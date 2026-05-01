@@ -16,13 +16,12 @@
   :root {
     --white: #ffffff;
     --off-white: #f9f8f6;
-    --light: #1e1e1c;        /* modifié pour fond sombre */
+    --light: #1e1e1c;
     --mid: #2a2a28;
     --border: #3a3a38;
     --text-muted: #aaa8a4;
     --text-body: #d1cfca;
     --text-dark: #ecebe7;
-    --accent: #2c2c2a;
     --gold: #c4a96a;
     --gold-light: #e8d9b8;
     --gold-dark: #b89a4a;
@@ -42,18 +41,12 @@
     line-height: 1.7;
     overflow-x: hidden;
     position: relative;
-    /* Fond noir marbré / gris très foncé */
-    background: radial-gradient(circle at 20% 30%, #1a1a18, #0d0d0c);
-    animation: bgShift 20s ease infinite alternate;
+    /* Image HD : écran d'ordinateur avec stats (Unsplash) */
+    background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80') no-repeat center center fixed;
+    background-size: cover;
   }
 
-  @keyframes bgShift {
-    0% { background: radial-gradient(circle at 20% 30%, #1a1a18, #0d0d0c); }
-    50% { background: radial-gradient(circle at 80% 70%, #222220, #111110); }
-    100% { background: radial-gradient(circle at 40% 50%, #1e1e1c, #0a0a09); }
-  }
-
-  /* Grain marbré plus fort */
+  /* Overlay sombre pour la lisibilité */
   body::before {
     content: "";
     position: fixed;
@@ -61,13 +54,43 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 0;
+  }
+
+  /* Effet de brillance animée sur l’arrière-plan (simule une animation d’écran) */
+  .screen-glint {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 40%, rgba(196,169,106,0.08) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 1;
+    animation: glintMove 12s infinite alternate;
+  }
+
+  @keyframes glintMove {
+    0% { opacity: 0.3; transform: scale(1); }
+    100% { opacity: 0.6; transform: scale(1.1); }
+  }
+
+  /* Grain fin par-dessus */
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
     background-repeat: repeat;
     pointer-events: none;
     z-index: 2;
   }
 
-  /* Bokeh plus sombre / doré subtil */
+  /* Cercles flottants (bokeh) */
   .bokeh {
     position: fixed;
     top: 0;
@@ -91,6 +114,7 @@
     100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.15; }
   }
 
+  /* Contenu principal */
   .content {
     position: relative;
     z-index: 10;
@@ -109,7 +133,7 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(10, 10, 9, 0.92);
+    background: rgba(10, 10, 9, 0.85);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
     padding: 0 6vw;
@@ -121,7 +145,7 @@
   }
   nav.scrolled {
     height: 60px;
-    background: rgba(10, 10, 9, 0.96);
+    background: rgba(10, 10, 9, 0.92);
     box-shadow: var(--shadow-sm);
   }
   .logo {
@@ -181,22 +205,6 @@
     position: relative;
     overflow: hidden;
   }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -60px;
-    right: -80px;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, var(--gold-light) 0%, transparent 70%);
-    opacity: 0.1;
-    pointer-events: none;
-    animation: glowPulse 4s infinite;
-  }
-  @keyframes glowPulse {
-    0% { transform: scale(1); opacity: 0.08; }
-    100% { transform: scale(1.1); opacity: 0.15; }
-  }
   .hero-inner {
     max-width: 760px;
     position: relative;
@@ -224,7 +232,7 @@
   .hero:hover .hero-eyebrow::before {
     width: 60px;
   }
-  /* TITRE RÉDUIT */
+  /* Titre réduit */
   .hero h1 {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(28px, 5vw, 62px);
@@ -343,7 +351,10 @@
   section {
     padding: 100px 6vw;
     position: relative;
-    background: transparent;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    margin: 20px 0;
+    border-radius: 0px;
   }
   .section-label {
     font-size: 11px;
@@ -382,7 +393,7 @@
     margin-bottom: 60px;
   }
 
-  /* Packs */
+  /* Packs - identiques à l'original complet */
   .packs-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -397,7 +408,6 @@
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border);
     position: relative;
-    z-index: 1;
     overflow: hidden;
   }
   .pack-card::before {
@@ -513,9 +523,7 @@
 
   /* Témoignages */
   #testimonials {
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(2px);
-    border-radius: 0;
+    background: rgba(0, 0, 0, 0.5);
   }
   .testimonial-grid {
     display: grid;
@@ -558,7 +566,7 @@
     color: var(--gold);
   }
 
-  /* About */
+  /* About avec compteur corrigé à 60 */
   .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -594,10 +602,6 @@
   }
 
   /* FAQ */
-  #faq {
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(4px);
-  }
   .faq-grid {
     max-width: 800px;
     margin: 0 auto;
@@ -640,8 +644,7 @@
 
   /* Contact */
   #contact {
-    background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(20,20,18,0.95));
-    backdrop-filter: blur(2px);
+    background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(20,20,18,0.9));
     text-align: center;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
@@ -658,7 +661,6 @@
     text-decoration: none;
     transition: var(--transition);
     border-radius: 50px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   }
   .contact-cta:hover {
     background: var(--gold-dark);
@@ -667,7 +669,7 @@
 
   /* Footer */
   .site-footer {
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(4px);
     padding: 50px 6vw 40px;
     border-top: 1px solid var(--border);
@@ -725,7 +727,6 @@
     opacity: 0;
     visibility: hidden;
     transition: var(--transition);
-    box-shadow: var(--shadow-md);
     z-index: 99;
   }
   #back-to-top.show {
@@ -746,7 +747,7 @@
     .about-grid { grid-template-columns: 1fr; gap: 40px; }
   }
   @media (max-width: 600px) {
-    section { padding: 60px 5vw; }
+    section { padding: 60px 5vw; margin: 10px 0; }
     nav { padding: 0 5vw; height: 65px; }
     .hero { padding: 100px 5vw 60px; }
     .stats-row { flex-direction: column; gap: 20px; }
@@ -756,7 +757,9 @@
 </head>
 <body>
 
-<!-- Cercles flottants (bokeh) -->
+<!-- Effet de brillance -->
+<div class="screen-glint"></div>
+<!-- Cercles bokeh -->
 <div class="bokeh">
   <span style="width: 180px; height: 180px; top: 10%; left: -5%; animation-duration: 18s;"></span>
   <span style="width: 300px; height: 300px; bottom: 0; right: -10%; animation-duration: 25s; animation-delay: 2s;"></span>
@@ -785,7 +788,7 @@
     </div>
   </section>
 
-  <!-- SECTION PACKS (contenu complet) -->
+  <!-- PACKS : contenu complet (identique à l’original long) -->
   <section id="packs">
     <p class="section-label">Offres</p>
     <h2 class="section-title">Choisissez votre<br>niveau d'accompagnement</h2>
@@ -798,7 +801,7 @@
         <div class="pack-price"><strong>89 €</strong> / mois</div>
         <div class="pack-divider"></div>
         <p class="pack-category">🧭 Stratégie & Planning</p>
-        <ul class="pack-items"><li>Analyse globale du potentiel du business</li><li>Business plan</li><li>Étude de marché</li><li>Analyse de la concurrence</li><li>Proposition de valeur</li><li>Fixation des prix & marges</li><li>Plan d'action 30 / 60 / 90 jours</li></ul>
+        <ul class="pack-items"><li>Analyse globale du potentiel du business</li><li>Business plan</li><li>Étude de marché</li><li>Analyse de la concurrence</li><li>Proposition de valeur</li><li>Fixation des prix & marges</li><li>Plan d'action 30/60/90 jours</li></ul>
         <p class="pack-category">🏗️ Création & Lancement</p>
         <ul class="pack-items"><li>Création d'une offre claire et vendable</li><li>Structuration des packages</li><li>Naming & branding de base</li><li>Tunnel de vente simple</li><li>Stratégie de lancement</li><li>Plan de communication</li></ul>
         <p class="pack-category">📣 Marketing & Vente</p>
@@ -820,7 +823,7 @@
         <div class="pack-price"><strong>139 €</strong> / mois</div>
         <div class="pack-divider"></div>
         <p class="pack-category">🧭 Stratégie & Planning</p>
-        <ul class="pack-items"><li>Analyse globale du potentiel du business</li><li>Identification des leviers de croissance</li><li>Business plan</li><li>Étude de marché</li><li>Analyse de la concurrence</li><li>Positionnement</li><li>Avatar client idéal (ICP)</li><li>Proposition de valeur</li><li>Modèle économique</li><li>Fixation des prix & marges</li><li>Plan d'action 30 / 60 / 90 jours</li></ul>
+        <ul class="pack-items"><li>Analyse globale du potentiel du business</li><li>Identification des leviers de croissance</li><li>Business plan</li><li>Étude de marché</li><li>Analyse de la concurrence</li><li>Positionnement</li><li>Avatar client idéal (ICP)</li><li>Proposition de valeur</li><li>Modèle économique</li><li>Fixation des prix & marges</li><li>Plan d'action 30/60/90 jours</li></ul>
         <p class="pack-category">🏗️ Création & Lancement</p>
         <ul class="pack-items"><li>Création d'une offre claire et vendable</li><li>Système de vente opérationnel</li><li>Aide à la création d'entreprise</li><li>Choix du statut juridique</li><li>Aide à l'ouverture du compte pro</li><li>Structuration des packages</li><li>Naming & branding de base</li><li>Tunnel de vente simple</li><li>Mise en place des outils (paiement, CRM)</li><li>Stratégie de lancement</li><li>Plan de communication</li></ul>
         <p class="pack-category">📣 Marketing & Vente</p>
@@ -842,7 +845,7 @@
         <div class="pack-price"><strong>350 €</strong> / mois</div>
         <div class="pack-divider"></div>
         <p class="pack-category">🧭 Stratégie & Planning</p>
-        <ul class="pack-items"><li>Analyse globale du potentiel du business</li><li>Leviers de croissance prioritaires</li><li>Clarification des objectifs à court et long terme</li><li>Audit complet de la situation</li><li>Business plan</li><li>Étude de marché</li><li>Analyse de la concurrence</li><li>Positionnement</li><li>Avatar client idéal (ICP)</li><li>Proposition de valeur</li><li>Modèle économique</li><li>Fixation des prix & marges</li><li>Plan d'action 30 / 60 / 90 jours</li></ul>
+        <ul class="pack-items"><li>Analyse globale du potentiel du business</li><li>Leviers de croissance prioritaires</li><li>Clarification des objectifs à court et long terme</li><li>Audit complet de la situation</li><li>Business plan</li><li>Étude de marché</li><li>Analyse de la concurrence</li><li>Positionnement</li><li>Avatar client idéal (ICP)</li><li>Proposition de valeur</li><li>Modèle économique</li><li>Fixation des prix & marges</li><li>Plan d'action 30/60/90 jours</li></ul>
         <p class="pack-category">🏗️ Création & Lancement</p>
         <ul class="pack-items"><li>Création d'une offre claire et vendable</li><li>Système de vente opérationnel</li><li>Aide à la création d'entreprise</li><li>Choix du statut juridique</li><li>Aide à l'ouverture du compte pro</li><li>Structuration des packages</li><li>Naming & branding de base</li><li>Tunnel de vente simple</li><li>Mise en place des outils (paiement, CRM)</li><li>Stratégie de lancement</li><li>Plan de communication</li></ul>
         <p class="pack-category">📣 Marketing & Vente</p>
@@ -860,7 +863,7 @@
     </div>
   </section>
 
-  <!-- TÉMOIGNAGES (avis personnalisés) -->
+  <!-- TÉMOIGNAGES -->
   <section id="testimonials">
     <p class="section-label">Témoignages</p>
     <h2 class="section-title">Ils ont transformé leur business</h2>
@@ -879,7 +882,7 @@
     </div>
   </section>
 
-  <!-- ABOUT (images et compteurs) -->
+  <!-- ABOUT (avec compteur 60) -->
   <section id="about">
     <div class="about-grid">
       <div>
@@ -896,7 +899,7 @@
             <div class="stat-label">Packs</div>
           </div>
           <div class="stat-item">
-            <div class="stat-number" data-target="150">0</div>
+            <div class="stat-number" data-target="60">0</div>   <!-- modifié de 150 à 60 -->
             <div class="stat-label">Clients accompagnés</div>
           </div>
           <div class="stat-item">
