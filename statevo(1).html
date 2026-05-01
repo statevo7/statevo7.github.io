@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ✅ SEO -->
+<title>Statevo | Consultant Stratégie d'Entreprise – Packs META, WAVY, ELITE</title>
+<meta name="description" content="Statevo accompagne entrepreneurs et dirigeants pour transformer leur idée en business rentable et scalable. Choisissez votre pack : META (89€), WAVY (139€) ou ELITE (350€/mois).">
+<meta name="keywords" content="consultant stratégie entreprise, business plan, accompagnement entrepreneur, marketing, coaching business, Statevo">
+<meta name="author" content="Statevo Corporation">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://statevo7.github.io/">
+
+<!-- ✅ Open Graph (réseaux sociaux) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://statevo7.github.io/">
+<meta property="og:title" content="Statevo | Consultant Stratégie d'Entreprise">
+<meta property="og:description" content="Transformez votre idée en business rentable et scalable avec Statevo. Packs META, WAVY et ELITE dès 89€/mois.">
+<meta property="og:image" content="https://raw.githubusercontent.com/statevo7/statevo7.github.io/507dd1f13de373474daeeba1d4faace9552626af/Screenshot%202026-05-01%20at%2015-22-07%20Free%20Logo%20Maker%20-%20Get%20Custom%20Logo%20Designs%20in%20Minutes%20Looka.png">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Statevo Corporation">
+
+<!-- ✅ Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Statevo | Consultant Stratégie d'Entreprise">
+<meta name="twitter:description" content="Transformez votre idée en business rentable et scalable avec Statevo. Packs dès 89€/mois.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/statevo7/statevo7.github.io/507dd1f13de373474daeeba1d4faace9552626af/Screenshot%202026-05-01%20at%2015-22-07%20Free%20Logo%20Maker%20-%20Get%20Custom%20Logo%20Designs%20in%20Minutes%20Looka.png">
+
+<!-- ✅ Performance : preconnect pour les polices -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<!-- ✅ Schema.org (données structurées pour Google) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Statevo Corporation",
+  "description": "Consultant en stratégie d'entreprise, création web et accompagnement terrain pour transformer votre projet en réalité rentable et scalable.",
+  "url": "https://statevo7.github.io/",
+  "email": "statevocontact@gmail.com",
+  "telephone": "+33641549178",
+  "priceRange": "€€",
+  "areaServed": "FR",
+  "serviceType": "Business Strategy Consulting"
+}
+</script>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --white: #ffffff;
+    --off-white: #f9f8f6;
+    --light: #1e1e1c;
+    --mid: #2a2a28;
+    --border: #3a3a38;
+    --text-muted: #aaa8a4;
+    --text-body: #d1cfca;
+    --text-dark: #ecebe7;
+    --gold: #c4a96a;
+    --gold-light: #e8d9b8;
+    --gold-dark: #b89a4a;
+    --shadow-sm: 0 8px 20px rgba(0,0,0,0.3);
+    --shadow-md: 0 12px 30px rgba(0,0,0,0.4);
+    --shadow-lg: 0 25px 40px rgba(0,0,0,0.5);
+    --transition: all 0.3s cubic-bezier(0.2,0.9,0.4,1.1);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text-body);
+    line-height: 1.7;
+    overflow-x: hidden;
+    position: relative;
+    /* ✅ Performance : fallback couleur si l'image ne charge pas */
+    background-color: #0a0a09;
+    background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80') no-repeat center center fixed;
+    background-size: cover;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 0;
+    /* ✅ Accessibilité : pas d'interférence avec les clics */
+    pointer-events: none;
+  }
+
+  .screen-glint {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 40%, rgba(196,169,106,0.08) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 1;
+    animation: glintMove 12s infinite alternate;
+  }
+
+  @keyframes glintMove {
+    0% { opacity: 0.3; transform: scale(1); }
+    100% { opacity: 0.6; transform: scale(1.1); }
+  }
+
+  /* ✅ Sécurité : pointer-events none sur le grain */
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .bokeh {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .bokeh span {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(196, 169, 106, 0.08);
+    backdrop-filter: blur(15px);
+    animation: float 22s infinite ease-in-out;
+  }
+  @keyframes float {
+    0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.15; }
+    50% { transform: translateY(-60px) translateX(40px) scale(1.2); opacity: 0.3; }
+    100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.15; }
+  }
+
+  .content {
+    position: relative;
+    z-index: 10;
+    background: transparent;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(10, 10, 9, 0.85);
+    backdrop-filter: blur(12px);
+    /* ✅ Performance : fallback backdrop-filter */
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 6vw;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: var(--transition);
+  }
+  nav.scrolled {
+    height: 60px;
+    background: rgba(10, 10, 9, 0.92);
+    box-shadow: var(--shadow-sm);
+  }
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: var(--transition);
+  }
+  .logo:hover {
+    color: var(--gold-light);
+    letter-spacing: 0.14em;
+  }
+  nav a.cta-nav {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    border: 1px solid var(--gold);
+    padding: 9px 24px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background: transparent;
+  }
+  nav a.cta-nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gold);
+    transition: left 0.3s ease;
+    z-index: -1;
+  }
+  nav a.cta-nav:hover {
+    color: var(--text-dark);
+    border-color: var(--gold);
+  }
+  nav a.cta-nav:hover::before {
+    left: 0;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 6vw 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-inner {
+    max-width: 760px;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-eyebrow {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.3s;
+  }
+  .hero:hover .hero-eyebrow::before {
+    width: 60px;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 5vw, 62px);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--white);
+    margin-bottom: 32px;
+    letter-spacing: -0.01em;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+    position: relative;
+    display: inline-block;
+  }
+  .hero h1 em::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: var(--gold-light);
+    opacity: 0.3;
+    z-index: -1;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .btn-primary, .btn-secondary {
+    transition: var(--transition);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--text-dark);
+    padding: 14px 36px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gold-dark);
+    transition: left 0.3s ease;
+    z-index: -1;
+  }
+  .btn-primary:hover::before {
+    left: 0;
+  }
+  .btn-primary:hover {
+    color: var(--white);
+  }
+  .btn-secondary {
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--gold);
+    transition: var(--transition);
+  }
+  .btn-secondary i {
+    transition: transform 0.3s;
+  }
+  .btn-secondary:hover {
+    color: var(--gold-light);
+    border-bottom-color: var(--gold-light);
+    gap: 15px;
+  }
+  .btn-secondary:hover i {
+    transform: translateX(5px);
+  }
+  .hero-photo {
+    position: absolute;
+    right: 6vw;
+    bottom: 10vh;
+    max-width: 220px;
+    transition: var(--transition);
+    animation: fadeInUp 1s ease 0.2s both;
+  }
+  .hero-photo img {
+    width: 100%;
+    border-radius: 30px;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+    filter: brightness(0.9);
+  }
+  .hero-photo img:hover {
+    transform: scale(1.02) rotate(1deg);
+    filter: brightness(1);
+    box-shadow: 0 30px 40px rgba(0,0,0,0.5);
+  }
+
+  /* Sections communes */
+  section {
+    padding: 100px 6vw;
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    margin: 20px 0;
+  }
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.3s;
+  }
+  section:hover .section-label::before {
+    width: 50px;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .section-sub {
+    font-size: 16px;
+    color: var(--text-muted);
+    max-width: 550px;
+    margin-bottom: 60px;
+  }
+
+  /* Packs */
+  .packs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .pack-card {
+    background: rgba(20, 20, 18, 0.85);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    padding: 44px 32px 40px;
+    border-radius: 20px;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .pack-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .pack-card:hover::before {
+    transform: scaleX(1);
+  }
+  .pack-card:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--gold-light);
+    background: rgba(20, 20, 18, 0.95);
+  }
+  .pack-card.featured {
+    background: rgba(0, 0, 0, 0.8);
+    border-color: var(--gold);
+    transform: scale(1.02);
+  }
+  .pack-card.featured:hover {
+    transform: translateY(-12px) scale(1.02);
+  }
+  .pack-badge {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(196, 169, 106, 0.2);
+    padding: 5px 14px;
+    display: inline-block;
+    margin-bottom: 28px;
+    border-radius: 30px;
+  }
+  .pack-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--white);
+  }
+  .pack-price strong {
+    font-size: 48px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    color: var(--gold);
+  }
+  .pack-price {
+    font-size: 13px;
+    margin-bottom: 32px;
+    color: var(--text-muted);
+  }
+  .pack-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 20px 0;
+  }
+  .pack-category {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 20px 0 8px;
+  }
+  .pack-items {
+    list-style: none;
+    margin-bottom: 20px;
+  }
+  .pack-items li {
+    font-size: 13px;
+    padding: 4px 0 4px 18px;
+    position: relative;
+    color: var(--text-body);
+  }
+  .pack-items li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 10px;
+  }
+  .pack-cta {
+    margin-top: 30px;
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-align: center;
+    transition: var(--transition);
+    border-radius: 40px;
+    background: transparent;
+  }
+  .pack-cta:hover {
+    background: var(--gold);
+    color: var(--text-dark);
+    border-color: var(--gold);
+  }
+
+  /* Témoignages */
+  #testimonials {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 40px;
+  }
+  .testimonial-card {
+    background: rgba(20, 20, 18, 0.85);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    padding: 40px 32px;
+    border-radius: 24px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    text-align: left;
+    border: 1px solid var(--border);
+  }
+  .testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+    background: rgba(20, 20, 18, 0.95);
+  }
+  .testimonial-text {
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    color: var(--text-body);
+  }
+  .stars {
+    color: var(--gold);
+    margin-bottom: 16px;
+    letter-spacing: 3px;
+  }
+  .testimonial-author {
+    color: var(--white);
+  }
+  .testimonial-author span {
+    color: var(--gold);
+  }
+
+  /* About */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .about-grid img {
+    width: 100%;
+    border-radius: 24px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border);
+  }
+  .stats-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 60px;
+    text-align: center;
+  }
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* FAQ */
+  .faq-grid {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
+  }
+  .faq-question {
+    font-weight: 600;
+    font-size: 18px;
+    padding: 20px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white);
+    transition: var(--transition);
+    /* ✅ Accessibilité */
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+  }
+  .faq-question:hover {
+    color: var(--gold);
+  }
+  .faq-question i {
+    transition: transform 0.3s;
+  }
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    color: var(--text-muted);
+    font-size: 15px;
+  }
+  .faq-item.active .faq-answer {
+    max-height: 200px;
+    padding-bottom: 20px;
+  }
+  .faq-item.active .faq-question i {
+    transform: rotate(180deg);
+  }
+
+  /* Contact */
+  #contact {
+    background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(20,20,18,0.9));
+    text-align: center;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .contact-cta {
+    display: inline-block;
+    padding: 16px 48px;
+    background: var(--gold);
+    color: var(--text-dark);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: var(--transition);
+    border-radius: 50px;
+  }
+  .contact-cta:hover {
+    background: var(--gold-dark);
+    transform: scale(1.05);
+  }
+
+  /* Footer */
+  .site-footer {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    padding: 50px 6vw 40px;
+    border-top: 1px solid var(--border);
+  }
+  .footer-description p {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 20px;
+    text-align: center;
+  }
+  .footer-copyright {
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 20px;
+  }
+  .footer-whatsapp {
+    text-align: center;
+  }
+  .footer-whatsapp a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: var(--transition);
+  }
+  .footer-whatsapp a:hover {
+    background: #128C7E;
+    transform: scale(1.05);
+    gap: 15px;
+  }
+
+  /* Back to top */
+  #back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--gold);
+    color: var(--text-dark);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    z-index: 99;
+  }
+  #back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  #back-to-top:hover {
+    background: var(--gold-dark);
+    transform: translateY(-5px);
+  }
+
+  /* ✅ Accessibilité : focus visible pour navigation clavier */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* ✅ Accessibilité : respect des préférences de mouvement réduit */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .packs-grid { grid-template-columns: 1fr; gap: 30px; }
+    .testimonial-grid { grid-template-columns: 1fr; }
+    .hero-photo { display: none; }
+    .stats-row { flex-wrap: wrap; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+  @media (max-width: 600px) {
+    section { padding: 60px 5vw; margin: 10px 0; }
+    nav { padding: 0 5vw; height: 65px; }
+    .hero { padding: 100px 5vw 60px; }
+    .stats-row { flex-direction: column; gap: 20px; }
+    .hero h1 { font-size: clamp(24px, 6vw, 42px); }
+  }
+</style>
+</head>
+<body>
+
+<div class="screen-glint" aria-hidden="true"></div>
+<div class="bokeh" aria-hidden="true">
+  <span style="width: 180px; height: 180px; top: 10%; left: -5%; animation-duration: 18s;"></span>
+  <span style="width: 300px; height: 300px; bottom: 0; right: -10%; animation-duration: 25s; animation-delay: 2s;"></span>
+  <span style="width: 120px; height: 120px; top: 40%; left: 80%; animation-duration: 20s; animation-delay: 1s;"></span>
+  <span style="width: 250px; height: 250px; bottom: 20%; left: 10%; animation-duration: 28s;"></span>
+  <span style="width: 90px; height: 90px; top: 70%; left: 40%; animation-duration: 15s;"></span>
+</div>
+
+<div class="content">
+  <nav id="navbar" role="navigation" aria-label="Navigation principale">
+    <a href="#" class="logo" aria-label="Statevo — Retour à l'accueil">Statevo</a>
+    <a href="#contact" class="cta-nav" aria-label="Prendre contact avec Statevo">Prendre contact</a>
+  </nav>
+
+  <section class="hero" aria-label="Présentation Statevo">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Consultant en Stratégie d'Entreprise</p>
+      <h1>Transformer votre<br>idée en business<br><em>rentable &amp; scalable</em></h1>
+      <div class="hero-actions">
+        <a href="#packs" class="btn-primary" aria-label="Voir les packs d'accompagnement">Découvrir les packs</a>
+        <a href="#contact" class="btn-secondary" aria-label="Me contacter">Me contacter <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <!-- ✅ Performance : loading lazy sur les images non critiques -->
+      <img src="https://raw.githubusercontent.com/statevo7/statevo7.github.io/507dd1f13de373474daeeba1d4faace9552626af/Screenshot%202026-05-01%20at%2015-22-07%20Free%20Logo%20Maker%20-%20Get%20Custom%20Logo%20Designs%20in%20Minutes%20Looka.png" alt="Logo Statevo" loading="lazy" width="220">
+    </div>
+  </section>
+
+  <!-- PACKS -->
+  <section id="packs" aria-labelledby="packs-title">
+    <p class="section-label" aria-hidden="true">Offres</p>
+    <h2 class="section-title" id="packs-title">Choisissez votre<br>niveau d'accompagnement</h2>
+    <p class="section-sub">3 packs adaptés à votre stade de développement et à vos objectifs.</p>
+    <div class="packs-grid">
+      <!-- META -->
+      <article class="pack-card" aria-label="Pack META à 89 euros par mois">
+        <span class="pack-badge">Essentiel</span>
+        <p class="pack-name">META</p>
+        <div class="pack-price"><strong>89 €</strong> / mois</div>
+        <div class="pack-divider"></div>
+        <p class="pack-category">🧭 Stratégie &amp; Planning</p>
+        <ul class="pack-items">
+          <li>Analyse globale du potentiel du business</li>
+          <li>Business plan</li>
+          <li>Étude de marché</li>
+          <li>Analyse de la concurrence</li>
+          <li>Proposition de valeur</li>
+          <li>Fixation des prix &amp; marges</li>
+          <li>Plan d'action 30/60/90 jours</li>
+        </ul>
+        <p class="pack-category">🏗️ Création &amp; Lancement</p>
+        <ul class="pack-items">
+          <li>Création d'une offre claire et vendable</li>
+          <li>Structuration des packages</li>
+          <li>Naming &amp; branding de base</li>
+          <li>Tunnel de vente simple</li>
+          <li>Stratégie de lancement</li>
+          <li>Plan de communication</li>
+        </ul>
+        <p class="pack-category">📣 Marketing &amp; Vente</p>
+        <ul class="pack-items">
+          <li>Système d'acquisition clients</li>
+          <li>Optimisation du taux de conversion</li>
+          <li>Stratégie de vente</li>
+          <li>Stratégie réseaux sociaux</li>
+          <li>Techniques de closing</li>
+        </ul>
+        <p class="pack-category">📊 Finance &amp; Chiffres</p>
+        <ul class="pack-items">
+          <li>Analyse de la rentabilité</li>
+          <li>Gestion de trésorerie</li>
+          <li>Calcul de rentabilité</li>
+          <li>Suivi des KPI</li>
+        </ul>
+        <p class="pack-category">🤝 Accompagnement</p>
+        <ul class="pack-items">
+          <li>2 sessions 1:1 / mois</li>
+          <li>Suivi hebdomadaire</li>
+          <li>Déblocage de problèmes</li>
+          <li>Prise de décision guidée</li>
+          <li>Accountability</li>
+        </ul>
+        <p class="pack-category">⚙️ Productivité &amp; Systèmes</p>
+        <ul class="pack-items">
+          <li>Réduction des tâches inutiles</li>
+          <li>Structuration des process</li>
+          <li>Fonctionnement business scalable</li>
+        </ul>
+        <p class="pack-category">🧠 Mindset &amp; Performance</p>
+        <ul class="pack-items">
+          <li>Mentalité orientée exécution</li>
+          <li>Gestion du stress</li>
+          <li>Prise de décision</li>
+          <li>Déblocage des blocages</li>
+        </ul>
+        <a href="#contact" class="pack-cta" aria-label="Commencer avec le pack META">Commencer</a>
+      </article>
+
+      <!-- WAVY -->
+      <article class="pack-card featured" aria-label="Pack WAVY à 139 euros par mois, le plus populaire">
+        <span class="pack-badge">⭐ Le plus populaire</span>
+        <p class="pack-name">WAVY</p>
+        <div class="pack-price"><strong>139 €</strong> / mois</div>
+        <div class="pack-divider"></div>
+        <p class="pack-category">🧭 Stratégie &amp; Planning</p>
+        <ul class="pack-items">
+          <li>Analyse globale du potentiel du business</li>
+          <li>Identification des leviers de croissance</li>
+          <li>Business plan</li>
+          <li>Étude de marché</li>
+          <li>Analyse de la concurrence</li>
+          <li>Positionnement</li>
+          <li>Avatar client idéal (ICP)</li>
+          <li>Proposition de valeur</li>
+          <li>Modèle économique</li>
+          <li>Fixation des prix &amp; marges</li>
+          <li>Plan d'action 30/60/90 jours</li>
+        </ul>
+        <p class="pack-category">🏗️ Création &amp; Lancement</p>
+        <ul class="pack-items">
+          <li>Création d'une offre claire et vendable</li>
+          <li>Système de vente opérationnel</li>
+          <li>Aide à la création d'entreprise</li>
+          <li>Choix du statut juridique</li>
+          <li>Aide à l'ouverture du compte pro</li>
+          <li>Structuration des packages</li>
+          <li>Naming &amp; branding de base</li>
+          <li>Tunnel de vente simple</li>
+          <li>Mise en place des outils (paiement, CRM)</li>
+          <li>Stratégie de lancement</li>
+          <li>Plan de communication</li>
+        </ul>
+        <p class="pack-category">📣 Marketing &amp; Vente</p>
+        <ul class="pack-items">
+          <li>Système d'acquisition de clients</li>
+          <li>Optimisation du taux de conversion</li>
+          <li>Stratégie de vente</li>
+          <li>Script de vente</li>
+          <li>Copywriting (posts, messages, pages)</li>
+          <li>Stratégie réseaux sociaux</li>
+          <li>Funnel de conversion</li>
+          <li>Techniques de closing</li>
+        </ul>
+        <p class="pack-category">📊 Finance &amp; Chiffres</p>
+        <ul class="pack-items">
+          <li>Analyse de la rentabilité réelle</li>
+          <li>Tableau de bord de suivi</li>
+          <li>Prévisionnel financier</li>
+          <li>Gestion de trésorerie</li>
+          <li>Calcul de rentabilité</li>
+          <li>Suivi des KPI</li>
+        </ul>
+        <p class="pack-category">🤝 Accompagnement</p>
+        <ul class="pack-items">
+          <li>4 sessions 1:1 / mois</li>
+          <li>Suivi hebdomadaire</li>
+          <li>Support continu</li>
+          <li>Déblocage de problèmes</li>
+          <li>Prise de décision guidée</li>
+          <li>Accountability</li>
+          <li>Accompagnement orienté résultats concrets</li>
+        </ul>
+        <p class="pack-category">⚙️ Productivité &amp; Systèmes</p>
+        <ul class="pack-items">
+          <li>Organisation du travail</li>
+          <li>Gestion du temps</li>
+          <li>Mise en place d'outils</li>
+          <li>Automatisation des tâches</li>
+          <li>Structuration des process</li>
+        </ul>
+        <p class="pack-category">🧠 Mindset &amp; Performance</p>
+        <ul class="pack-items">
+          <li>Mentalité orientée exécution</li>
+          <li>Discipline &amp; constance</li>
+          <li>Gestion du stress</li>
+          <li>Prise de décision</li>
+          <li>Déblocage des blocages</li>
+        </ul>
+        <a href="#contact" class="pack-cta" aria-label="Commencer avec le pack WAVY">Commencer</a>
+      </article>
+
+      <!-- ELITE -->
+      <article class="pack-card" aria-label="Pack ELITE à 350 euros par mois">
+        <span class="pack-badge">Premium</span>
+        <p class="pack-name">ELITE</p>
+        <div class="pack-price"><strong>350 €</strong> / mois</div>
+        <div class="pack-divider"></div>
+        <p class="pack-category">🧭 Stratégie &amp; Planning</p>
+        <ul class="pack-items">
+          <li>Analyse globale du potentiel du business</li>
+          <li>Leviers de croissance prioritaires</li>
+          <li>Clarification des objectifs à court et long terme</li>
+          <li>Audit complet de la situation</li>
+          <li>Business plan</li>
+          <li>Étude de marché</li>
+          <li>Analyse de la concurrence</li>
+          <li>Positionnement</li>
+          <li>Avatar client idéal (ICP)</li>
+          <li>Proposition de valeur</li>
+          <li>Modèle économique</li>
+          <li>Fixation des prix &amp; marges</li>
+          <li>Plan d'action 30/60/90 jours</li>
+        </ul>
+        <p class="pack-category">🏗️ Création &amp; Lancement</p>
+        <ul class="pack-items">
+          <li>Création d'une offre claire et vendable</li>
+          <li>Système de vente opérationnel</li>
+          <li>Aide à la création d'entreprise</li>
+          <li>Choix du statut juridique</li>
+          <li>Aide à l'ouverture du compte pro</li>
+          <li>Structuration des packages</li>
+          <li>Naming &amp; branding de base</li>
+          <li>Tunnel de vente simple</li>
+          <li>Mise en place des outils (paiement, CRM)</li>
+          <li>Stratégie de lancement</li>
+          <li>Plan de communication</li>
+        </ul>
+        <p class="pack-category">📣 Marketing &amp; Vente</p>
+        <ul class="pack-items">
+          <li>Système d'acquisition de clients</li>
+          <li>Optimisation du taux de conversion</li>
+          <li>Stratégie de vente</li>
+          <li>Script de vente</li>
+          <li>Copywriting (posts, messages, pages)</li>
+          <li>Stratégie réseaux sociaux</li>
+          <li>Calendrier de contenu</li>
+          <li>Funnel de conversion</li>
+          <li>Techniques de closing</li>
+        </ul>
+        <p class="pack-category">📊 Finance &amp; Chiffres</p>
+        <ul class="pack-items">
+          <li>Analyse de la rentabilité réelle</li>
+          <li>Tableau de bord de suivi</li>
+          <li>Prévisionnel financier</li>
+          <li>Gestion de trésorerie</li>
+          <li>Calcul de rentabilité</li>
+          <li>Suivi des KPI</li>
+        </ul>
+        <p class="pack-category">🤝 Accompagnement</p>
+        <ul class="pack-items">
+          <li>8 sessions 1:1 / mois</li>
+          <li>Suivi hebdomadaire</li>
+          <li>Support continu</li>
+          <li>Déblocage de problèmes</li>
+          <li>Possible accompagnement sur le terrain</li>
+          <li>Prise de décision guidée</li>
+          <li>Accountability</li>
+          <li>Accompagnement orienté résultats concrets</li>
+        </ul>
+        <p class="pack-category">⚙️ Productivité &amp; Systèmes</p>
+        <ul class="pack-items">
+          <li>Organisation du travail</li>
+          <li>Gestion du temps</li>
+          <li>Mise en place d'outils</li>
+          <li>Automatisation des tâches</li>
+          <li>Structuration des process</li>
+        </ul>
+        <p class="pack-category">🧠 Mindset &amp; Performance</p>
+        <ul class="pack-items">
+          <li>Mentalité orientée exécution</li>
+          <li>Discipline &amp; constance</li>
+          <li>Gestion du stress</li>
+          <li>Prise de décision</li>
+          <li>Déblocage des blocages</li>
+        </ul>
+        <a href="#contact" class="pack-cta" aria-label="Commencer avec le pack ELITE">Commencer</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- TÉMOIGNAGES -->
+  <section id="testimonials" aria-labelledby="testimonials-title">
+    <p class="section-label" aria-hidden="true">Témoignages</p>
+    <h2 class="section-title" id="testimonials-title">Ils ont transformé leur business</h2>
+    <p class="section-sub">Des résultats concrets grâce à un accompagnement sur mesure.</p>
+    <div class="testimonial-grid">
+      <article class="testimonial-card">
+        <div class="stars" role="img" aria-label="5 étoiles sur 5">★★★★★</div>
+        <p class="testimonial-text">"Grâce à Statevo, j'ai doublé mon chiffre d'affaire et amélioré ma compréhension du marché."</p>
+        <p class="testimonial-author">— Laura M. <span>Dirigeante, NovaStyle</span></p>
+      </article>
+      <article class="testimonial-card">
+        <div class="stars" role="img" aria-label="5 étoiles sur 5">★★★★★</div>
+        <p class="testimonial-text">"Très intéressant pour débuter ou relancer un business qui va mal."</p>
+        <p class="testimonial-author">— Julien D. <span>Entrepreneur</span></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" aria-labelledby="about-title">
+    <div class="about-grid">
+      <div>
+        <img src="https://raw.githubusercontent.com/statevo7/statevo7.github.io/c8cedb048dc590f2982b57c6b33a440d1a80965e/Screenshot%202026-05-01%20at%2021-31-31%20Free%20Logo%20Maker%20-%20Get%20Custom%20Logo%20Designs%20in%20Minutes%20Looka.png" alt="Logo Statevo consulting" loading="lazy" width="600">
+      </div>
+      <div>
+        <p class="section-label" aria-hidden="true">À propos</p>
+        <h2 class="section-title" id="about-title">Consultant en stratégie &amp; développement</h2>
+        <p style="font-size: 16px; margin-bottom: 30px;">Mon objectif : transformer une idée ou un business existant en une activité claire, rentable et scalable. Avec une approche terrain et des méthodes éprouvées.</p>
+        <img src="https://img.over-blog-kiwi.com/2/49/57/72/20171130/ob_0baedb_industrie-stats.jpg" alt="Statistiques industrie" loading="lazy" style="width:100%; border-radius: 20px; margin-bottom: 30px;" width="600">
+        <div class="stats-row">
+          <div class="stat-item">
+            <div class="stat-number" data-target="3" aria-label="3 packs disponibles">0</div>
+            <div class="stat-label">Packs</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="60" aria-label="60 clients accompagnés">0</div>
+            <div class="stat-label">Clients accompagnés</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="24" aria-label="Disponible 24h sur 24, 7 jours sur 7">0</div>
+            <div class="stat-label">Disponibilité 7j/7</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" aria-labelledby="faq-title">
+    <p class="section-label" aria-hidden="true">FAQ</p>
+    <h2 class="section-title" id="faq-title">Questions fréquentes</h2>
+    <p class="section-sub">Tout ce que vous devez savoir avant de commencer.</p>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <!-- ✅ Accessibilité : bouton sémantique avec aria -->
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
+          Comment se déroule la première session ?
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <div class="faq-answer" id="faq-answer-1">Lors d'un appel découverte gratuit, nous analysons vos besoins, votre projet et je vous recommande le pack adapté. Sans engagement.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
+          Puis-je changer de pack en cours de route ?
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <div class="faq-answer" id="faq-answer-2">Oui, vous pouvez évoluer vers un pack supérieur ou inférieur à tout moment, avec un simple préavis.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
+          Les sessions sont-elles en visio ou en présentiel ?
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <div class="faq-answer" id="faq-answer-3">Principalement en visio (Zoom/Google Meet), mais un accompagnement terrain est possible pour le pack ELITE.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" aria-labelledby="contact-title">
+    <p class="section-label" aria-hidden="true">Contact</p>
+    <h2 class="section-title" id="contact-title">Prêt à passer à l'action ?</h2>
+    <p class="section-sub">Discutons de votre projet et trouvons le pack qui correspond à votre situation.</p>
+    <!-- ✅ WhatsApp comme alternative au mailto -->
+    <div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; align-items: center;">
+      <a href="mailto:statevocontact@gmail.com" class="contact-cta" aria-label="Envoyer un email à Statevo">
+        Prendre rendez-vous <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+      </a>
+      <a href="https://wa.me/33641549178" class="contact-cta" style="background: #25D366;" target="_blank" rel="noopener noreferrer" aria-label="Contacter Statevo sur WhatsApp (ouvre dans un nouvel onglet)">
+        WhatsApp <i class="fab fa-whatsapp" aria-hidden="true"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-description">
+      <p>Statevo Corporation — Stratégie d'Entreprise, Création Web &amp; Accompagnement Terrain</p>
+      <p>Conseil en développement business, création de sites web sur mesure et interventions opérationnelles sur le terrain pour transformer votre projet en réalité rentable et scalable.</p>
+    </div>
+    <div class="footer-copyright">
+      © 2024–2026 Statevo Corporation. Tous droits réservés.
+    </div>
+    <div class="footer-whatsapp">
+      <!-- ✅ Sécurité : rel="noopener noreferrer" sur tous les target="_blank" -->
+      <a href="https://wa.me/33641549178" target="_blank" rel="noopener noreferrer" aria-label="Écrire à Statevo sur WhatsApp (ouvre dans un nouvel onglet)">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i> Écrivez-moi sur WhatsApp
+      </a>
+    </div>
+  </footer>
+
+  <a href="#" id="back-to-top" aria-label="Retour en haut de page">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </a>
+</div>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('navbar');
+  const backToTop = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+    if (window.scrollY > 300) backToTop.classList.add('show');
+    else backToTop.classList.remove('show');
+  });
+
+  // ✅ FAQ : accessibilité avec aria-expanded
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const btn = item.querySelector('.faq-question');
+    btn.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      // Fermer tous
+      faqItems.forEach(i => {
+        i.classList.remove('active');
+        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      // Ouvrir celui cliqué si pas déjà ouvert
+      if (!isActive) {
+        item.classList.add('active');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+  // Ouvrir le premier par défaut
+  if (faqItems.length) {
+    faqItems[0].classList.add('active');
+    faqItems[0].querySelector('.faq-question').setAttribute('aria-expanded', 'true');
+  }
+
+  // ✅ Compteur animé avec délai pour éviter le flash instantané
+  const counters = document.querySelectorAll('.stat-number');
+  const animateCounter = (counter) => {
+    const target = +counter.getAttribute('data-target');
+    let count = 0;
+    setTimeout(() => {
+      const update = () => {
+        if (count < target) {
+          count += Math.ceil(target / 30);
+          if (count > target) count = target;
+          counter.innerText = count;
+          setTimeout(update, 30);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      update();
+    }, 300);
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(counter => observer.observe(counter));
+</script>
+</body>
+</html>
