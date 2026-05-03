@@ -3,16 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- ✅ SEO -->
 <title>Statevo | Consultant Stratégie d'Entreprise – Packs META, WAVY, ELITE</title>
 <meta name="description" content="Statevo accompagne entrepreneurs et dirigeants pour transformer leur idée en business rentable et scalable. Choisissez votre pack : META (89€), WAVY (139€) ou ELITE (350€/mois).">
 <meta name="keywords" content="consultant stratégie entreprise, business plan, accompagnement entrepreneur, marketing, coaching business, Statevo">
 <meta name="author" content="Statevo Corporation">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://statevo7.github.io/">
-
-<!-- ✅ Open Graph (réseaux sociaux) – image et URL mises à jour -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://statevo7.github.io/">
 <meta property="og:title" content="Statevo | Consultant Stratégie d'Entreprise">
@@ -20,20 +16,14 @@
 <meta property="og:image" content="https://www.humanperf.com/en/blog/continuous-improvement/articles/continuous-improvement-management/continuous-improvement-methods-used.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Statevo Corporation">
-
-<!-- ✅ Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Statevo | Consultant Stratégie d'Entreprise">
 <meta name="twitter:description" content="Transformez votre idée en business rentable et scalable avec Statevo. Packs dès 89€/mois.">
 <meta name="twitter:image" content="https://www.humanperf.com/en/blog/continuous-improvement/articles/continuous-improvement-management/continuous-improvement-methods-used.jpg">
-
-<!-- ✅ Performance : preconnect pour les polices -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-<!-- ✅ Schema.org (données structurées pour Google) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -50,11 +40,7 @@
 </script>
 
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
     --white: #ffffff;
@@ -74,9 +60,7 @@
     --transition: all 0.3s cubic-bezier(0.2,0.9,0.4,1.1);
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
 
   body {
     font-family: 'DM Sans', sans-serif;
@@ -92,27 +76,20 @@
   body::before {
     content: "";
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.75);
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.75);
     z-index: 0;
     pointer-events: none;
   }
 
   .screen-glint {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
     background: radial-gradient(circle at 20% 40%, rgba(196,169,106,0.08) 0%, transparent 60%);
-    pointer-events: none;
-    z-index: 1;
+    pointer-events: none; z-index: 1;
     animation: glintMove 12s infinite alternate;
   }
-
   @keyframes glintMove {
     0% { opacity: 0.3; transform: scale(1); }
     100% { opacity: 0.6; transform: scale(1.1); }
@@ -120,693 +97,382 @@
 
   body::after {
     content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
     background-repeat: repeat;
-    pointer-events: none;
-    z-index: 2;
+    pointer-events: none; z-index: 2;
   }
 
-  .bokeh {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 1;
-    pointer-events: none;
-  }
-  .bokeh span {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(196, 169, 106, 0.08);
-    backdrop-filter: blur(15px);
-    animation: float 22s infinite ease-in-out;
-  }
+  .bokeh { position: fixed; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 1; pointer-events: none; }
+  .bokeh span { position: absolute; border-radius: 50%; background: rgba(196,169,106,0.08); backdrop-filter: blur(15px); animation: float 22s infinite ease-in-out; }
   @keyframes float {
     0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.15; }
     50% { transform: translateY(-60px) translateX(40px) scale(1.2); opacity: 0.3; }
     100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.15; }
   }
 
-  .content {
-    position: relative;
-    z-index: 10;
-    background: transparent;
-  }
+  .content { position: relative; z-index: 10; background: transparent; }
 
   @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* NAV */
+  /* ── NAV ── */
   nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    position: fixed; top: 0; left: 0; right: 0;
     z-index: 1000;
-    background: rgba(10, 10, 9, 0.85);
+    background: rgba(10,10,9,0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
     padding: 0 6vw;
     height: 75px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: flex; align-items: center; justify-content: space-between;
     transition: var(--transition);
   }
-  nav.scrolled {
-    height: 60px;
-    background: rgba(10, 10, 9, 0.92);
-    box-shadow: var(--shadow-sm);
-  }
+  nav.scrolled { height: 60px; background: rgba(10,10,9,0.92); box-shadow: var(--shadow-sm); }
   .logo {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 24px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    color: var(--gold);
-    text-transform: uppercase;
-    text-decoration: none;
+    font-size: 24px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold); text-decoration: none;
     transition: var(--transition);
   }
-  .logo:hover {
-    color: var(--gold-light);
-    letter-spacing: 0.14em;
+  .logo:hover { color: var(--gold-light); letter-spacing: 0.14em; }
+
+  .nav-links { display: flex; align-items: center; gap: 28px; }
+  .nav-links a.nav-link {
+    font-size: 12px; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--text-muted);
+    text-decoration: none; transition: var(--transition);
   }
+  .nav-links a.nav-link:hover { color: var(--gold); }
+
   nav a.cta-nav {
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--gold);
-    text-decoration: none;
-    border: 1px solid var(--gold);
-    padding: 9px 24px;
-    transition: var(--transition);
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    background: transparent;
+    font-size: 13px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--gold);
+    text-decoration: none; border: 1px solid var(--gold);
+    padding: 9px 24px; transition: var(--transition);
+    position: relative; overflow: hidden; z-index: 1; background: transparent;
   }
   nav a.cta-nav::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--gold);
-    transition: left 0.3s ease;
-    z-index: -1;
+    content: ''; position: absolute; top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: var(--gold); transition: left 0.3s ease; z-index: -1;
   }
-  nav a.cta-nav:hover {
-    color: var(--text-dark);
-    border-color: var(--gold);
-  }
-  nav a.cta-nav:hover::before {
-    left: 0;
-  }
+  nav a.cta-nav:hover { color: var(--text-dark); border-color: var(--gold); }
+  nav a.cta-nav:hover::before { left: 0; }
 
-  /* HERO */
+  /* ── HERO ── */
   .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 100px 6vw 80px;
-    position: relative;
-    overflow: hidden;
+    min-height: 100vh; display: flex; align-items: center;
+    padding: 100px 6vw 80px; position: relative; overflow: hidden;
   }
-  .hero-inner {
-    max-width: 760px;
-    position: relative;
-    z-index: 2;
-  }
+  .hero-inner { max-width: 760px; position: relative; z-index: 2; }
   .hero-eyebrow {
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 24px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    font-size: 12px; font-weight: 500; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 24px; display: flex; align-items: center; gap: 12px;
   }
   .hero-eyebrow::before {
-    content: '';
-    display: inline-block;
-    width: 40px;
-    height: 2px;
-    background: var(--gold);
-    transition: width 0.3s;
+    content: ''; display: inline-block;
+    width: 40px; height: 2px; background: var(--gold); transition: width 0.3s;
   }
-  .hero:hover .hero-eyebrow::before {
-    width: 60px;
-  }
+  .hero:hover .hero-eyebrow::before { width: 60px; }
+
   .hero h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(28px, 5vw, 62px);
-    font-weight: 300;
-    line-height: 1.2;
-    color: var(--white);
-    margin-bottom: 32px;
-    letter-spacing: -0.01em;
+    font-size: clamp(28px, 5vw, 62px); font-weight: 300;
+    line-height: 1.2; color: var(--white);
+    margin-bottom: 32px; letter-spacing: -0.01em;
   }
   .hero h1 em {
-    font-style: italic;
-    color: var(--gold);
-    position: relative;
-    display: inline-block;
+    font-style: italic; color: var(--gold);
+    position: relative; display: inline-block;
   }
   .hero h1 em::after {
-    content: '';
-    position: absolute;
-    bottom: 5px;
-    left: 0;
-    width: 100%;
-    height: 8px;
-    background: var(--gold-light);
-    opacity: 0.3;
-    z-index: -1;
+    content: ''; position: absolute; bottom: 5px; left: 0;
+    width: 100%; height: 8px;
+    background: var(--gold-light); opacity: 0.3; z-index: -1;
   }
-  .hero-actions {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  .btn-primary, .btn-secondary {
-    transition: var(--transition);
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-  }
+
+  .hero-actions { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
+  .btn-primary, .btn-secondary { transition: var(--transition); position: relative; z-index: 1; overflow: hidden; }
   .btn-primary {
-    background: var(--gold);
-    color: var(--text-dark);
-    padding: 14px 36px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-decoration: none;
-    display: inline-block;
-    border: none;
-    cursor: pointer;
+    background: var(--gold); color: var(--text-dark);
+    padding: 14px 36px; font-size: 13px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    text-decoration: none; display: inline-block; border: none; cursor: pointer;
   }
   .btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--gold-dark);
-    transition: left 0.3s ease;
-    z-index: -1;
+    content: ''; position: absolute; top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: var(--gold-dark); transition: left 0.3s ease; z-index: -1;
   }
-  .btn-primary:hover::before {
-    left: 0;
-  }
-  .btn-primary:hover {
-    color: var(--white);
-  }
+  .btn-primary:hover::before { left: 0; }
+  .btn-primary:hover { color: var(--white); }
   .btn-secondary {
-    color: var(--gold);
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding-bottom: 4px;
-    border-bottom: 2px solid var(--gold);
-    transition: var(--transition);
+    color: var(--gold); font-size: 13px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    text-decoration: none; display: inline-flex; align-items: center;
+    gap: 10px; padding-bottom: 4px; border-bottom: 2px solid var(--gold);
   }
-  .btn-secondary i {
-    transition: transform 0.3s;
-  }
-  .btn-secondary:hover {
-    color: var(--gold-light);
-    border-bottom-color: var(--gold-light);
-    gap: 15px;
-  }
-  .btn-secondary:hover i {
-    transform: translateX(5px);
-  }
+  .btn-secondary i { transition: transform 0.3s; }
+  .btn-secondary:hover { color: var(--gold-light); border-bottom-color: var(--gold-light); gap: 15px; }
+  .btn-secondary:hover i { transform: translateX(5px); }
+
   .hero-photo {
-    position: absolute;
-    right: 6vw;
-    bottom: 10vh;
-    max-width: 220px;
-    transition: var(--transition);
+    position: absolute; right: 6vw; bottom: 10vh;
+    max-width: 220px; transition: var(--transition);
     animation: fadeInUp 1s ease 0.2s both;
   }
   .hero-photo img {
-    width: 100%;
-    border-radius: 30px;
-    box-shadow: var(--shadow-lg);
-    transition: var(--transition);
-    filter: brightness(0.9);
+    width: 100%; border-radius: 30px; box-shadow: var(--shadow-lg);
+    transition: var(--transition); filter: brightness(0.9);
   }
-  .hero-photo img:hover {
-    transform: scale(1.02) rotate(1deg);
-    filter: brightness(1);
-    box-shadow: 0 30px 40px rgba(0,0,0,0.5);
-  }
+  .hero-photo img:hover { transform: scale(1.02) rotate(1deg); filter: brightness(1); box-shadow: 0 30px 40px rgba(0,0,0,0.5); }
 
-  /* Sections communes */
+  /* ── SECTIONS ── */
   section {
-    padding: 100px 6vw;
-    position: relative;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    padding: 100px 6vw; position: relative;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
     margin: 20px 0;
   }
   .section-label {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 16px; display: flex; align-items: center; gap: 12px;
   }
   .section-label::before {
-    content: '';
-    display: inline-block;
-    width: 30px;
-    height: 2px;
-    background: var(--gold);
-    transition: width 0.3s;
+    content: ''; display: inline-block;
+    width: 30px; height: 2px; background: var(--gold); transition: width 0.3s;
   }
-  section:hover .section-label::before {
-    width: 50px;
-  }
+  section:hover .section-label::before { width: 50px; }
   .section-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(32px, 5vw, 56px);
-    font-weight: 300;
-    color: var(--white);
-    line-height: 1.15;
-    margin-bottom: 20px;
+    font-size: clamp(32px, 5vw, 56px); font-weight: 300;
+    color: var(--white); line-height: 1.15; margin-bottom: 20px;
   }
-  .section-sub {
-    font-size: 16px;
-    color: var(--text-muted);
-    max-width: 550px;
-    margin-bottom: 60px;
-  }
+  .section-sub { font-size: 16px; color: var(--text-muted); max-width: 550px; margin-bottom: 60px; }
 
-  /* Packs */
-  .packs-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+  /* ── COMMENT ÇA MARCHE ── */
+  #how-it-works { background: rgba(0,0,0,0.6); }
+  .steps-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 20px;
   }
+  .step-card {
+    background: rgba(20,20,18,0.85); border: 1px solid var(--border);
+    border-radius: 20px; padding: 40px 32px;
+    transition: var(--transition); position: relative; overflow: hidden;
+  }
+  .step-card::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 100%; height: 4px; background: var(--gold);
+    transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
+  }
+  .step-card:hover::before { transform: scaleX(1); }
+  .step-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); }
+  .step-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 64px; font-weight: 600;
+    color: rgba(196,169,106,0.15); line-height: 1;
+    margin-bottom: 12px;
+  }
+  .step-icon { font-size: 28px; margin-bottom: 16px; }
+  .step-title { font-size: 18px; font-weight: 600; color: var(--white); margin-bottom: 10px; }
+  .step-desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+  /* ── PACKS ── */
+  .packs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .pack-card {
-    background: rgba(20, 20, 18, 0.85);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    padding: 44px 32px 40px;
-    border-radius: 20px;
-    transition: var(--transition);
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--border);
-    position: relative;
-    overflow: hidden;
+    background: rgba(20,20,18,0.85); backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px); padding: 44px 32px 40px;
+    border-radius: 20px; transition: var(--transition);
+    box-shadow: var(--shadow-sm); border: 1px solid var(--border);
+    position: relative; overflow: hidden;
   }
   .pack-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: var(--gold);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 100%; height: 5px; background: var(--gold);
+    transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
   }
-  .pack-card:hover::before {
-    transform: scaleX(1);
-  }
-  .pack-card:hover {
-    transform: translateY(-12px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--gold-light);
-    background: rgba(20, 20, 18, 0.95);
-  }
-  .pack-card.featured {
-    background: rgba(0, 0, 0, 0.8);
-    border-color: var(--gold);
-    transform: scale(1.02);
-  }
-  .pack-card.featured:hover {
-    transform: translateY(-12px) scale(1.02);
-  }
+  .pack-card:hover::before { transform: scaleX(1); }
+  .pack-card:hover { transform: translateY(-12px); box-shadow: var(--shadow-lg); border-color: var(--gold-light); background: rgba(20,20,18,0.95); }
+  .pack-card.featured { background: rgba(0,0,0,0.8); border-color: var(--gold); transform: scale(1.02); }
+  .pack-card.featured:hover { transform: translateY(-12px) scale(1.02); }
+
   .pack-badge {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold);
-    background: rgba(196, 169, 106, 0.2);
-    padding: 5px 14px;
-    display: inline-block;
-    margin-bottom: 28px;
-    border-radius: 30px;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold);
+    background: rgba(196,169,106,0.2); padding: 5px 14px;
+    display: inline-block; margin-bottom: 28px; border-radius: 30px;
   }
-  .pack-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 36px;
-    font-weight: 500;
-    margin-bottom: 8px;
-    color: var(--white);
-  }
-  .pack-price strong {
-    font-size: 48px;
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
-    color: var(--gold);
-  }
-  .pack-price {
-    font-size: 13px;
-    margin-bottom: 32px;
-    color: var(--text-muted);
-  }
-  .pack-divider {
-    height: 1px;
-    background: var(--border);
-    margin: 20px 0;
-  }
-  .pack-category {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin: 20px 0 8px;
-  }
-  .pack-items {
-    list-style: none;
-    margin-bottom: 20px;
-  }
-  .pack-items li {
-    font-size: 13px;
-    padding: 4px 0 4px 18px;
-    position: relative;
-    color: var(--text-body);
-  }
-  .pack-items li::before {
-    content: '✦';
-    position: absolute;
-    left: 0;
-    color: var(--gold);
-    font-size: 10px;
-  }
+  .pack-name { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 500; margin-bottom: 8px; color: var(--white); }
+  .pack-price strong { font-size: 48px; font-family: 'Cormorant Garamond', serif; font-weight: 600; color: var(--gold); }
+  .pack-price { font-size: 13px; margin-bottom: 32px; color: var(--text-muted); }
+  .pack-divider { height: 1px; background: var(--border); margin: 20px 0; }
+  .pack-category { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin: 20px 0 8px; }
+  .pack-items { list-style: none; margin-bottom: 20px; }
+  .pack-items li { font-size: 13px; padding: 4px 0 4px 18px; position: relative; color: var(--text-body); }
+  .pack-items li::before { content: '✦'; position: absolute; left: 0; color: var(--gold); font-size: 10px; }
   .pack-cta {
-    margin-top: 30px;
-    display: inline-block;
-    padding: 12px 28px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    text-align: center;
-    transition: var(--transition);
-    border-radius: 40px;
-    background: transparent;
+    margin-top: 30px; display: inline-block; padding: 12px 28px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; text-decoration: none;
+    border: 1px solid var(--gold); color: var(--gold);
+    text-align: center; transition: var(--transition); border-radius: 40px; background: transparent;
   }
-  .pack-cta:hover {
-    background: var(--gold);
-    color: var(--text-dark);
-    border-color: var(--gold);
+  .pack-cta:hover { background: var(--gold); color: var(--text-dark); }
+
+  /* Pack ELITE exclusive tag */
+  .exclusive-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: #0a0a09;
+    background: var(--gold); padding: 4px 10px; border-radius: 20px;
+    margin-left: 6px; vertical-align: middle;
   }
 
-  /* Témoignages */
-  #testimonials {
-    background: rgba(0, 0, 0, 0.5);
-  }
-  .testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-    margin-top: 40px;
-  }
+  /* ── TÉMOIGNAGES ── */
+  #testimonials { background: rgba(0,0,0,0.5); }
+  .testimonial-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-top: 40px; }
   .testimonial-card {
-    background: rgba(20, 20, 18, 0.85);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    padding: 40px 32px;
-    border-radius: 24px;
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition);
-    text-align: left;
-    border: 1px solid var(--border);
+    background: rgba(20,20,18,0.85); backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px); padding: 40px 32px;
+    border-radius: 24px; box-shadow: var(--shadow-sm);
+    transition: var(--transition); text-align: left; border: 1px solid var(--border);
   }
-  .testimonial-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-md);
-    background: rgba(20, 20, 18, 0.95);
-  }
-  .testimonial-text {
-    font-style: italic;
-    font-size: 18px;
-    font-weight: 300;
-    line-height: 1.6;
-    margin-bottom: 24px;
-    color: var(--text-body);
-  }
-  .stars {
-    color: var(--gold);
-    margin-bottom: 16px;
-    letter-spacing: 3px;
-  }
-  .testimonial-author {
-    color: var(--white);
-  }
-  .testimonial-author span {
-    color: var(--gold);
-  }
+  .testimonial-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); background: rgba(20,20,18,0.95); }
+  .testimonial-text { font-style: italic; font-size: 18px; font-weight: 300; line-height: 1.6; margin-bottom: 24px; color: var(--text-body); }
+  .stars { color: var(--gold); margin-bottom: 16px; letter-spacing: 3px; }
+  .testimonial-author { color: var(--white); }
+  .testimonial-author span { color: var(--gold); }
 
-  /* About */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-  }
-  .about-grid img {
-    width: 100%;
-    border-radius: 24px;
-    box-shadow: var(--shadow-md);
-    border: 1px solid var(--border);
-  }
-  .stats-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    margin-top: 60px;
-    text-align: center;
-  }
-  .stat-number {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 52px;
-    font-weight: 600;
-    color: var(--gold);
-    line-height: 1;
-  }
-  .stat-label {
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-  }
+  /* ── ABOUT ── */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .about-grid img { width: 100%; border-radius: 24px; box-shadow: var(--shadow-md); border: 1px solid var(--border); }
+  .stats-row { display: flex; justify-content: space-between; gap: 40px; margin-top: 60px; text-align: center; }
+  .stat-number { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 600; color: var(--gold); line-height: 1; }
+  .stat-label { font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
 
-  /* FAQ */
-  .faq-grid {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  .faq-item {
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 20px;
-  }
+  /* ── FAQ ── */
+  .faq-grid { max-width: 800px; margin: 0 auto; }
+  .faq-item { border-bottom: 1px solid var(--border); margin-bottom: 20px; }
   .faq-question {
-    font-weight: 600;
-    font-size: 18px;
-    padding: 20px 0;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--white);
-    transition: var(--transition);
-    background: none;
-    border: none;
-    width: 100%;
-    text-align: left;
+    font-weight: 600; font-size: 18px; padding: 20px 0; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    color: var(--white); transition: var(--transition);
+    background: none; border: none; width: 100%; text-align: left;
   }
-  .faq-question:hover {
-    color: var(--gold);
-  }
-  .faq-question i {
-    transition: transform 0.3s;
-  }
-  .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-    color: var(--text-muted);
-    font-size: 15px;
-  }
-  .faq-item.active .faq-answer {
-    max-height: 200px;
-    padding-bottom: 20px;
-  }
-  .faq-item.active .faq-question i {
-    transform: rotate(180deg);
-  }
+  .faq-question:hover { color: var(--gold); }
+  .faq-question i { transition: transform 0.3s; }
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; color: var(--text-muted); font-size: 15px; }
+  .faq-item.active .faq-answer { max-height: 200px; padding-bottom: 20px; }
+  .faq-item.active .faq-question i { transform: rotate(180deg); }
 
-  /* Contact */
+  /* ── CONTACT FORM ── */
   #contact {
     background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(20,20,18,0.9));
-    text-align: center;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
   }
-  .contact-cta {
-    display: inline-block;
-    padding: 16px 48px;
-    background: var(--gold);
-    color: var(--text-dark);
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: var(--transition);
-    border-radius: 50px;
-  }
-  .contact-cta:hover {
-    background: var(--gold-dark);
-    transform: scale(1.05);
-  }
+  #contact .section-sub { max-width: 600px; }
 
-  /* Footer */
+  .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .contact-info { display: flex; flex-direction: column; gap: 24px; }
+  .contact-info-item {
+    display: flex; align-items: flex-start; gap: 16px;
+    padding: 20px 24px; background: rgba(20,20,18,0.6);
+    border: 1px solid var(--border); border-radius: 16px;
+    transition: var(--transition);
+  }
+  .contact-info-item:hover { border-color: var(--gold); transform: translateX(4px); }
+  .contact-info-icon { font-size: 20px; color: var(--gold); margin-top: 2px; min-width: 24px; }
+  .contact-info-text { font-size: 14px; color: var(--text-muted); }
+  .contact-info-text strong { display: block; color: var(--white); font-size: 15px; margin-bottom: 2px; }
+  .contact-info-text a { color: var(--gold); text-decoration: none; }
+  .contact-info-text a:hover { color: var(--gold-light); }
+
+  .contact-form { display: flex; flex-direction: column; gap: 16px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: rgba(20,20,18,0.8); border: 1px solid var(--border);
+    color: var(--text-body); padding: 12px 16px; font-family: 'DM Sans', sans-serif;
+    font-size: 14px; border-radius: 10px; outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s; resize: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(196,169,106,0.1); }
+  .form-group select option { background: #1e1e1c; }
+  .form-group textarea { min-height: 120px; }
+
+  .form-submit {
+    background: var(--gold); color: var(--text-dark);
+    padding: 14px 36px; font-size: 13px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    border: none; cursor: pointer; border-radius: 50px;
+    transition: var(--transition); position: relative; overflow: hidden;
+    display: flex; align-items: center; gap: 10px; justify-content: center;
+  }
+  .form-submit:hover { background: var(--gold-dark); transform: scale(1.02); }
+
+  .form-success {
+    display: none; text-align: center; padding: 40px;
+    background: rgba(196,169,106,0.1); border: 1px solid var(--gold);
+    border-radius: 16px; color: var(--white);
+  }
+  .form-success i { font-size: 40px; color: var(--gold); margin-bottom: 16px; display: block; }
+
+  /* ── FOOTER ── */
   .site-footer {
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(4px);
+    background: rgba(0,0,0,0.8); backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    padding: 50px 6vw 40px;
-    border-top: 1px solid var(--border);
+    padding: 50px 6vw 40px; border-top: 1px solid var(--border);
   }
-  .footer-description p {
-    color: var(--text-muted);
-    font-size: 14px;
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 0 auto 20px;
-    text-align: center;
-  }
-  .footer-copyright {
-    text-align: center;
-    font-size: 12px;
-    color: rgba(255,255,255,0.4);
-    margin-bottom: 20px;
-  }
-  .footer-whatsapp {
-    text-align: center;
-  }
+  .footer-description p { color: var(--text-muted); font-size: 14px; line-height: 1.6; max-width: 700px; margin: 0 auto 20px; text-align: center; }
+  .footer-copyright { text-align: center; font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 20px; }
+  .footer-whatsapp { text-align: center; }
   .footer-whatsapp a {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: #25D366;
-    color: white;
-    padding: 12px 28px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #25D366; color: white; padding: 12px 28px;
+    border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 14px;
     transition: var(--transition);
   }
-  .footer-whatsapp a:hover {
-    background: #128C7E;
-    transform: scale(1.05);
-    gap: 15px;
-  }
+  .footer-whatsapp a:hover { background: #128C7E; transform: scale(1.05); gap: 15px; }
 
-  /* Back to top */
+  /* ── BACK TO TOP ── */
   #back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: var(--gold);
-    color: var(--text-dark);
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    opacity: 0;
-    visibility: hidden;
-    transition: var(--transition);
-    z-index: 99;
+    position: fixed; bottom: 30px; right: 30px;
+    background: var(--gold); color: var(--text-dark);
+    width: 48px; height: 48px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none; opacity: 0; visibility: hidden;
+    transition: var(--transition); z-index: 99;
   }
-  #back-to-top.show {
-    opacity: 1;
-    visibility: visible;
-  }
-  #back-to-top:hover {
-    background: var(--gold-dark);
-    transform: translateY(-5px);
-  }
+  #back-to-top.show { opacity: 1; visibility: visible; }
+  #back-to-top:hover { background: var(--gold-dark); transform: translateY(-5px); }
 
-  /* ✅ Accessibilité : focus visible pour navigation clavier */
-  a:focus-visible,
-  button:focus-visible {
-    outline: 2px solid var(--gold);
-    outline-offset: 3px;
-    border-radius: 2px;
-  }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
 
-  /* ✅ Accessibilité : respect des préférences de mouvement réduit */
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation-duration: 0.01ms !important;
-      transition-duration: 0.01ms !important;
-    }
-  }
-
-  /* Responsive */
+  /* ── RESPONSIVE ── */
   @media (max-width: 1024px) {
     .packs-grid { grid-template-columns: 1fr; gap: 30px; }
     .testimonial-grid { grid-template-columns: 1fr; }
     .hero-photo { display: none; }
     .stats-row { flex-wrap: wrap; }
     .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .steps-grid { grid-template-columns: 1fr; gap: 20px; }
+    .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+    .form-row { grid-template-columns: 1fr; }
+    .nav-links a.nav-link { display: none; }
   }
   @media (max-width: 600px) {
     section { padding: 60px 5vw; margin: 10px 0; }
@@ -821,19 +487,27 @@
 
 <div class="screen-glint" aria-hidden="true"></div>
 <div class="bokeh" aria-hidden="true">
-  <span style="width: 180px; height: 180px; top: 10%; left: -5%; animation-duration: 18s;"></span>
-  <span style="width: 300px; height: 300px; bottom: 0; right: -10%; animation-duration: 25s; animation-delay: 2s;"></span>
-  <span style="width: 120px; height: 120px; top: 40%; left: 80%; animation-duration: 20s; animation-delay: 1s;"></span>
-  <span style="width: 250px; height: 250px; bottom: 20%; left: 10%; animation-duration: 28s;"></span>
-  <span style="width: 90px; height: 90px; top: 70%; left: 40%; animation-duration: 15s;"></span>
+  <span style="width:180px;height:180px;top:10%;left:-5%;animation-duration:18s;"></span>
+  <span style="width:300px;height:300px;bottom:0;right:-10%;animation-duration:25s;animation-delay:2s;"></span>
+  <span style="width:120px;height:120px;top:40%;left:80%;animation-duration:20s;animation-delay:1s;"></span>
+  <span style="width:250px;height:250px;bottom:20%;left:10%;animation-duration:28s;"></span>
+  <span style="width:90px;height:90px;top:70%;left:40%;animation-duration:15s;"></span>
 </div>
 
 <div class="content">
+
+  <!-- NAV -->
   <nav id="navbar" role="navigation" aria-label="Navigation principale">
     <a href="#" class="logo" aria-label="Statevo — Retour à l'accueil">Statevo</a>
-    <a href="#contact" class="cta-nav" aria-label="Prendre contact avec Statevo">Prendre contact</a>
+    <div class="nav-links">
+      <a href="#packs" class="nav-link">Packs</a>
+      <a href="#how-it-works" class="nav-link">Comment ça marche</a>
+      <a href="#about" class="nav-link">À propos</a>
+      <a href="#contact" class="cta-nav" aria-label="Prendre contact avec Statevo">Prendre contact</a>
+    </div>
   </nav>
 
+  <!-- HERO -->
   <section class="hero" aria-label="Présentation Statevo">
     <div class="hero-inner">
       <p class="hero-eyebrow">Consultant en Stratégie d'Entreprise</p>
@@ -848,17 +522,46 @@
     </div>
   </section>
 
+  <!-- COMMENT ÇA MARCHE -->
+  <section id="how-it-works" aria-labelledby="how-title">
+    <p class="section-label" aria-hidden="true">Processus</p>
+    <h2 class="section-title" id="how-title">Comment ça marche</h2>
+    <p class="section-sub">3 étapes simples pour transformer votre projet en business concret.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">01</div>
+        <div class="step-icon">📞</div>
+        <h3 class="step-title">Appel découverte gratuit</h3>
+        <p class="step-desc">On analyse ensemble votre situation, vos objectifs et vos blocages. Sans engagement. Je vous recommande le pack le plus adapté à votre stade.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">02</div>
+        <div class="step-icon">🗺️</div>
+        <h3 class="step-title">Plan d'action sur mesure</h3>
+        <p class="step-desc">Dès la première session, vous repartez avec un plan d'action clair 30/60/90 jours, une stratégie définie et des priorités actionnables.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">03</div>
+        <div class="step-icon">🚀</div>
+        <h3 class="step-title">Exécution &amp; suivi</h3>
+        <p class="step-desc">Je vous accompagne semaine après semaine — sessions 1:1, déblocage de problèmes, accountability — jusqu'aux résultats concrets.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- PACKS -->
   <section id="packs" aria-labelledby="packs-title">
     <p class="section-label" aria-hidden="true">Offres</p>
     <h2 class="section-title" id="packs-title">Choisissez votre<br>niveau d'accompagnement</h2>
     <p class="section-sub">3 packs adaptés à votre stade de développement et à vos objectifs.</p>
     <div class="packs-grid">
+
       <!-- META -->
       <article class="pack-card" aria-label="Pack META à 89 euros par mois">
         <span class="pack-badge">Essentiel</span>
         <p class="pack-name">META</p>
         <div class="pack-price"><strong>89 €</strong> / mois</div>
+        <p style="font-size:13px;color:var(--text-muted);margin-bottom:20px;line-height:1.5;">Idéal pour <strong style="color:var(--text-body)">lancer votre premier projet</strong> avec une stratégie claire et les bons outils.</p>
         <div class="pack-divider"></div>
         <p class="pack-category">🧭 Stratégie &amp; Planning</p>
         <ul class="pack-items">
@@ -923,79 +626,56 @@
         <span class="pack-badge">⭐ Le plus populaire</span>
         <p class="pack-name">WAVY</p>
         <div class="pack-price"><strong>139 €</strong> / mois</div>
+        <p style="font-size:13px;color:var(--text-muted);margin-bottom:20px;line-height:1.5;">Pour ceux qui veulent <strong style="color:var(--text-body)">aller plus vite</strong> : outils mis en place, scripts de vente, suivi renforcé.</p>
         <div class="pack-divider"></div>
         <p class="pack-category">🧭 Stratégie &amp; Planning</p>
         <ul class="pack-items">
-          <li>Analyse globale du potentiel du business</li>
-          <li>Identification des leviers de croissance</li>
-          <li>Business plan</li>
-          <li>Étude de marché</li>
-          <li>Analyse de la concurrence</li>
-          <li>Positionnement</li>
-          <li>Avatar client idéal (ICP)</li>
-          <li>Proposition de valeur</li>
-          <li>Modèle économique</li>
-          <li>Fixation des prix &amp; marges</li>
+          <li>Analyse globale + leviers de croissance</li>
+          <li>Business plan &amp; étude de marché</li>
+          <li>Positionnement &amp; avatar client (ICP)</li>
+          <li>Modèle économique complet</li>
           <li>Plan d'action 30/60/90 jours</li>
         </ul>
         <p class="pack-category">🏗️ Création &amp; Lancement</p>
         <ul class="pack-items">
-          <li>Création d'une offre claire et vendable</li>
-          <li>Système de vente opérationnel</li>
           <li>Aide à la création d'entreprise</li>
           <li>Choix du statut juridique</li>
           <li>Aide à l'ouverture du compte pro</li>
-          <li>Structuration des packages</li>
-          <li>Naming &amp; branding de base</li>
-          <li>Tunnel de vente simple</li>
           <li>Mise en place des outils (paiement, CRM)</li>
-          <li>Stratégie de lancement</li>
-          <li>Plan de communication</li>
+          <li>Système de vente opérationnel</li>
         </ul>
         <p class="pack-category">📣 Marketing &amp; Vente</p>
         <ul class="pack-items">
-          <li>Système d'acquisition de clients</li>
-          <li>Optimisation du taux de conversion</li>
-          <li>Stratégie de vente</li>
-          <li>Script de vente</li>
+          <li>Script de vente personnalisé</li>
           <li>Copywriting (posts, messages, pages)</li>
+          <li>Funnel de conversion complet</li>
           <li>Stratégie réseaux sociaux</li>
-          <li>Funnel de conversion</li>
-          <li>Techniques de closing</li>
+          <li>Techniques de closing avancées</li>
         </ul>
         <p class="pack-category">📊 Finance &amp; Chiffres</p>
         <ul class="pack-items">
-          <li>Analyse de la rentabilité réelle</li>
-          <li>Tableau de bord de suivi</li>
           <li>Prévisionnel financier</li>
+          <li>Tableau de bord de suivi</li>
           <li>Gestion de trésorerie</li>
-          <li>Calcul de rentabilité</li>
           <li>Suivi des KPI</li>
         </ul>
         <p class="pack-category">🤝 Accompagnement</p>
         <ul class="pack-items">
-          <li>4 sessions 1:1 / mois</li>
-          <li>Suivi hebdomadaire</li>
-          <li>Support continu</li>
-          <li>Déblocage de problèmes</li>
-          <li>Prise de décision guidée</li>
-          <li>Accountability</li>
+          <li>4 sessions 1:1 / mois (2x META)</li>
+          <li>Support continu entre les sessions</li>
           <li>Accompagnement orienté résultats concrets</li>
+          <li>Accountability renforcée</li>
         </ul>
         <p class="pack-category">⚙️ Productivité &amp; Systèmes</p>
         <ul class="pack-items">
-          <li>Organisation du travail</li>
-          <li>Gestion du temps</li>
-          <li>Mise en place d'outils</li>
-          <li>Automatisation des tâches</li>
+          <li>Automatisation des tâches répétitives</li>
+          <li>Mise en place d'outils de productivité</li>
           <li>Structuration des process</li>
         </ul>
         <p class="pack-category">🧠 Mindset &amp; Performance</p>
         <ul class="pack-items">
-          <li>Mentalité orientée exécution</li>
           <li>Discipline &amp; constance</li>
           <li>Gestion du stress</li>
-          <li>Prise de décision</li>
           <li>Déblocage des blocages</li>
         </ul>
         <a href="#contact" class="pack-cta" aria-label="Commencer avec le pack WAVY">Commencer</a>
@@ -1006,87 +686,75 @@
         <span class="pack-badge">Premium</span>
         <p class="pack-name">ELITE</p>
         <div class="pack-price"><strong>350 €</strong> / mois</div>
+        <p style="font-size:13px;color:var(--text-muted);margin-bottom:20px;line-height:1.5;">Pour ceux qui veulent <strong style="color:var(--text-body)">aller vite et fort</strong> : accès prioritaire, accompagnement terrain, calendrier de contenu + audit complet.</p>
         <div class="pack-divider"></div>
+
+        <!-- Exclusivités ELITE mises en avant -->
+        <div style="background:rgba(196,169,106,0.08);border:1px solid rgba(196,169,106,0.3);border-radius:12px;padding:16px 20px;margin-bottom:20px;">
+          <p style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">✦ Exclusif ELITE</p>
+          <ul class="pack-items" style="margin-bottom:0;">
+            <li>8 sessions 1:1 / mois <span class="exclusive-tag">4x META</span></li>
+            <li>Accompagnement terrain possible</li>
+            <li>Accès direct WhatsApp prioritaire</li>
+            <li>Audit complet de votre situation</li>
+            <li>Calendrier de contenu mensuel</li>
+          </ul>
+        </div>
+
         <p class="pack-category">🧭 Stratégie &amp; Planning</p>
         <ul class="pack-items">
-          <li>Analyse globale du potentiel du business</li>
-          <li>Leviers de croissance prioritaires</li>
-          <li>Clarification des objectifs à court et long terme</li>
           <li>Audit complet de la situation</li>
-          <li>Business plan</li>
-          <li>Étude de marché</li>
-          <li>Analyse de la concurrence</li>
-          <li>Positionnement</li>
-          <li>Avatar client idéal (ICP)</li>
-          <li>Proposition de valeur</li>
-          <li>Modèle économique</li>
-          <li>Fixation des prix &amp; marges</li>
+          <li>Clarification des objectifs CT &amp; LT</li>
+          <li>Leviers de croissance prioritaires</li>
+          <li>Business plan &amp; étude de marché</li>
+          <li>Modèle économique complet</li>
           <li>Plan d'action 30/60/90 jours</li>
         </ul>
         <p class="pack-category">🏗️ Création &amp; Lancement</p>
         <ul class="pack-items">
-          <li>Création d'une offre claire et vendable</li>
-          <li>Système de vente opérationnel</li>
           <li>Aide à la création d'entreprise</li>
           <li>Choix du statut juridique</li>
-          <li>Aide à l'ouverture du compte pro</li>
-          <li>Structuration des packages</li>
-          <li>Naming &amp; branding de base</li>
-          <li>Tunnel de vente simple</li>
           <li>Mise en place des outils (paiement, CRM)</li>
-          <li>Stratégie de lancement</li>
-          <li>Plan de communication</li>
+          <li>Système de vente opérationnel</li>
         </ul>
         <p class="pack-category">📣 Marketing &amp; Vente</p>
         <ul class="pack-items">
-          <li>Système d'acquisition de clients</li>
-          <li>Optimisation du taux de conversion</li>
-          <li>Stratégie de vente</li>
-          <li>Script de vente</li>
+          <li>Script de vente personnalisé</li>
           <li>Copywriting (posts, messages, pages)</li>
-          <li>Stratégie réseaux sociaux</li>
-          <li>Calendrier de contenu</li>
-          <li>Funnel de conversion</li>
-          <li>Techniques de closing</li>
+          <li>Calendrier de contenu mensuel</li>
+          <li>Funnel de conversion complet</li>
+          <li>Techniques de closing avancées</li>
         </ul>
         <p class="pack-category">📊 Finance &amp; Chiffres</p>
         <ul class="pack-items">
-          <li>Analyse de la rentabilité réelle</li>
-          <li>Tableau de bord de suivi</li>
           <li>Prévisionnel financier</li>
+          <li>Tableau de bord de suivi</li>
           <li>Gestion de trésorerie</li>
-          <li>Calcul de rentabilité</li>
           <li>Suivi des KPI</li>
         </ul>
         <p class="pack-category">🤝 Accompagnement</p>
         <ul class="pack-items">
           <li>8 sessions 1:1 / mois</li>
-          <li>Suivi hebdomadaire</li>
-          <li>Support continu</li>
-          <li>Déblocage de problèmes</li>
-          <li>Possible accompagnement sur le terrain</li>
+          <li>Support continu + accès prioritaire</li>
+          <li>Accompagnement terrain (si besoin)</li>
           <li>Prise de décision guidée</li>
-          <li>Accountability</li>
-          <li>Accompagnement orienté résultats concrets</li>
+          <li>Accountability maximale</li>
         </ul>
         <p class="pack-category">⚙️ Productivité &amp; Systèmes</p>
         <ul class="pack-items">
-          <li>Organisation du travail</li>
-          <li>Gestion du temps</li>
-          <li>Mise en place d'outils</li>
           <li>Automatisation des tâches</li>
           <li>Structuration des process</li>
+          <li>Outils &amp; systèmes mis en place</li>
         </ul>
         <p class="pack-category">🧠 Mindset &amp; Performance</p>
         <ul class="pack-items">
-          <li>Mentalité orientée exécution</li>
           <li>Discipline &amp; constance</li>
           <li>Gestion du stress</li>
-          <li>Prise de décision</li>
           <li>Déblocage des blocages</li>
         </ul>
         <a href="#contact" class="pack-cta" aria-label="Commencer avec le pack ELITE">Commencer</a>
       </article>
+
     </div>
   </section>
 
@@ -1118,15 +786,15 @@
       <div>
         <p class="section-label" aria-hidden="true">À propos</p>
         <h2 class="section-title" id="about-title">Consultant en stratégie &amp; développement</h2>
-        <p style="font-size: 16px; margin-bottom: 30px;">Mon objectif : transformer une idée ou un business existant en une activité claire, rentable et scalable. Avec une approche terrain et des méthodes éprouvées.</p>
-        <img src="https://img.over-blog-kiwi.com/2/49/57/72/20171130/ob_0baedb_industrie-stats.jpg" alt="Statistiques industrie" loading="lazy" style="width:100%; border-radius: 20px; margin-bottom: 30px;" width="600">
+        <p style="font-size:16px;margin-bottom:30px;">Mon objectif : transformer une idée ou un business existant en une activité claire, rentable et scalable. Avec une approche terrain et des méthodes éprouvées.</p>
+        <img src="https://img.over-blog-kiwi.com/2/49/57/72/20171130/ob_0baedb_industrie-stats.jpg" alt="Statistiques industrie" loading="lazy" style="width:100%;border-radius:20px;margin-bottom:30px;" width="600">
         <div class="stats-row">
           <div class="stat-item">
             <div class="stat-number" data-target="3" aria-label="3 packs disponibles">0</div>
             <div class="stat-label">Packs</div>
           </div>
           <div class="stat-item">
-            <div class="stat-number" data-target="60" aria-label="60 clients accompagnés">0</div>
+            <div class="stat-number" data-target="34" aria-label="34 clients accompagnés">0</div>
             <div class="stat-label">Clients accompagnés</div>
           </div>
           <div class="stat-item">
@@ -1165,6 +833,13 @@
         </button>
         <div class="faq-answer" id="faq-answer-3">Principalement en visio (Zoom/Google Meet), mais un accompagnement terrain est possible pour le pack ELITE.</div>
       </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
+          Quelle est la différence entre WAVY et ELITE ?
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <div class="faq-answer" id="faq-answer-4">ELITE offre 8 sessions 1:1 par mois (contre 4 pour WAVY), un accès WhatsApp prioritaire, un audit complet, un calendrier de contenu mensuel et la possibilité d'un accompagnement terrain. C'est le pack pour ceux qui veulent des résultats rapides avec un suivi maximal.</div>
+      </div>
     </div>
   </section>
 
@@ -1172,14 +847,86 @@
   <section id="contact" aria-labelledby="contact-title">
     <p class="section-label" aria-hidden="true">Contact</p>
     <h2 class="section-title" id="contact-title">Prêt à passer à l'action ?</h2>
-    <p class="section-sub">Discutons de votre projet et trouvons le pack qui correspond à votre situation.</p>
-    <div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; align-items: center;">
-      <a href="mailto:statevocontact@gmail.com" class="contact-cta" aria-label="Envoyer un email à Statevo">
-        Prendre rendez-vous <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-      </a>
-      <a href="https://wa.me/33641549178" class="contact-cta" style="background: #25D366;" target="_blank" rel="noopener noreferrer" aria-label="Contacter Statevo sur WhatsApp (ouvre dans un nouvel onglet)">
-        WhatsApp <i class="fab fa-whatsapp" aria-hidden="true"></i>
-      </a>
+    <p class="section-sub">Remplissez le formulaire ou contactez-moi directement — je reviens vers vous sous 24h.</p>
+
+    <div class="contact-layout">
+      <!-- Info de contact -->
+      <div class="contact-info">
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-info-text">
+            <strong>Email</strong>
+            <a href="mailto:statevocontact@gmail.com">statevocontact@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fab fa-whatsapp"></i></div>
+          <div class="contact-info-text">
+            <strong>WhatsApp</strong>
+            <a href="https://wa.me/33641549178" target="_blank" rel="noopener noreferrer">+33 6 41 54 91 78</a>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fas fa-clock"></i></div>
+          <div class="contact-info-text">
+            <strong>Disponibilité</strong>
+            7j/7 — Réponse sous 24h
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fas fa-video"></i></div>
+          <div class="contact-info-text">
+            <strong>Appel découverte</strong>
+            Gratuit, sans engagement, 30 min
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulaire -->
+      <div>
+        <div class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">Prénom</label>
+              <input type="text" id="fname" placeholder="Votre prénom" autocomplete="given-name">
+            </div>
+            <div class="form-group">
+              <label for="lname">Nom</label>
+              <input type="text" id="lname" placeholder="Votre nom" autocomplete="family-name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="votre@email.com" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="pack">Pack qui vous intéresse</label>
+            <select id="pack">
+              <option value="" disabled selected>Choisir un pack...</option>
+              <option value="meta">META — 89 €/mois</option>
+              <option value="wavy">WAVY — 139 €/mois ⭐</option>
+              <option value="elite">ELITE — 350 €/mois</option>
+              <option value="unknown">Je ne sais pas encore</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Parlez-moi de votre projet</label>
+            <textarea id="message" placeholder="Décrivez votre projet, vos objectifs ou vos blocages..."></textarea>
+          </div>
+          <button type="button" class="form-submit" onclick="submitForm()">
+            Envoyer ma demande <i class="fas fa-paper-plane" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="form-success" id="formSuccess">
+          <i class="fas fa-check-circle"></i>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:28px;margin-bottom:10px;color:var(--white)">Message envoyé !</h3>
+          <p style="color:var(--text-muted)">Je vous recontacte sous 24h. En attendant, vous pouvez aussi me joindre directement sur WhatsApp.</p>
+          <br>
+          <a href="https://wa.me/33641549178" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:white;padding:12px 28px;border-radius:50px;text-decoration:none;font-weight:600;font-size:14px;">
+            <i class="fab fa-whatsapp"></i> Continuer sur WhatsApp
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1193,7 +940,7 @@
       © 2024–2026 Statevo Corporation. Tous droits réservés.
     </div>
     <div class="footer-whatsapp">
-      <a href="https://wa.me/33641549178" target="_blank" rel="noopener noreferrer" aria-label="Écrire à Statevo sur WhatsApp (ouvre dans un nouvel onglet)">
+      <a href="https://wa.me/33641549178" target="_blank" rel="noopener noreferrer" aria-label="Écrire à Statevo sur WhatsApp">
         <i class="fab fa-whatsapp" aria-hidden="true"></i> Écrivez-moi sur WhatsApp
       </a>
     </div>
@@ -1202,65 +949,56 @@
   <a href="#" id="back-to-top" aria-label="Retour en haut de page">
     <i class="fas fa-arrow-up" aria-hidden="true"></i>
   </a>
+
 </div>
 
 <script>
+  // Nav scroll
   const nav = document.getElementById('navbar');
   const backToTop = document.getElementById('back-to-top');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) nav.classList.add('scrolled');
-    else nav.classList.remove('scrolled');
-    if (window.scrollY > 300) backToTop.classList.add('show');
-    else backToTop.classList.remove('show');
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+    backToTop.classList.toggle('show', window.scrollY > 300);
   });
 
+  // FAQ
   const faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(item => {
     const btn = item.querySelector('.faq-question');
     btn.addEventListener('click', () => {
       const isActive = item.classList.contains('active');
-      faqItems.forEach(i => {
-        i.classList.remove('active');
-        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-      });
-      if (!isActive) {
-        item.classList.add('active');
-        btn.setAttribute('aria-expanded', 'true');
-      }
+      faqItems.forEach(i => { i.classList.remove('active'); i.querySelector('.faq-question').setAttribute('aria-expanded', 'false'); });
+      if (!isActive) { item.classList.add('active'); btn.setAttribute('aria-expanded', 'true'); }
     });
   });
-  if (faqItems.length) {
-    faqItems[0].classList.add('active');
-    faqItems[0].querySelector('.faq-question').setAttribute('aria-expanded', 'true');
-  }
+  if (faqItems.length) { faqItems[0].classList.add('active'); faqItems[0].querySelector('.faq-question').setAttribute('aria-expanded', 'true'); }
 
-  const counters = document.querySelectorAll('.stat-number');
+  // Counters
   const animateCounter = (counter) => {
     const target = +counter.getAttribute('data-target');
     let count = 0;
     setTimeout(() => {
       const update = () => {
-        if (count < target) {
-          count += Math.ceil(target / 30);
-          if (count > target) count = target;
-          counter.innerText = count;
-          setTimeout(update, 30);
-        } else {
-          counter.innerText = target;
-        }
+        if (count < target) { count += Math.ceil(target / 30); if (count > target) count = target; counter.innerText = count; setTimeout(update, 30); }
+        else { counter.innerText = target; }
       };
       update();
     }, 300);
   };
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animateCounter(entry.target);
-        observer.unobserve(entry.target);
-      }
-    });
+    entries.forEach(entry => { if (entry.isIntersecting) { animateCounter(entry.target); observer.unobserve(entry.target); } });
   }, { threshold: 0.5 });
-  counters.forEach(counter => observer.observe(counter));
+  document.querySelectorAll('.stat-number').forEach(c => observer.observe(c));
+
+  // Form
+  function submitForm() {
+    const fname = document.getElementById('fname').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    if (!fname || !email || !message) { alert('Merci de remplir au moins votre prénom, email et message.'); return; }
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }
 </script>
 </body>
 </html>
