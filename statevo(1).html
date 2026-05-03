@@ -12,12 +12,12 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://statevo7.github.io/">
 
-<!-- ✅ Open Graph (réseaux sociaux) -->
+<!-- ✅ Open Graph (réseaux sociaux) – image et URL mises à jour -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://statevo7.github.io/">
 <meta property="og:title" content="Statevo | Consultant Stratégie d'Entreprise">
 <meta property="og:description" content="Transformez votre idée en business rentable et scalable avec Statevo. Packs META, WAVY et ELITE dès 89€/mois.">
-<meta property="og:image" content="https://raw.githubusercontent.com/statevo7/statevo7.github.io/507dd1f13de373474daeeba1d4faace9552626af/Screenshot%202026-05-01%20at%2015-22-07%20Free%20Logo%20Maker%20-%20Get%20Custom%20Logo%20Designs%20in%20Minutes%20Looka.png">
+<meta property="og:image" content="https://www.humanperf.com/en/blog/continuous-improvement/articles/continuous-improvement-management/continuous-improvement-methods-used.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Statevo Corporation">
 
@@ -25,7 +25,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Statevo | Consultant Stratégie d'Entreprise">
 <meta name="twitter:description" content="Transformez votre idée en business rentable et scalable avec Statevo. Packs dès 89€/mois.">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/statevo7/statevo7.github.io/507dd1f13de373474daeeba1d4faace9552626af/Screenshot%202026-05-01%20at%2015-22-07%20Free%20Logo%20Maker%20-%20Get%20Custom%20Logo%20Designs%20in%20Minutes%20Looka.png">
+<meta name="twitter:image" content="https://www.humanperf.com/en/blog/continuous-improvement/articles/continuous-improvement-management/continuous-improvement-methods-used.jpg">
 
 <!-- ✅ Performance : preconnect pour les polices -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -84,7 +84,6 @@
     line-height: 1.7;
     overflow-x: hidden;
     position: relative;
-    /* ✅ Performance : fallback couleur si l'image ne charge pas */
     background-color: #0a0a09;
     background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80') no-repeat center center fixed;
     background-size: cover;
@@ -99,7 +98,6 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.75);
     z-index: 0;
-    /* ✅ Accessibilité : pas d'interférence avec les clics */
     pointer-events: none;
   }
 
@@ -120,7 +118,6 @@
     100% { opacity: 0.6; transform: scale(1.1); }
   }
 
-  /* ✅ Sécurité : pointer-events none sur le grain */
   body::after {
     content: "";
     position: fixed;
@@ -177,7 +174,6 @@
     z-index: 1000;
     background: rgba(10, 10, 9, 0.85);
     backdrop-filter: blur(12px);
-    /* ✅ Performance : fallback backdrop-filter */
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
     padding: 0 6vw;
@@ -665,7 +661,6 @@
     align-items: center;
     color: var(--white);
     transition: var(--transition);
-    /* ✅ Accessibilité */
     background: none;
     border: none;
     width: 100%;
@@ -849,7 +844,6 @@
       </div>
     </div>
     <div class="hero-photo">
-      <!-- ✅ Performance : loading lazy sur les images non critiques -->
       <img src="https://raw.githubusercontent.com/statevo7/statevo7.github.io/507dd1f13de373474daeeba1d4faace9552626af/Screenshot%202026-05-01%20at%2015-22-07%20Free%20Logo%20Maker%20-%20Get%20Custom%20Logo%20Designs%20in%20Minutes%20Looka.png" alt="Logo Statevo" loading="lazy" width="220">
     </div>
   </section>
@@ -1151,7 +1145,6 @@
     <p class="section-sub">Tout ce que vous devez savoir avant de commencer.</p>
     <div class="faq-grid">
       <div class="faq-item">
-        <!-- ✅ Accessibilité : bouton sémantique avec aria -->
         <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
           Comment se déroule la première session ?
           <i class="fas fa-chevron-down" aria-hidden="true"></i>
@@ -1180,7 +1173,6 @@
     <p class="section-label" aria-hidden="true">Contact</p>
     <h2 class="section-title" id="contact-title">Prêt à passer à l'action ?</h2>
     <p class="section-sub">Discutons de votre projet et trouvons le pack qui correspond à votre situation.</p>
-    <!-- ✅ WhatsApp comme alternative au mailto -->
     <div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; align-items: center;">
       <a href="mailto:statevocontact@gmail.com" class="contact-cta" aria-label="Envoyer un email à Statevo">
         Prendre rendez-vous <i class="fas fa-calendar-alt" aria-hidden="true"></i>
@@ -1201,7 +1193,6 @@
       © 2024–2026 Statevo Corporation. Tous droits réservés.
     </div>
     <div class="footer-whatsapp">
-      <!-- ✅ Sécurité : rel="noopener noreferrer" sur tous les target="_blank" -->
       <a href="https://wa.me/33641549178" target="_blank" rel="noopener noreferrer" aria-label="Écrire à Statevo sur WhatsApp (ouvre dans un nouvel onglet)">
         <i class="fab fa-whatsapp" aria-hidden="true"></i> Écrivez-moi sur WhatsApp
       </a>
@@ -1214,7 +1205,6 @@
 </div>
 
 <script>
-  // Nav scroll
   const nav = document.getElementById('navbar');
   const backToTop = document.getElementById('back-to-top');
   window.addEventListener('scroll', () => {
@@ -1224,31 +1214,26 @@
     else backToTop.classList.remove('show');
   });
 
-  // ✅ FAQ : accessibilité avec aria-expanded
   const faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(item => {
     const btn = item.querySelector('.faq-question');
     btn.addEventListener('click', () => {
       const isActive = item.classList.contains('active');
-      // Fermer tous
       faqItems.forEach(i => {
         i.classList.remove('active');
         i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
       });
-      // Ouvrir celui cliqué si pas déjà ouvert
       if (!isActive) {
         item.classList.add('active');
         btn.setAttribute('aria-expanded', 'true');
       }
     });
   });
-  // Ouvrir le premier par défaut
   if (faqItems.length) {
     faqItems[0].classList.add('active');
     faqItems[0].querySelector('.faq-question').setAttribute('aria-expanded', 'true');
   }
 
-  // ✅ Compteur animé avec délai pour éviter le flash instantané
   const counters = document.querySelectorAll('.stat-number');
   const animateCounter = (counter) => {
     const target = +counter.getAttribute('data-target');
