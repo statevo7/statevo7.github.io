@@ -3,801 +3,1237 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Statevo — Coaching Sentimental</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+<!-- SEO FR/EN -->
+<title>Statevo — Social Dynamics & Dating Coaching</title>
+<meta name="description" content="Statevo — Coaching en dynamiques sociales et séduction. Comprends ce que les autres ne voient jamais. Transforme tes relations en 2 semaines.">
+<meta name="keywords" content="social dynamics coaching, dating coach, seduction coaching, coach séduction, développement personnel, relations amoureuses, attraction, confiance en soi">
+<meta name="author" content="Statevo">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://statevo7.github.io/">
+<meta name="theme-color" content="#0a0a0a">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://statevo7.github.io/">
+<meta property="og:title" content="Statevo — Social Dynamics & Dating Coaching">
+<meta property="og:description" content="Decode what others miss. Transform your relationships in 2 weeks.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=1200&q=80">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_GB">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Statevo — Social Dynamics & Dating Coaching">
+<meta name="twitter:description" content="Decode what others miss. Transform your relationships in 2 weeks.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=1200&q=80">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Statevo",
+  "description": "Social Dynamics & Dating Coaching — Decode hidden communication, build confidence, transform your relationships.",
+  "url": "https://statevo7.github.io/",
+  "telephone": "+33641549178",
+  "email": "statevocontact@gmail.com",
+  "priceRange": "€€",
+  "serviceType": ["Dating Coaching", "Social Dynamics", "Relationship Coaching", "Personal Development"],
+  "areaServed": ["FR", "GB", "BE", "CH", "CA"],
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Pack LUNETTE",
+      "price": "79",
+      "priceCurrency": "EUR",
+      "description": "2-week full coaching program — autonomous"
+    },
+    {
+      "@type": "Offer",
+      "name": "Pack MONACO",
+      "price": "300",
+      "priceCurrency": "EUR",
+      "description": "2-week full coaching program + 2 field sessions"
+    }
+  ]
+}
+</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+<style>
   :root {
-    --black: #07090f;
-    --night: #0d1220;
-    --deep: #111827;
-    --mid: #1e2a3a;
-    --surface: #162030;
-    --white: #e8edf5;
-    --muted: rgba(232,237,245,0.5);
-    --faint: rgba(232,237,245,0.12);
-    --gold: #c9a84c;
-    --gold-light: #e8d49a;
-    --gold-faint: rgba(201,168,76,0.12);
-    --blue: #4a7fa5;
-    --blue-light: #7aaed4;
-    --font-display: 'Cormorant Garamond', serif;
-    --font-body: 'DM Sans', sans-serif;
+    --bg: #0a0a0a;
+    --bg2: #111111;
+    --bg3: #181818;
+    --border: rgba(255,255,255,0.08);
+    --border2: rgba(255,255,255,0.15);
+    --text: #f0ede8;
+    --muted: #888880;
+    --accent: #c8a96e;
+    --accent2: #e8c98a;
+    --white: #ffffff;
   }
 
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
   html { scroll-behavior: smooth; }
+
   body {
-    background: var(--black);
-    color: var(--white);
-    font-family: var(--font-body);
-    font-weight: 300;
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 16px;
     line-height: 1.7;
     overflow-x: hidden;
   }
 
-  /* NAV */
+  h1, h2, h3, h4, .syne { font-family: 'Syne', sans-serif; }
+
+  /* ─── NAV ─── */
   nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 1.4rem 4rem;
-    background: rgba(7,9,15,0.9);
-    backdrop-filter: blur(16px);
-    border-bottom: 0.5px solid rgba(74,127,165,0.15);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 2.5rem;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
   }
+
   .nav-logo {
-    font-family: var(--font-display);
-    font-size: 1.6rem; font-weight: 600;
-    letter-spacing: 0.1em;
-    color: var(--white);
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: 0.08em;
+    color: var(--text);
     text-decoration: none;
+    text-transform: uppercase;
   }
-  .nav-logo span { color: var(--blue-light); }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+  }
+
   .nav-links a {
-    font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--white); text-decoration: none; opacity: 0.55;
-    transition: opacity 0.2s, color 0.2s;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
   }
-  .nav-links a:hover { opacity: 1; color: var(--blue-light); }
-  .nav-cta {
-    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
-    padding: 0.6rem 1.5rem;
-    border: 0.5px solid rgba(74,127,165,0.5);
-    color: var(--blue-light); text-decoration: none;
+
+  .nav-links a:hover { color: var(--text); }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  /* Language toggle */
+  .lang-toggle {
+    display: flex;
+    background: var(--bg3);
+    border: 1px solid var(--border2);
+    border-radius: 20px;
+    padding: 3px;
+    gap: 2px;
+  }
+
+  .lang-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    padding: 4px 10px;
+    border-radius: 16px;
     transition: all 0.2s;
   }
-  .nav-cta:hover { background: var(--blue); color: var(--white); border-color: var(--blue); }
 
-  /* HERO */
+  .lang-btn.active {
+    background: var(--accent);
+    color: #0a0a0a;
+  }
+
+  .btn-cta {
+    background: var(--accent);
+    color: #0a0a0a;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-cta:hover { background: var(--accent2); transform: translateY(-1px); }
+
+  /* ─── HERO ─── */
   .hero {
     min-height: 100vh;
-    display: flex; align-items: center;
-    position: relative; overflow: hidden;
-    padding: 9rem 4rem 5rem;
+    display: flex;
+    align-items: center;
+    padding: 8rem 2.5rem 4rem;
+    position: relative;
+    overflow: hidden;
   }
-  .hero-bg {
-    position: absolute; inset: 0;
-    background-image: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1600&q=80');
-    background-size: cover; background-position: center top;
-    opacity: 0.12; filter: grayscale(40%) hue-rotate(200deg);
-  }
-  .hero-overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(120deg, rgba(7,9,15,0.98) 45%, rgba(13,18,32,0.75) 100%);
-  }
-  .hero-glow {
-    position: absolute; top: 20%; right: 10%;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(74,127,165,0.08) 0%, transparent 70%);
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(200,169,110,0.06) 0%, transparent 70%);
     pointer-events: none;
   }
-  .hero-content { position: relative; z-index: 2; max-width: 780px; }
-  .hero-tag {
+
+  .hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .hero-label::before {
+    content: '';
     display: inline-block;
-    font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--blue-light);
-    border: 0.5px solid rgba(74,127,165,0.35);
-    padding: 0.4rem 1.1rem; margin-bottom: 2.5rem;
-    animation: fadeUp 0.8s ease both;
-  }
-
-  .hero-phrase {
-    margin-bottom: 2.5rem;
-    animation: fadeUp 0.8s 0.1s ease both;
-  }
-  .hero-phrase-line {
-    display: flex; align-items: baseline; gap: 1rem;
-    margin-bottom: 1rem; flex-wrap: wrap;
-  }
-  .phrase-word {
-    font-family: var(--font-display);
-    font-size: clamp(1.4rem, 3vw, 2.2rem);
-    font-weight: 300; font-style: italic;
-    color: rgba(232,237,245,0.45);
-    line-height: 1.2;
-  }
-  .phrase-arrow {
-    font-size: 0.9rem; color: var(--blue-light); opacity: 0.6;
-    letter-spacing: 0.05em;
-  }
-  .phrase-meaning {
-    font-family: var(--font-display);
-    font-size: clamp(1.6rem, 3.5vw, 2.6rem);
-    font-weight: 400;
-    color: var(--white);
-    line-height: 1.2;
-  }
-  .phrase-meaning em { font-style: italic; color: var(--blue-light); }
-
-  .hero-divider {
-    width: 40px; height: 0.5px;
-    background: rgba(74,127,165,0.4);
-    margin: 2rem 0;
-    animation: fadeUp 0.8s 0.2s ease both;
+    width: 32px;
+    height: 1px;
+    background: var(--accent);
   }
 
   .hero h1 {
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    font-weight: 300; line-height: 1.35;
-    color: var(--white); opacity: 0.75;
-    margin-bottom: 2rem;
-    animation: fadeUp 0.8s 0.25s ease both;
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
   }
 
-  .hero-btns {
-    display: flex; gap: 1rem; flex-wrap: wrap;
-    animation: fadeUp 0.8s 0.35s ease both;
+  .hero h1 em {
+    font-style: normal;
+    color: var(--accent);
   }
+
+  .hero-sub {
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+
+  .hero-quote {
+    background: var(--bg3);
+    border-left: 2px solid var(--accent);
+    padding: 1rem 1.25rem;
+    margin-bottom: 2.5rem;
+    font-style: italic;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
   .btn-primary {
-    padding: 1rem 2.2rem;
-    background: var(--blue); color: var(--white);
-    font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
-    text-decoration: none; font-weight: 400;
+    background: var(--accent);
+    color: #0a0a0a;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.9rem 1.8rem;
+    border-radius: 2px;
     transition: all 0.2s;
   }
-  .btn-primary:hover { background: var(--blue-light); color: var(--black); }
+
+  .btn-primary:hover { background: var(--accent2); transform: translateY(-2px); }
+
   .btn-ghost {
-    padding: 1rem 2.2rem;
-    border: 0.5px solid rgba(232,237,245,0.2);
-    color: var(--white); font-size: 0.75rem; letter-spacing: 0.1em;
-    text-transform: uppercase; text-decoration: none;
+    background: transparent;
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.9rem 1.8rem;
+    border: 1px solid var(--border2);
+    border-radius: 2px;
     transition: all 0.2s;
   }
-  .btn-ghost:hover { border-color: var(--blue-light); color: var(--blue-light); }
 
-  .hero-scroll {
-    position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
-    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-    opacity: 0.3; font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
-  }
-  .hero-scroll-line { width: 0.5px; height: 36px; background: var(--white); display: block; animation: scrollLine 1.8s ease infinite; }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
-  /* SECTIONS */
-  section { padding: 7rem 4rem; }
-  .section-tag {
-    font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--blue-light); margin-bottom: 1rem; display: block;
+  .hero-image {
+    position: relative;
   }
+
+  .hero-image img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    object-position: center top;
+    filter: grayscale(20%) contrast(1.05);
+    display: block;
+  }
+
+  .hero-image::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border: 1px solid var(--border);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .hero-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to top, var(--bg), transparent);
+    pointer-events: none;
+  }
+
+  /* ─── SECTION BASE ─── */
+  section {
+    padding: 6rem 2.5rem;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+  }
+
   .section-title {
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 3.5vw, 3.2rem);
-    font-weight: 300; line-height: 1.2; margin-bottom: 1.5rem;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
   }
-  .section-title em { font-style: italic; color: var(--blue-light); }
 
-  /* PROMESSE */
-  .promise { background: var(--night); border-top: 0.5px solid rgba(74,127,165,0.1); border-bottom: 0.5px solid rgba(74,127,165,0.1); }
-  .promise-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 5rem; align-items: center; max-width: 1200px; margin: 0 auto; }
-  .promise-img { position: relative; aspect-ratio: 3/4; overflow: hidden; }
-  .promise-img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%) brightness(0.85); transition: transform 0.6s; }
-  .promise-img:hover img { transform: scale(1.03); }
-  .promise-img::after { content: ''; position: absolute; inset: 0; border: 0.5px solid rgba(74,127,165,0.2); pointer-events: none; }
-  .promise-text p { font-size: 0.95rem; opacity: 0.7; margin-bottom: 1.3rem; line-height: 1.85; }
+  .section-title em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  /* ─── PROMISE ─── */
+  #promise {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .promise-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .promise-image img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    object-position: center top;
+    filter: grayscale(15%) contrast(1.08);
+  }
+
+  .promise-image {
+    position: relative;
+  }
+
+  .promise-image::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: -12px;
+    bottom: -12px;
+    border: 1px solid var(--border2);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .promise-image img { position: relative; z-index: 1; }
+
   .promise-quote {
-    font-family: var(--font-display);
-    font-size: 1.5rem; font-style: italic; font-weight: 300;
-    color: var(--blue-light); line-height: 1.5;
-    border-left: 1.5px solid var(--blue);
-    padding-left: 1.5rem; margin: 2rem 0;
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--accent);
+    border-left: 2px solid var(--accent);
+    padding-left: 1.25rem;
+    margin: 2rem 0;
+    font-style: italic;
+    line-height: 1.5;
   }
 
-  /* PILIERS */
-  .pillars { background: var(--black); }
-  .pillars-inner { max-width: 1200px; margin: 0 auto; }
-  .pillars-header { text-align: center; margin-bottom: 4rem; }
-  .pillars-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5px; background: rgba(74,127,165,0.08); }
+  .promise-text {
+    color: var(--muted);
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+  }
+
+  .stats-row {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .stat-item {}
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--accent);
+    display: block;
+  }
+  .stat-lbl {
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* ─── PILLARS ─── */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--border);
+    margin-top: 3.5rem;
+  }
+
   .pillar {
-    background: var(--black); padding: 2.5rem 2rem;
-    position: relative; overflow: hidden;
+    background: var(--bg);
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
     transition: background 0.3s;
   }
-  .pillar::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1.5px;
-    background: var(--blue); transform: scaleX(0); transform-origin: left;
-    transition: transform 0.4s ease;
-  }
-  .pillar:hover { background: var(--night); }
-  .pillar:hover::before { transform: scaleX(1); }
+
+  .pillar:hover { background: var(--bg3); }
+
   .pillar-num {
-    font-family: var(--font-display);
-    font-size: 4rem; font-weight: 300;
-    color: rgba(74,127,165,0.1); line-height: 1; margin-bottom: 1.2rem;
+    font-family: 'Syne', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: rgba(200,169,110,0.12);
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    line-height: 1;
+    pointer-events: none;
   }
-  .pillar h3 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 400; margin-bottom: 0.75rem; }
-  .pillar p { font-size: 0.88rem; opacity: 0.55; line-height: 1.75; }
 
-  /* PACKS */
-  .packs { background: var(--night); }
-  .packs-inner { max-width: 1200px; margin: 0 auto; }
-  .packs-header { text-align: center; margin-bottom: 4rem; }
-  .packs-header p { opacity: 0.55; max-width: 500px; margin: 0 auto; font-size: 0.9rem; }
-  .packs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-
-  /* LUNETTE - bleu nuit, pas d'or */
-  .pack-card {
-    padding: 3rem 2.5rem;
-    border: 0.5px solid rgba(74,127,165,0.2);
-    display: flex; flex-direction: column; gap: 1.8rem;
+  .pillar h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.8rem;
     position: relative;
-    background: rgba(13,18,32,0.6);
-    transition: border-color 0.3s;
-  }
-  .pack-card:hover { border-color: rgba(74,127,165,0.45); }
-
-  /* MONACO - touche dorée uniquement ici */
-  .pack-card.monaco {
-    border-color: rgba(201,168,76,0.35);
-    background: linear-gradient(160deg, rgba(201,168,76,0.04) 0%, rgba(13,18,32,0.6) 50%);
-  }
-  .pack-card.monaco:hover { border-color: rgba(201,168,76,0.6); }
-  .monaco-tag {
-    position: absolute; top: -1px; right: 2rem;
-    background: var(--gold); color: var(--black);
-    font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase;
-    padding: 0.35rem 1rem; font-weight: 500;
   }
 
-  .pack-name { font-family: var(--font-display); font-size: 2.4rem; font-weight: 300; letter-spacing: 0.06em; margin-bottom: 0.2rem; }
-  .pack-card.monaco .pack-name { color: var(--gold-light); }
-
-  .pack-price { font-family: var(--font-display); font-size: 3rem; font-weight: 300; line-height: 1; }
-  .pack-card:not(.monaco) .pack-price { color: var(--blue-light); }
-  .pack-card.monaco .pack-price { color: var(--gold); }
-  .pack-price small { font-size: 1rem; opacity: 0.5; font-family: var(--font-body); }
-
-  .pack-tagline { font-size: 0.82rem; opacity: 0.5; margin-top: 0.4rem; }
-
-  .pack-intro {
-    font-size: 0.88rem; line-height: 1.8; opacity: 0.78; font-style: italic;
-    padding-left: 1.2rem;
-  }
-  .pack-card:not(.monaco) .pack-intro { border-left: 1.5px solid var(--blue); }
-  .pack-card.monaco .pack-intro { border-left: 1.5px solid var(--gold); }
-
-  .pack-divider { border: none; border-top: 0.5px solid rgba(255,255,255,0.06); }
-
-  .cat-label {
-    font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
-    margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.6rem;
-  }
-  .pack-card:not(.monaco) .cat-label { color: var(--blue-light); }
-  .pack-card.monaco .cat-label { color: var(--gold); }
-  .cat-label::after { content: ''; flex: 1; height: 0.5px; }
-  .pack-card:not(.monaco) .cat-label::after { background: rgba(74,127,165,0.18); }
-  .pack-card.monaco .cat-label::after { background: rgba(201,168,76,0.18); }
-
-  .pack-cat { margin-bottom: 1.4rem; }
-  .cat-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-  .cat-list li { font-size: 0.83rem; opacity: 0.68; padding-left: 1rem; position: relative; line-height: 1.55; }
-  .cat-list li::before { content: ''; position: absolute; left: 0; top: 0.68em; width: 4px; height: 0.5px; opacity: 0.5; }
-  .pack-card:not(.monaco) .cat-list li::before { background: var(--blue-light); }
-  .pack-card.monaco .cat-list li::before { background: var(--gold); }
-
-  .terrain-badge {
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    background: rgba(201,168,76,0.1); border: 0.5px solid rgba(201,168,76,0.35);
-    color: var(--gold); font-size: 0.72rem; padding: 0.4rem 1rem;
-    letter-spacing: 0.05em;
+  .pillar p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    font-weight: 300;
   }
 
-  .pack-cta {
-    display: block; text-align: center; margin-top: auto;
-    padding: 1rem; text-decoration: none;
-    font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
-    transition: all 0.2s;
+  /* ─── PACKS ─── */
+  #packs {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
   }
-  .pack-card:not(.monaco) .pack-cta {
-    border: 0.5px solid rgba(74,127,165,0.4); color: var(--blue-light);
-  }
-  .pack-card:not(.monaco) .pack-cta:hover { background: var(--blue); color: var(--white); border-color: var(--blue); }
-  .pack-card.monaco .pack-cta {
-    background: var(--gold); color: var(--black); border: none; font-weight: 500;
-  }
-  .pack-card.monaco .pack-cta:hover { background: var(--gold-light); }
 
-  /* BIO */
-  .bio { background: var(--black); border-top: 0.5px solid rgba(74,127,165,0.1); }
-  .bio-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.4fr; gap: 6rem; align-items: center; }
-  .bio-img { position: relative; }
-  .bio-img img { width: 100%; aspect-ratio: 3/4; object-fit: cover; filter: grayscale(20%) brightness(0.85); display: block; }
-  .bio-img::before { content: ''; position: absolute; top: -1rem; left: -1rem; right: 1rem; bottom: 1rem; border: 0.5px solid rgba(74,127,165,0.2); z-index: -1; }
-  .bio-badge {
-    position: absolute; bottom: -1rem; right: -1rem;
-    background: var(--deep); border: 0.5px solid rgba(74,127,165,0.3);
-    padding: 1.2rem 1.5rem; text-align: center;
+  .packs-intro {
+    color: var(--muted);
+    max-width: 580px;
+    margin-bottom: 3.5rem;
+    font-weight: 300;
   }
-  .bio-badge strong { display: block; font-size: 1.8rem; font-family: var(--font-display); font-weight: 300; color: var(--blue-light); }
-  .bio-badge span { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.5; }
-  .bio-text p { font-size: 0.93rem; opacity: 0.68; margin-bottom: 1.2rem; line-height: 1.85; }
-  .bio-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-top: 2.5rem; }
-  .stat { text-align: center; padding: 1.2rem; border: 0.5px solid rgba(74,127,165,0.15); }
-  .stat-num { font-family: var(--font-display); font-size: 2rem; font-weight: 300; color: var(--blue-light); display: block; }
-  .stat-label { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.4; }
 
-  /* TEMOIGNAGES */
-  .temoignages { background: var(--night); }
-  .temoignages-inner { max-width: 1200px; margin: 0 auto; }
-  .temoignages-header { text-align: center; margin-bottom: 4rem; }
-  .temoignages-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
-  .temoignage { padding: 2rem; border: 0.5px solid rgba(74,127,165,0.12); transition: border-color 0.3s; }
-  .temoignage:hover { border-color: rgba(74,127,165,0.3); }
-  .stars { color: var(--blue-light); font-size: 0.8rem; margin-bottom: 1rem; letter-spacing: 0.1em; }
-  .temoignage-text { font-family: var(--font-display); font-size: 1.05rem; font-style: italic; font-weight: 300; line-height: 1.65; opacity: 0.82; margin-bottom: 1.5rem; }
-  .temoignage-author { font-size: 0.72rem; opacity: 0.4; }
-  .temoignage-author strong { display: block; color: var(--blue-light); opacity: 1; font-weight: 400; margin-bottom: 0.1rem; }
-
-  /* FAQ */
-  .faq { background: var(--black); }
-  .faq-inner { max-width: 780px; margin: 0 auto; }
-  .faq-header { text-align: center; margin-bottom: 3rem; }
-  .faq-item { border-bottom: 0.5px solid rgba(255,255,255,0.07); padding: 1.5rem 0; cursor: pointer; }
-  .faq-q { display: flex; justify-content: space-between; align-items: center; font-size: 0.93rem; font-weight: 400; }
-  .faq-q .faq-icon { color: var(--blue-light); font-size: 1.3rem; transition: transform 0.3s; flex-shrink: 0; margin-left: 1rem; }
-  .faq-a { font-size: 0.86rem; opacity: 0.55; line-height: 1.85; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; }
-  .faq-item.open .faq-icon { transform: rotate(45deg); }
-  .faq-item.open .faq-a { max-height: 200px; padding-top: 1rem; }
-
-  /* CTA */
-  .cta-section {
-    background: var(--night); text-align: center;
-    padding: 9rem 4rem; position: relative; overflow: hidden;
-    border-top: 0.5px solid rgba(74,127,165,0.12);
+  .packs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
   }
-  .cta-bg-text {
-    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
-    font-family: var(--font-display); font-size: 16vw; font-weight: 600;
-    color: rgba(74,127,165,0.04); white-space: nowrap; pointer-events: none;
+
+  .pack-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 2.5rem 2rem;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+
+  .pack-card:hover { border-color: var(--border2); }
+
+  .pack-card.featured {
+    border-color: var(--accent);
+  }
+
+  .pack-badge {
+    position: absolute;
+    top: -1px;
+    right: 2rem;
+    background: var(--accent);
+    color: #0a0a0a;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.65rem;
     letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 12px;
   }
-  .cta-section .section-title { font-size: clamp(2rem,4vw,3.5rem); margin-bottom: 1rem; }
-  .cta-section > p { opacity: 0.55; max-width: 460px; margin: 0 auto 2.5rem; font-size: 0.92rem; }
-  .cta-btn-main {
-    display: inline-block; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase;
-    padding: 1.1rem 3rem; background: var(--blue); color: var(--white);
-    text-decoration: none; font-weight: 400; transition: background 0.2s;
-  }
-  .cta-btn-main:hover { background: var(--blue-light); color: var(--black); }
 
-  /* FOOTER */
+  .pack-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .pack-price {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .pack-duration {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .pack-desc {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 1.8rem;
+    font-weight: 300;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1.5rem;
+  }
+
+  .pack-features { list-style: none; margin-bottom: 2rem; }
+
+  .pack-section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 1.25rem 0 0.6rem;
+  }
+
+  .pack-features li {
+    font-size: 0.85rem;
+    color: var(--muted);
+    padding: 0.3rem 0 0.3rem 1.25rem;
+    position: relative;
+    font-weight: 300;
+  }
+
+  .pack-features li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.75rem;
+  }
+
+  .pack-features li.highlight {
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  /* ─── ABOUT ─── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .about-image {
+    position: relative;
+  }
+
+  .about-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center top;
+    filter: grayscale(20%);
+  }
+
+  .about-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 2.5rem;
+  }
+
+  .chip {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 0.35rem 0.8rem;
+    border-radius: 1px;
+  }
+
+  .about-text {
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ─── TESTIMONIALS ─── */
+  #temoignages {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    margin-top: 3.5rem;
+  }
+
+  .testi-card {
+    background: var(--bg2);
+    padding: 2rem 1.75rem;
+  }
+
+  .stars {
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+
+  .testi-text {
+    color: var(--text);
+    font-size: 0.9rem;
+    line-height: 1.75;
+    font-style: italic;
+    font-weight: 300;
+    margin-bottom: 1.25rem;
+  }
+
+  .testi-author {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: var(--text);
+  }
+
+  .testi-pack {
+    font-size: 0.72rem;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+  }
+
+  /* ─── FAQ ─── */
+  .faq-list {
+    margin-top: 3rem;
+    max-width: 780px;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .faq-q {
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+    text-align: left;
+    gap: 1rem;
+    transition: color 0.2s;
+  }
+
+  .faq-q:hover { color: var(--accent); }
+
+  .faq-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--border2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: var(--accent);
+    transition: transform 0.3s;
+  }
+
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+  .faq-a {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.35s ease;
+  }
+
+  .faq-a-inner {
+    padding-bottom: 1.5rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  /* ─── CTA FINALE ─── */
+  #contact {
+    text-align: center;
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+  }
+
+  .cta-bg {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-bg::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 300px;
+    background: radial-gradient(ellipse, rgba(200,169,110,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-title {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.02em;
+  }
+
+  .cta-sub {
+    color: var(--muted);
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+    font-weight: 300;
+  }
+
+  /* ─── FOOTER ─── */
   footer {
-    background: #050709; padding: 2.5rem 4rem;
-    display: flex; justify-content: space-between; align-items: center;
-    border-top: 0.5px solid rgba(255,255,255,0.05); flex-wrap: wrap; gap: 1rem;
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    padding: 2rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
-  .footer-logo { font-family: var(--font-display); font-size: 1.2rem; color: var(--white); letter-spacing: 0.1em; }
-  .footer-logo span { color: var(--blue-light); }
-  footer p { font-size: 0.72rem; opacity: 0.25; }
-  .footer-wa { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue-light); text-decoration: none; opacity: 0.6; transition: opacity 0.2s; }
-  .footer-wa:hover { opacity: 1; }
 
-  /* ANIM */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+  .footer-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    color: var(--text);
+    text-decoration: none;
+    text-transform: uppercase;
   }
-  @keyframes scrollLine {
-    0% { transform: scaleY(0); transform-origin: top; }
-    50% { transform: scaleY(1); transform-origin: top; }
-    51% { transform: scaleY(1); transform-origin: bottom; }
-    100% { transform: scaleY(0); transform-origin: bottom; }
-  }
-  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
 
-  @media (max-width: 900px) {
-    nav { padding: 1.2rem 1.5rem; }
+  .footer-copy {
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .footer-links a {
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.25rem; }
     .nav-links { display: none; }
-    section { padding: 5rem 1.5rem; }
-    .hero { padding: 7rem 1.5rem 4rem; }
-    .promise-grid, .bio-inner { grid-template-columns: 1fr; gap: 3rem; }
-    .packs-grid { grid-template-columns: 1fr; }
+
+    section { padding: 4rem 1.25rem; }
+
+    .hero { padding: 6rem 1.25rem 3rem; }
+    .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-image { order: -1; }
+    .hero-image img { height: 300px; }
+
+    .promise-grid,
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .promise-image img,
+    .about-image img { height: 320px; }
+
     .pillars-grid { grid-template-columns: 1fr; }
-    .temoignages-grid { grid-template-columns: 1fr; }
-    footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
+    .packs-grid { grid-template-columns: 1fr; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .stats-row { gap: 1.5rem; }
+
+    footer { flex-direction: column; text-align: center; }
   }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <a class="nav-logo" href="#">State<span>vo</span></a>
+  <a href="#" class="nav-logo" data-fr="Statevo" data-en="Statevo">Statevo</a>
   <ul class="nav-links">
-    <li><a href="#packs">Les packs</a></li>
-    <li><a href="#bio">À propos</a></li>
-    <li><a href="#temoignages">Témoignages</a></li>
-    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#packs" data-fr="Les packs" data-en="Packages">Les packs</a></li>
+    <li><a href="#bio" data-fr="À propos" data-en="About">À propos</a></li>
+    <li><a href="#temoignages" data-fr="Témoignages" data-en="Results">Témoignages</a></li>
+    <li><a href="#faq" data-fr="FAQ" data-en="FAQ">FAQ</a></li>
   </ul>
-  <a class="nav-cta" href="#contact">Prendre contact</a>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('fr')">FR</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="#contact" class="btn-cta" data-fr="Prendre contact" data-en="Get started">Prendre contact</a>
+  </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-content">
-    <span class="hero-tag">Coaching sentimental — Statevo</span>
-
-    <div class="hero-phrase">
-      <div class="hero-phrase-line">
-        <span class="phrase-word">"un bonjour"</span>
-        <span class="phrase-arrow">→</span>
-        <span class="phrase-meaning">je te trouve <em>mignon</em></span>
-      </div>
-      <div class="hero-phrase-line">
-        <span class="phrase-word">"bonne nuit"</span>
-        <span class="phrase-arrow">→</span>
-        <span class="phrase-meaning">demain <em>appelle moi</em></span>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <p class="hero-label" data-fr="Social Dynamics & Dating Coaching" data-en="Social Dynamics & Dating Coaching">Social Dynamics & Dating Coaching</p>
+      <h1>
+        <span data-fr='La plupart des gens ne voient pas ça.<br>Toi tu vas apprendre à tout <em>lire.</em>' data-en='Most people never see it.<br>You're about to learn to read <em>everything.</em>'>La plupart des gens ne voient pas ça.<br>Toi tu vas apprendre à tout <em>lire.</em></span>
+      </h1>
+      <div class="hero-quote" data-fr='"un bonjour" → je te trouve mignon &nbsp;&nbsp; "bonne nuit" → demain appelle-moi' data-en='"hey" → I find you attractive &nbsp;&nbsp; "good night" → call me tomorrow'>"un bonjour" → je te trouve mignon &nbsp;&nbsp; "bonne nuit" → demain appelle-moi</div>
+      <p class="hero-sub" data-fr="Ce que les autres mettent des années à comprendre, tu vas l'intégrer en 2 semaines. Pas des techniques. Une vraie façon de voir." data-en="What others spend years figuring out, you'll master in 2 weeks. Not techniques. A completely new way of seeing.">Ce que les autres mettent des années à comprendre, tu vas l'intégrer en 2 semaines. Pas des techniques. Une vraie façon de voir.</p>
+      <div class="hero-ctas">
+        <a href="#packs" class="btn-primary" data-fr="Voir les packs" data-en="See packages">Voir les packs</a>
+        <a href="#bio" class="btn-ghost" data-fr="Qui suis-je ?" data-en="Who am I?">Qui suis-je ?</a>
       </div>
     </div>
-
-    <div class="hero-divider"></div>
-
-    <h1>La plupart des gens ne voient pas ça.<br>Toi tu vas apprendre à tout lire.</h1>
-
-    <div class="hero-btns">
-      <a href="#packs" class="btn-primary">Voir les packs</a>
-      <a href="#bio" class="btn-ghost">Qui suis-je ?</a>
-    </div>
-  </div>
-  <div class="hero-scroll">
-    <span class="hero-scroll-line"></span>
-    scroll
-  </div>
-</section>
-
-<!-- PROMESSE -->
-<section class="promise">
-  <div class="promise-grid">
-    <div class="promise-img reveal">
-      <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=80" alt="Coach Statevo">
-    </div>
-    <div class="promise-text reveal">
-      <span class="section-tag">La promesse</span>
-      <h2 class="section-title">Ce n'est pas<br>du conseil.<br>C'est une <em>nouvelle vision.</em></h2>
-      <p>La plupart des gens passent des années à ne pas comprendre pourquoi leurs relations ne fonctionnent pas. Ils cherchent les bonnes réponses aux mauvaises questions.</p>
-      <p>Mon travail c'est de te donner une lecture différente du monde. Pas des techniques. Pas des scripts. Une vraie compréhension de ce qui se joue dans chaque interaction humaine.</p>
-      <div class="promise-quote">"Les mots sont la surface. En dessous, il y a tout ce que l'autre communique sans le dire."</div>
-      <p>En 2 semaines, tu vas développer une acuité que la plupart des gens n'auront jamais. Et ça, personne ne peut te l'enlever.</p>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=800&q=80" alt="Statevo — Social Dynamics Coach" loading="eager">
     </div>
   </div>
 </section>
 
-<!-- PILIERS -->
-<section class="pillars">
-  <div class="pillars-inner">
-    <div class="pillars-header reveal">
-      <span class="section-tag">Les fondations</span>
-      <h2 class="section-title">3 piliers.<br><em>Une transformation.</em></h2>
+<!-- PROMISE -->
+<section id="promise">
+  <div class="container">
+    <div class="promise-grid">
+      <div class="promise-image">
+        <img src="https://images.unsplash.com/photo-1583195764036-46f8c4b45e5a?w=800&q=80" alt="Coaching Statevo" loading="lazy">
+      </div>
+      <div class="promise-content">
+        <p class="section-label" data-fr="La promesse" data-en="The promise">La promesse</p>
+        <h2 class="section-title" data-fr="Ce n'est pas du conseil. C'est une <em>nouvelle vision.</em>" data-en="This isn't advice. It's a <em>new way of seeing.</em>">Ce n'est pas du conseil. C'est une <em>nouvelle vision.</em></h2>
+        <p class="promise-text" data-fr="La plupart des gens passent des années à ne pas comprendre pourquoi leurs relations ne fonctionnent pas. Ils cherchent les bonnes réponses aux mauvaises questions." data-en="Most people spend years not understanding why their relationships don't work. They look for the right answers to the wrong questions.">La plupart des gens passent des années à ne pas comprendre pourquoi leurs relations ne fonctionnent pas. Ils cherchent les bonnes réponses aux mauvaises questions.</p>
+        <blockquote class="promise-quote" data-fr='"Les mots sont la surface. En dessous, il y a tout ce que l\'autre communique sans le dire."' data-en='"Words are just the surface. Beneath them lies everything the other person communicates without saying a word."'>"Les mots sont la surface. En dessous, il y a tout ce que l'autre communique sans le dire."</blockquote>
+        <p class="promise-text" data-fr="En 2 semaines, tu vas développer une acuité que la plupart des gens n'auront jamais. Et ça, personne ne peut te l'enlever." data-en="In 2 weeks, you'll develop a level of perception most people will never reach. And no one can take that away from you.">En 2 semaines, tu vas développer une acuité que la plupart des gens n'auront jamais. Et ça, personne ne peut te l'enlever.</p>
+        <div class="stats-row">
+          <div class="stat-item">
+            <span class="stat-num">2</span>
+            <span class="stat-lbl" data-fr="Semaines" data-en="Weeks">Semaines</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">100%</span>
+            <span class="stat-lbl" data-fr="Sur-mesure" data-en="Tailored">Sur-mesure</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">7j/7</span>
+            <span class="stat-lbl" data-fr="Disponible" data-en="Available">Disponible</span>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section id="fondations">
+  <div class="container">
+    <p class="section-label" data-fr="Les fondations" data-en="The foundations">Les fondations</p>
+    <h2 class="section-title" data-fr="3 piliers. <em>Une transformation.</em>" data-en="3 pillars. <em>One transformation.</em>">3 piliers. <em>Une transformation.</em></h2>
     <div class="pillars-grid">
-      <div class="pillar reveal">
-        <div class="pillar-num">01</div>
-        <h3>Le langage invisible</h3>
-        <p>Décoder ce que les mots ne disent pas. Le timing d'un message, la longueur d'une réponse, un silence après une question. Tout communique. Tu vas apprendre à tout lire.</p>
+      <div class="pillar">
+        <span class="pillar-num">01</span>
+        <h3 data-fr="Le langage invisible" data-en="The invisible language">Le langage invisible</h3>
+        <p data-fr="Décoder ce que les mots ne disent pas. Le timing d'un message, la longueur d'une réponse, un silence après une question. Tout communique. Tu vas apprendre à tout lire." data-en="Decode what words don't say. The timing of a message, the length of a reply, a silence after a question. Everything communicates. You'll learn to read all of it.">Décoder ce que les mots ne disent pas. Le timing d'un message, la longueur d'une réponse, un silence après une question. Tout communique. Tu vas apprendre à tout lire.</p>
       </div>
-      <div class="pillar reveal">
-        <div class="pillar-num">02</div>
-        <h3>L'image & la routine</h3>
-        <p>T'habiller selon ton physique réel. Construire une routine qui te rend stable et constant. Travailler ton énergie — ce que les gens ressentent avant même que tu parles.</p>
+      <div class="pillar">
+        <span class="pillar-num">02</span>
+        <h3 data-fr="L'image & la routine" data-en="Image & daily routine">L'image & la routine</h3>
+        <p data-fr="T'habiller selon ton physique réel. Construire une routine qui te rend stable et constant. Travailler ton énergie — ce que les gens ressentent avant même que tu parles." data-en="Dress for your actual physique. Build a routine that makes you stable and consistent. Work on your energy — what people feel before you even speak.">T'habiller selon ton physique réel. Construire une routine qui te rend stable et constant. Travailler ton énergie — ce que les gens ressentent avant même que tu parles.</p>
       </div>
-      <div class="pillar reveal">
-        <div class="pillar-num">03</div>
-        <h3>L'amour de soi</h3>
-        <p>Apprendre à t'aimer réellement — pas comme un concept, comme une pratique. Te comprendre en profondeur. Devenir quelqu'un que tu respectes. Les autres le ressentent.</p>
+      <div class="pillar">
+        <span class="pillar-num">03</span>
+        <h3 data-fr="L'amour de soi" data-en="Self-worth">L'amour de soi</h3>
+        <p data-fr="Apprendre à t'aimer réellement — pas comme un concept, comme une pratique. Te comprendre en profondeur. Devenir quelqu'un que tu respectes. Les autres le ressentent." data-en="Learn to truly love yourself — not as a concept, but as a practice. Understand yourself deeply. Become someone you respect. Others will feel it.">Apprendre à t'aimer réellement — pas comme un concept, comme une pratique. Te comprendre en profondeur. Devenir quelqu'un que tu respectes. Les autres le ressentent.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- PACKS -->
-<section class="packs" id="packs">
-  <div class="packs-inner">
-    <div class="packs-header reveal">
-      <span class="section-tag">Les offres</span>
-      <h2 class="section-title">Choisissez votre<br><em>niveau d'accompagnement</em></h2>
-      <p>Deux packs, même contenu complet. La seule différence : les 2 sorties terrain dans le pack MONACO.</p>
-    </div>
+<section id="packs">
+  <div class="container">
+    <p class="section-label" data-fr="Les offres" data-en="Packages">Les offres</p>
+    <h2 class="section-title" data-fr="Choisissez votre <em>niveau d'accompagnement</em>" data-en="Choose your <em>level of commitment</em>">Choisissez votre <em>niveau d'accompagnement</em></h2>
+    <p class="packs-intro" data-fr="Deux packs, même contenu complet. La seule différence : les 2 sorties terrain dans le pack MONACO." data-en="Two packages, same complete content. The only difference: 2 real-world field sessions included in MONACO.">Deux packs, même contenu complet. La seule différence : les 2 sorties terrain dans le pack MONACO.</p>
     <div class="packs-grid">
-
       <!-- LUNETTE -->
-      <div class="pack-card reveal">
-        <div>
-          <div class="pack-name">LUNETTE</div>
-          <div class="pack-price">79€ <small>/ 2 semaines</small></div>
-          <div class="pack-tagline">Pack complet — autonome et suffisant pour changer</div>
-        </div>
-        <div class="pack-intro">
-          Tu vas apprendre à lire ce que les gens ne disent jamais vraiment. Un "bonjour" qui arrive à une certaine heure, un "bonne nuit" qui traîne — ça ne veut pas dire bonne nuit. Ça veut dire appelle-moi demain. Je t'apprends à décoder le langage invisible. Ce que la plupart des gens ratent toute leur vie, toi tu vas commencer à le voir.
-        </div>
-        <hr class="pack-divider">
-        <div>
-          <div class="pack-cat">
-            <div class="cat-label">Langage caché & lecture</div>
-            <ul class="cat-list">
-              <li>Tu décodes ce que les mots veulent vraiment dire — pas ce qu'ils semblent dire</li>
-              <li>Tu lis le timing, le ton, les silences, les sous-entendus</li>
-              <li>Tu sais si un message exprime de l'intérêt, de la distance ou de la manipulation</li>
-              <li>Tu réponds pour créer exactement l'effet que tu veux</li>
-              <li>Tu ne te fais plus avoir par les discours — tu regardes les actes</li>
-            </ul>
-          </div>
-          <div class="pack-cat">
-            <div class="cat-label">Travail sur soi & amour de soi</div>
-            <ul class="cat-list">
-              <li>Tu apprends à t'aimer — pas comme un concept, comme une pratique quotidienne</li>
-              <li>Tu te comprends réellement : pourquoi tu réagis comme ça, pourquoi tu attires ça</li>
-              <li>Tu arrêtes de chercher chez l'autre ce que tu n'as pas encore en toi</li>
-              <li>Tu identifies ce que tu veux — relation sérieuse ou bonne rencontre, on s'adapte</li>
-              <li>Tu deviens quelqu'un que tu respectes — et les autres le ressentent</li>
-            </ul>
-          </div>
-          <div class="pack-cat">
-            <div class="cat-label">Style & image personnelle</div>
-            <ul class="cat-list">
-              <li>Tu apprends à t'habiller selon ton physique réel — pas un idéal inaccessible</li>
-              <li>On travaille ce que les autres voient avant même que tu parles</li>
-              <li>Tu passes de quelqu'un qu'on oublie à quelqu'un qu'on remarque</li>
-              <li>Ton image devient cohérente avec qui tu es vraiment</li>
-            </ul>
-          </div>
-          <div class="pack-cat">
-            <div class="cat-label">Routine & énergie personnelle</div>
-            <ul class="cat-list">
-              <li>Tu construis une routine qui te rend stable — pas juste motivé par moments</li>
-              <li>Tu travailles ton énergie : ce que les gens ressentent quand tu entres quelque part</li>
-              <li>Tu élimines les habitudes qui te sabotent sans t'en rendre compte</li>
-              <li>Tu deviens constant — et la constance, ça attire</li>
-            </ul>
-          </div>
-          <div class="pack-cat">
-            <div class="cat-label">Communication & séduction</div>
-            <ul class="cat-list">
-              <li>Tu abordes quelqu'un naturellement — sans paraître forcé ni désespéré</li>
-              <li>Tu crées de l'attraction sans jouer un rôle</li>
-              <li>Tu lis les signaux faibles en temps réel — intérêt, désintérêt, jeu</li>
-              <li>Ton profil de rencontres arrête d'être invisible</li>
-            </ul>
-          </div>
-          <div class="pack-cat">
-            <div class="cat-label">Accompagnement</div>
-            <ul class="cat-list">
-              <li>Sessions 1:1 sur 2 semaines</li>
-              <li>Exercices concrets à appliquer entre les sessions</li>
-              <li>Suivi continu — tu n'es jamais seul face à une situation</li>
-              <li>Plan d'action calibré sur ton objectif réel</li>
-            </ul>
-          </div>
-        </div>
-        <a href="mailto:statevocontact@gmail.com" class="pack-cta">Commencer — 79€</a>
+      <div class="pack-card">
+        <p class="pack-name">Lunette</p>
+        <p class="pack-price">79€</p>
+        <p class="pack-duration" data-fr="/ 2 semaines — autonome et suffisant" data-en="/ 2 weeks — autonomous & complete">/ 2 semaines — autonome et suffisant</p>
+        <p class="pack-desc" data-fr="Tu vas apprendre à lire ce que les gens ne disent jamais vraiment. Un 'bonjour' qui arrive à une certaine heure, un 'bonne nuit' qui traîne — ça ne veut pas dire bonne nuit. Ça veut dire appelle-moi demain." data-en="You'll learn to read what people never truly say. A 'hey' that arrives at a specific time, a 'good night' that lingers — that doesn't mean good night. It means call me tomorrow.">Tu vas apprendre à lire ce que les gens ne disent jamais vraiment. Un 'bonjour' qui arrive à une certaine heure, un 'bonne nuit' qui traîne — ça ne veut pas dire bonne nuit. Ça veut dire appelle-moi demain.</p>
+        <ul class="pack-features">
+          <p class="pack-section-title" data-fr="Langage caché & lecture" data-en="Hidden language & reading">Langage caché & lecture</p>
+          <li data-fr="Décoder ce que les mots veulent vraiment dire" data-en="Decode what words really mean">Décoder ce que les mots veulent vraiment dire</li>
+          <li data-fr="Lire le timing, le ton, les silences, les sous-entendus" data-en="Read timing, tone, silences and subtext">Lire le timing, le ton, les silences, les sous-entendus</li>
+          <li data-fr="Répondre pour créer exactement l'effet que tu veux" data-en="Reply to create exactly the effect you want">Répondre pour créer exactement l'effet que tu veux</li>
+          <p class="pack-section-title" data-fr="Travail sur soi & amour de soi" data-en="Self-work & self-worth">Travail sur soi & amour de soi</p>
+          <li data-fr="T'aimer — pas comme un concept, comme une pratique" data-en="Love yourself — as a practice, not a concept">T'aimer — pas comme un concept, comme une pratique</li>
+          <li data-fr="Comprendre pourquoi tu réagis et attires comme tu le fais" data-en="Understand why you react and attract the way you do">Comprendre pourquoi tu réagis et attires comme tu le fais</li>
+          <p class="pack-section-title" data-fr="Accompagnement" data-en="Support">Accompagnement</p>
+          <li data-fr="Sessions 1:1 sur 2 semaines" data-en="1:1 sessions over 2 weeks">Sessions 1:1 sur 2 semaines</li>
+          <li data-fr="Suivi continu 7j/7" data-en="Continuous daily support">Suivi continu 7j/7</li>
+        </ul>
+        <a href="mailto:statevocontact@gmail.com" class="btn-primary" style="display:inline-block;font-size:0.78rem;" data-fr="Commencer — 79€" data-en="Start — €79">Commencer — 79€</a>
       </div>
 
       <!-- MONACO -->
-      <div class="pack-card monaco reveal">
-        <span class="monaco-tag">Premium</span>
-        <div>
-          <div class="pack-name">MONACO</div>
-          <div class="pack-price">300€ <small>/ 2 semaines</small></div>
-          <div class="pack-tagline">Même contenu complet + 2 sorties terrain</div>
-        </div>
-        <div class="pack-intro">
-          Tu vas acquérir une compréhension dimensionnelle du langage — les mots, le timing, le ton, le non-dit, l'énergie derrière chaque interaction. Un "t'as passé une bonne journée ?" peut vouloir dire dix choses différentes selon comment c'est envoyé. C'est une façon de voir le monde que tu ne pourras plus désapprendre.
-        </div>
-        <hr class="pack-divider">
-        <div>
-          <div class="pack-cat">
-            <div class="cat-label">Langage caché & lecture</div>
-            <ul class="cat-list">
-              <li>Tu décodes ce que les mots veulent vraiment dire — pas ce qu'ils semblent dire</li>
-              <li>Tu lis le timing, le ton, les silences, les sous-entendus</li>
-              <li>Tu sais si un message exprime de l'intérêt, de la distance ou de la manipulation</li>
-              <li>Tu réponds pour créer exactement l'effet que tu veux</li>
-              <li>Tu ne te fais plus avoir par les discours — tu regardes les actes</li>
-            </ul>
-          </div>
-          <div class="pack-cat">
-            <div class="cat-label">Travail sur soi & amour de soi</div>
-            <ul class="cat-list">
-              <li>Tu apprends à t'aimer — pas comme un concept, comme une pratique quotidienne</li>
-              <li>Tu te comprends réellement : pourquoi tu réagis comme ça, pourquoi tu attires ça</li>
-              <li>Tu arrêtes de chercher chez l'autre ce que tu n'as pas encore en toi</li>
-              <li>Tu identifies ce que tu veux — relation sérieuse ou bonne rencontre, on s'adapte</li>
-              <li>Tu deviens quelqu'un que tu respectes — et les autres le ressentent</li>
-            </ul>
-          </div>
-          <div class="pack-cat">
-            <div class="cat-label">Style & image personnelle</div>
-            <ul class="cat-list">
-              <li>Tu apprends à t'habiller selon ton physique réel — pas un idéal inaccessible</li>
-              <li>On travaille ce que les autres voient avant même que tu parles</li>
-              <li>Tu passes de quelqu'un qu'on oublie à quelqu'un qu'on remarque</li>
-              <li>Ton image devient cohérente avec qui tu es vraiment</li>
-            </ul>
-          </div>
-          <div class="pack-cat">
-            <div class="cat-label">Routine & énergie personnelle</div>
-            <ul class="cat-list">
-              <li>Tu construis une routine qui te rend stable — pas juste motivé par moments</li>
-              <li>Tu travailles ton énergie : ce que les gens ressentent quand tu entres quelque part</li>
-              <li>Tu élimines les habitudes qui te sabotent sans t'en rendre compte</li>
-              <li>Tu deviens constant — et la constance, ça attire</li>
-            </ul>
-          </div>
-          <div class="pack-cat">
-            <div class="cat-label">Communication & séduction</div>
-            <ul class="cat-list">
-              <li>Tu abordes quelqu'un naturellement — sans paraître forcé ni désespéré</li>
-              <li>Tu crées de l'attraction sans jouer un rôle</li>
-              <li>Tu lis les signaux faibles en temps réel — intérêt, désintérêt, jeu</li>
-              <li>Ton profil de rencontres arrête d'être invisible</li>
-            </ul>
-          </div>
-          <div class="pack-cat">
-            <div class="cat-label">Accompagnement</div>
-            <ul class="cat-list">
-              <li>Sessions 1:1 sur 2 semaines</li>
-              <li>Exercices concrets à appliquer entre les sessions</li>
-              <li>Suivi continu — tu n'es jamais seul face à une situation</li>
-              <li>Plan d'action calibré sur ton objectif réel</li>
-              <li><span class="terrain-badge">✦ 2 sorties terrain ensemble</span></li>
-            </ul>
-          </div>
-        </div>
-        <a href="mailto:statevocontact@gmail.com" class="pack-cta">Commencer — 300€</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- BIO -->
-<section class="bio" id="bio">
-  <div class="bio-inner">
-    <div class="bio-img reveal">
-      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80" alt="Coach Statevo">
-      <div class="bio-badge">
-        <strong>Statevo</strong>
-        <span>Coaching sentimental</span>
-      </div>
-    </div>
-    <div class="bio-text reveal">
-      <span class="section-tag">À propos</span>
-      <h2 class="section-title">Je ne te donne pas<br>des conseils. Je te donne<br>une <em>nouvelle façon de voir.</em></h2>
-      <p>J'ai passé des années à observer ce que les gens ratent dans leurs interactions. Pas par manque d'intelligence — par manque de lecture. On nous apprend à parler, jamais à écouter ce qui n'est pas dit.</p>
-      <p>Mon approche c'est simple : on part de là où tu en es. Tu partages ce que tu juges utile. On travaille sur ce qui te bloque vraiment — le regard que tu portes sur toi, l'image que tu projettes, ta façon de décoder les situations.</p>
-      <p>Que tu cherches une relation sérieuse ou simplement à mieux rencontrer des gens, l'accompagnement s'adapte entièrement à ton objectif. Pas de méthode universelle. Du sur-mesure.</p>
-      <div class="bio-stats">
-        <div class="stat">
-          <span class="stat-num">2</span>
-          <span class="stat-label">Semaines</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num">100%</span>
-          <span class="stat-label">Sur-mesure</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num">7j/7</span>
-          <span class="stat-label">Disponible</span>
-        </div>
+      <div class="pack-card featured">
+        <div class="pack-badge" data-fr="Premium" data-en="Premium">Premium</div>
+        <p class="pack-name">Monaco</p>
+        <p class="pack-price">300€</p>
+        <p class="pack-duration" data-fr="/ 2 semaines — contenu complet + terrain" data-en="/ 2 weeks — full content + field sessions">/ 2 semaines — contenu complet + terrain</p>
+        <p class="pack-desc" data-fr="Tu vas acquérir une compréhension dimensionnelle du langage — les mots, le timing, le ton, le non-dit, l'énergie derrière chaque interaction. Une façon de voir le monde que tu ne pourras plus désapprendre." data-en="You'll gain a multi-dimensional understanding of social dynamics — words, timing, tone, the unspoken, the energy behind every interaction. A way of seeing the world you can never un-learn.">Tu vas acquérir une compréhension dimensionnelle du langage — les mots, le timing, le ton, le non-dit, l'énergie derrière chaque interaction. Une façon de voir le monde que tu ne pourras plus désapprendre.</p>
+        <ul class="pack-features">
+          <p class="pack-section-title" data-fr="Tout ce qu'inclut LUNETTE +" data-en="Everything in LUNETTE +">Tout ce qu'inclut LUNETTE +</p>
+          <li data-fr="Style & image personnelle selon ton physique réel" data-en="Style & personal image tailored to your physique">Style & image personnelle selon ton physique réel</li>
+          <li data-fr="Routine & énergie — ce que les gens ressentent avant que tu parles" data-en="Routine & energy — what people feel before you speak">Routine & énergie — ce que les gens ressentent avant que tu parles</li>
+          <li data-fr="Communication & séduction en situation réelle" data-en="Communication & attraction in real situations">Communication & séduction en situation réelle</li>
+          <p class="pack-section-title" data-fr="Exclusif Monaco" data-en="Monaco exclusive">Exclusif Monaco</p>
+          <li class="highlight" data-fr="✦ 2 sorties terrain ensemble" data-en="✦ 2 real-world field sessions together">✦ 2 sorties terrain ensemble</li>
+          <li class="highlight" data-fr="✦ Feedback en temps réel en situation" data-en="✦ Real-time feedback in live situations">✦ Feedback en temps réel en situation</li>
+        </ul>
+        <a href="mailto:statevocontact@gmail.com" class="btn-primary" style="display:inline-block;font-size:0.78rem;" data-fr="Commencer — 300€" data-en="Start — €300">Commencer — 300€</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TEMOIGNAGES -->
-<section class="temoignages" id="temoignages">
-  <div class="temoignages-inner">
-    <div class="temoignages-header reveal">
-      <span class="section-tag">Témoignages</span>
-      <h2 class="section-title">Ils ont changé<br>leur <em>réalité</em></h2>
+<!-- ABOUT -->
+<section id="bio">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <p class="section-label" data-fr="À propos" data-en="About">À propos</p>
+        <h2 class="section-title" data-fr="Je ne te donne pas des conseils. Je te donne une <em>nouvelle façon de voir.</em>" data-en="I don't give you advice. I give you a <em>completely new perspective.</em>">Je ne te donne pas des conseils. Je te donne une <em>nouvelle façon de voir.</em></h2>
+        <p class="about-text" data-fr="J'ai passé des années à observer ce que les gens ratent dans leurs interactions. Pas par manque d'intelligence — par manque de lecture. On nous apprend à parler, jamais à écouter ce qui n'est pas dit." data-en="I spent years observing what people miss in their interactions. Not from a lack of intelligence — but from a lack of reading. We're taught to speak. Never to listen to what isn't said.">J'ai passé des années à observer ce que les gens ratent dans leurs interactions. Pas par manque d'intelligence — par manque de lecture. On nous apprend à parler, jamais à écouter ce qui n'est pas dit.</p>
+        <p class="about-text" data-fr="Mon approche : on part de là où tu en es. Tu partages ce que tu juges utile. On travaille sur ce qui te bloque vraiment — le regard que tu portes sur toi, l'image que tu projettes, ta façon de décoder les situations." data-en="My approach: we start from where you are. You share what feels useful. We work on what's actually blocking you — how you see yourself, the image you project, how you read situations.">Mon approche : on part de là où tu en es. Tu partages ce que tu juges utile. On travaille sur ce qui te bloque vraiment — le regard que tu portes sur toi, l'image que tu projettes, ta façon de décoder les situations.</p>
+        <p class="about-text" data-fr="Que tu cherches une relation sérieuse ou simplement à mieux rencontrer des gens, l'accompagnement s'adapte entièrement à ton objectif. Pas de méthode universelle. Du sur-mesure." data-en="Whether you're looking for a serious relationship or simply to connect with people better, the coaching adapts entirely to your goal. No universal method. Fully tailored.">Que tu cherches une relation sérieuse ou simplement à mieux rencontrer des gens, l'accompagnement s'adapte entièrement à ton objectif. Pas de méthode universelle. Du sur-mesure.</p>
+        <div class="about-chips">
+          <span class="chip" data-fr="2 Semaines" data-en="2 Weeks">2 Semaines</span>
+          <span class="chip" data-fr="100% Sur-mesure" data-en="100% Tailored">100% Sur-mesure</span>
+          <span class="chip" data-fr="7j/7 Disponible" data-en="7 Days / Week">7j/7 Disponible</span>
+        </div>
+      </div>
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80" alt="Statevo Coach" loading="lazy">
+      </div>
     </div>
-    <div class="temoignages-grid">
-      <div class="temoignage reveal">
-        <div class="stars">★★★★★</div>
-        <div class="temoignage-text">"Je pensais que le problème venait des autres. En 2 semaines j'ai compris que je ne savais tout simplement pas lire les situations. Maintenant je vois tout différemment."</div>
-        <div class="temoignage-author"><strong>— Karim M.</strong> Pack MONACO</div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="temoignages">
+  <div class="container">
+    <p class="section-label" data-fr="Témoignages" data-en="Results">Témoignages</p>
+    <h2 class="section-title" data-fr="Ils ont changé leur <em>réalité</em>" data-en="They changed their <em>reality</em>">Ils ont changé leur <em>réalité</em></h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <p class="stars">★★★★★</p>
+        <p class="testi-text" data-fr='"Je pensais que le problème venait des autres. En 2 semaines j\'ai compris que je ne savais tout simplement pas lire les situations. Maintenant je vois tout différemment."' data-en='"I thought the problem was with other people. In 2 weeks I understood I simply didn\'t know how to read situations. Now I see everything differently."'>"Je pensais que le problème venait des autres. En 2 semaines j'ai compris que je ne savais tout simplement pas lire les situations. Maintenant je vois tout différemment."</p>
+        <p class="testi-author">— Karim M.</p>
+        <p class="testi-pack">Pack MONACO</p>
       </div>
-      <div class="temoignage reveal">
-        <div class="stars">★★★★★</div>
-        <div class="temoignage-text">"Ce qui m'a le plus marqué c'est le travail sur l'image. Je m'habillais sans réfléchir à ce que ça disait de moi. Ça a tout changé dans la façon dont les gens me perçoivent."</div>
-        <div class="temoignage-author"><strong>— Thomas R.</strong> Pack LUNETTE</div>
+      <div class="testi-card">
+        <p class="stars">★★★★★</p>
+        <p class="testi-text" data-fr='"Ce qui m\'a le plus marqué c\'est le travail sur l\'image. Je m\'habillais sans réfléchir à ce que ça disait de moi. Ça a tout changé dans la façon dont les gens me perçoivent."' data-en='"What hit me most was the image work. I was dressing without thinking about what it said about me. It completely changed how people perceive me."'>"Ce qui m'a le plus marqué c'est le travail sur l'image. Je m'habillais sans réfléchir à ce que ça disait de moi. Ça a tout changé dans la façon dont les gens me perçoivent."</p>
+        <p class="testi-author">— Thomas R.</p>
+        <p class="testi-pack">Pack LUNETTE</p>
       </div>
-      <div class="temoignage reveal">
-        <div class="stars">★★★★★</div>
-        <div class="temoignage-text">"La sortie terrain m'a permis de voir en direct ce que je faisais mal. En situation réelle, ça va 10 fois plus vite qu'en théorie. Indispensable."</div>
-        <div class="temoignage-author"><strong>— Julien D.</strong> Pack MONACO</div>
+      <div class="testi-card">
+        <p class="stars">★★★★★</p>
+        <p class="testi-text" data-fr='"La sortie terrain m\'a permis de voir en direct ce que je faisais mal. En situation réelle, ça va 10 fois plus vite qu\'en théorie. Indispensable."' data-en='"The field session let me see in real-time what I was doing wrong. In a real situation, progress happens 10x faster than in theory. Essential."'>"La sortie terrain m'a permis de voir en direct ce que je faisais mal. En situation réelle, ça va 10 fois plus vite qu'en théorie. Indispensable."</p>
+        <p class="testi-author">— Julien D.</p>
+        <p class="testi-pack">Pack MONACO</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="faq" id="faq">
-  <div class="faq-inner">
-    <div class="faq-header reveal">
-      <span class="section-tag">FAQ</span>
-      <h2 class="section-title">Questions <em>fréquentes</em></h2>
-    </div>
-    <div class="reveal">
+<section id="faq">
+  <div class="container">
+    <p class="section-label" data-fr="FAQ" data-en="FAQ">FAQ</p>
+    <h2 class="section-title" data-fr="Questions <em>fréquentes</em>" data-en="Frequently asked <em>questions</em>">Questions <em>fréquentes</em></h2>
+    <div class="faq-list">
+
       <div class="faq-item">
-        <div class="faq-q">Comment se déroule la première session ? <span class="faq-icon">+</span></div>
-        <div class="faq-a">On commence par un appel découverte gratuit pour analyser ta situation, comprendre ton objectif — relation sérieuse ou rencontres — et définir comment adapter l'accompagnement. Sans engagement.</div>
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-fr="Comment se déroule la première session ?" data-en="How does the first session work?">Comment se déroule la première session ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p class="faq-a-inner" data-fr="On commence par un appel découverte gratuit pour analyser ta situation, comprendre ton objectif — relation sérieuse ou rencontres — et définir comment adapter l'accompagnement. Sans engagement." data-en="We start with a free discovery call to analyze your situation, understand your goal — serious relationship or dating — and define how to tailor the coaching. No commitment.">On commence par un appel découverte gratuit pour analyser ta situation, comprendre ton objectif — relation sérieuse ou rencontres — et définir comment adapter l'accompagnement. Sans engagement.</p>
+        </div>
       </div>
+
       <div class="faq-item">
-        <div class="faq-q">Les deux packs ont-ils vraiment le même contenu ? <span class="faq-icon">+</span></div>
-        <div class="faq-a">Oui. Les deux couvrent exactement les mêmes thématiques : langage caché, travail sur soi, style, routine, communication. La seule différence ce sont les 2 sorties terrain incluses dans le pack MONACO.</div>
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-fr="Les deux packs ont-ils vraiment le même contenu ?" data-en="Do both packages really have the same content?">Les deux packs ont-ils vraiment le même contenu ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p class="faq-a-inner" data-fr="Oui. Les deux couvrent exactement les mêmes thématiques : langage caché, travail sur soi, style, routine, communication. La seule différence ce sont les 2 sorties terrain incluses dans le pack MONACO." data-en="Yes. Both cover exactly the same topics: hidden language, self-work, style, routine, communication. The only difference is the 2 field sessions included in MONACO.">Oui. Les deux couvrent exactement les mêmes thématiques : langage caché, travail sur soi, style, routine, communication. La seule différence ce sont les 2 sorties terrain incluses dans le pack MONACO.</p>
+        </div>
       </div>
+
       <div class="faq-item">
-        <div class="faq-q">C'est quoi concrètement une "sortie terrain" ? <span class="faq-icon">+</span></div>
-        <div class="faq-a">On sort ensemble dans un contexte social réel — café, soirée, lieu public. Tu appliques ce qu'on a travaillé, je t'observe et je te donne un feedback en temps réel. C'est ce qui fait la différence entre comprendre et vraiment intégrer.</div>
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-fr="C'est quoi concrètement une 'sortie terrain' ?" data-en="What exactly is a 'field session'?">C'est quoi concrètement une 'sortie terrain' ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p class="faq-a-inner" data-fr="On sort ensemble dans un contexte social réel — café, soirée, lieu public. Tu appliques ce qu'on a travaillé, je t'observe et je te donne un feedback en temps réel. C'est ce qui fait la différence entre comprendre et vraiment intégrer." data-en="We go out together in a real social context — a café, a party, a public venue. You apply what we've worked on, I observe and give you real-time feedback. That's the difference between understanding something and truly owning it.">On sort ensemble dans un contexte social réel — café, soirée, lieu public. Tu appliques ce qu'on a travaillé, je t'observe et je te donne un feedback en temps réel. C'est ce qui fait la différence entre comprendre et vraiment intégrer.</p>
+        </div>
       </div>
+
       <div class="faq-item">
-        <div class="faq-q">Est-ce que ça marche si je cherche une relation sérieuse ? <span class="faq-icon">+</span></div>
-        <div class="faq-a">Oui. L'accompagnement s'adapte complètement à ton objectif. Que tu veuilles une relation stable et durable ou juste apprendre à mieux rencontrer des gens, on calibre tout en fonction de ce que toi tu veux vraiment.</div>
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-fr="Est-ce que ça marche si je cherche une relation sérieuse ?" data-en="Does this work if I'm looking for a serious relationship?">Est-ce que ça marche si je cherche une relation sérieuse ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p class="faq-a-inner" data-fr="Oui. L'accompagnement s'adapte complètement à ton objectif. Que tu veuilles une relation stable et durable ou juste apprendre à mieux rencontrer des gens, on calibre tout en fonction de ce que toi tu veux vraiment." data-en="Yes. The coaching adapts completely to your goal. Whether you want a stable long-term relationship or just to connect with people better, everything is calibrated to what you actually want.">Oui. L'accompagnement s'adapte complètement à ton objectif. Que tu veuilles une relation stable et durable ou juste apprendre à mieux rencontrer des gens, on calibre tout en fonction de ce que toi tu veux vraiment.</p>
+        </div>
       </div>
+
       <div class="faq-item">
-        <div class="faq-q">Les sessions sont en visio ou en présentiel ? <span class="faq-icon">+</span></div>
-        <div class="faq-a">Les sessions 1:1 se font en visio (Zoom ou Google Meet). Les sorties terrain du pack MONACO sont en présentiel. Le suivi entre les sessions se fait par message, disponible 7j/7.</div>
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-fr="Les sessions sont en visio ou en présentiel ?" data-en="Are sessions online or in-person?">Les sessions sont en visio ou en présentiel ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p class="faq-a-inner" data-fr="Les sessions 1:1 se font en visio (Zoom ou Google Meet). Les sorties terrain du pack MONACO sont en présentiel. Le suivi entre les sessions se fait par message, disponible 7j/7." data-en="The 1:1 sessions are online (Zoom or Google Meet). The MONACO field sessions are in person. Between-session support is via message, available 7 days a week.">Les sessions 1:1 se font en visio (Zoom ou Google Meet). Les sorties terrain du pack MONACO sont en présentiel. Le suivi entre les sessions se fait par message, disponible 7j/7.</p>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- CTA FINAL -->
-<section class="cta-section" id="contact">
-  <div class="cta-bg-text">STATEVO</div>
-  <span class="section-tag">Prêt ?</span>
-  <h2 class="section-title">Le moment de<br>changer, <em>c'est maintenant.</em></h2>
-  <p>Envoie un message. On discute de ta situation, sans engagement. En 15 minutes tu sais si cet accompagnement est fait pour toi.</p>
-  <a href="mailto:statevocontact@gmail.com" class="cta-btn-main">Prendre contact</a>
+<!-- CTA FINALE -->
+<section id="contact" class="cta-bg">
+  <div class="container" style="max-width:720px; text-align:center;">
+    <p class="section-label" style="justify-content:center;" data-fr="Prêt ?" data-en="Ready?">Prêt ?</p>
+    <h2 class="cta-title" data-fr="Le moment de changer, <em>c'est maintenant.</em>" data-en="The moment to change <em>is now.</em>">Le moment de changer, <em>c'est maintenant.</em></h2>
+    <p class="cta-sub" data-fr="Envoie un message. On discute de ta situation, sans engagement. En 15 minutes tu sais si cet accompagnement est fait pour toi." data-en="Send a message. We'll talk about your situation, no commitment. In 15 minutes you'll know if this is right for you.">Envoie un message. On discute de ta situation, sans engagement. En 15 minutes tu sais si cet accompagnement est fait pour toi.</p>
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+      <a href="mailto:statevocontact@gmail.com" class="btn-primary" data-fr="Prendre contact" data-en="Get in touch">Prendre contact</a>
+      <a href="https://wa.me/33641549178" class="btn-ghost" target="_blank" rel="noopener">WhatsApp →</a>
+    </div>
+  </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <span class="footer-logo">State<span>vo</span></span>
-  <p>© 2024–2026 Statevo. Coaching sentimental & développement personnel.</p>
-  <a href="https://wa.me/33641549178" class="footer-wa">WhatsApp →</a>
+  <a href="#" class="footer-logo">Statevo</a>
+  <p class="footer-copy" data-fr="© 2024–2026 Statevo. Social Dynamics & Dating Coaching." data-en="© 2024–2026 Statevo. Social Dynamics & Dating Coaching.">© 2024–2026 Statevo. Social Dynamics & Dating Coaching.</p>
+  <div class="footer-links">
+    <a href="mailto:statevocontact@gmail.com">Email</a>
+    <a href="https://wa.me/33641549178" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
 </footer>
 
 <script>
-  const reveals = document.querySelectorAll('.reveal');
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 90);
-        obs.unobserve(e.target);
+  // ── Language toggle ──
+  let currentLang = 'fr';
+
+  function setLang(lang) {
+    currentLang = lang;
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+      const val = el.getAttribute('data-' + lang);
+      if (el.tagName === 'META') {
+        el.setAttribute('content', val);
+      } else {
+        el.innerHTML = val;
       }
     });
-  }, { threshold: 0.08 });
-  reveals.forEach(el => obs.observe(el));
 
-  document.querySelectorAll('.faq-item').forEach(item => {
-    item.querySelector('.faq-q').addEventListener('click', () => {
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang);
+    });
+
+    // Update page title & meta description
+    if (lang === 'en') {
+      document.title = 'Statevo — Social Dynamics & Dating Coaching';
+      document.querySelector('meta[name="description"]').setAttribute('content',
+        'Statevo — Social Dynamics & Dating Coaching. Decode what others never see. Transform your relationships in 2 weeks.');
+    } else {
+      document.title = 'Statevo — Social Dynamics & Dating Coaching';
+      document.querySelector('meta[name="description"]').setAttribute('content',
+        'Statevo — Coaching en dynamiques sociales et séduction. Comprends ce que les autres ne voient jamais. Transforme tes relations en 2 semaines.');
+    }
+  }
+
+  // ── FAQ accordion ──
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const answer = item.querySelector('.faq-a');
+    const isOpen = item.classList.contains('open');
+
+    document.querySelectorAll('.faq-item.open').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-a').style.maxHeight = '0';
+    });
+
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  }
+
+  // ── Smooth scroll offset for fixed nav ──
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const offset = target.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top: offset, behavior: 'smooth' });
+      }
     });
   });
 </script>
