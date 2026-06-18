@@ -3,1618 +3,1010 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Statevo — Social Dynamics & Dating Coaching</title>
-<meta name="description" content="Statevo — Coaching en dynamiques sociales et séduction. Comprends ce que les autres ne voient jamais. Transforme tes relations en 2 semaines.">
-<meta name="keywords" content="social dynamics coaching, dating coach, seduction coaching, coach séduction, développement personnel, relations amoureuses, attraction, confiance en soi">
-<meta name="author" content="Statevo">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://statevo7.github.io/">
-<meta name="theme-color" content="#060612">
-
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://statevo7.github.io/">
-<meta property="og:title" content="Statevo — Social Dynamics & Dating Coaching">
-<meta property="og:description" content="Decode what others miss. Transform your relationships in 2 weeks.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=1200&q=80">
-<meta property="og:locale" content="fr_FR">
-<meta property="og:locale:alternate" content="en_GB">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Statevo — Social Dynamics & Dating Coaching">
-<meta name="twitter:description" content="Decode what others miss. Transform your relationships in 2 weeks.">
-<meta name="twitter:image" content="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=1200&q=80">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Statevo",
-  "description": "Social Dynamics & Dating Coaching — Decode hidden communication, build confidence, transform your relationships.",
-  "url": "https://statevo7.github.io/",
-  "telephone": "+33641549178",
-  "email": "statevocontact@gmail.com",
-  "priceRange": "€€",
-  "serviceType": ["Dating Coaching", "Social Dynamics", "Relationship Coaching", "Personal Development"],
-  "areaServed": ["FR", "GB", "BE", "CH", "CA"],
-  "offers": [
-    {"@type": "Offer","name": "Pack LUNETTE","price": "79","priceCurrency": "EUR","description": "2-week full coaching program — autonomous"},
-    {"@type": "Offer","name": "Pack MONACO","price": "300","priceCurrency": "EUR","description": "2-week full coaching program + 2 field sessions"}
-  ]
-}
-</script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-
+<title>Statevo — Stratégie d'Entreprise</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
-:root {
-  --bg: #060612;
-  --bg2: #08081a;
-  --bg3: #0d0d22;
-  --blue: #4f8ef7;
-  --blue2: #6fa3ff;
-  --violet: #9b6dff;
-  --rose: #f472b6;
-  --rose2: #e879a8;
-  --cyan: #22d3ee;
-  --text: #f0eeff;
-  --text2: #c4bfdf;
-  --muted: #7a7599;
-  --glass: rgba(255,255,255,0.04);
-  --glass2: rgba(255,255,255,0.07);
-  --border: rgba(255,255,255,0.07);
-  --border2: rgba(255,255,255,0.12);
-  --glow-blue: rgba(79,142,247,0.18);
-  --glow-violet: rgba(155,109,255,0.18);
-  --glow-rose: rgba(244,114,182,0.15);
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'Outfit', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  font-size: 15px;
-  line-height: 1.7;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* ── BACKGROUND HALO LAYER ── */
-.bg-halos {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-.halo {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.55;
-}
-.halo-1 {
-  width: 700px; height: 700px;
-  top: -200px; left: -150px;
-  background: radial-gradient(circle, rgba(79,142,247,0.22) 0%, transparent 70%);
-  animation: halo-drift1 18s ease-in-out infinite alternate;
-}
-.halo-2 {
-  width: 600px; height: 600px;
-  top: 30%; right: -100px;
-  background: radial-gradient(circle, rgba(155,109,255,0.2) 0%, transparent 70%);
-  animation: halo-drift2 22s ease-in-out infinite alternate;
-}
-.halo-3 {
-  width: 500px; height: 500px;
-  bottom: 10%; left: 20%;
-  background: radial-gradient(circle, rgba(244,114,182,0.14) 0%, transparent 70%);
-  animation: halo-drift3 26s ease-in-out infinite alternate;
-}
-@keyframes halo-drift1 { from { transform: translate(0,0); } to { transform: translate(60px, 80px); } }
-@keyframes halo-drift2 { from { transform: translate(0,0); } to { transform: translate(-40px, 60px); } }
-@keyframes halo-drift3 { from { transform: translate(0,0); } to { transform: translate(50px, -50px); } }
-
-/* ── NOISE OVERLAY ── */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  background-size: 200px 200px;
-}
-
-/* ── NAV ── */
-nav {
-  position: fixed;
-  top: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 200;
-  width: calc(100% - 48px);
-  max-width: 1100px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.7rem 1.4rem;
-  background: rgba(8,8,26,0.6);
-  backdrop-filter: blur(24px) saturate(1.5);
-  -webkit-backdrop-filter: blur(24px) saturate(1.5);
-  border: 1px solid var(--border2);
-  border-radius: 16px;
-  transition: all 0.3s;
-}
-
-nav.scrolled {
-  background: rgba(8,8,26,0.82);
-  box-shadow: 0 8px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.06);
-}
-
-.nav-logo {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 800;
-  font-size: 1.05rem;
-  letter-spacing: 0.1em;
-  color: var(--text);
-  text-decoration: none;
-  text-transform: uppercase;
-  background: linear-gradient(135deg, #fff 0%, var(--blue2) 50%, var(--violet) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 1.8rem;
-  list-style: none;
-}
-
-.nav-links a {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--text); }
-
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.lang-toggle {
-  display: flex;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 3px;
-  gap: 2px;
-}
-.lang-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-family: 'Outfit', sans-serif;
-  font-weight: 600;
-  font-size: 0.65rem;
-  letter-spacing: 0.06em;
-  color: var(--muted);
-  padding: 3px 9px;
-  border-radius: 16px;
-  transition: all 0.2s;
-}
-.lang-btn.active {
-  background: linear-gradient(135deg, var(--blue), var(--violet));
-  color: #fff;
-}
-
-.btn-cta {
-  background: linear-gradient(135deg, var(--blue), var(--violet));
-  color: #fff;
-  font-family: 'Outfit', sans-serif;
-  font-weight: 600;
-  font-size: 0.72rem;
-  letter-spacing: 0.05em;
-  text-decoration: none;
-  padding: 0.5rem 1.1rem;
-  border-radius: 10px;
-  transition: all 0.25s;
-  box-shadow: 0 0 16px rgba(79,142,247,0.3);
-  position: relative;
-  overflow: hidden;
-}
-.btn-cta::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, var(--violet), var(--rose));
-  opacity: 0;
-  transition: opacity 0.25s;
-}
-.btn-cta:hover::before { opacity: 1; }
-.btn-cta:hover { transform: translateY(-1px); box-shadow: 0 0 24px rgba(155,109,255,0.4); }
-.btn-cta span { position: relative; z-index: 1; }
-
-/* Hamburger */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 4px;
-  cursor: pointer;
-  padding: 6px;
-  border: none;
-  background: none;
-}
-.hamburger span {
-  width: 20px; height: 1.5px;
-  background: var(--text2);
-  border-radius: 2px;
-  transition: all 0.3s;
-  display: block;
-}
-.hamburger.open span:nth-child(1) { transform: translateY(5.5px) rotate(45deg); }
-.hamburger.open span:nth-child(2) { opacity: 0; }
-.hamburger.open span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
-
-.mobile-menu {
-  display: none;
-  position: fixed;
-  top: 80px; left: 16px; right: 16px;
-  background: rgba(8,8,26,0.95);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid var(--border2);
-  border-radius: 16px;
-  padding: 1.25rem;
-  z-index: 199;
-  flex-direction: column;
-  gap: 0.15rem;
-}
-.mobile-menu.open { display: flex; }
-.mobile-menu a {
-  color: var(--text2);
-  text-decoration: none;
-  font-size: 0.88rem;
-  font-weight: 500;
-  padding: 0.75rem 1rem;
-  border-radius: 10px;
-  transition: all 0.2s;
-}
-.mobile-menu a:hover { background: var(--glass2); color: var(--text); }
-
-/* ── HERO ── */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 7rem 2rem 4rem;
-  position: relative;
-  z-index: 2;
-}
-
-.hero-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  background: rgba(79,142,247,0.1);
-  border: 1px solid rgba(79,142,247,0.25);
-  border-radius: 100px;
-  padding: 0.3rem 0.9rem;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--blue2);
-  margin-bottom: 1.6rem;
-}
-.hero-eyebrow::before {
-  content: '';
-  width: 6px; height: 6px;
-  background: var(--blue);
-  border-radius: 50%;
-  box-shadow: 0 0 8px var(--blue);
-  animation: pulse-dot 2s ease-in-out infinite;
-}
-@keyframes pulse-dot {
-  0%,100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.7); }
-}
-
-.hero h1 {
-  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
-  font-weight: 800;
-  line-height: 1.12;
-  letter-spacing: -0.025em;
-  margin-bottom: 1.4rem;
-  color: var(--text);
-}
-.hero h1 .serif {
-  font-family: 'Instrument Serif', serif;
-  font-style: italic;
-  font-weight: 400;
-  background: linear-gradient(135deg, var(--blue2), var(--violet), var(--rose));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero-quote-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: var(--glass);
-  border: 1px solid var(--border);
-  border-left: 2px solid var(--violet);
-  border-radius: 8px;
-  padding: 0.7rem 1rem;
-  margin-bottom: 1.6rem;
-  font-size: 0.8rem;
-  color: var(--text2);
-  font-style: italic;
-}
-
-.hero-sub {
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.75;
-  margin-bottom: 2.2rem;
-  font-weight: 400;
-  max-width: 480px;
-}
-
-.hero-ctas { display: flex; gap: 0.8rem; flex-wrap: wrap; }
-
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: linear-gradient(135deg, var(--blue), var(--violet));
-  color: #fff;
-  font-family: 'Outfit', sans-serif;
-  font-weight: 600;
-  font-size: 0.8rem;
-  letter-spacing: 0.04em;
-  text-decoration: none;
-  padding: 0.8rem 1.6rem;
-  border-radius: 12px;
-  transition: all 0.25s;
-  box-shadow: 0 0 24px rgba(79,142,247,0.3), inset 0 1px 0 rgba(255,255,255,0.15);
-  position: relative;
-  overflow: hidden;
-}
-.btn-primary::before {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(135deg, var(--violet), var(--rose));
-  opacity: 0; transition: opacity 0.25s;
-}
-.btn-primary:hover::before { opacity: 1; }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(155,109,255,0.45); }
-.btn-primary span { position: relative; z-index: 1; }
-
-.btn-ghost {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  background: var(--glass);
-  color: var(--text2);
-  font-family: 'Outfit', sans-serif;
-  font-weight: 500;
-  font-size: 0.8rem;
-  letter-spacing: 0.04em;
-  text-decoration: none;
-  padding: 0.8rem 1.6rem;
-  border: 1px solid var(--border2);
-  border-radius: 12px;
-  backdrop-filter: blur(8px);
-  transition: all 0.25s;
-}
-.btn-ghost:hover { border-color: var(--violet); color: var(--text); background: rgba(155,109,255,0.08); }
-
-/* Hero image */
-.hero-image {
-  position: relative;
-}
-.hero-img-wrap {
-  position: relative;
-  border-radius: 24px;
-  overflow: hidden;
-  border: 1px solid var(--border2);
-  box-shadow: 0 24px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04);
-}
-.hero-img-wrap img {
-  width: 100%; height: 500px;
-  object-fit: cover; object-position: center top;
-  filter: saturate(0.9) contrast(1.05);
-  display: block;
-  transition: transform 0.6s ease;
-}
-.hero-img-wrap:hover img { transform: scale(1.04); }
-.hero-img-wrap::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(180deg, transparent 50%, rgba(6,6,18,0.7) 100%);
-  pointer-events: none;
-}
-
-/* Floating tag over image */
-.hero-float-tag {
-  position: absolute;
-  bottom: 1.5rem; left: 1.5rem;
-  background: rgba(8,8,26,0.75);
-  backdrop-filter: blur(16px);
-  border: 1px solid var(--border2);
-  border-radius: 12px;
-  padding: 0.75rem 1rem;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-.float-dot {
-  width: 8px; height: 8px;
-  background: var(--blue);
-  border-radius: 50%;
-  box-shadow: 0 0 8px var(--blue);
-  flex-shrink: 0;
-  animation: pulse-dot 2s ease-in-out infinite;
-}
-.float-text { font-size: 0.75rem; font-weight: 500; color: var(--text2); }
-.float-text strong { color: var(--text); display: block; font-size: 0.72rem; }
-
-/* ── SCROLL REVEAL ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: none;
-}
-
-/* ── SECTION BASE ── */
-section { padding: 6rem 2rem; position: relative; z-index: 2; }
-
-.container { max-width: 1100px; margin: 0 auto; }
-
-.section-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--violet);
-  margin-bottom: 1rem;
-}
-.section-label::before {
-  content: '';
-  width: 20px; height: 1px;
-  background: linear-gradient(90deg, var(--violet), transparent);
-}
-
-.section-title {
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.022em;
-  margin-bottom: 1rem;
-}
-.section-title .serif {
-  font-family: 'Instrument Serif', serif;
-  font-style: italic;
-  font-weight: 400;
-  background: linear-gradient(135deg, var(--blue2), var(--violet));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* ── PROMISE ── */
-#promise { background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%); }
-
-.promise-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  align-items: center;
-}
-
-.promise-img-wrap {
-  border-radius: 24px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  position: relative;
-  box-shadow: 0 24px 60px rgba(0,0,0,0.4);
-}
-.promise-img-wrap img {
-  width: 100%; height: 460px;
-  object-fit: cover; object-position: center top;
-  filter: saturate(0.85) contrast(1.06);
-  display: block;
-  transition: transform 0.6s ease;
-}
-.promise-img-wrap:hover img { transform: scale(1.04); }
-
-.promise-quote-box {
-  background: var(--glass);
-  border: 1px solid var(--border);
-  border-left: 2px solid var(--violet);
-  border-radius: 12px;
-  padding: 1.1rem 1.25rem;
-  margin: 1.8rem 0;
-  font-size: 0.88rem;
-  font-style: italic;
-  color: var(--text2);
-  line-height: 1.7;
-  backdrop-filter: blur(8px);
-}
-
-.promise-text {
-  color: var(--muted);
-  font-size: 0.9rem;
-  line-height: 1.8;
-  margin-bottom: 1.2rem;
-}
-
-.stats-row {
-  display: flex;
-  gap: 2rem;
-  margin-top: 2.2rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--border);
-}
-.stat-num {
-  font-size: 2rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, var(--blue2), var(--violet));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  display: block;
-  line-height: 1;
-  margin-bottom: 0.25rem;
-}
-.stat-lbl {
-  font-size: 0.7rem;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 500;
-}
-
-/* ── PILLARS ── */
-#fondations { background: var(--bg2); }
-
-.pillars-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin-top: 3rem;
-}
-
-.pillar {
-  background: var(--glass);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 2.2rem 1.8rem;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.35s;
-  backdrop-filter: blur(8px);
-}
-.pillar::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--violet), transparent);
-  opacity: 0;
-  transition: opacity 0.35s;
-}
-.pillar:hover { border-color: rgba(155,109,255,0.3); background: rgba(155,109,255,0.05); transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.3), 0 0 32px rgba(155,109,255,0.08); }
-.pillar:hover::before { opacity: 1; }
-
-.pillar-icon {
-  width: 44px; height: 44px;
-  border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 1.2rem;
-  font-size: 1.2rem;
-}
-.pillar-icon.blue { background: rgba(79,142,247,0.12); border: 1px solid rgba(79,142,247,0.2); }
-.pillar-icon.violet { background: rgba(155,109,255,0.12); border: 1px solid rgba(155,109,255,0.2); }
-.pillar-icon.rose { background: rgba(244,114,182,0.12); border: 1px solid rgba(244,114,182,0.2); }
-
-.pillar-num {
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 0.6rem;
-  display: block;
-}
-
-.pillar h3 {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 0.6rem;
-}
-.pillar p {
-  color: var(--muted);
-  font-size: 0.83rem;
-  line-height: 1.7;
-}
-
-/* ── FOR YOU ── */
-#for-you { background: var(--bg); }
-
-.for-you-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3.5rem;
-  align-items: start;
-  margin-top: 3rem;
-}
-
-.for-you-list { display: flex; flex-direction: column; gap: 0.75rem; }
-
-.fyi-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.9rem;
-  background: var(--glass);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 1rem 1.15rem;
-  transition: all 0.25s;
-}
-.fyi-item:hover { border-color: var(--border2); background: var(--glass2); }
-
-.fyi-check {
-  flex-shrink: 0;
-  width: 20px; height: 20px;
-  border-radius: 6px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.65rem;
-  margin-top: 2px;
-}
-.fyi-check.yes { background: rgba(79,142,247,0.15); color: var(--blue2); border: 1px solid rgba(79,142,247,0.25); }
-.fyi-check.no { background: rgba(244,114,182,0.12); color: var(--rose); border: 1px solid rgba(244,114,182,0.2); }
-
-.fyi-item p { font-size: 0.85rem; color: var(--text2); line-height: 1.5; }
-
-.for-you-cta {
-  background: var(--glass);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 2.2rem 2rem;
-  backdrop-filter: blur(8px);
-  position: sticky;
-  top: 100px;
-}
-.for-you-cta h3 {
-  font-size: 1.15rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-.for-you-cta p { color: var(--muted); font-size: 0.85rem; margin-bottom: 1.5rem; line-height: 1.6; }
-
-/* ── PACKS ── */
-#packs { background: var(--bg2); }
-
-.packs-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
-  margin-top: 3rem;
-}
-
-.pack-card {
-  background: var(--glass);
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  padding: 2.2rem 2rem;
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(12px);
-  transition: all 0.3s;
-}
-.pack-card::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
-}
-.pack-card:hover { transform: translateY(-4px); box-shadow: 0 24px 64px rgba(0,0,0,0.4); }
-
-.pack-card.featured {
-  border-color: rgba(155,109,255,0.4);
-  background: linear-gradient(145deg, rgba(155,109,255,0.07) 0%, rgba(79,142,247,0.05) 100%);
-}
-.pack-card.featured::after {
-  background: linear-gradient(90deg, transparent, var(--violet), transparent);
-  opacity: 0.6;
-}
-
-.pack-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  background: linear-gradient(135deg, var(--blue), var(--violet));
-  color: #fff;
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 0.25rem 0.7rem;
-  border-radius: 100px;
-  margin-bottom: 1.2rem;
-}
-.pack-badge::before { content: '✦'; font-size: 0.55rem; }
-
-.pack-name {
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--violet);
-  margin-bottom: 0.5rem;
-}
-
-.pack-price {
-  font-size: 3rem;
-  font-weight: 800;
-  line-height: 1;
-  margin-bottom: 0.2rem;
-  background: linear-gradient(135deg, var(--text), var(--text2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.pack-duration {
-  font-size: 0.78rem;
-  color: var(--muted);
-  margin-bottom: 1.2rem;
-}
-
-.pack-desc {
-  color: var(--muted);
-  font-size: 0.83rem;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border);
-}
-
-.pack-section-title {
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin: 1.1rem 0 0.5rem;
-}
-
-.pack-features { list-style: none; margin-bottom: 1.8rem; }
-.pack-features li {
-  font-size: 0.82rem;
-  color: var(--text2);
-  padding: 0.28rem 0 0.28rem 1.4rem;
-  position: relative;
-}
-.pack-features li::before {
-  content: '→';
-  position: absolute; left: 0;
-  color: var(--blue2);
-  font-size: 0.72rem;
-}
-.pack-features li.highlight { color: var(--violet); font-weight: 600; }
-.pack-features li.highlight::before { color: var(--violet); content: '✦'; }
-
-/* ── ABOUT ── */
-#bio { background: var(--bg); }
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  align-items: center;
-}
-
-.about-img-wrap {
-  border-radius: 24px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  box-shadow: 0 24px 60px rgba(0,0,0,0.4);
-  position: relative;
-}
-.about-img-wrap img {
-  width: 100%; height: 480px;
-  object-fit: cover; object-position: center top;
-  filter: saturate(0.85);
-  display: block;
-  transition: transform 0.6s ease;
-}
-.about-img-wrap:hover img { transform: scale(1.04); }
-
-.about-text { color: var(--muted); font-size: 0.88rem; line-height: 1.8; margin-bottom: 1.2rem; }
-
-.about-chips {
-  display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem;
-}
-.chip {
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border-radius: 100px;
-  padding: 0.28rem 0.8rem;
-}
-.chip.blue { background: rgba(79,142,247,0.1); border: 1px solid rgba(79,142,247,0.25); color: var(--blue2); }
-.chip.violet { background: rgba(155,109,255,0.1); border: 1px solid rgba(155,109,255,0.25); color: var(--violet); }
-.chip.rose { background: rgba(244,114,182,0.1); border: 1px solid rgba(244,114,182,0.22); color: var(--rose); }
-
-/* ── TESTIMONIALS ── */
-#temoignages { background: var(--bg2); }
-
-.testi-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin-top: 3rem;
-}
-
-.testi-card {
-  background: var(--glass);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 1.8rem 1.6rem;
-  backdrop-filter: blur(8px);
-  transition: all 0.3s;
-  position: relative;
-  overflow: hidden;
-}
-.testi-card::before {
-  content: '"';
-  position: absolute;
-  top: -0.5rem; right: 1rem;
-  font-size: 5rem;
-  font-family: 'Instrument Serif', serif;
-  color: rgba(155,109,255,0.1);
-  line-height: 1;
-  pointer-events: none;
-}
-.testi-card:hover { border-color: rgba(155,109,255,0.25); transform: translateY(-3px); box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
-
-.stars {
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  margin-bottom: 0.9rem;
-  background: linear-gradient(135deg, var(--blue2), var(--violet));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.testi-text {
-  color: var(--text2);
-  font-size: 0.83rem;
-  line-height: 1.75;
-  font-style: italic;
-  margin-bottom: 1.2rem;
-}
-.testi-author { font-weight: 700; font-size: 0.78rem; color: var(--text); }
-.testi-pack { font-size: 0.68rem; color: var(--violet); margin-top: 0.2rem; letter-spacing: 0.05em; }
-
-/* ── FAQ ── */
-#faq { background: var(--bg); }
-
-.faq-list { margin-top: 2.5rem; max-width: 760px; display: flex; flex-direction: column; gap: 0.6rem; }
-
-.faq-item {
-  background: var(--glass);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  overflow: hidden;
-  transition: border-color 0.25s;
-}
-.faq-item.open { border-color: rgba(155,109,255,0.3); }
-
-.faq-q {
-  width: 100%;
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.15rem 1.35rem;
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.87rem;
-  font-weight: 600;
-  color: var(--text);
-  text-align: left;
-  gap: 1rem;
-  transition: color 0.2s;
-}
-.faq-q:hover { color: var(--blue2); }
-
-.faq-icon {
-  flex-shrink: 0;
-  width: 24px; height: 24px;
-  border-radius: 8px;
-  background: rgba(155,109,255,0.1);
-  border: 1px solid rgba(155,109,255,0.2);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.75rem;
-  color: var(--violet);
-  transition: transform 0.3s, background 0.3s;
-}
-.faq-item.open .faq-icon {
-  transform: rotate(45deg);
-  background: rgba(155,109,255,0.2);
-}
-
-.faq-a { overflow: hidden; max-height: 0; transition: max-height 0.35s ease; }
-.faq-a-inner {
-  padding: 0 1.35rem 1.2rem;
-  color: var(--muted);
-  font-size: 0.83rem;
-  line-height: 1.75;
-}
-
-/* ── CTA FINAL ── */
-#contact {
-  background: var(--bg2);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-#contact::before {
-  content: '';
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 700px; height: 400px;
-  background: radial-gradient(ellipse, rgba(155,109,255,0.12) 0%, transparent 65%);
-  pointer-events: none;
-}
-
-.cta-title {
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
-  font-weight: 800;
-  line-height: 1.15;
-  margin-bottom: 1rem;
-  letter-spacing: -0.022em;
-}
-
-.cta-sub { color: var(--muted); max-width: 500px; margin: 0 auto 2.5rem; font-size: 0.9rem; line-height: 1.7; }
-
-.cta-badges {
-  display: flex;
-  gap: 0.6rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 2.2rem;
-}
-.cta-badge {
-  font-size: 0.68rem;
-  font-weight: 600;
-  color: var(--muted);
-  border: 1px solid var(--border);
-  border-radius: 100px;
-  padding: 0.3rem 0.8rem;
-}
-
-/* ── FOOTER ── */
-footer {
-  background: var(--bg);
-  border-top: 1px solid var(--border);
-  padding: 1.75rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
-  position: relative;
-  z-index: 2;
-}
-
-.footer-logo {
-  font-weight: 800;
-  font-size: 0.95rem;
-  letter-spacing: 0.1em;
-  color: var(--text);
-  text-decoration: none;
-  text-transform: uppercase;
-  background: linear-gradient(135deg, #fff, var(--blue2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.footer-copy { font-size: 0.72rem; color: var(--muted); }
-
-.footer-links { display: flex; gap: 1.25rem; }
-.footer-links a { font-size: 0.72rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-.footer-links a:hover { color: var(--blue2); }
-
-/* ── WHATSAPP FLOAT ── */
-.wa-float {
-  position: fixed;
-  bottom: 1.75rem;
-  right: 1.75rem;
-  z-index: 300;
-  width: 52px; height: 52px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #25d366, #128c7e);
-  display: flex; align-items: center; justify-content: center;
-  text-decoration: none;
-  box-shadow: 0 4px 24px rgba(37,211,102,0.4);
-  transition: all 0.25s;
-  animation: wa-bounce 3s ease-in-out infinite;
-}
-.wa-float:hover { transform: scale(1.1) translateY(-2px); box-shadow: 0 8px 32px rgba(37,211,102,0.5); }
-.wa-float svg { width: 26px; height: 26px; fill: white; }
-@keyframes wa-bounce {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
-}
-
-/* ── RESPONSIVE ── */
-@media (max-width: 768px) {
-  nav { width: calc(100% - 32px); padding: 0.65rem 1rem; }
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-  .btn-cta { display: none; }
-
-  section { padding: 4rem 1.25rem; }
-  .hero { padding: 5.5rem 1.25rem 3rem; }
-  .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-  .hero-image { order: -1; }
-  .hero-img-wrap img { height: 280px; }
-  .hero h1 { font-size: 2rem; }
-  .hero-sub { max-width: 100%; }
-
-  .promise-grid, .about-grid, .for-you-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .promise-img-wrap img, .about-img-wrap img { height: 280px; }
-  .for-you-cta { position: static; }
-
-  .pillars-grid, .packs-grid, .testi-grid { grid-template-columns: 1fr; }
-  .stats-row { gap: 1.5rem; flex-wrap: wrap; }
-
-  footer { flex-direction: column; text-align: center; }
-  .wa-float { bottom: 1.25rem; right: 1.25rem; }
-}
-
-/* ── GRADIENT DIVIDERS ── */
-.divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border2), transparent);
-  position: relative; z-index: 2;
-}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --white: #ffffff;
+    --off-white: #f9f8f6;
+    --light: #1e1e1c;
+    --mid: #2a2a28;
+    --border: #3a3a38;
+    --text-muted: #aaa8a4;
+    --text-body: #d1cfca;
+    --text-dark: #ecebe7;
+    --gold: #c4a96a;
+    --gold-light: #e8d9b8;
+    --gold-dark: #b89a4a;
+    --shadow-sm: 0 8px 20px rgba(0,0,0,0.3);
+    --shadow-md: 0 12px 30px rgba(0,0,0,0.4);
+    --shadow-lg: 0 25px 40px rgba(0,0,0,0.5);
+    --transition: all 0.3s cubic-bezier(0.2,0.9,0.4,1.1);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text-body);
+    line-height: 1.7;
+    overflow-x: hidden;
+    position: relative;
+    /* Image HD : écran d'ordinateur avec stats (Unsplash) */
+    background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80') no-repeat center center fixed;
+    background-size: cover;
+  }
+
+  /* Overlay sombre pour la lisibilité */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 0;
+  }
+
+  /* Effet de brillance animée sur l’arrière-plan (simule une animation d’écran) */
+  .screen-glint {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 40%, rgba(196,169,106,0.08) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 1;
+    animation: glintMove 12s infinite alternate;
+  }
+
+  @keyframes glintMove {
+    0% { opacity: 0.3; transform: scale(1); }
+    100% { opacity: 0.6; transform: scale(1.1); }
+  }
+
+  /* Grain fin par-dessus */
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  /* Cercles flottants (bokeh) */
+  .bokeh {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .bokeh span {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(196, 169, 106, 0.08);
+    backdrop-filter: blur(15px);
+    animation: float 22s infinite ease-in-out;
+  }
+  @keyframes float {
+    0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.15; }
+    50% { transform: translateY(-60px) translateX(40px) scale(1.2); opacity: 0.3; }
+    100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.15; }
+  }
+
+  /* Contenu principal */
+  .content {
+    position: relative;
+    z-index: 10;
+    background: transparent;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(10, 10, 9, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 6vw;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: var(--transition);
+  }
+  nav.scrolled {
+    height: 60px;
+    background: rgba(10, 10, 9, 0.92);
+    box-shadow: var(--shadow-sm);
+  }
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: var(--transition);
+  }
+  .logo:hover {
+    color: var(--gold-light);
+    letter-spacing: 0.14em;
+  }
+  nav a.cta-nav {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    border: 1px solid var(--gold);
+    padding: 9px 24px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background: transparent;
+  }
+  nav a.cta-nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gold);
+    transition: left 0.3s ease;
+    z-index: -1;
+  }
+  nav a.cta-nav:hover {
+    color: var(--text-dark);
+    border-color: var(--gold);
+  }
+  nav a.cta-nav:hover::before {
+    left: 0;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 6vw 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-inner {
+    max-width: 760px;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-eyebrow {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.3s;
+  }
+  .hero:hover .hero-eyebrow::before {
+    width: 60px;
+  }
+  /* Titre réduit */
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 5vw, 62px);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--white);
+    margin-bottom: 32px;
+    letter-spacing: -0.01em;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+    position: relative;
+    display: inline-block;
+  }
+  .hero h1 em::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: var(--gold-light);
+    opacity: 0.3;
+    z-index: -1;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .btn-primary, .btn-secondary {
+    transition: var(--transition);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--text-dark);
+    padding: 14px 36px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gold-dark);
+    transition: left 0.3s ease;
+    z-index: -1;
+  }
+  .btn-primary:hover::before {
+    left: 0;
+  }
+  .btn-primary:hover {
+    color: var(--white);
+  }
+  .btn-secondary {
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--gold);
+    transition: var(--transition);
+  }
+  .btn-secondary i {
+    transition: transform 0.3s;
+  }
+  .btn-secondary:hover {
+    color: var(--gold-light);
+    border-bottom-color: var(--gold-light);
+    gap: 15px;
+  }
+  .btn-secondary:hover i {
+    transform: translateX(5px);
+  }
+  .hero-photo {
+    position: absolute;
+    right: 6vw;
+    bottom: 10vh;
+    max-width: 220px;
+    transition: var(--transition);
+    animation: fadeInUp 1s ease 0.2s both;
+  }
+  .hero-photo img {
+    width: 100%;
+    border-radius: 30px;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+    filter: brightness(0.9);
+  }
+  .hero-photo img:hover {
+    transform: scale(1.02) rotate(1deg);
+    filter: brightness(1);
+    box-shadow: 0 30px 40px rgba(0,0,0,0.5);
+  }
+
+  /* Sections communes */
+  section {
+    padding: 100px 6vw;
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    margin: 20px 0;
+    border-radius: 0px;
+  }
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.3s;
+  }
+  section:hover .section-label::before {
+    width: 50px;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .section-sub {
+    font-size: 16px;
+    color: var(--text-muted);
+    max-width: 550px;
+    margin-bottom: 60px;
+  }
+
+  /* Packs - identiques à l'original complet */
+  .packs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .pack-card {
+    background: rgba(20, 20, 18, 0.85);
+    backdrop-filter: blur(4px);
+    padding: 44px 32px 40px;
+    border-radius: 20px;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .pack-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .pack-card:hover::before {
+    transform: scaleX(1);
+  }
+  .pack-card:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--gold-light);
+    background: rgba(20, 20, 18, 0.95);
+  }
+  .pack-card.featured {
+    background: rgba(0, 0, 0, 0.8);
+    border-color: var(--gold);
+    transform: scale(1.02);
+  }
+  .pack-card.featured:hover {
+    transform: translateY(-12px) scale(1.02);
+  }
+  .pack-badge {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(196, 169, 106, 0.2);
+    padding: 5px 14px;
+    display: inline-block;
+    margin-bottom: 28px;
+    border-radius: 30px;
+  }
+  .pack-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--white);
+  }
+  .pack-price strong {
+    font-size: 48px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    color: var(--gold);
+  }
+  .pack-price {
+    font-size: 13px;
+    margin-bottom: 32px;
+    color: var(--text-muted);
+  }
+  .pack-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 20px 0;
+  }
+  .pack-category {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 20px 0 8px;
+  }
+  .pack-items {
+    list-style: none;
+    margin-bottom: 20px;
+  }
+  .pack-items li {
+    font-size: 13px;
+    padding: 4px 0 4px 18px;
+    position: relative;
+    color: var(--text-body);
+  }
+  .pack-items li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 10px;
+  }
+  .pack-cta {
+    margin-top: 30px;
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-align: center;
+    transition: var(--transition);
+    border-radius: 40px;
+    background: transparent;
+  }
+  .pack-cta:hover {
+    background: var(--gold);
+    color: var(--text-dark);
+    border-color: var(--gold);
+  }
+
+  /* Témoignages */
+  #testimonials {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 40px;
+  }
+  .testimonial-card {
+    background: rgba(20, 20, 18, 0.85);
+    backdrop-filter: blur(4px);
+    padding: 40px 32px;
+    border-radius: 24px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    text-align: left;
+    border: 1px solid var(--border);
+  }
+  .testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+    background: rgba(20, 20, 18, 0.95);
+  }
+  .testimonial-text {
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    color: var(--text-body);
+  }
+  .stars {
+    color: var(--gold);
+    margin-bottom: 16px;
+    letter-spacing: 3px;
+  }
+  .testimonial-author {
+    color: var(--white);
+  }
+  .testimonial-author span {
+    color: var(--gold);
+  }
+
+  /* About avec compteur corrigé à 60 */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .about-grid img {
+    width: 100%;
+    border-radius: 24px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border);
+  }
+  .stats-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 60px;
+    text-align: center;
+  }
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* FAQ */
+  .faq-grid {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
+  }
+  .faq-question {
+    font-weight: 600;
+    font-size: 18px;
+    padding: 20px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white);
+    transition: var(--transition);
+  }
+  .faq-question:hover {
+    color: var(--gold);
+  }
+  .faq-question i {
+    transition: transform 0.3s;
+  }
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    color: var(--text-muted);
+    font-size: 15px;
+  }
+  .faq-item.active .faq-answer {
+    max-height: 200px;
+    padding-bottom: 20px;
+  }
+  .faq-item.active .faq-question i {
+    transform: rotate(180deg);
+  }
+
+  /* Contact */
+  #contact {
+    background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(20,20,18,0.9));
+    text-align: center;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .contact-cta {
+    display: inline-block;
+    padding: 16px 48px;
+    background: var(--gold);
+    color: var(--text-dark);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: var(--transition);
+    border-radius: 50px;
+  }
+  .contact-cta:hover {
+    background: var(--gold-dark);
+    transform: scale(1.05);
+  }
+
+  /* Footer */
+  .site-footer {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    padding: 50px 6vw 40px;
+    border-top: 1px solid var(--border);
+  }
+  .footer-description p {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 20px;
+    text-align: center;
+  }
+  .footer-copyright {
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 20px;
+  }
+  .footer-whatsapp {
+    text-align: center;
+  }
+  .footer-whatsapp a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: var(--transition);
+  }
+  .footer-whatsapp a:hover {
+    background: #128C7E;
+    transform: scale(1.05);
+    gap: 15px;
+  }
+
+  /* Back to top */
+  #back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--gold);
+    color: var(--text-dark);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    z-index: 99;
+  }
+  #back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  #back-to-top:hover {
+    background: var(--gold-dark);
+    transform: translateY(-5px);
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .packs-grid { grid-template-columns: 1fr; gap: 30px; }
+    .testimonial-grid { grid-template-columns: 1fr; }
+    .hero-photo { display: none; }
+    .stats-row { flex-wrap: wrap; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+  @media (max-width: 600px) {
+    section { padding: 60px 5vw; margin: 10px 0; }
+    nav { padding: 0 5vw; height: 65px; }
+    .hero { padding: 100px 5vw 60px; }
+    .stats-row { flex-direction: column; gap: 20px; }
+    .hero h1 { font-size: clamp(24px, 6vw, 42px); }
+  }
 </style>
 </head>
 <body>
 
-<!-- Background Halos -->
-<div class="bg-halos">
-  <div class="halo halo-1"></div>
-  <div class="halo halo-2"></div>
-  <div class="halo halo-3"></div>
+<!-- Effet de brillance -->
+<div class="screen-glint"></div>
+<!-- Cercles bokeh -->
+<div class="bokeh">
+  <span style="width: 180px; height: 180px; top: 10%; left: -5%; animation-duration: 18s;"></span>
+  <span style="width: 300px; height: 300px; bottom: 0; right: -10%; animation-duration: 25s; animation-delay: 2s;"></span>
+  <span style="width: 120px; height: 120px; top: 40%; left: 80%; animation-duration: 20s; animation-delay: 1s;"></span>
+  <span style="width: 250px; height: 250px; bottom: 20%; left: 10%; animation-duration: 28s;"></span>
+  <span style="width: 90px; height: 90px; top: 70%; left: 40%; animation-duration: 15s;"></span>
 </div>
 
-<!-- NAV -->
-<nav id="navbar">
-  <a href="#" class="nav-logo" data-fr="Statevo" data-en="Statevo">Statevo</a>
-  <ul class="nav-links">
-    <li><a href="#packs" data-fr="Les packs" data-en="Packages">Les packs</a></li>
-    <li><a href="#bio" data-fr="À propos" data-en="About">À propos</a></li>
-    <li><a href="#temoignages" data-fr="Témoignages" data-en="Results">Témoignages</a></li>
-    <li><a href="#faq" data-fr="FAQ" data-en="FAQ">FAQ</a></li>
-  </ul>
-  <div class="nav-right">
-    <div class="lang-toggle">
-      <button class="lang-btn active" onclick="setLang('fr')">FR</button>
-      <button class="lang-btn" onclick="setLang('en')">EN</button>
-    </div>
-    <a href="#contact" class="btn-cta"><span data-fr="Prendre contact" data-en="Get started">Prendre contact</span></a>
-    <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+<div class="content">
+  <nav id="navbar">
+    <a href="#" class="logo">Statevo</a>
+    <a href="#contact" class="cta-nav">Prendre contact</a>
+  </nav>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#packs" onclick="closeMenu()" data-fr="Les packs" data-en="Packages">Les packs</a>
-  <a href="#bio" onclick="closeMenu()" data-fr="À propos" data-en="About">À propos</a>
-  <a href="#temoignages" onclick="closeMenu()" data-fr="Témoignages" data-en="Results">Témoignages</a>
-  <a href="#faq" onclick="closeMenu()" data-fr="FAQ" data-en="FAQ">FAQ</a>
-  <a href="#contact" onclick="closeMenu()" data-fr="Prendre contact" data-en="Get started" style="color:var(--blue2);font-weight:600;margin-top:0.5rem;">Prendre contact →</a>
-</div>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-content reveal">
-      <div class="hero-eyebrow" data-fr="Social Dynamics & Dating Coaching" data-en="Social Dynamics & Dating Coaching">Social Dynamics & Dating Coaching</div>
-      <h1>
-        <span data-fr='La plupart ne voient pas ça.<br>Toi tu vas apprendre à tout <span class="serif">lire.</span>' data-en='Most people never see it.<br>You'll learn to read <span class="serif">everything.</span>'>La plupart ne voient pas ça.<br>Toi tu vas apprendre à tout <span class="serif">lire.</span></span>
-      </h1>
-      <div class="hero-quote-pill" data-fr='"un bonjour" → je te trouve mignon &nbsp;&nbsp; "bonne nuit" → appelle-moi demain' data-en='"hey" → I find you attractive &nbsp;&nbsp; "good night" → call me tomorrow'>"un bonjour" → je te trouve mignon &nbsp;&nbsp; "bonne nuit" → appelle-moi demain</div>
-      <p class="hero-sub" data-fr="Ce que les autres mettent des années à comprendre, tu vas l'intégrer en 2 semaines. Pas des techniques. Une vraie façon de voir le monde." data-en="What others spend years figuring out, you'll master in 2 weeks. Not techniques. A completely new way of seeing the world.">Ce que les autres mettent des années à comprendre, tu vas l'intégrer en 2 semaines. Pas des techniques. Une vraie façon de voir le monde.</p>
-      <div class="hero-ctas">
-        <a href="#packs" class="btn-primary"><span data-fr="Voir les packs" data-en="See packages">Voir les packs</span></a>
-        <a href="#bio" class="btn-ghost"><span data-fr="Qui suis-je ?" data-en="Who am I?">Qui suis-je ?</span></a>
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Consultant en Stratégie d'Entreprise</p>
+      <h1>Transformer votre<br>idée en business<br><em>rentable & scalable</em></h1>
+      <div class="hero-actions">
+        <a href="#packs" class="btn-primary">Découvrir les packs</a>
+        <a href="#contact" class="btn-secondary">Me contacter <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
-    <div class="hero-image reveal" style="transition-delay:0.15s">
-      <div class="hero-img-wrap">
-        <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=800&q=80" alt="Statevo — Social Dynamics Coach" loading="eager">
-        <div class="hero-float-tag">
-          <div class="float-dot"></div>
-          <div class="float-text">
-            <strong data-fr="Disponible maintenant" data-en="Available now">Disponible maintenant</strong>
-            <span data-fr="2 places restantes ce mois-ci" data-en="2 spots left this month">2 places restantes ce mois-ci</span>
-          </div>
-        </div>
-      </div>
+    <div class="hero-photo">
+      <img src="https://raw.githubusercontent.com/statevo7/statevo7.github.io/507dd1f13de373474daeeba1d4faace9552626af/Screenshot%202026-05-01%20at%2015-22-07%20Free%20Logo%20Maker%20-%20Get%20Custom%20Logo%20Designs%20in%20Minutes%20Looka.png" alt="Statevo">
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="divider"></div>
-
-<!-- PROMISE -->
-<section id="promise">
-  <div class="container">
-    <div class="promise-grid">
-      <div class="promise-img-wrap reveal">
-        <img src="https://images.unsplash.com/photo-1583195764036-46f8c4b45e5a?w=800&q=80" alt="Coaching Statevo" loading="lazy">
-      </div>
-      <div class="promise-content reveal" style="transition-delay:0.1s">
-        <p class="section-label" data-fr="La promesse" data-en="The promise">La promesse</p>
-        <h2 class="section-title" data-fr='Ce n\'est pas du conseil. C\'est une <span class="serif">nouvelle vision.</span>' data-en='This isn\'t advice. It\'s a <span class="serif">new way of seeing.</span>'>Ce n'est pas du conseil. C'est une <span class="serif">nouvelle vision.</span></h2>
-        <p class="promise-text" data-fr="La plupart des gens passent des années à ne pas comprendre pourquoi leurs relations ne fonctionnent pas. Ils cherchent les bonnes réponses aux mauvaises questions." data-en="Most people spend years not understanding why their relationships don't work. They look for the right answers to the wrong questions.">La plupart des gens passent des années à ne pas comprendre pourquoi leurs relations ne fonctionnent pas. Ils cherchent les bonnes réponses aux mauvaises questions.</p>
-        <div class="promise-quote-box" data-fr='"Les mots sont la surface. En dessous, il y a tout ce que l\'autre communique sans le dire."' data-en='"Words are just the surface. Beneath them lies everything the other person communicates without saying a word."'>"Les mots sont la surface. En dessous, il y a tout ce que l'autre communique sans le dire."</div>
-        <p class="promise-text" data-fr="En 2 semaines, tu vas développer une acuité que la plupart des gens n'auront jamais. Et ça, personne ne peut te l'enlever." data-en="In 2 weeks, you'll develop a level of perception most people will never reach. And no one can take that away from you.">En 2 semaines, tu vas développer une acuité que la plupart des gens n'auront jamais. Et ça, personne ne peut te l'enlever.</p>
-        <div class="stats-row">
-          <div>
-            <span class="stat-num">2</span>
-            <span class="stat-lbl" data-fr="Semaines" data-en="Weeks">Semaines</span>
-          </div>
-          <div>
-            <span class="stat-num">100%</span>
-            <span class="stat-lbl" data-fr="Sur-mesure" data-en="Tailored">Sur-mesure</span>
-          </div>
-          <div>
-            <span class="stat-num">7j/7</span>
-            <span class="stat-lbl" data-fr="Disponible" data-en="Available">Disponible</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- PILLARS -->
-<section id="fondations">
-  <div class="container">
-    <div class="reveal">
-      <p class="section-label" data-fr="Les fondations" data-en="The foundations">Les fondations</p>
-      <h2 class="section-title" data-fr='3 piliers. <span class="serif">Une transformation.</span>' data-en='3 pillars. <span class="serif">One transformation.</span>'>3 piliers. <span class="serif">Une transformation.</span></h2>
-    </div>
-    <div class="pillars-grid">
-      <div class="pillar reveal" style="transition-delay:0s">
-        <div class="pillar-icon blue">👁</div>
-        <span class="pillar-num">01</span>
-        <h3 data-fr="Le langage invisible" data-en="The invisible language">Le langage invisible</h3>
-        <p data-fr="Décoder ce que les mots ne disent pas. Le timing d'un message, la longueur d'une réponse, un silence après une question. Tout communique. Tu vas apprendre à tout lire." data-en="Decode what words don't say. The timing of a message, the length of a reply, a silence after a question. Everything communicates. You'll learn to read all of it.">Décoder ce que les mots ne disent pas. Le timing d'un message, la longueur d'une réponse, un silence après une question. Tout communique. Tu vas apprendre à tout lire.</p>
-      </div>
-      <div class="pillar reveal" style="transition-delay:0.1s">
-        <div class="pillar-icon violet">⚡</div>
-        <span class="pillar-num">02</span>
-        <h3 data-fr="L'image & la routine" data-en="Image & daily routine">L'image & la routine</h3>
-        <p data-fr="T'habiller selon ton physique réel. Construire une routine qui te rend stable et constant. Travailler ton énergie — ce que les gens ressentent avant même que tu parles." data-en="Dress for your actual physique. Build a routine that makes you stable and consistent. Work on your energy — what people feel before you even speak.">T'habiller selon ton physique réel. Construire une routine qui te rend stable et constant. Travailler ton énergie — ce que les gens ressentent avant même que tu parles.</p>
-      </div>
-      <div class="pillar reveal" style="transition-delay:0.2s">
-        <div class="pillar-icon rose">🌸</div>
-        <span class="pillar-num">03</span>
-        <h3 data-fr="L'amour de soi" data-en="Self-worth">L'amour de soi</h3>
-        <p data-fr="Apprendre à t'aimer réellement — pas comme un concept, comme une pratique. Te comprendre en profondeur. Devenir quelqu'un que tu respectes. Les autres le ressentent." data-en="Learn to truly love yourself — not as a concept, but as a practice. Understand yourself deeply. Become someone you respect. Others will feel it.">Apprendre à t'aimer réellement — pas comme un concept, comme une pratique. Te comprendre en profondeur. Devenir quelqu'un que tu respectes. Les autres le ressentent.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- FOR YOU -->
-<section id="for-you">
-  <div class="container">
-    <div class="reveal">
-      <p class="section-label" data-fr="Est-ce pour toi ?" data-en="Is this for you?">Est-ce pour toi ?</p>
-      <h2 class="section-title" data-fr='Reconnais-toi <span class="serif">ici.</span>' data-en='Recognize yourself <span class="serif">here.</span>'>Reconnais-toi <span class="serif">ici.</span></h2>
-    </div>
-    <div class="for-you-grid">
-      <div>
-        <div class="for-you-list">
-          <div class="fyi-item reveal">
-            <div class="fyi-check yes">✓</div>
-            <p data-fr="Tu envoies des messages et tu n'arrives pas à décoder ce que l'autre ressent vraiment." data-en="You send messages and can't figure out what the other person actually feels.">Tu envoies des messages et tu n'arrives pas à décoder ce que l'autre ressent vraiment.</p>
-          </div>
-          <div class="fyi-item reveal" style="transition-delay:0.05s">
-            <div class="fyi-check yes">✓</div>
-            <p data-fr="Tu as l'impression de toujours faire les mauvais choix dans tes relations, sans comprendre pourquoi." data-en="You feel like you always make the wrong moves in relationships, without understanding why.">Tu as l'impression de toujours faire les mauvais choix dans tes relations, sans comprendre pourquoi.</p>
-          </div>
-          <div class="fyi-item reveal" style="transition-delay:0.1s">
-            <div class="fyi-check yes">✓</div>
-            <p data-fr="Tu veux une relation sérieuse ou simplement mieux rencontrer des gens — mais tu ne sais pas par où commencer." data-en="You want a serious relationship or just to meet people better — but you don't know where to start.">Tu veux une relation sérieuse ou simplement mieux rencontrer des gens — mais tu ne sais pas par où commencer.</p>
-          </div>
-          <div class="fyi-item reveal" style="transition-delay:0.15s">
-            <div class="fyi-check yes">✓</div>
-            <p data-fr="Tu sens que ton image ou ton énergie ne reflète pas vraiment qui tu es — et ça te freine." data-en="You feel your image or energy doesn't reflect who you truly are — and it's holding you back.">Tu sens que ton image ou ton énergie ne reflète pas vraiment qui tu es — et ça te freine.</p>
-          </div>
-          <div class="fyi-item reveal" style="transition-delay:0.2s">
-            <div class="fyi-check no">✗</div>
-            <p data-fr="Si tu cherches des 'lignes de drague' ou des manipulations. Ce n'est pas ce qu'on fait ici." data-en="If you're looking for 'pick-up lines' or manipulation tactics. That's not what we do here.">Si tu cherches des 'lignes de drague' ou des manipulations. Ce n'est pas ce qu'on fait ici.</p>
-          </div>
-        </div>
-      </div>
-      <div class="for-you-cta reveal" style="transition-delay:0.1s">
-        <p class="section-label" data-fr="Appel gratuit" data-en="Free call">Appel gratuit</p>
-        <h3 data-fr="Tu te reconnais ?" data-en="Does this resonate?">Tu te reconnais ?</h3>
-        <p data-fr="Commence par un appel découverte de 15 minutes. Gratuit, sans engagement. On analyse ta situation ensemble et tu sais exactement si c'est fait pour toi." data-en="Start with a free 15-minute discovery call. No commitment. We analyze your situation together and you'll know exactly if this is right for you.">Commence par un appel découverte de 15 minutes. Gratuit, sans engagement. On analyse ta situation ensemble et tu sais exactement si c'est fait pour toi.</p>
-        <a href="mailto:statevocontact@gmail.com" class="btn-primary" style="width:100%; justify-content:center;"><span data-fr="Réserver l'appel gratuit" data-en="Book the free call">Réserver l'appel gratuit</span></a>
-        <div style="text-align:center;margin-top:0.9rem;">
-          <span style="font-size:0.72rem; color:var(--muted)" data-fr="Réponse sous 24h · 7j/7" data-en="Reply within 24h · 7 days/week">Réponse sous 24h · 7j/7</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- PACKS -->
-<section id="packs">
-  <div class="container">
-    <div class="reveal">
-      <p class="section-label" data-fr="Les offres" data-en="Packages">Les offres</p>
-      <h2 class="section-title" data-fr='Choisissez votre <span class="serif">niveau d\'accompagnement</span>' data-en='Choose your <span class="serif">level of commitment</span>'>Choisissez votre <span class="serif">niveau d'accompagnement</span></h2>
-      <p style="color:var(--muted);font-size:0.88rem;margin-bottom:0.5rem;max-width:560px" data-fr="Deux packs, même contenu complet. La seule différence : les 2 sorties terrain dans le pack MONACO." data-en="Two packages, same complete content. The only difference: 2 real-world field sessions included in MONACO.">Deux packs, même contenu complet. La seule différence : les 2 sorties terrain dans le pack MONACO.</p>
-    </div>
+  <!-- PACKS : contenu complet (identique à l’original long) -->
+  <section id="packs">
+    <p class="section-label">Offres</p>
+    <h2 class="section-title">Choisissez votre<br>niveau d'accompagnement</h2>
+    <p class="section-sub">3 packs adaptés à votre stade de développement et à vos objectifs.</p>
     <div class="packs-grid">
-      <!-- LUNETTE -->
-      <div class="pack-card reveal">
-        <p class="pack-name">Lunette</p>
-        <p class="pack-price">79€</p>
-        <p class="pack-duration" data-fr="/ 2 semaines — autonome et suffisant" data-en="/ 2 weeks — autonomous & complete">/ 2 semaines — autonome et suffisant</p>
-        <p class="pack-desc" data-fr="Tu vas apprendre à lire ce que les gens ne disent jamais vraiment. Un 'bonjour' qui arrive à une certaine heure, un 'bonne nuit' qui traîne — ça ne veut pas dire bonne nuit. Ça veut dire appelle-moi demain." data-en="You'll learn to read what people never truly say. A 'hey' at a specific time, a lingering 'good night' — that doesn't mean good night. It means call me tomorrow.">Tu vas apprendre à lire ce que les gens ne disent jamais vraiment. Un 'bonjour' qui arrive à une certaine heure, un 'bonne nuit' qui traîne — ça ne veut pas dire bonne nuit. Ça veut dire appelle-moi demain.</p>
-        <ul class="pack-features">
-          <p class="pack-section-title" data-fr="Langage caché & lecture" data-en="Hidden language & reading">Langage caché & lecture</p>
-          <li data-fr="Décoder ce que les mots veulent vraiment dire" data-en="Decode what words really mean">Décoder ce que les mots veulent vraiment dire</li>
-          <li data-fr="Lire le timing, le ton, les silences, les sous-entendus" data-en="Read timing, tone, silences and subtext">Lire le timing, le ton, les silences, les sous-entendus</li>
-          <li data-fr="Répondre pour créer exactement l'effet que tu veux" data-en="Reply to create exactly the effect you want">Répondre pour créer exactement l'effet que tu veux</li>
-          <p class="pack-section-title" data-fr="Travail sur soi & amour de soi" data-en="Self-work & self-worth">Travail sur soi & amour de soi</p>
-          <li data-fr="T'aimer — pas comme un concept, comme une pratique" data-en="Love yourself — as a practice, not a concept">T'aimer — pas comme un concept, comme une pratique</li>
-          <li data-fr="Comprendre pourquoi tu réagis et attires comme tu le fais" data-en="Understand why you react and attract the way you do">Comprendre pourquoi tu réagis et attires comme tu le fais</li>
-          <p class="pack-section-title" data-fr="Accompagnement" data-en="Support">Accompagnement</p>
-          <li data-fr="Sessions 1:1 sur 2 semaines" data-en="1:1 sessions over 2 weeks">Sessions 1:1 sur 2 semaines</li>
-          <li data-fr="Suivi continu 7j/7" data-en="Continuous daily support">Suivi continu 7j/7</li>
-        </ul>
-        <a href="mailto:statevocontact@gmail.com" class="btn-primary" style="width:100%;justify-content:center;font-size:0.78rem"><span data-fr="Commencer — 79€" data-en="Start — €79">Commencer — 79€</span></a>
+      <!-- META -->
+      <div class="pack-card">
+        <span class="pack-badge">Essentiel</span>
+        <p class="pack-name">META</p>
+        <div class="pack-price"><strong>89 €</strong> / mois</div>
+        <div class="pack-divider"></div>
+        <p class="pack-category">🧭 Stratégie & Planning</p>
+        <ul class="pack-items"><li>Analyse globale du potentiel du business</li><li>Business plan</li><li>Étude de marché</li><li>Analyse de la concurrence</li><li>Proposition de valeur</li><li>Fixation des prix & marges</li><li>Plan d'action 30/60/90 jours</li></ul>
+        <p class="pack-category">🏗️ Création & Lancement</p>
+        <ul class="pack-items"><li>Création d'une offre claire et vendable</li><li>Structuration des packages</li><li>Naming & branding de base</li><li>Tunnel de vente simple</li><li>Stratégie de lancement</li><li>Plan de communication</li></ul>
+        <p class="pack-category">📣 Marketing & Vente</p>
+        <ul class="pack-items"><li>Système d'acquisition clients</li><li>Optimisation du taux de conversion</li><li>Stratégie de vente</li><li>Stratégie réseaux sociaux</li><li>Techniques de closing</li></ul>
+        <p class="pack-category">📊 Finance & Chiffres</p>
+        <ul class="pack-items"><li>Analyse de la rentabilité</li><li>Gestion de trésorerie</li><li>Calcul de rentabilité</li><li>Suivi des KPI</li></ul>
+        <p class="pack-category">🤝 Accompagnement</p>
+        <ul class="pack-items"><li>2 sessions 1:1 / mois</li><li>Suivi hebdomadaire</li><li>Déblocage de problèmes</li><li>Prise de décision guidée</li><li>Accountability</li></ul>
+        <p class="pack-category">⚙️ Productivité & Systèmes</p>
+        <ul class="pack-items"><li>Réduction des tâches inutiles</li><li>Structuration des process</li><li>Fonctionnement business scalable</li></ul>
+        <p class="pack-category">🧠 Mindset & Performance</p>
+        <ul class="pack-items"><li>Mentalité orientée exécution</li><li>Gestion du stress</li><li>Prise de décision</li><li>Déblocage des blocages</li></ul>
+        <a href="#contact" class="pack-cta">Commencer</a>
       </div>
-
-      <!-- MONACO -->
-      <div class="pack-card featured reveal" style="transition-delay:0.1s">
-        <div class="pack-badge" data-fr="Premium" data-en="Premium">Premium</div>
-        <p class="pack-name">Monaco</p>
-        <p class="pack-price">300€</p>
-        <p class="pack-duration" data-fr="/ 2 semaines — contenu complet + terrain" data-en="/ 2 weeks — full content + field sessions">/ 2 semaines — contenu complet + terrain</p>
-        <p class="pack-desc" data-fr="Tu vas acquérir une compréhension dimensionnelle du langage — les mots, le timing, le ton, le non-dit, l'énergie derrière chaque interaction. Une façon de voir le monde que tu ne pourras plus désapprendre." data-en="You'll gain a multi-dimensional understanding of social dynamics — words, timing, tone, the unspoken, the energy behind every interaction. A way of seeing the world you can never un-learn.">Tu vas acquérir une compréhension dimensionnelle du langage — les mots, le timing, le ton, le non-dit, l'énergie derrière chaque interaction. Une façon de voir le monde que tu ne pourras plus désapprendre.</p>
-        <ul class="pack-features">
-          <p class="pack-section-title" data-fr="Tout ce qu'inclut LUNETTE +" data-en="Everything in LUNETTE +">Tout ce qu'inclut LUNETTE +</p>
-          <li data-fr="Style & image personnelle selon ton physique réel" data-en="Style & personal image tailored to your physique">Style & image personnelle selon ton physique réel</li>
-          <li data-fr="Routine & énergie — ce que les gens ressentent avant que tu parles" data-en="Routine & energy — what people feel before you speak">Routine & énergie — ce que les gens ressentent avant que tu parles</li>
-          <li data-fr="Communication & séduction en situation réelle" data-en="Communication & attraction in real situations">Communication & séduction en situation réelle</li>
-          <p class="pack-section-title" data-fr="Exclusif Monaco" data-en="Monaco exclusive">Exclusif Monaco</p>
-          <li class="highlight" data-fr="✦ 2 sorties terrain ensemble" data-en="✦ 2 real-world field sessions together">✦ 2 sorties terrain ensemble</li>
-          <li class="highlight" data-fr="✦ Feedback en temps réel en situation" data-en="✦ Real-time feedback in live situations">✦ Feedback en temps réel en situation</li>
-        </ul>
-        <a href="mailto:statevocontact@gmail.com" class="btn-primary" style="width:100%;justify-content:center;font-size:0.78rem;background:linear-gradient(135deg,var(--violet),var(--rose))"><span data-fr="Commencer — 300€" data-en="Start — €300">Commencer — 300€</span></a>
+      <!-- WAVY -->
+      <div class="pack-card featured">
+        <span class="pack-badge">⭐ Le plus populaire</span>
+        <p class="pack-name">WAVY</p>
+        <div class="pack-price"><strong>139 €</strong> / mois</div>
+        <div class="pack-divider"></div>
+        <p class="pack-category">🧭 Stratégie & Planning</p>
+        <ul class="pack-items"><li>Analyse globale du potentiel du business</li><li>Identification des leviers de croissance</li><li>Business plan</li><li>Étude de marché</li><li>Analyse de la concurrence</li><li>Positionnement</li><li>Avatar client idéal (ICP)</li><li>Proposition de valeur</li><li>Modèle économique</li><li>Fixation des prix & marges</li><li>Plan d'action 30/60/90 jours</li></ul>
+        <p class="pack-category">🏗️ Création & Lancement</p>
+        <ul class="pack-items"><li>Création d'une offre claire et vendable</li><li>Système de vente opérationnel</li><li>Aide à la création d'entreprise</li><li>Choix du statut juridique</li><li>Aide à l'ouverture du compte pro</li><li>Structuration des packages</li><li>Naming & branding de base</li><li>Tunnel de vente simple</li><li>Mise en place des outils (paiement, CRM)</li><li>Stratégie de lancement</li><li>Plan de communication</li></ul>
+        <p class="pack-category">📣 Marketing & Vente</p>
+        <ul class="pack-items"><li>Système d'acquisition de clients</li><li>Optimisation du taux de conversion</li><li>Stratégie de vente</li><li>Script de vente</li><li>Copywriting (posts, messages, pages)</li><li>Stratégie réseaux sociaux</li><li>Funnel de conversion</li><li>Techniques de closing</li></ul>
+        <p class="pack-category">📊 Finance & Chiffres</p>
+        <ul class="pack-items"><li>Analyse de la rentabilité réelle</li><li>Tableau de bord de suivi</li><li>Prévisionnel financier</li><li>Gestion de trésorerie</li><li>Calcul de rentabilité</li><li>Suivi des KPI</li></ul>
+        <p class="pack-category">🤝 Accompagnement</p>
+        <ul class="pack-items"><li>4 sessions 1:1 / mois</li><li>Suivi hebdomadaire</li><li>Support continu</li><li>Déblocage de problèmes</li><li>Prise de décision guidée</li><li>Accountability</li><li>Accompagnement orienté résultats concrets</li></ul>
+        <p class="pack-category">⚙️ Productivité & Systèmes</p>
+        <ul class="pack-items"><li>Organisation du travail</li><li>Gestion du temps</li><li>Mise en place d'outils</li><li>Automatisation des tâches</li><li>Structuration des process</li></ul>
+        <p class="pack-category">🧠 Mindset & Performance</p>
+        <ul class="pack-items"><li>Mentalité orientée exécution</li><li>Discipline & constance</li><li>Gestion du stress</li><li>Prise de décision</li><li>Déblocage des blocages</li></ul>
+        <a href="#contact" class="pack-cta">Commencer</a>
+      </div>
+      <!-- ELITE -->
+      <div class="pack-card">
+        <span class="pack-badge">Premium</span>
+        <p class="pack-name">ELITE</p>
+        <div class="pack-price"><strong>350 €</strong> / mois</div>
+        <div class="pack-divider"></div>
+        <p class="pack-category">🧭 Stratégie & Planning</p>
+        <ul class="pack-items"><li>Analyse globale du potentiel du business</li><li>Leviers de croissance prioritaires</li><li>Clarification des objectifs à court et long terme</li><li>Audit complet de la situation</li><li>Business plan</li><li>Étude de marché</li><li>Analyse de la concurrence</li><li>Positionnement</li><li>Avatar client idéal (ICP)</li><li>Proposition de valeur</li><li>Modèle économique</li><li>Fixation des prix & marges</li><li>Plan d'action 30/60/90 jours</li></ul>
+        <p class="pack-category">🏗️ Création & Lancement</p>
+        <ul class="pack-items"><li>Création d'une offre claire et vendable</li><li>Système de vente opérationnel</li><li>Aide à la création d'entreprise</li><li>Choix du statut juridique</li><li>Aide à l'ouverture du compte pro</li><li>Structuration des packages</li><li>Naming & branding de base</li><li>Tunnel de vente simple</li><li>Mise en place des outils (paiement, CRM)</li><li>Stratégie de lancement</li><li>Plan de communication</li></ul>
+        <p class="pack-category">📣 Marketing & Vente</p>
+        <ul class="pack-items"><li>Système d'acquisition de clients</li><li>Optimisation du taux de conversion</li><li>Stratégie de vente</li><li>Script de vente</li><li>Copywriting (posts, messages, pages)</li><li>Stratégie réseaux sociaux</li><li>Calendrier de contenu</li><li>Funnel de conversion</li><li>Techniques de closing</li></ul>
+        <p class="pack-category">📊 Finance & Chiffres</p>
+        <ul class="pack-items"><li>Analyse de la rentabilité réelle</li><li>Tableau de bord de suivi</li><li>Prévisionnel financier</li><li>Gestion de trésorerie</li><li>Calcul de rentabilité</li><li>Suivi des KPI</li></ul>
+        <p class="pack-category">🤝 Accompagnement</p>
+        <ul class="pack-items"><li>8 sessions 1:1 / mois</li><li>Suivi hebdomadaire</li><li>Support continu</li><li>Déblocage de problèmes</li><li>Possible accompagnement sur le terrain</li><li>Prise de décision guidée</li><li>Accountability</li><li>Accompagnement orienté résultats concrets</li></ul>
+        <p class="pack-category">⚙️ Productivité & Systèmes</p>
+        <ul class="pack-items"><li>Organisation du travail</li><li>Gestion du temps</li><li>Mise en place d'outils</li><li>Automatisation des tâches</li><li>Structuration des process</li></ul>
+        <p class="pack-category">🧠 Mindset & Performance</p>
+        <ul class="pack-items"><li>Mentalité orientée exécution</li><li>Discipline & constance</li><li>Gestion du stress</li><li>Prise de décision</li><li>Déblocage des blocages</li></ul>
+        <a href="#contact" class="pack-cta">Commencer</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="divider"></div>
+  <!-- TÉMOIGNAGES -->
+  <section id="testimonials">
+    <p class="section-label">Témoignages</p>
+    <h2 class="section-title">Ils ont transformé leur business</h2>
+    <p class="section-sub">Des résultats concrets grâce à un accompagnement sur mesure.</p>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Grâce à Statevo, j'ai doublé mon chiffre d'affaire et amélioré ma compréhension du marché."</p>
+        <p class="testimonial-author">— Laura M. <span>Dirigeante, NovaStyle</span></p>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Très intéressant pour débuter ou relancer un business qui va mal."</p>
+        <p class="testimonial-author">— Julien D. <span>Entrepreneur</span></p>
+      </div>
+    </div>
+  </section>
 
-<!-- ABOUT -->
-<section id="bio">
-  <div class="container">
+  <!-- ABOUT (avec compteur 60) -->
+  <section id="about">
     <div class="about-grid">
-      <div class="reveal">
-        <p class="section-label" data-fr="À propos" data-en="About">À propos</p>
-        <h2 class="section-title" data-fr='Je ne te donne pas des conseils. Je te donne une <span class="serif">nouvelle façon de voir.</span>' data-en='I don\'t give you advice. I give you a <span class="serif">completely new perspective.</span>'>Je ne te donne pas des conseils. Je te donne une <span class="serif">nouvelle façon de voir.</span></h2>
-        <p class="about-text" data-fr="J'ai passé des années à observer ce que les gens ratent dans leurs interactions. Pas par manque d'intelligence — par manque de lecture. On nous apprend à parler, jamais à écouter ce qui n'est pas dit." data-en="I spent years observing what people miss in their interactions. Not from a lack of intelligence — but from a lack of reading. We're taught to speak. Never to listen to what isn't said.">J'ai passé des années à observer ce que les gens ratent dans leurs interactions. Pas par manque d'intelligence — par manque de lecture. On nous apprend à parler, jamais à écouter ce qui n'est pas dit.</p>
-        <p class="about-text" data-fr="Mon approche : on part de là où tu en es. Tu partages ce que tu juges utile. On travaille sur ce qui te bloque vraiment — le regard que tu portes sur toi, l'image que tu projettes, ta façon de décoder les situations." data-en="My approach: we start from where you are. You share what feels useful. We work on what's actually blocking you — how you see yourself, the image you project, how you read situations.">Mon approche : on part de là où tu en es. Tu partages ce que tu juges utile. On travaille sur ce qui te bloque vraiment — le regard que tu portes sur toi, l'image que tu projettes, ta façon de décoder les situations.</p>
-        <p class="about-text" data-fr="Que tu cherches une relation sérieuse ou simplement à mieux rencontrer des gens, l'accompagnement s'adapte entièrement à ton objectif. Pas de méthode universelle. Du sur-mesure." data-en="Whether you're looking for a serious relationship or simply to connect with people better, the coaching adapts entirely to your goal. No universal method. Fully tailored.">Que tu cherches une relation sérieuse ou simplement à mieux rencontrer des gens, l'accompagnement s'adapte entièrement à ton objectif. Pas de méthode universelle. Du sur-mesure.</p>
-        <div class="about-chips">
-          <span class="chip blue" data-fr="2 Semaines" data-en="2 Weeks">2 Semaines</span>
-          <span class="chip violet" data-fr="100% Sur-mesure" data-en="100% Tailored">100% Sur-mesure</span>
-          <span class="chip rose" data-fr="7j/7 Disponible" data-en="7 Days / Week">7j/7 Disponible</span>
+      <div>
+        <img src="https://raw.githubusercontent.com/statevo7/statevo7.github.io/c8cedb048dc590f2982b57c6b33a440d1a80965e/Screenshot%202026-05-01%20at%2021-31-31%20Free%20Logo%20Maker%20-%20Get%20Custom%20Logo%20Designs%20in%20Minutes%20Looka.png" alt="Statevo consulting">
+      </div>
+      <div>
+        <p class="section-label">À propos</p>
+        <h2 class="section-title">Consultant en stratégie & développement</h2>
+        <p style="font-size: 16px; margin-bottom: 30px;">Mon objectif : transformer une idée ou un business existant en une activité claire, rentable et scalable. Avec une approche terrain et des méthodes éprouvées.</p>
+        <img src="https://img.over-blog-kiwi.com/2/49/57/72/20171130/ob_0baedb_industrie-stats.jpg" alt="Statistiques" style="width:100%; border-radius: 20px; margin-bottom: 30px;">
+        <div class="stats-row">
+          <div class="stat-item">
+            <div class="stat-number" data-target="3">0</div>
+            <div class="stat-label">Packs</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="60">0</div>   <!-- modifié de 150 à 60 -->
+            <div class="stat-label">Clients accompagnés</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="24">0</div>
+            <div class="stat-label">Disponibilité 7j/7</div>
+          </div>
         </div>
       </div>
-      <div class="about-img-wrap reveal" style="transition-delay:0.15s">
-        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80" alt="Statevo Coach" loading="lazy">
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <p class="section-label">FAQ</p>
+    <h2 class="section-title">Questions fréquentes</h2>
+    <p class="section-sub">Tout ce que vous devez savoir avant de commencer.</p>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-question">Comment se déroule la première session ? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">Lors d'un appel découverte gratuit, nous analysons vos besoins, votre projet et je vous recommande le pack adapté. Sans engagement.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Puis-je changer de pack en cours de route ? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">Oui, vous pouvez évoluer vers un pack supérieur ou inférieur à tout moment, avec un simple préavis.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Les sessions sont-elles en visio ou en présentiel ? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">Principalement en visio (Zoom/Google Meet), mais un accompagnement terrain est possible pour le pack ELITE.</div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="divider"></div>
+  <!-- CONTACT -->
+  <section id="contact">
+    <p class="section-label">Contact</p>
+    <h2 class="section-title">Prêt à passer à l'action ?</h2>
+    <p class="section-sub">Discutons de votre projet et trouvons le pack qui correspond à votre situation.</p>
+    <a href="mailto:statevocontact@gmail.com" class="contact-cta">Prendre rendez-vous <i class="fas fa-calendar-alt"></i></a>
+  </section>
 
-<!-- TESTIMONIALS -->
-<section id="temoignages">
-  <div class="container">
-    <div class="reveal">
-      <p class="section-label" data-fr="Témoignages" data-en="Results">Témoignages</p>
-      <h2 class="section-title" data-fr='Ils ont changé leur <span class="serif">réalité</span>' data-en='They changed their <span class="serif">reality</span>'>Ils ont changé leur <span class="serif">réalité</span></h2>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-description">
+      <p>Statevo Corporation — Stratégie d'Entreprise, Création Web & Accompagnement Terrain</p>
+      <p>Conseil en développement business, création de sites web sur mesure et interventions opérationnelles sur le terrain pour transformer votre projet en réalité rentable et scalable.</p>
     </div>
-    <div class="testi-grid">
-      <div class="testi-card reveal">
-        <p class="stars">★★★★★</p>
-        <p class="testi-text" data-fr='"Je pensais que le problème venait des autres. En 2 semaines j\'ai compris que je ne savais tout simplement pas lire les situations. Maintenant je vois tout différemment."' data-en='"I thought the problem was with other people. In 2 weeks I understood I simply didn\'t know how to read situations. Now I see everything differently."'>"Je pensais que le problème venait des autres. En 2 semaines j'ai compris que je ne savais tout simplement pas lire les situations. Maintenant je vois tout différemment."</p>
-        <p class="testi-author">— Karim M.</p>
-        <p class="testi-pack">Pack MONACO</p>
-      </div>
-      <div class="testi-card reveal" style="transition-delay:0.1s">
-        <p class="stars">★★★★★</p>
-        <p class="testi-text" data-fr='"Ce qui m\'a le plus marqué c\'est le travail sur l\'image. Je m\'habillais sans réfléchir à ce que ça disait de moi. Ça a tout changé dans la façon dont les gens me perçoivent."' data-en='"What hit me most was the image work. I was dressing without thinking about what it said about me. It completely changed how people perceive me."'>"Ce qui m'a le plus marqué c'est le travail sur l'image. Je m'habillais sans réfléchir à ce que ça disait de moi. Ça a tout changé dans la façon dont les gens me perçoivent."</p>
-        <p class="testi-author">— Thomas R.</p>
-        <p class="testi-pack">Pack LUNETTE</p>
-      </div>
-      <div class="testi-card reveal" style="transition-delay:0.2s">
-        <p class="stars">★★★★★</p>
-        <p class="testi-text" data-fr='"La sortie terrain m\'a permis de voir en direct ce que je faisais mal. En situation réelle, ça va 10 fois plus vite qu\'en théorie. Indispensable."' data-en='"The field session let me see in real-time what I was doing wrong. In a real situation, progress happens 10x faster than in theory. Essential."'>"La sortie terrain m'a permis de voir en direct ce que je faisais mal. En situation réelle, ça va 10 fois plus vite qu'en théorie. Indispensable."</p>
-        <p class="testi-author">— Julien D.</p>
-        <p class="testi-pack">Pack MONACO</p>
-      </div>
+    <div class="footer-copyright">
+      © 2024–2026 Statevo Corporation. Tous droits réservés.
     </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- FAQ -->
-<section id="faq">
-  <div class="container">
-    <div class="reveal">
-      <p class="section-label" data-fr="FAQ" data-en="FAQ">FAQ</p>
-      <h2 class="section-title" data-fr='Questions <span class="serif">fréquentes</span>' data-en='Frequently asked <span class="serif">questions</span>'>Questions <span class="serif">fréquentes</span></h2>
+    <div class="footer-whatsapp">
+      <a href="https://wa.me/33641549178" target="_blank">
+        <i class="fab fa-whatsapp"></i> Écrivez-moi sur WhatsApp
+      </a>
     </div>
-    <div class="faq-list">
+  </footer>
 
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span data-fr="Comment se déroule la première session ?" data-en="How does the first session work?">Comment se déroule la première session ?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">
-          <p class="faq-a-inner" data-fr="On commence par un appel découverte gratuit pour analyser ta situation, comprendre ton objectif — relation sérieuse ou rencontres — et définir comment adapter l'accompagnement. Sans engagement." data-en="We start with a free discovery call to analyze your situation, understand your goal — serious relationship or dating — and define how to tailor the coaching. No commitment.">On commence par un appel découverte gratuit pour analyser ta situation, comprendre ton objectif — relation sérieuse ou rencontres — et définir comment adapter l'accompagnement. Sans engagement.</p>
-        </div>
-      </div>
-
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span data-fr="Les deux packs ont-ils vraiment le même contenu ?" data-en="Do both packages really have the same content?">Les deux packs ont-ils vraiment le même contenu ?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">
-          <p class="faq-a-inner" data-fr="Oui. Les deux couvrent exactement les mêmes thématiques : langage caché, travail sur soi, style, routine, communication. La seule différence ce sont les 2 sorties terrain incluses dans le pack MONACO." data-en="Yes. Both cover exactly the same topics: hidden language, self-work, style, routine, communication. The only difference is the 2 field sessions included in MONACO.">Oui. Les deux couvrent exactement les mêmes thématiques : langage caché, travail sur soi, style, routine, communication. La seule différence ce sont les 2 sorties terrain incluses dans le pack MONACO.</p>
-        </div>
-      </div>
-
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span data-fr="C'est quoi concrètement une 'sortie terrain' ?" data-en="What exactly is a 'field session'?">C'est quoi concrètement une 'sortie terrain' ?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">
-          <p class="faq-a-inner" data-fr="On sort ensemble dans un contexte social réel — café, soirée, lieu public. Tu appliques ce qu'on a travaillé, je t'observe et je te donne un feedback en temps réel. C'est ce qui fait la différence entre comprendre et vraiment intégrer." data-en="We go out together in a real social context — a café, a party, a public venue. You apply what we've worked on, I observe and give you real-time feedback. That's the difference between understanding something and truly owning it.">On sort ensemble dans un contexte social réel — café, soirée, lieu public. Tu appliques ce qu'on a travaillé, je t'observe et je te donne un feedback en temps réel. C'est ce qui fait la différence entre comprendre et vraiment intégrer.</p>
-        </div>
-      </div>
-
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span data-fr="Est-ce que ça marche si je cherche une relation sérieuse ?" data-en="Does this work if I'm looking for a serious relationship?">Est-ce que ça marche si je cherche une relation sérieuse ?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">
-          <p class="faq-a-inner" data-fr="Oui. L'accompagnement s'adapte complètement à ton objectif. Que tu veuilles une relation stable et durable ou juste apprendre à mieux rencontrer des gens, on calibre tout en fonction de ce que toi tu veux vraiment." data-en="Yes. The coaching adapts completely to your goal. Whether you want a stable long-term relationship or just to connect with people better, everything is calibrated to what you actually want.">Oui. L'accompagnement s'adapte complètement à ton objectif. Que tu veuilles une relation stable et durable ou juste apprendre à mieux rencontrer des gens, on calibre tout en fonction de ce que toi tu veux vraiment.</p>
-        </div>
-      </div>
-
-      <div class="faq-item reveal">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span data-fr="Les sessions sont en visio ou en présentiel ?" data-en="Are sessions online or in-person?">Les sessions sont en visio ou en présentiel ?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">
-          <p class="faq-a-inner" data-fr="Les sessions 1:1 se font en visio (Zoom ou Google Meet). Les sorties terrain du pack MONACO sont en présentiel. Le suivi entre les sessions se fait par message, disponible 7j/7." data-en="The 1:1 sessions are online (Zoom or Google Meet). The MONACO field sessions are in person. Between-session support is via message, available 7 days a week.">Les sessions 1:1 se font en visio (Zoom ou Google Meet). Les sorties terrain du pack MONACO sont en présentiel. Le suivi entre les sessions se fait par message, disponible 7j/7.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- CTA FINAL -->
-<section id="contact">
-  <div class="container" style="max-width:700px; text-align:center;">
-    <div class="reveal">
-      <p class="section-label" style="justify-content:center;" data-fr="Prêt ?" data-en="Ready?">Prêt ?</p>
-      <h2 class="cta-title">
-        <span data-fr='Le moment de changer, <span class="serif">c\'est maintenant.</span>' data-en='The moment to change <span class="serif">is now.</span>'>Le moment de changer, <span class="serif">c'est maintenant.</span></span>
-      </h2>
-      <p class="cta-sub" data-fr="Envoie un message. On discute de ta situation, sans engagement. En 15 minutes tu sais si cet accompagnement est fait pour toi." data-en="Send a message. We'll talk about your situation, no commitment. In 15 minutes you'll know if this is right for you.">Envoie un message. On discute de ta situation, sans engagement. En 15 minutes tu sais si cet accompagnement est fait pour toi.</p>
-      <div class="cta-badges">
-        <span class="cta-badge" data-fr="✓ Appel gratuit" data-en="✓ Free call">✓ Appel gratuit</span>
-        <span class="cta-badge" data-fr="✓ Sans engagement" data-en="✓ No commitment">✓ Sans engagement</span>
-        <span class="cta-badge" data-fr="✓ Réponse sous 24h" data-en="✓ Reply within 24h">✓ Réponse sous 24h</span>
-      </div>
-      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
-        <a href="mailto:statevocontact@gmail.com" class="btn-primary"><span data-fr="Prendre contact" data-en="Get in touch">Prendre contact</span></a>
-        <a href="https://wa.me/33641549178" class="btn-ghost" target="_blank" rel="noopener"><span data-fr="WhatsApp →" data-en="WhatsApp →">WhatsApp →</span></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <a href="#" class="footer-logo">Statevo</a>
-  <p class="footer-copy" data-fr="© 2024–2026 Statevo. Social Dynamics & Dating Coaching." data-en="© 2024–2026 Statevo. Social Dynamics & Dating Coaching.">© 2024–2026 Statevo. Social Dynamics & Dating Coaching.</p>
-  <div class="footer-links">
-    <a href="mailto:statevocontact@gmail.com">Email</a>
-    <a href="https://wa.me/33641549178" target="_blank" rel="noopener">WhatsApp</a>
-  </div>
-</footer>
-
-<!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/33641549178" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
-</a>
+  <a href="#" id="back-to-top"><i class="fas fa-arrow-up"></i></a>
+</div>
 
 <script>
-// ── Language toggle ──
-let currentLang = 'fr';
-
-function setLang(lang) {
-  currentLang = lang;
-  document.documentElement.lang = lang;
-
-  document.querySelectorAll('[data-' + lang + ']').forEach(el => {
-    const val = el.getAttribute('data-' + lang);
-    if (el.tagName === 'META') {
-      el.setAttribute('content', val);
-    } else {
-      el.innerHTML = val;
-    }
-  });
-
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang);
-  });
-
-  if (lang === 'en') {
-    document.title = 'Statevo — Social Dynamics & Dating Coaching';
-    document.querySelector('meta[name="description"]').setAttribute('content',
-      'Statevo — Social Dynamics & Dating Coaching. Decode what others never see. Transform your relationships in 2 weeks.');
-  } else {
-    document.title = 'Statevo — Social Dynamics & Dating Coaching';
-    document.querySelector('meta[name="description"]').setAttribute('content',
-      'Statevo — Coaching en dynamiques sociales et séduction. Comprends ce que les autres ne voient jamais. Transforme tes relations en 2 semaines.');
-  }
-}
-
-// ── FAQ accordion ──
-function toggleFaq(btn) {
-  const item = btn.closest('.faq-item');
-  const answer = item.querySelector('.faq-a');
-  const isOpen = item.classList.contains('open');
-
-  document.querySelectorAll('.faq-item.open').forEach(i => {
-    i.classList.remove('open');
-    i.querySelector('.faq-a').style.maxHeight = '0';
-  });
-
-  if (!isOpen) {
-    item.classList.add('open');
-    answer.style.maxHeight = answer.scrollHeight + 'px';
-  }
-}
-
-// ── Mobile menu ──
-function toggleMenu() {
-  const menu = document.getElementById('mobileMenu');
-  const hamburger = document.getElementById('hamburger');
-  menu.classList.toggle('open');
-  hamburger.classList.toggle('open');
-}
-
-function closeMenu() {
-  document.getElementById('mobileMenu').classList.remove('open');
-  document.getElementById('hamburger').classList.remove('open');
-}
-
-// ── Nav scroll effect ──
-window.addEventListener('scroll', () => {
   const nav = document.getElementById('navbar');
-  nav.classList.toggle('scrolled', window.scrollY > 60);
-});
-
-// ── Scroll reveal ──
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+    const btn = document.getElementById('back-to-top');
+    if (window.scrollY > 300) btn.classList.add('show');
+    else btn.classList.remove('show');
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-// ── Smooth scroll offset for fixed nav ──
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const id = a.getAttribute('href');
-    if (id === '#') return;
-    const target = document.querySelector(id);
-    if (target) {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
       e.preventDefault();
-      closeMenu();
-      const offset = target.getBoundingClientRect().top + window.scrollY - 90;
-      window.scrollTo({ top: offset, behavior: 'smooth' });
-    }
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
   });
-});
+
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const q = item.querySelector('.faq-question');
+    q.addEventListener('click', () => item.classList.toggle('active'));
+  });
+  if (faqItems.length) faqItems[0].classList.add('active');
+
+  const counters = document.querySelectorAll('.stat-number');
+  const animateCounter = (counter) => {
+    const target = +counter.getAttribute('data-target');
+    let count = 0;
+    const update = () => {
+      if (count < target) {
+        count += Math.ceil(target / 30);
+        if (count > target) count = target;
+        counter.innerText = count;
+        setTimeout(update, 30);
+      } else counter.innerText = target;
+    };
+    update();
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(counter => observer.observe(counter));
 </script>
 </body>
 </html>
