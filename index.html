@@ -9,32 +9,54 @@
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    background: #000;
     color: white;
+    background: #000;
 }
 
-header {
+/* HERO IMAGE */
+.hero {
+    background: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085') center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 100px 20px 60px;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    top: 0;
+    left: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
 }
 
 h1 {
-    font-size: 50px;
-    font-weight: 600;
+    font-size: 55px;
+    margin: 0;
 }
 
 .subtitle {
-    font-size: 20px;
-    color: #a1a1aa;
+    font-size: 22px;
+    color: #d4d4d8;
     margin-top: 10px;
 }
 
+/* CARDS */
 .container {
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
-    padding: 40px 20px;
+    padding: 80px 20px;
 }
 
 .card {
@@ -51,14 +73,10 @@ h1 {
     border-color: #38bdf8;
 }
 
-.card h2 {
-    font-weight: 500;
-}
-
 .price {
-    font-size: 35px;
-    margin: 15px 0;
+    font-size: 36px;
     color: #38bdf8;
+    margin: 15px 0;
 }
 
 ul {
@@ -77,13 +95,13 @@ button {
     cursor: pointer;
     background: white;
     color: black;
-    transition: 0.3s;
 }
 
 button:hover {
     opacity: 0.85;
 }
 
+/* FOOTER */
 footer {
     text-align: center;
     padding: 60px 20px;
@@ -111,22 +129,26 @@ footer {
 
 <body>
 
-<header>
-    <h1>Statevo</h1>
-    <p class="subtitle">Ton business mérite un site</p>
-</header>
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Statevo</h1>
+        <p class="subtitle">Ton business mérite un site</p>
+    </div>
+</section>
 
+<!-- OFFRES -->
 <div class="container">
 
     <div class="card">
         <h2>💎 Offre Premium</h2>
         <p class="price">150€</p>
         <ul>
-            <li>✔ Site professionnel</li>
-            <li>✔ Paiement intégré</li>
-            <li>✔ Réservation</li>
-            <li>✔ Mise en ligne</li>
-            <li>✔ Support 1 mois</li>
+            <li>✔ Site sur mesure & moderne</li>
+            <li>✔ Paiement sécurisé intégré</li>
+            <li>✔ Réservation automatisée</li>
+            <li>✔ Optimisé mobile & rapide</li>
+            <li>✔ Support 1 mois inclus</li>
         </ul>
         <button onclick="whatsapp()">Réserver</button>
     </div>
@@ -135,8 +157,9 @@ footer {
         <h2>⚡ Offre Essentielle</h2>
         <p class="price">70€</p>
         <ul>
-            <li>✔ Site professionnel</li>
-            <li>✔ Design moderne</li>
+            <li>✔ Site propre & professionnel</li>
+            <li>✔ Design moderne responsive</li>
+            <li>✔ Chargement rapide</li>
             <li>❌ Paiement</li>
             <li>❌ Réservation</li>
         </ul>
@@ -145,6 +168,7 @@ footer {
 
 </div>
 
+<!-- FOOTER -->
 <footer>
     <p>Contact rapide</p>
     <div class="footer-buttons">
