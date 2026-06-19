@@ -56,7 +56,16 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(0,0,0,0.6
 .card{background:#111;padding:35px;border-radius:20px;width:340px;border:1px solid #1f1f1f;transition:.4s}
 .card:hover{transform:translateY(-6px);border-color:#38bdf8}
 .price{font-size:36px;color:#38bdf8;margin:15px 0}
-ul{padding-left:20px;line-height:1.8;color:#d4d4d8;margin-bottom:20px}
+
+/* LISTE OFFRES AVEC SOUS-TEXTE */
+.offer-list{padding-left:0;list-style:none;margin-bottom:20px}
+.offer-list li{padding:10px 0;border-bottom:1px solid #1e1e1e}
+.offer-list li:last-child{border-bottom:none}
+.offer-item-label{font-size:14px;color:#e4e4e7;font-weight:500}
+.offer-item-sub{font-size:12px;color:#555;margin-top:3px;line-height:1.5}
+.offer-item-label.disabled{color:#444}
+.offer-item-sub.disabled{color:#333}
+
 .btn-white{width:100%;padding:14px;border-radius:12px;border:none;font-weight:600;cursor:pointer;background:white;color:black;font-size:15px;transition:.2s}
 .btn-white:hover{opacity:.85}
 .btn-outline{width:100%;padding:14px;border-radius:12px;border:1px solid white;font-weight:600;cursor:pointer;background:transparent;color:white;font-size:15px;transition:.2s}
@@ -191,12 +200,27 @@ footer p{font-size:18px;color:#d4d4d8;margin-bottom:20px}
     <div class="card">
       <h2>💎 Offre Premium</h2>
       <p class="price">150€</p>
-      <ul>
-        <li>✔ Site sur mesure & moderne</li>
-        <li>✔ Paiement sécurisé intégré</li>
-        <li>✔ Réservation automatisée</li>
-        <li>✔ Optimisé mobile & rapide</li>
-        <li>✔ Support 1 mois inclus</li>
+      <ul class="offer-list">
+        <li>
+          <div class="offer-item-label">✔ Site sur mesure & moderne</div>
+          <div class="offer-item-sub">Design unique adapté à ton activité, tes couleurs et ton image de marque</div>
+        </li>
+        <li>
+          <div class="offer-item-label">✔ Paiement sécurisé intégré</div>
+          <div class="offer-item-sub">Tes clients paient directement sur ton site via Stripe ou PayPal</div>
+        </li>
+        <li>
+          <div class="offer-item-label">✔ Réservation automatisée</div>
+          <div class="offer-item-sub">Système de prise de rendez-vous en ligne, disponible 24h/24</div>
+        </li>
+        <li>
+          <div class="offer-item-label">✔ Optimisé mobile & rapide</div>
+          <div class="offer-item-sub">Parfait sur smartphone, tablette et ordinateur — temps de chargement minimal</div>
+        </li>
+        <li>
+          <div class="offer-item-label">✔ Support 1 mois inclus</div>
+          <div class="offer-item-sub">Modifications, corrections ou ajouts pendant 30 jours après la livraison</div>
+        </li>
       </ul>
       <button class="btn-white" onclick="toggleForm('premium')">Réserver</button>
       <div class="form-area" id="form-premium">
@@ -213,12 +237,27 @@ footer p{font-size:18px;color:#d4d4d8;margin-bottom:20px}
     <div class="card">
       <h2>⚡ Offre Essentielle</h2>
       <p class="price">70€</p>
-      <ul>
-        <li>✔ Site propre & professionnel</li>
-        <li>✔ Design moderne responsive</li>
-        <li>✔ Chargement rapide</li>
-        <li>❌ Paiement</li>
-        <li>❌ Réservation</li>
+      <ul class="offer-list">
+        <li>
+          <div class="offer-item-label">✔ Site propre & professionnel</div>
+          <div class="offer-item-sub">Présentation de ton activité, tes services, tes coordonnées et tes horaires</div>
+        </li>
+        <li>
+          <div class="offer-item-label">✔ Design moderne responsive</div>
+          <div class="offer-item-sub">Interface soignée, mise en page adaptée à tous les écrans</div>
+        </li>
+        <li>
+          <div class="offer-item-label">✔ Chargement rapide</div>
+          <div class="offer-item-sub">Code optimisé pour une navigation fluide et un bon référencement Google</div>
+        </li>
+        <li>
+          <div class="offer-item-label disabled">❌ Paiement</div>
+          <div class="offer-item-sub disabled">Non disponible dans cette offre</div>
+        </li>
+        <li>
+          <div class="offer-item-label disabled">❌ Réservation</div>
+          <div class="offer-item-sub disabled">Non disponible dans cette offre</div>
+        </li>
       </ul>
       <button class="btn-outline" onclick="toggleForm('essentiel')">Commander</button>
       <div class="form-area" id="form-essentiel">
