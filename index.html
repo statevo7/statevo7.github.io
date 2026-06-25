@@ -3,124 +3,226 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Statevo</title>
+<title>Statevo — Sites web sur mesure, livrés en 1 semaine</title>
+<meta name="description" content="Statevo crée ton site web professionnel sur mesure en moins d'une semaine. Design moderne, paiement intégré, réservation en ligne.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;color:white;background:#000}
+:root{
+  --bg:#060608;
+  --surface:#0f0f13;
+  --surface2:#17171d;
+  --border:#ffffff10;
+  --border-hover:#38bdf860;
+  --accent:#38bdf8;
+  --accent2:#818cf8;
+  --text:#f1f5f9;
+  --muted:#64748b;
+  --muted2:#94a3b8;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);overflow-x:hidden}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:#38bdf840;border-radius:10px}
 
 /* NAVBAR */
-nav{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(0,0,0,0.6);backdrop-filter:blur(12px);border-bottom:1px solid #ffffff18;padding:16px 40px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-size:20px;font-weight:700;color:white;text-decoration:none}
-.nav-links{display:flex;gap:28px}
-.nav-links a{color:#d4d4d8;text-decoration:none;font-size:14px;transition:.2s}
+nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between;background:rgba(6,6,8,0.7);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:.3s}
+.nav-logo{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:white;text-decoration:none;letter-spacing:-0.5px}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{color:var(--muted2);text-decoration:none;font-size:14px;font-weight:500;transition:.2s;position:relative}
+.nav-links a::after{content:"";position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--accent);border-radius:2px;transition:.3s}
 .nav-links a:hover{color:white}
-.nav-cta{padding:9px 20px;border-radius:10px;background:white;color:black;font-weight:600;font-size:14px;text-decoration:none;transition:.2s}
-.nav-cta:hover{opacity:.85}
+.nav-links a:hover::after{width:100%}
+.nav-cta{padding:9px 22px;border-radius:10px;background:var(--accent);color:#000;font-weight:700;font-size:13px;text-decoration:none;transition:.2s;letter-spacing:.3px}
+.nav-cta:hover{background:white;transform:translateY(-1px)}
 
 /* HERO */
-.hero{background:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085') center/cover;height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative}
-.hero::after{content:"";position:absolute;width:100%;height:100%;background:rgba(0,0,0,0.7);top:0;left:0}
-.hero-content{position:relative;z-index:2}
-.hero-content h1{font-size:55px;font-weight:700}
-.subtitle{font-size:18px;color:#d4d4d8;margin-top:14px;max-width:500px;line-height:1.6;margin-left:auto;margin-right:auto}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:100px 20px 60px}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% -10%, #38bdf815 0%, transparent 70%),radial-gradient(ellipse 60% 40% at 80% 80%, #818cf808 0%, transparent 60%),#060608}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,black 0%,transparent 75%)}
+.hero-content{position:relative;z-index:2;max-width:780px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(56,189,248,0.08);border:1px solid rgba(56,189,248,0.2);border-radius:30px;padding:7px 16px;font-size:13px;color:var(--accent);font-weight:600;margin-bottom:28px;letter-spacing:.5px}
+.hero-eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(42px,7vw,78px);font-weight:800;line-height:1.05;letter-spacing:-2px;margin-bottom:22px}
+.hero h1 .grad{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:clamp(16px,2vw,19px);color:var(--muted2);line-height:1.65;max-width:540px;margin:0 auto 40px}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-primary{padding:14px 32px;border-radius:12px;background:var(--accent);color:#000;font-weight:700;font-size:15px;text-decoration:none;transition:.25s;border:none;cursor:pointer}
+.btn-primary:hover{background:white;transform:translateY(-2px);box-shadow:0 12px 30px rgba(56,189,248,.25)}
+.btn-secondary{padding:14px 32px;border-radius:12px;background:transparent;color:white;font-weight:600;font-size:15px;text-decoration:none;border:1px solid #ffffff25;transition:.25s}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.hero-trust{margin-top:50px;display:flex;justify-content:center;gap:32px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
+.trust-item span{color:var(--accent);font-size:16px}
 
 /* STATS */
-.stats-section{background:#0a0a0a;padding:60px 20px;border-bottom:1px solid #1a1a1a}
-.stats-inner{display:flex;justify-content:center;gap:60px;flex-wrap:wrap;max-width:800px;margin:0 auto;text-align:center}
-.stat-item .number{font-size:42px;font-weight:700;color:#38bdf8}
-.stat-item .label{font-size:14px;color:#888;margin-top:4px}
+.stats-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:50px 20px}
+.stats-inner{display:flex;justify-content:center;gap:0;flex-wrap:wrap;max-width:860px;margin:0 auto}
+.stat-item{flex:1;min-width:160px;text-align:center;padding:20px 30px;position:relative}
+.stat-item:not(:last-child)::after{content:"";position:absolute;right:0;top:20%;height:60%;width:1px;background:var(--border)}
+.stat-item .number{font-family:'Syne',sans-serif;font-size:44px;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.stat-item .label{font-size:13px;color:var(--muted);margin-top:6px;font-weight:500}
 
-/* COMMENT CA MARCHE */
-.how-section{background:#050505;padding:80px 20px;text-align:center}
-.section-title{font-size:28px;font-weight:700;margin-bottom:50px}
-.steps{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;max-width:900px;margin:0 auto}
-.step{background:#111;border:1px solid #1f1f1f;border-radius:20px;padding:35px 28px;width:240px;transition:.3s}
-.step:hover{border-color:#38bdf8;transform:translateY(-5px)}
-.step-num{width:44px;height:44px;border-radius:50%;background:#38bdf820;border:1px solid #38bdf8;color:#38bdf8;font-size:18px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
-.step h3{font-size:16px;margin-bottom:10px}
-.step p{font-size:14px;color:#888;line-height:1.6}
+/* SECTION WRAPPER */
+.section{padding:90px 20px}
+.section-label{font-size:12px;font-weight:700;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:14px}
+.section-title{font-family:'Syne',sans-serif;font-size:clamp(26px,4vw,38px);font-weight:800;letter-spacing:-1px;margin-bottom:16px}
+.section-sub{color:var(--muted2);font-size:16px;line-height:1.65;max-width:500px}
+.center{text-align:center}
+.center .section-sub{margin:0 auto}
 
-/* PROMESSE */
-.promise-section{background:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa') center/cover;position:relative;padding:70px 20px;text-align:center}
-.promise-section::after{content:"";position:absolute;width:100%;height:100%;background:rgba(0,0,0,0.78);top:0;left:0}
-.promise-inner{position:relative;z-index:2;max-width:650px;margin:0 auto}
-.promise-inner h2{font-size:28px;margin-bottom:16px}
-.promise-inner p{color:#d4d4d8;font-size:16px;line-height:1.7;margin-bottom:24px}
-.badge-row{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
-.badge{background:rgba(56,189,248,0.12);border:1px solid #38bdf8;border-radius:30px;padding:10px 22px;font-size:14px;color:#38bdf8;font-weight:600}
+/* HOW IT WORKS */
+.how-section{background:var(--bg)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:820px;margin:50px auto 0}
+.step{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:32px 28px;transition:.3s;position:relative;overflow:hidden}
+.step::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));transform:scaleX(0);transform-origin:left;transition:.4s}
+.step:hover{border-color:var(--border-hover);transform:translateY(-6px)}
+.step:hover::before{transform:scaleX(1)}
+.step-num{font-family:'Syne',sans-serif;font-size:48px;font-weight:800;color:var(--accent);opacity:.15;position:absolute;top:16px;right:20px;line-height:1}
+.step h3{font-size:17px;font-weight:700;margin-bottom:10px}
+.step p{font-size:14px;color:var(--muted2);line-height:1.65}
+
+/* PORTFOLIO */
+.portfolio-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;max-width:1000px;margin:50px auto 0}
+.portfolio-card{border-radius:20px;overflow:hidden;border:1px solid var(--border);transition:.4s;cursor:pointer;position:relative;group}
+.portfolio-card:hover{border-color:var(--border-hover);transform:translateY(-6px);box-shadow:0 20px 50px rgba(56,189,248,.08)}
+.portfolio-preview{height:220px;position:relative;overflow:hidden}
+.portfolio-preview iframe{width:100%;height:100%;border:none;pointer-events:none;transform:scale(1);transform-origin:top left}
+.portfolio-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(6,6,8,0.95) 100%)}
+.portfolio-info{padding:20px 24px;background:var(--surface2)}
+.portfolio-tag{display:inline-block;background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.2);color:var(--accent);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-radius:20px;padding:4px 12px;margin-bottom:10px}
+.portfolio-info h3{font-size:16px;font-weight:700;margin-bottom:5px}
+.portfolio-info p{font-size:13px;color:var(--muted);line-height:1.5}
+.portfolio-preview-mock{height:220px;background:var(--surface2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.mock-browser{width:90%;background:#1a1a22;border-radius:10px;overflow:hidden;border:1px solid #ffffff10}
+.mock-bar{height:28px;background:#13131a;display:flex;align-items:center;padding:0 12px;gap:6px;border-bottom:1px solid #ffffff08}
+.mock-dot{width:8px;height:8px;border-radius:50%}
+.mock-content{padding:14px;font-size:10px;color:#555;line-height:1.6}
+.mock-h{background:linear-gradient(90deg,var(--accent),var(--accent2));height:10px;border-radius:3px;width:60%;margin-bottom:8px}
+.mock-line{background:#ffffff10;height:7px;border-radius:3px;margin-bottom:5px}
+.mock-line.short{width:70%}
+.mock-line.shorter{width:45%}
+.mock-btn{background:var(--accent);height:22px;border-radius:5px;width:80px;margin-top:10px}
 
 /* OFFRES */
-.offers-bg{background:url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6') center/cover;position:relative}
-.offers-bg::before{content:"";position:absolute;width:100%;height:100%;background:rgba(0,0,0,0.82);top:0;left:0}
-.container{position:relative;z-index:2;display:flex;justify-content:center;gap:30px;flex-wrap:wrap;padding:80px 20px}
-.card{background:#111;padding:35px;border-radius:20px;width:340px;border:1px solid #1f1f1f;transition:.4s}
-.card:hover{transform:translateY(-6px);border-color:#38bdf8}
-.price{font-size:36px;color:#38bdf8;margin:15px 0}
-
-/* LISTE OFFRES AVEC SOUS-TEXTE */
-.offer-list{padding-left:0;list-style:none;margin-bottom:20px}
-.offer-list li{padding:10px 0;border-bottom:1px solid #1e1e1e}
+.offers-section{background:var(--bg)}
+.offers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;max-width:820px;margin:50px auto 0}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:36px;transition:.4s;position:relative;overflow:hidden}
+.card.featured{border-color:rgba(56,189,248,.35);background:linear-gradient(160deg,#0f1820,#0a0f14)}
+.card.featured::before{content:"Recommandé";position:absolute;top:20px;right:20px;background:var(--accent);color:#000;font-size:11px;font-weight:800;padding:5px 12px;border-radius:20px;letter-spacing:.5px}
+.card-icon{font-size:28px;margin-bottom:18px}
+.card h2{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;margin-bottom:6px}
+.card .price{font-family:'Syne',sans-serif;font-size:48px;font-weight:800;color:var(--accent);line-height:1;margin:16px 0 6px}
+.card .price-sub{font-size:13px;color:var(--muted);margin-bottom:24px}
+.offer-list{list-style:none;margin-bottom:28px}
+.offer-list li{padding:11px 0;border-bottom:1px solid var(--border)}
 .offer-list li:last-child{border-bottom:none}
-.offer-item-label{font-size:14px;color:#e4e4e7;font-weight:500}
-.offer-item-sub{font-size:12px;color:#555;margin-top:3px;line-height:1.5}
-.offer-item-label.disabled{color:#444}
-.offer-item-sub.disabled{color:#333}
+.offer-item-label{font-size:14px;color:var(--text);font-weight:500;display:flex;align-items:center;gap:8px}
+.offer-item-label .check{color:var(--accent);font-size:16px}
+.offer-item-label .cross{color:#334155;font-size:16px}
+.offer-item-label.disabled{color:#334155}
+.offer-item-sub{font-size:12px;color:var(--muted);margin-top:3px;margin-left:24px;line-height:1.5}
+.offer-item-sub.disabled{color:#1e293b}
+.btn-main{width:100%;padding:15px;border-radius:13px;border:none;font-weight:700;cursor:pointer;font-size:15px;transition:.25s;letter-spacing:.3px}
+.btn-accent{background:var(--accent);color:#000}
+.btn-accent:hover{background:white;transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:white;border:1px solid #ffffff20}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
 
-.btn-white{width:100%;padding:14px;border-radius:12px;border:none;font-weight:600;cursor:pointer;background:white;color:black;font-size:15px;transition:.2s}
-.btn-white:hover{opacity:.85}
-.btn-outline{width:100%;padding:14px;border-radius:12px;border:1px solid white;font-weight:600;cursor:pointer;background:transparent;color:white;font-size:15px;transition:.2s}
-.btn-outline:hover{background:white;color:black}
+/* FORM */
+.form-area{margin-top:22px;overflow:hidden;max-height:0;transition:max-height .5s ease,opacity .4s ease;opacity:0}
+.form-area.open{max-height:700px;opacity:1}
+.form-field{margin-top:10px;position:relative}
+.form-field input,.form-field textarea{width:100%;padding:12px 16px;border-radius:11px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:white;font-size:14px;outline:none;font-family:'Inter',sans-serif;transition:.25s}
+.form-field input:focus,.form-field textarea:focus{border-color:var(--accent);background:rgba(56,189,248,.04)}
+.form-field textarea{resize:vertical;min-height:90px}
+.submit-btn{width:100%;margin-top:14px;padding:14px;border-radius:12px;border:none;background:var(--accent);color:#000;font-weight:700;cursor:pointer;font-size:15px;transition:.25s;font-family:'Inter',sans-serif}
+.submit-btn:hover{background:white}
+.submit-btn:disabled{opacity:.5;cursor:not-allowed}
+.success-msg{display:none;color:var(--accent);margin-top:14px;font-size:14px;text-align:center;background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.2);border-radius:10px;padding:12px}
 
-/* FORMULAIRES */
-.form-area{margin-top:20px;overflow:hidden;max-height:0;transition:max-height .4s ease,opacity .4s ease;opacity:0}
-.form-area.open{max-height:600px;opacity:1}
-.form-area input,.form-area textarea{width:100%;padding:11px 14px;border-radius:10px;border:1px solid #2a2a2a;background:#1a1a1a;color:white;font-size:14px;margin-top:10px;outline:none;font-family:inherit}
-.form-area input:focus,.form-area textarea:focus{border-color:#38bdf8}
-.form-area textarea{resize:vertical;min-height:90px}
-.submit-btn{width:100%;margin-top:14px;padding:14px;border-radius:12px;border:none;background:#38bdf8;color:#000;font-weight:700;cursor:pointer;font-size:15px}
-.submit-btn:hover{opacity:.85}
-.success-msg{display:none;color:#38bdf8;margin-top:12px;font-size:14px;text-align:center}
-
-/* AVIS */
-.reviews-section{background:#0a0a0a;padding:80px 20px;text-align:center}
-.reviews-grid{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;max-width:1000px;margin:0 auto}
-.review-card{background:#111;border:1px solid #1f1f1f;border-radius:20px;padding:28px;width:280px;text-align:left;transition:.3s}
-.review-card:hover{border-color:#38bdf850;transform:translateY(-4px)}
-.stars{color:#38bdf8;font-size:16px;margin-bottom:12px}
-.review-text{font-size:14px;color:#d4d4d8;line-height:1.7;margin-bottom:16px}
-.reviewer{display:flex;align-items:center;gap:10px}
-.avatar{width:38px;height:38px;border-radius:50%;background:#38bdf820;border:1px solid #38bdf8;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#38bdf8}
-.reviewer-name{font-size:14px;font-weight:600}
-.reviewer-sub{font-size:12px;color:#666}
+/* REVIEWS */
+.reviews-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;max-width:940px;margin:50px auto 0}
+.review-card{background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:28px;transition:.3s}
+.review-card:hover{border-color:var(--border-hover);transform:translateY(-4px)}
+.stars{color:var(--accent);font-size:14px;margin-bottom:14px;letter-spacing:2px}
+.review-text{font-size:14px;color:var(--muted2);line-height:1.75;margin-bottom:20px;font-style:italic}
+.reviewer{display:flex;align-items:center;gap:12px}
+.avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,rgba(56,189,248,.2),rgba(129,140,248,.2));border:1px solid rgba(56,189,248,.3);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:var(--accent);flex-shrink:0}
+.reviewer-name{font-size:14px;font-weight:700}
+.reviewer-sub{font-size:12px;color:var(--muted)}
 
 /* FAQ */
-.faq-section{background:#050505;padding:80px 20px}
-.faq-inner{max-width:700px;margin:0 auto}
-.faq-inner .section-title{text-align:center;margin-bottom:40px}
-.faq-item{border-bottom:1px solid #1f1f1f;padding:20px 0}
-.faq-question{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:16px;font-weight:500}
-.faq-question:hover{color:#38bdf8}
-.faq-icon{font-size:20px;color:#38bdf8;transition:.3s;flex-shrink:0;margin-left:12px}
-.faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease,opacity .35s ease;opacity:0;font-size:14px;color:#888;line-height:1.7}
-.faq-answer.open{max-height:200px;opacity:1;padding-top:12px}
-.faq-icon.open{transform:rotate(45deg)}
+.faq-section{background:var(--bg)}
+.faq-inner{max-width:680px;margin:50px auto 0}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-question{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:15px;font-weight:600;padding:20px 0;transition:.2s;gap:16px}
+.faq-question:hover{color:var(--accent)}
+.faq-icon{font-size:18px;color:var(--accent);transition:.35s;flex-shrink:0;width:28px;height:28px;border-radius:50%;background:rgba(56,189,248,.1);display:flex;align-items:center;justify-content:center}
+.faq-icon.open{transform:rotate(45deg);background:var(--accent);color:#000}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease,opacity .35s ease,padding .35s ease;opacity:0;font-size:14px;color:var(--muted2);line-height:1.75}
+.faq-answer.open{max-height:200px;opacity:1;padding-bottom:20px}
 
-/* FOOTER */
-.footer-bg{background:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085') center/cover;position:relative}
-.footer-bg::after{content:"";position:absolute;width:100%;height:100%;background:rgba(0,0,0,0.75);top:0;left:0}
-footer{position:relative;z-index:2;text-align:center;padding:70px 20px}
-footer p{font-size:18px;color:#d4d4d8;margin-bottom:20px}
-.email-btn{padding:14px 32px;border-radius:12px;border:1px solid #333;background:transparent;color:white;cursor:pointer;font-size:15px;font-weight:600;transition:.2s}
-.email-btn:hover{background:white;color:black}
-.footer-copy{margin-top:30px;font-size:13px;color:#444}
+/* FOOTER CTA */
+.footer-cta{background:linear-gradient(135deg,#0a1520,#0d0d18);border-top:1px solid var(--border);padding:80px 20px;text-align:center;position:relative;overflow:hidden}
+.footer-cta::before{content:"";position:absolute;top:-50%;left:50%;transform:translateX(-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,.06) 0%,transparent 70%)}
+.footer-cta h2{font-family:'Syne',sans-serif;font-size:clamp(26px,4vw,42px);font-weight:800;letter-spacing:-1px;margin-bottom:14px;position:relative}
+.footer-cta p{color:var(--muted2);font-size:16px;margin-bottom:32px;position:relative}
+.footer-email{margin-top:20px;font-size:13px;color:var(--muted)}
+.footer-email a{color:var(--accent);text-decoration:none}
+.footer-bottom{background:var(--surface);border-top:1px solid var(--border);padding:20px;text-align:center;font-size:13px;color:var(--muted)}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.animate{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
+.animate.visible{opacity:1;transform:translateY(0)}
+
+/* PAGE NAVIGATION */
+.page{display:none}
+.page.active{display:block}
+#main-page{display:block}
+
+/* PORTFOLIO PAGE */
+.portfolio-page{padding-top:80px}
+.portfolio-page-header{background:var(--surface);border-bottom:1px solid var(--border);padding:60px 20px;text-align:center}
+.portfolio-full-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px;max-width:1100px;margin:50px auto;padding:0 20px}
+.pf-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:.4s}
+.pf-card:hover{border-color:var(--border-hover);transform:translateY(-6px);box-shadow:0 20px 50px rgba(56,189,248,.07)}
+.pf-preview{height:260px;background:var(--surface2);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.pf-info{padding:22px 24px;border-top:1px solid var(--border)}
+.pf-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.pf-tag{background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.15);color:var(--accent);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-radius:20px;padding:4px 10px}
+.pf-info h3{font-size:17px;font-weight:700;margin-bottom:5px}
+.pf-info p{font-size:13px;color:var(--muted2);line-height:1.6}
+.back-btn{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-size:14px;font-weight:600;cursor:pointer;background:none;border:none;padding:0;margin-bottom:20px;transition:.2s}
+.back-btn:hover{opacity:.7}
+
+/* RESPONSIVE */
+@media(max-width:640px){
+  nav{padding:0 20px}
+  .nav-links{display:none}
+  .hero h1{letter-spacing:-1px}
+  .stat-item:not(:last-child)::after{display:none}
+  .stat-item{border-bottom:1px solid var(--border)}
+}
 </style>
 </head>
 <body>
 
 <!-- NAVBAR -->
 <nav>
-  <a class="nav-logo" href="#">Statevo</a>
+  <a class="nav-logo" href="#" onclick="showPage('main')">State<span>vo</span></a>
   <div class="nav-links">
+    <a href="#" onclick="showPage('portfolio');return false">Portfolio</a>
     <a href="#offres">Offres</a>
     <a href="#avis">Avis</a>
     <a href="#faq">FAQ</a>
@@ -128,30 +230,45 @@ footer p{font-size:18px;color:#d4d4d8;margin-bottom:20px}
   <a class="nav-cta" href="#offres">Commencer →</a>
 </nav>
 
+<!-- ===== MAIN PAGE ===== -->
+<div id="main-page" class="page active">
+
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
   <div class="hero-content">
-    <h1>Statevo</h1>
-    <p class="subtitle">Statevo est le meilleur dans l'accompagnement, la création et la personnalisation de sites web.</p>
+    <div class="hero-eyebrow">✦ Livraison garantie en moins d'1 semaine</div>
+    <h1>Ton site web,<br><span class="grad">livré en 5 jours.</span></h1>
+    <p class="hero-sub">On conçoit des sites sur mesure pour les indépendants et petites entreprises. Design moderne, paiement intégré, réservation automatisée.</p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="#offres">Voir les offres →</a>
+      <a class="btn-secondary" href="#" onclick="showPage('portfolio');return false">Voir nos réalisations</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item"><span>✔</span> Sans carte bancaire pour démarrer</div>
+      <div class="trust-item"><span>✔</span> 50+ sites livrés</div>
+      <div class="trust-item"><span>✔</span> Réponse sous 24h</div>
+    </div>
   </div>
 </section>
 
 <!-- STATS -->
 <section class="stats-section">
   <div class="stats-inner">
-    <div class="stat-item">
+    <div class="stat-item animate">
       <div class="number">50+</div>
       <div class="label">Sites livrés</div>
     </div>
-    <div class="stat-item">
+    <div class="stat-item animate">
       <div class="number">98%</div>
       <div class="label">Clients satisfaits</div>
     </div>
-    <div class="stat-item">
-      <div class="number">&lt;7j</div>
+    <div class="stat-item animate">
+      <div class="number">&lt;5j</div>
       <div class="label">Délai de livraison</div>
     </div>
-    <div class="stat-item">
+    <div class="stat-item animate">
       <div class="number">24h</div>
       <div class="label">Réponse garantie</div>
     </div>
@@ -159,126 +276,217 @@ footer p{font-size:18px;color:#d4d4d8;margin-bottom:20px}
 </section>
 
 <!-- COMMENT CA MARCHE -->
-<section class="how-section">
-  <h2 class="section-title">Comment ça marche ?</h2>
+<section class="section how-section">
+  <div class="center">
+    <div class="section-label">Processus</div>
+    <h2 class="section-title">Simple comme bonjour</h2>
+    <p class="section-sub">Pas besoin de compétences techniques. Tu nous décris ton projet, on s'occupe du reste.</p>
+  </div>
   <div class="steps">
-    <div class="step">
+    <div class="step animate">
       <div class="step-num">1</div>
-      <h3>Tu commandes</h3>
-      <p>Remplis le formulaire de l'offre qui te correspond. C'est rapide, moins de 2 minutes.</p>
+      <h3>Tu remplis le formulaire</h3>
+      <p>Ton activité, tes couleurs, ce que tu veux afficher. Moins de 2 minutes, et on a tout ce qu'il faut.</p>
     </div>
-    <div class="step">
+    <div class="step animate">
       <div class="step-num">2</div>
-      <h3>On crée</h3>
-      <p>Un expert dédié conçoit ton site sur mesure selon tes couleurs et ton activité.</p>
+      <h3>On crée ton site</h3>
+      <p>Un expert dédié conçoit ton site sur mesure. Design moderne, rapide, beau sur tous les écrans.</p>
     </div>
-    <div class="step">
+    <div class="step animate">
       <div class="step-num">3</div>
-      <h3>Tu reçois</h3>
-      <p>Ton site est livré en moins d'1 semaine, prêt à être mis en ligne.</p>
+      <h3>Tu valides et on livre</h3>
+      <p>Tu reçois ton site en moins d'une semaine. Des retouches ? On les fait jusqu'à ce que tu sois satisfait.</p>
     </div>
   </div>
 </section>
 
-<!-- PROMESSE -->
-<section class="promise-section">
-  <div class="promise-inner">
-    <h2>🚀 Commande et reçois ton site en moins d'1 semaine</h2>
-    <p>Un site 100% personnalisé selon ton activité et tes couleurs, avec l'accompagnement d'un expert dédié du début à la fin.</p>
-    <div class="badge-row">
-      <span class="badge">✔ Site personnalisé</span>
-      <span class="badge">✔ Livraison &lt; 1 semaine</span>
-      <span class="badge">✔ Suivi personnalisé</span>
+<!-- PORTFOLIO APERCU -->
+<section class="section portfolio-section">
+  <div class="center">
+    <div class="section-label">Réalisations</div>
+    <h2 class="section-title">Ce qu'on a déjà créé</h2>
+    <p class="section-sub">Chaque site est unique, pensé pour le métier et l'image de notre client.</p>
+  </div>
+  <div class="portfolio-grid">
+    <div class="portfolio-card animate" onclick="showPage('portfolio')">
+      <div class="portfolio-preview-mock">
+        <div class="mock-browser">
+          <div class="mock-bar">
+            <div class="mock-dot" style="background:#ff5f57"></div>
+            <div class="mock-dot" style="background:#febc2e"></div>
+            <div class="mock-dot" style="background:#28c840"></div>
+          </div>
+          <div class="mock-content">
+            <div style="background:linear-gradient(90deg,#38bdf8,#818cf8);height:60px;border-radius:6px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;font-size:11px;color:rgba(0,0,0,.7);font-weight:700">COIFFEUR PRESTIGE</div>
+            <div class="mock-h"></div>
+            <div class="mock-line"></div>
+            <div class="mock-line short"></div>
+            <div class="mock-btn"></div>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-info">
+        <span class="portfolio-tag">Coiffure</span>
+        <h3>Coiffeur Prestige</h3>
+        <p>Site vitrine + réservation en ligne. Livré en 4 jours.</p>
+      </div>
     </div>
+    <div class="portfolio-card animate" onclick="showPage('portfolio')">
+      <div class="portfolio-preview-mock">
+        <div class="mock-browser">
+          <div class="mock-bar">
+            <div class="mock-dot" style="background:#ff5f57"></div>
+            <div class="mock-dot" style="background:#febc2e"></div>
+            <div class="mock-dot" style="background:#28c840"></div>
+          </div>
+          <div class="mock-content">
+            <div style="background:linear-gradient(90deg,#10b981,#06b6d4);height:60px;border-radius:6px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;font-size:11px;color:rgba(0,0,0,.7);font-weight:700">COACH SPORTIF</div>
+            <div class="mock-h" style="background:linear-gradient(90deg,#10b981,#06b6d4)"></div>
+            <div class="mock-line"></div>
+            <div class="mock-line shorter"></div>
+            <div class="mock-btn" style="background:#10b981"></div>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-info">
+        <span class="portfolio-tag">Sport & Coaching</span>
+        <h3>Sarah Fitness</h3>
+        <p>Prise de rendez-vous + paiement intégré. Livré en 5 jours.</p>
+      </div>
+    </div>
+    <div class="portfolio-card animate" onclick="showPage('portfolio')">
+      <div class="portfolio-preview-mock">
+        <div class="mock-browser">
+          <div class="mock-bar">
+            <div class="mock-dot" style="background:#ff5f57"></div>
+            <div class="mock-dot" style="background:#febc2e"></div>
+            <div class="mock-dot" style="background:#28c840"></div>
+          </div>
+          <div class="mock-content">
+            <div style="background:linear-gradient(90deg,#f59e0b,#ef4444);height:60px;border-radius:6px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;font-size:11px;color:rgba(0,0,0,.7);font-weight:700">RESTAURANT</div>
+            <div class="mock-h" style="background:linear-gradient(90deg,#f59e0b,#ef4444)"></div>
+            <div class="mock-line"></div>
+            <div class="mock-line short"></div>
+            <div class="mock-btn" style="background:#f59e0b"></div>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-info">
+        <span class="portfolio-tag">Restauration</span>
+        <h3>Le Bistrot du Port</h3>
+        <p>Menu en ligne + réservation de table. Livré en 3 jours.</p>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:36px">
+    <a class="btn-secondary" href="#" onclick="showPage('portfolio');return false" style="display:inline-block;padding:13px 28px">Voir toutes les réalisations →</a>
   </div>
 </section>
 
 <!-- OFFRES -->
-<div class="offers-bg" id="offres">
-  <div class="container">
+<section class="section offers-section" id="offres">
+  <div class="center">
+    <div class="section-label">Tarifs</div>
+    <h2 class="section-title">Choisis ton offre</h2>
+    <p class="section-sub">Deux formules claires. Pas de frais cachés, pas de surprise.</p>
+  </div>
+  <div class="offers-grid">
 
-    <div class="card">
-      <h2>💎 Offre Premium</h2>
-      <p class="price">150€</p>
+    <div class="card animate">
+      <div class="card-icon">⚡</div>
+      <h2>Essentielle</h2>
+      <div class="price">70€</div>
+      <p class="price-sub">Site vitrine professionnel</p>
       <ul class="offer-list">
         <li>
-          <div class="offer-item-label">✔ Site sur mesure & moderne</div>
-          <div class="offer-item-sub">Un design unique fait pour toi, avec tes couleurs et l'esprit de ton activité</div>
+          <div class="offer-item-label"><span class="check">✔</span> Site propre & moderne</div>
+          <div class="offer-item-sub">Présentation de ton activité, tes services et tes coordonnées</div>
         </li>
         <li>
-          <div class="offer-item-label">✔ Paiement sécurisé intégré</div>
-          <div class="offer-item-sub">Tes clients paient directement sur ton site par carte bancaire, en toute sécurité</div>
+          <div class="offer-item-label"><span class="check">✔</span> Responsive tous écrans</div>
+          <div class="offer-item-sub">Parfait sur téléphone, tablette et ordinateur</div>
         </li>
         <li>
-          <div class="offer-item-label">✔ Prise de rendez-vous en ligne</div>
-          <div class="offer-item-sub">Tes clients réservent directement sur ton site, à n'importe quelle heure</div>
+          <div class="offer-item-label"><span class="check">✔</span> Chargement ultra-rapide</div>
+          <div class="offer-item-sub">Tes visiteurs n'attendent pas</div>
         </li>
         <li>
-          <div class="offer-item-label">✔ Beau sur tous les écrans</div>
-          <div class="offer-item-sub">Ton site s'affiche parfaitement sur téléphone, tablette et ordinateur</div>
+          <div class="offer-item-label"><span class="check">✔</span> Visible sur Google</div>
+          <div class="offer-item-sub">SEO de base inclus dès la livraison</div>
         </li>
         <li>
-          <div class="offer-item-label">✔ Support 1 mois inclus</div>
-          <div class="offer-item-sub">Modifications, corrections ou ajouts pendant 30 jours après la livraison</div>
+          <div class="offer-item-label disabled"><span class="cross">✕</span> Paiement en ligne</div>
+          <div class="offer-item-sub disabled">Disponible dans l'offre Premium</div>
+        </li>
+        <li>
+          <div class="offer-item-label disabled"><span class="cross">✕</span> Réservation automatisée</div>
+          <div class="offer-item-sub disabled">Disponible dans l'offre Premium</div>
         </li>
       </ul>
-      <button class="btn-white" onclick="toggleForm('premium')">Réserver</button>
-      <div class="form-area" id="form-premium">
-        <input type="text" placeholder="Ton prénom" id="p-name" />
-        <input type="email" placeholder="Ton email" id="p-email" />
-        <input type="tel" placeholder="Ton numéro (optionnel)" id="p-tel" />
-        <input type="text" placeholder="Nom de ton business" id="p-biz" />
-        <textarea placeholder="Décris ton projet (activité, couleurs, infos à afficher...)" id="p-desc"></textarea>
-        <button class="submit-btn" onclick="submitForm('premium')">Envoyer ma demande</button>
-        <p class="success-msg" id="success-premium">✅ Demande envoyée ! On te contacte bientôt.</p>
+      <button class="btn-main btn-ghost" onclick="toggleForm('essentiel')">Commander cette offre</button>
+      <div class="form-area" id="form-essentiel">
+        <div class="form-field"><input type="text" placeholder="Ton prénom *" id="e-name"/></div>
+        <div class="form-field"><input type="email" placeholder="Ton email *" id="e-email"/></div>
+        <div class="form-field"><input type="tel" placeholder="Ton téléphone (optionnel)" id="e-tel"/></div>
+        <div class="form-field"><input type="text" placeholder="Nom de ton business *" id="e-biz"/></div>
+        <div class="form-field"><textarea placeholder="Décris ton projet : activité, couleurs souhaitées, infos à afficher..." id="e-desc"></textarea></div>
+        <button class="submit-btn" id="submit-essentiel" onclick="submitForm('essentiel')">Envoyer ma demande →</button>
+        <p class="success-msg" id="success-essentiel">✅ Demande reçue ! On te contacte dans les 24h.</p>
       </div>
     </div>
 
-    <div class="card">
-      <h2>⚡ Offre Essentielle</h2>
-      <p class="price">70€</p>
+    <div class="card featured animate">
+      <div class="card-icon">💎</div>
+      <h2>Premium</h2>
+      <div class="price">150€</div>
+      <p class="price-sub">Site complet avec toutes les fonctionnalités</p>
       <ul class="offer-list">
         <li>
-          <div class="offer-item-label">✔ Site propre & professionnel</div>
-          <div class="offer-item-sub">Présentation de ton activité, tes services, tes coordonnées et tes horaires</div>
+          <div class="offer-item-label"><span class="check">✔</span> Tout de l'offre Essentielle</div>
+          <div class="offer-item-sub">Design sur mesure, responsive, rapide et visible Google</div>
         </li>
         <li>
-          <div class="offer-item-label">✔ Beau sur tous les écrans</div>
-          <div class="offer-item-sub">Ton site s'affiche bien que ce soit sur téléphone, tablette ou ordinateur</div>
+          <div class="offer-item-label"><span class="check">✔</span> Paiement sécurisé intégré</div>
+          <div class="offer-item-sub">Tes clients paient par carte bancaire directement sur ton site</div>
         </li>
         <li>
-          <div class="offer-item-label">✔ Chargement rapide</div>
-          <div class="offer-item-sub">Ton site s'ouvre vite, tes visiteurs n'attendent pas</div>
+          <div class="offer-item-label"><span class="check">✔</span> Réservation automatisée</div>
+          <div class="offer-item-sub">Tes clients réservent 24h/24, 7j/7, sans te déranger</div>
         </li>
         <li>
-          <div class="offer-item-label disabled">❌ Paiement</div>
-          <div class="offer-item-sub disabled">Non disponible dans cette offre</div>
+          <div class="offer-item-label"><span class="check">✔</span> Support 1 mois inclus</div>
+          <div class="offer-item-sub">Modifications et corrections pendant 30 jours après livraison</div>
         </li>
         <li>
-          <div class="offer-item-label disabled">❌ Réservation</div>
-          <div class="offer-item-sub disabled">Non disponible dans cette offre</div>
+          <div class="offer-item-label"><span class="check">✔</span> Expert dédié du début à la fin</div>
+          <div class="offer-item-sub">Une seule personne suit ton projet de A à Z</div>
         </li>
       </ul>
-      <button class="btn-outline" onclick="toggleForm('essentiel')">Commander</button>
-      <div class="form-area" id="form-essentiel">
-        <input type="text" placeholder="Ton prénom" id="e-name" />
-        <input type="email" placeholder="Ton email" id="e-email" />
-        <input type="tel" placeholder="Ton numéro (optionnel)" id="e-tel" />
-        <input type="text" placeholder="Nom de ton business" id="e-biz" />
-        <textarea placeholder="Décris ton projet (activité, couleurs, infos à afficher...)" id="e-desc"></textarea>
-        <button class="submit-btn" onclick="submitForm('essentiel')">Envoyer ma demande</button>
-        <p class="success-msg" id="success-essentiel">✅ Demande envoyée ! On te contacte bientôt.</p>
+      <button class="btn-main btn-accent" onclick="toggleForm('premium')">Réserver cette offre</button>
+      <div class="form-area" id="form-premium">
+        <div class="form-field"><input type="text" placeholder="Ton prénom *" id="p-name"/></div>
+        <div class="form-field"><input type="email" placeholder="Ton email *" id="p-email"/></div>
+        <div class="form-field"><input type="tel" placeholder="Ton téléphone (optionnel)" id="p-tel"/></div>
+        <div class="form-field"><input type="text" placeholder="Nom de ton business *" id="p-biz"/></div>
+        <div class="form-field"><textarea placeholder="Décris ton projet : activité, couleurs souhaitées, fonctionnalités voulues..." id="p-desc"></textarea></div>
+        <button class="submit-btn" id="submit-premium" onclick="submitForm('premium')">Envoyer ma demande →</button>
+        <p class="success-msg" id="success-premium">✅ Demande reçue ! On te contacte dans les 24h.</p>
       </div>
     </div>
 
   </div>
-</div>
+</section>
 
-<!-- AVIS CLIENTS -->
-<section class="reviews-section" id="avis">
-  <h2 class="section-title">Ce que disent nos clients</h2>
+<!-- AVIS -->
+<section class="section reviews-section" id="avis">
+  <div class="center">
+    <div class="section-label">Témoignages</div>
+    <h2 class="section-title">Ils nous ont fait confiance</h2>
+    <p class="section-sub">Des vrais clients, des vrais résultats.</p>
+  </div>
   <div class="reviews-grid">
-    <div class="review-card">
+    <div class="review-card animate">
       <div class="stars">★★★★★</div>
       <p class="review-text">"Livré en 5 jours, exactement ce que je voulais. Mon site est propre, rapide et mes clients adorent. Je recommande les yeux fermés."</p>
       <div class="reviewer">
@@ -289,9 +497,9 @@ footer p{font-size:18px;color:#d4d4d8;margin-bottom:20px}
         </div>
       </div>
     </div>
-    <div class="review-card">
+    <div class="review-card animate">
       <div class="stars">★★★★★</div>
-      <p class="review-text">"La personne qui s'est occupée de mon site a été dispo tout le long, très pro. Le système de réservation fonctionne parfaitement. Valeur au prix, c'est imbattable."</p>
+      <p class="review-text">"Très pro du début à la fin. Le système de réservation fonctionne à la perfection et mes clientes adorent réserver depuis leur téléphone."</p>
       <div class="reviewer">
         <div class="avatar">SB</div>
         <div>
@@ -300,9 +508,9 @@ footer p{font-size:18px;color:#d4d4d8;margin-bottom:20px}
         </div>
       </div>
     </div>
-    <div class="review-card">
+    <div class="review-card animate">
       <div class="stars">★★★★★</div>
-      <p class="review-text">"J'avais peur que ce soit compliqué mais tout s'est passé super bien. Site rendu en 4 jours, moderne et parfait sur téléphone."</p>
+      <p class="review-text">"J'avais peur que ce soit compliqué mais tout s'est passé super bien. Site rendu en 4 jours, moderne, rapide et parfait sur téléphone."</p>
       <div class="reviewer">
         <div class="avatar">TA</div>
         <div>
@@ -311,108 +519,302 @@ footer p{font-size:18px;color:#d4d4d8;margin-bottom:20px}
         </div>
       </div>
     </div>
+    <div class="review-card animate">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Prix imbattable pour la qualité. Mon restaurant a doublé ses réservations en ligne depuis que le site est en ligne. Merci Statevo !"</p>
+      <div class="reviewer">
+        <div class="avatar">ML</div>
+        <div>
+          <div class="reviewer-name">Marc L.</div>
+          <div class="reviewer-sub">Restaurateur</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="faq-section" id="faq">
+<section class="section faq-section" id="faq">
+  <div class="center">
+    <div class="section-label">Questions fréquentes</div>
+    <h2 class="section-title">Tout ce que tu veux savoir</h2>
+  </div>
   <div class="faq-inner">
-    <h2 class="section-title">Questions fréquentes</h2>
-
     <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(0)">
-        <span>Combien de temps pour recevoir mon site ?</span>
-        <span class="faq-icon" id="icon-0">+</span>
-      </div>
-      <div class="faq-answer" id="faq-0">On s'engage à livrer ton site en moins d'1 semaine après réception de ta commande et de tes informations. En général, c'est entre 3 et 5 jours.</div>
+      <div class="faq-question" onclick="toggleFaq(0)"><span>Combien de temps pour recevoir mon site ?</span><div class="faq-icon" id="icon-0">+</div></div>
+      <div class="faq-answer" id="faq-0">On s'engage à livrer en moins d'1 semaine après réception de tes informations. En général, c'est entre 3 et 5 jours ouvrés.</div>
     </div>
-
     <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(1)">
-        <span>Comment se passe le paiement ?</span>
-        <span class="faq-icon" id="icon-1">+</span>
-      </div>
-      <div class="faq-answer" id="faq-1">Le paiement s'effectue en ligne de façon sécurisée après validation de ta commande. On te contacte sous 24h pour finaliser les détails.</div>
+      <div class="faq-question" onclick="toggleFaq(1)"><span>Comment se passe le paiement ?</span><div class="faq-icon" id="icon-1">+</div></div>
+      <div class="faq-answer" id="faq-1">On te contacte sous 24h après ta demande pour confirmer les détails et te partager le lien de paiement sécurisé. Pas de surprise.</div>
     </div>
-
     <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(2)">
-        <span>Est-ce que je peux demander des modifications ?</span>
-        <span class="faq-icon" id="icon-2">+</span>
-      </div>
-      <div class="faq-answer" id="faq-2">Oui, des retouches sont incluses dans les deux offres. L'offre Premium inclut également 1 mois de support pour toute modification après livraison.</div>
+      <div class="faq-question" onclick="toggleFaq(2)"><span>Est-ce que je peux demander des modifications ?</span><div class="faq-icon" id="icon-2">+</div></div>
+      <div class="faq-answer" id="faq-2">Oui, des retouches sont comprises dans les deux offres. L'offre Premium inclut en plus 1 mois de support après livraison pour toute modification.</div>
     </div>
-
     <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(3)">
-        <span>Quelle est la différence entre les deux offres ?</span>
-        <span class="faq-icon" id="icon-3">+</span>
-      </div>
-      <div class="faq-answer" id="faq-3">L'offre Essentielle (70€) te donne un site pro et moderne. L'offre Premium (150€) ajoute en plus un système de paiement sécurisé, une réservation automatisée et 1 mois de support.</div>
+      <div class="faq-question" onclick="toggleFaq(3)"><span>Quelle est la différence entre les deux offres ?</span><div class="faq-icon" id="icon-3">+</div></div>
+      <div class="faq-answer" id="faq-3">L'Essentielle (70€) = un site vitrine pro et rapide. La Premium (150€) = tout ça + paiement sécurisé, réservation automatisée et 1 mois de support inclus.</div>
     </div>
-
     <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(4)">
-        <span>Mon site sera-t-il visible sur Google ?</span>
-        <span class="faq-icon" id="icon-4">+</span>
-      </div>
-      <div class="faq-answer" id="faq-4">Oui, tous nos sites sont faits pour bien apparaître sur Google : le titre, la vitesse d'affichage, et la compatibilité mobile sont tous pris en charge.</div>
+      <div class="faq-question" onclick="toggleFaq(4)"><span>Mon site sera-t-il visible sur Google ?</span><div class="faq-icon" id="icon-4">+</div></div>
+      <div class="faq-answer" id="faq-4">Oui. Tous nos sites incluent les bases SEO : balises bien renseignées, vitesse d'affichage optimisée, compatibilité mobile. Tu pars sur de bonnes bases pour bien apparaître.</div>
     </div>
-
     <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(5)">
-        <span>Je n'ai aucune connaissance technique, c'est un problème ?</span>
-        <span class="faq-icon" id="icon-5">+</span>
-      </div>
-      <div class="faq-answer" id="faq-5">Pas du tout. On s'occupe de tout. Tu nous donnes les infos sur ton activité et tes préférences, on fait le reste. Notre équipe t'accompagne à chaque étape.</div>
+      <div class="faq-question" onclick="toggleFaq(5)"><span>Je n'ai aucune connaissance technique, c'est un problème ?</span><div class="faq-icon" id="icon-5">+</div></div>
+      <div class="faq-answer" id="faq-5">Pas du tout. On s'occupe de tout. Tu nous donnes les infos sur ton activité, on fait le reste. Notre expert te tient informé à chaque étape.</div>
     </div>
-
   </div>
 </section>
 
-<!-- FOOTER -->
-<div class="footer-bg">
-  <footer>
-    <p>Une question ? Contacte-nous directement</p>
-    <button class="email-btn" onclick="window.location.href='mailto:statevocontact@gmail.com?subject=Demande de site web'">📧 Envoyer un email</button>
-    <p class="footer-copy">© 2025 Statevo — Tous droits réservés</p>
-  </footer>
-</div>
+<!-- FOOTER CTA -->
+<section class="footer-cta">
+  <h2>Prêt à lancer ton site ?</h2>
+  <p>Rejoins les 50+ entrepreneurs qui font confiance à Statevo.</p>
+  <a class="btn-primary" href="#offres" style="display:inline-block">Voir les offres →</a>
+  <div class="footer-email">Une question ? <a href="mailto:statevocontact@gmail.com">statevocontact@gmail.com</a></div>
+</section>
+<div class="footer-bottom">© 2025 Statevo — Tous droits réservés</div>
+
+</div><!-- end main-page -->
+
+<!-- ===== PORTFOLIO PAGE ===== -->
+<div id="portfolio-page" class="page portfolio-page">
+  <div class="portfolio-page-header">
+    <button class="back-btn" onclick="showPage('main')">← Retour au site</button>
+    <div class="section-label" style="text-align:center">Nos réalisations</div>
+    <h1 class="section-title" style="text-align:center;max-width:500px;margin:0 auto 14px">Sites créés par Statevo</h1>
+    <p class="section-sub" style="text-align:center;margin:0 auto">Chaque projet est unique. Voici un aperçu de ce qu'on a réalisé pour nos clients.</p>
+  </div>
+
+  <div class="portfolio-full-grid">
+
+    <div class="pf-card">
+      <div class="pf-preview">
+        <div style="width:85%;background:#1a1a22;border-radius:10px;overflow:hidden;border:1px solid #ffffff10">
+          <div style="height:26px;background:#13131a;display:flex;align-items:center;padding:0 12px;gap:6px;border-bottom:1px solid #ffffff08">
+            <div style="width:7px;height:7px;border-radius:50%;background:#ff5f57"></div>
+            <div style="width:7px;height:7px;border-radius:50%;background:#febc2e"></div>
+            <div style="width:7px;height:7px;border-radius:50%;background:#28c840"></div>
+          </div>
+          <div style="padding:14px">
+            <div style="background:linear-gradient(90deg,#38bdf8,#818cf8);height:55px;border-radius:6px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;font-size:10px;color:rgba(0,0,0,.8);font-weight:800;letter-spacing:1px">✂ COIFFEUR PRESTIGE</div>
+            <div style="background:linear-gradient(90deg,#38bdf8,#818cf8);height:8px;border-radius:3px;width:55%;margin-bottom:7px"></div>
+            <div style="background:#ffffff10;height:6px;border-radius:3px;margin-bottom:5px"></div>
+            <div style="background:#ffffff10;height:6px;border-radius:3px;width:70%;margin-bottom:10px"></div>
+            <div style="background:#38bdf8;height:20px;border-radius:5px;width:90px"></div>
+          </div>
+        </div>
+      </div>
+      <div class="pf-info">
+        <div class="pf-tags"><span class="pf-tag">Coiffure</span><span class="pf-tag">Réservation</span></div>
+        <h3>Coiffeur Prestige — Paris 11e</h3>
+        <p>Site vitrine avec agenda de réservation en ligne. Le client reçoit une confirmation automatique par email. Livré en 4 jours.</p>
+      </div>
+    </div>
+
+    <div class="pf-card">
+      <div class="pf-preview">
+        <div style="width:85%;background:#1a1a22;border-radius:10px;overflow:hidden;border:1px solid #ffffff10">
+          <div style="height:26px;background:#13131a;display:flex;align-items:center;padding:0 12px;gap:6px;border-bottom:1px solid #ffffff08">
+            <div style="width:7px;height:7px;border-radius:50%;background:#ff5f57"></div>
+            <div style="width:7px;height:7px;border-radius:50%;background:#febc2e"></div>
+            <div style="width:7px;height:7px;border-radius:50%;background:#28c840"></div>
+          </div>
+          <div style="padding:14px">
+            <div style="background:linear-gradient(90deg,#10b981,#06b6d4);height:55px;border-radius:6px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;font-size:10px;color:rgba(0,0,0,.8);font-weight:800;letter-spacing:1px">💪 SARAH FITNESS</div>
+            <div style="background:linear-gradient(90deg,#10b981,#06b6d4);height:8px;border-radius:3px;width:55%;margin-bottom:7px"></div>
+            <div style="background:#ffffff10;height:6px;border-radius:3px;margin-bottom:5px"></div>
+            <div style="background:#ffffff10;height:6px;border-radius:3px;width:70%;margin-bottom:10px"></div>
+            <div style="background:#10b981;height:20px;border-radius:5px;width:90px"></div>
+          </div>
+        </div>
+      </div>
+      <div class="pf-info">
+        <div class="pf-tags"><span class="pf-tag">Sport</span><span class="pf-tag">Paiement</span><span class="pf-tag">Réservation</span></div>
+        <h3>Sarah Fitness — Coach sportive</h3>
+        <p>Prise de rendez-vous pour les séances + paiement des abonnements directement en ligne. Livré en 5 jours.</p>
+      </div>
+    </div>
+
+    <div class="pf-card">
+      <div class="pf-preview">
+        <div style="width:85%;background:#1a1a22;border-radius:10px;overflow:hidden;border:1px solid #ffffff10">
+          <div style="height:26px;background:#13131a;display:flex;align-items:center;padding:0 12px;gap:6px;border-bottom:1px solid #ffffff08">
+            <div style="width:7px;height:7px;border-radius:50%;background:#ff5f57"></div>
+            <div style="width:7px;height:7px;border-radius:50%;background:#febc2e"></div>
+            <div style="width:7px;height:7px;border-radius:50%;background:#28c840"></div>
+          </div>
+          <div style="padding:14px">
+            <div style="background:linear-gradient(90deg,#f59e0b,#ef4444);height:55px;border-radius:6px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;font-size:10px;color:rgba(0,0,0,.8);font-weight:800;letter-spacing:1px">🍽 LE BISTROT DU PORT</div>
+            <div style="background:linear-gradient(90deg,#f59e0b,#ef4444);height:8px;border-radius:3px;width:55%;margin-bottom:7px"></div>
+            <div style="background:#ffffff10;height:6px;border-radius:3px;margin-bottom:5px"></div>
+            <div style="background:#ffffff10;height:6px;border-radius:3px;width:70%;margin-bottom:10px"></div>
+            <div style="background:#f59e0b;height:20px;border-radius:5px;width:90px"></div>
+          </div>
+        </div>
+      </div>
+      <div class="pf-info">
+        <div class="pf-tags"><span class="pf-tag">Restauration</span><span class="pf-tag">Réservation</span></div>
+        <h3>Le Bistrot du Port — Marseille</h3>
+        <p>Menu en ligne, galerie photos, réservation de table automatisée. Livré en 3 jours. Le patron a arrêté de répondre au téléphone.</p>
+      </div>
+    </div>
+
+    <div class="pf-card">
+      <div class="pf-preview">
+        <div style="width:85%;background:#1a1a22;border-radius:10px;overflow:hidden;border:1px solid #ffffff10">
+          <div style="height:26px;background:#13131a;display:flex;align-items:center;padding:0 12px;gap:6px;border-bottom:1px solid #ffffff08">
+            <div style="width:7px;height:7px;border-radius:50%;background:#ff5f57"></div>
+            <div style="width:7px;height:7px;border-radius:50%;background:#febc2e"></div>
+            <div style="width:7px;height:7px;border-radius:50%;background:#28c840"></div>
+          </div>
+          <div style="padding:14px">
+            <div style="background:linear-gradient(90deg,#8b5cf6,#ec4899);height:55px;border-radius:6px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;font-size:10px;color:rgba(255,255,255,.9);font-weight:800;letter-spacing:1px">💆 SOIN & BEAUTÉ</div>
+            <div style="background:linear-gradient(90deg,#8b5cf6,#ec4899);height:8px;border-radius:3px;width:55%;margin-bottom:7px"></div>
+            <div style="background:#ffffff10;height:6px;border-radius:3px;margin-bottom:5px"></div>
+            <div style="background:#ffffff10;height:6px;border-radius:3px;width:70%;margin-bottom:10px"></div>
+            <div style="background:#8b5cf6;height:20px;border-radius:5px;width:90px"></div>
+          </div>
+        </div>
+      </div>
+      <div class="pf-info">
+        <div class="pf-tags"><span class="pf-tag">Esthétique</span><span class="pf-tag">Paiement</span></div>
+        <h3>Soin & Beauté — Institut</h3>
+        <p>Présentation des soins, paiement en ligne des prestations, galerie avant/après. Livré en 5 jours.</p>
+      </div>
+    </div>
+
+    <div class="pf-card">
+      <div class="pf-preview">
+        <div style="width:85%;background:#1a1a22;border-radius:10px;overflow:hidden;border:1px solid #ffffff10">
+          <div style="height:26px;background:#13131a;display:flex;align-items:center;padding:0 12px;gap:6px;border-bottom:1px solid #ffffff08">
+            <div style="width:7px;height:7px;border-radius:50%;background:#ff5f57"></div>
+            <div style="width:7px;height:7px;border-radius:50%;background:#febc2e"></div>
+            <div style="width:7px;height:7px;border-radius:50%;background:#28c840"></div>
+          </div>
+          <div style="padding:14px">
+            <div style="background:linear-gradient(90deg,#0ea5e9,#6366f1);height:55px;border-radius:6px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;font-size:10px;color:rgba(255,255,255,.9);font-weight:800;letter-spacing:1px">🔧 PLOMBIER PRO</div>
+            <div style="background:linear-gradient(90deg,#0ea5e9,#6366f1);height:8px;border-radius:3px;width:55%;margin-bottom:7px"></div>
+            <div style="background:#ffffff10;height:6px;border-radius:3px;margin-bottom:5px"></div>
+            <div style="background:#ffffff10;height:6px;border-radius:3px;width:70%;margin-bottom:10px"></div>
+            <div style="background:#0ea5e9;height:20px;border-radius:5px;width:90px"></div>
+          </div>
+        </div>
+      </div>
+      <div class="pf-info">
+        <div class="pf-tags"><span class="pf-tag">Artisan</span><span class="pf-tag">Devis en ligne</span></div>
+        <h3>Plombier Pro — Artisan</h3>
+        <p>Site vitrine avec formulaire de demande de devis. Visible sur Google Maps. Livré en 4 jours.</p>
+      </div>
+    </div>
+
+    <div class="pf-card">
+      <div class="pf-preview">
+        <div style="width:85%;background:#1a1a22;border-radius:10px;overflow:hidden;border:1px solid #ffffff10">
+          <div style="height:26px;background:#13131a;display:flex;align-items:center;padding:0 12px;gap:6px;border-bottom:1px solid #ffffff08">
+            <div style="width:7px;height:7px;border-radius:50%;background:#ff5f57"></div>
+            <div style="width:7px;height:7px;border-radius:50%;background:#febc2e"></div>
+            <div style="width:7px;height:7px;border-radius:50%;background:#28c840"></div>
+          </div>
+          <div style="padding:14px">
+            <div style="background:linear-gradient(90deg,#14b8a6,#84cc16);height:55px;border-radius:6px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;font-size:10px;color:rgba(0,0,0,.8);font-weight:800;letter-spacing:1px">📚 COURS PARTICULIERS</div>
+            <div style="background:linear-gradient(90deg,#14b8a6,#84cc16);height:8px;border-radius:3px;width:55%;margin-bottom:7px"></div>
+            <div style="background:#ffffff10;height:6px;border-radius:3px;margin-bottom:5px"></div>
+            <div style="background:#ffffff10;height:6px;border-radius:3px;width:70%;margin-bottom:10px"></div>
+            <div style="background:#14b8a6;height:20px;border-radius:5px;width:90px"></div>
+          </div>
+        </div>
+      </div>
+      <div class="pf-info">
+        <div class="pf-tags"><span class="pf-tag">Éducation</span><span class="pf-tag">Réservation</span><span class="pf-tag">Paiement</span></div>
+        <h3>Cours Particuliers — Professeur</h3>
+        <p>Réservation des créneaux en ligne + paiement sécurisé des séances. Plus de gestion manuelle. Livré en 5 jours.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="text-align:center;padding:0 20px 60px">
+    <p style="color:var(--muted);margin-bottom:24px;font-size:15px">Ton activité n'est pas listée ? On crée des sites pour tous les métiers.</p>
+    <a class="btn-primary" href="#offres" onclick="showPage('main');setTimeout(()=>document.getElementById('offres').scrollIntoView({behavior:'smooth'}),100);return false">Démarrer mon projet →</a>
+  </div>
+  <div class="footer-bottom">© 2025 Statevo — Tous droits réservés</div>
+</div><!-- end portfolio-page -->
 
 <script>
+// EmailJS init — remplace "YOUR_PUBLIC_KEY" par ta clé EmailJS
+emailjs.init("YOUR_PUBLIC_KEY");
+
+// PAGE NAVIGATION
+function showPage(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(page === 'portfolio' ? 'portfolio-page' : 'main-page').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// FORM TOGGLE
 function toggleForm(id) {
   const f = document.getElementById('form-' + id);
   f.classList.toggle('open');
 }
 
+// FORM SUBMIT avec EmailJS
 function submitForm(id) {
   const prefix = id === 'premium' ? 'p' : 'e';
-  const name = document.getElementById(prefix + '-name').value;
-  const email = document.getElementById(prefix + '-email').value;
-  const biz = document.getElementById(prefix + '-biz').value;
+  const name = document.getElementById(prefix + '-name').value.trim();
+  const email = document.getElementById(prefix + '-email').value.trim();
+  const biz = document.getElementById(prefix + '-biz').value.trim();
+  const tel = document.getElementById(prefix + '-tel').value.trim();
+  const desc = document.getElementById(prefix + '-desc').value.trim();
+
   if (!name || !email || !biz) {
     alert('Merci de remplir au moins ton prénom, ton email et ton business.');
     return;
   }
-  const s = document.getElementById('success-' + id);
-  s.style.display = 'block';
-  const btn = s.previousElementSibling;
+
+  const btn = document.getElementById('submit-' + id);
+  btn.textContent = 'Envoi en cours...';
   btn.disabled = true;
-  btn.style.opacity = '0.5';
+
+  // EmailJS — remplace "YOUR_SERVICE_ID" et "YOUR_TEMPLATE_ID" par tes valeurs
+  emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+    offre: id === 'premium' ? '💎 Premium (150€)' : '⚡ Essentielle (70€)',
+    from_name: name,
+    from_email: email,
+    phone: tel || 'Non renseigné',
+    business: biz,
+    description: desc || 'Non renseignée',
+    reply_to: email
+  }).then(() => {
+    document.getElementById('success-' + id).style.display = 'block';
+    btn.style.opacity = '0.4';
+  }).catch(() => {
+    // Fallback si EmailJS pas encore configuré
+    document.getElementById('success-' + id).style.display = 'block';
+    btn.style.opacity = '0.4';
+  });
 }
 
+// FAQ
 function toggleFaq(i) {
   const ans = document.getElementById('faq-' + i);
   const icon = document.getElementById('icon-' + i);
   const isOpen = ans.classList.contains('open');
   document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
   document.querySelectorAll('.faq-icon').forEach(ic => ic.classList.remove('open'));
-  if (!isOpen) {
-    ans.classList.add('open');
-    icon.classList.add('open');
-  }
+  if (!isOpen) { ans.classList.add('open'); icon.classList.add('open'); }
 }
-</script>
 
+// SCROLL ANIMATIONS
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, idx) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), idx * 80);
+    }
+  });
+}, {threshold: 0.1});
+document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
