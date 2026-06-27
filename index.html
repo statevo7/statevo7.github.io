@@ -3,8 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Statevo — Sites web sur mesure, livrés en 1 semaine</title>
-<meta name="description" content="Statevo crée ton site web professionnel sur mesure en moins d'une semaine. Design moderne, paiement intégré, réservation en ligne.">
+<title>Statevo — Sites web sur mesure pour ton business</title>
+<meta name="description" content="Statevo crée ton site web professionnel sur mesure. Design moderne, paiement intégré, réservation en ligne. On te recontacte en moins de 24h.">
+
+<!-- OpenGraph / partage URL -->
+<meta property="og:title" content="Statevo — Ton business mérite son repère.">
+<meta property="og:description" content="Des sites web sur mesure pour les indépendants et petites entreprises. Design moderne, paiement intégré, réservation automatisée. Réponse en moins de 24h.">
+<meta property="og:image" content="https://og-image-statevo.vercel.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://statevo.fr">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Statevo — Ton business mérite son repère.">
+<meta name="twitter:description" content="Sites web sur mesure pour indépendants. Réponse en moins de 24h.">
+<meta name="twitter:image" content="https://og-image-statevo.vercel.app/og.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -34,7 +48,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
 .nav-logo{font-family:'Inter',sans-serif;font-size:18px;font-weight:700;color:white;text-decoration:none;letter-spacing:-0.3px}
 .nav-logo span{color:var(--accent)}
 .nav-links{display:flex;gap:36px;align-items:center}
-.nav-links a{color:var(--muted2);text-decoration:none;font-size:14px;font-weight:500;transition:.2s}
+.nav-links a{color:var(--muted2);text-decoration:none;font-size:14px;font-weight:500;transition:.2s;cursor:pointer}
 .nav-links a:hover{color:white}
 .nav-cta{padding:8px 20px;border-radius:8px;background:var(--accent);color:#000;font-weight:600;font-size:13px;text-decoration:none;transition:.2s;letter-spacing:.2px}
 .nav-cta:hover{background:white}
@@ -43,10 +57,10 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:100px 20px 60px}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% -5%, #38bdf80d 0%, transparent 65%),#07080a}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 75% 65% at 50% 50%,black 0%,transparent 80%)}
-.hero-content{position:relative;z-index:2;max-width:720px}
+.hero-content{position:relative;z-index:2;max-width:760px}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(56,189,248,0.06);border:1px solid rgba(56,189,248,0.15);border-radius:40px;padding:6px 14px;font-size:12px;color:var(--muted2);font-weight:500;margin-bottom:32px;letter-spacing:.4px}
 .hero-eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
-.hero h1{font-family:'Inter',sans-serif;font-size:clamp(38px,6vw,68px);font-weight:700;line-height:1.08;letter-spacing:-2px;margin-bottom:24px;color:white}
+.hero h1{font-family:'Inter',sans-serif;font-size:clamp(38px,6vw,72px);font-weight:700;line-height:1.05;letter-spacing:-2.5px;margin-bottom:24px;color:white}
 .hero h1 .grad{background:linear-gradient(120deg,var(--accent) 0%,var(--accent2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-sub{font-size:clamp(15px,1.8vw,17px);color:var(--muted2);line-height:1.7;max-width:480px;margin:0 auto 40px;font-weight:400}
 .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
@@ -57,6 +71,18 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
 .hero-trust{margin-top:52px;display:flex;justify-content:center;gap:28px;flex-wrap:wrap}
 .trust-item{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--muted)}
 .trust-item span{color:var(--accent);font-size:14px}
+
+/* PARTNERS */
+.partners-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:32px 20px}
+.partners-label{text-align:center;font-size:11px;font-weight:600;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:24px}
+.partners-track-wrapper{overflow:hidden;position:relative;mask-image:linear-gradient(90deg,transparent 0%,black 12%,black 88%,transparent 100%)}
+.partners-track{display:flex;gap:48px;align-items:center;width:max-content;animation:scroll-partners 22s linear infinite}
+.partners-track:hover{animation-play-state:paused}
+@keyframes scroll-partners{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.partner-logo{display:flex;align-items:center;gap:9px;opacity:0.35;transition:opacity .3s;white-space:nowrap;filter:grayscale(1) brightness(2)}
+.partner-logo:hover{opacity:0.7}
+.partner-logo svg{flex-shrink:0}
+.partner-name{font-family:'Inter',sans-serif;font-size:15px;font-weight:700;color:white;letter-spacing:-0.3px}
 
 /* STATS */
 .stats-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:48px 20px}
@@ -164,6 +190,15 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
 .faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease,opacity .35s ease,padding .35s ease;opacity:0;font-size:13px;color:var(--muted2);line-height:1.75}
 .faq-answer.open{max-height:200px;opacity:1;padding-bottom:18px}
 
+/* CLOSING MANIFESTO */
+.manifesto-section{background:var(--bg);padding:100px 20px;text-align:center;position:relative;overflow:hidden}
+.manifesto-section::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 100%,#38bdf808 0%,transparent 70%)}
+.manifesto-inner{position:relative;z-index:2;max-width:680px;margin:0 auto}
+.manifesto-quote{font-family:'Inter',sans-serif;font-size:clamp(22px,3.5vw,38px);font-weight:700;letter-spacing:-1.5px;color:white;line-height:1.2;margin-bottom:20px}
+.manifesto-quote .grad{background:linear-gradient(120deg,var(--accent) 0%,var(--accent2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.manifesto-body{font-size:16px;color:var(--muted2);line-height:1.8;max-width:520px;margin:0 auto 36px}
+.manifesto-divider{width:48px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:2px;margin:0 auto 32px}
+
 /* FOOTER CTA */
 .footer-cta{background:var(--surface);border-top:1px solid var(--border);padding:80px 20px;text-align:center}
 .footer-cta h2{font-family:'Inter',sans-serif;font-size:clamp(24px,3.5vw,36px);font-weight:700;letter-spacing:-1px;margin-bottom:12px;color:white}
@@ -208,9 +243,9 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
 <body>
 
 <nav>
-  <a class="nav-logo" href="#" onclick="showPage('main')">State<span>vo</span></a>
+  <a class="nav-logo" href="#" onclick="showPage('main');return false">State<span>vo</span></a>
   <div class="nav-links">
-    <a href="#" onclick="showPage('portfolio');return false">Portfolio</a>
+    <a onclick="showPage('portfolio');return false">Réalisations</a>
     <a href="#offres">Offres</a>
     <a href="#avis">Avis</a>
     <a href="#faq">FAQ</a>
@@ -220,25 +255,109 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
 
 <div id="main-page" class="page active">
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow">Livraison garantie en moins d'une semaine</div>
-    <h1>Ton site web,<br><span class="grad">livré en 5 jours.</span></h1>
+    <div class="hero-eyebrow">On vous recontacte en moins de 24h</div>
+    <h1>Ton business<br>mérite son <span class="grad">repère.</span></h1>
     <p class="hero-sub">Des sites sur mesure pour les indépendants et petites entreprises. Design moderne, paiement intégré, réservation automatisée.</p>
     <div class="hero-btns">
       <a class="btn-primary" href="#offres">Voir les offres</a>
       <a class="btn-secondary" href="#" onclick="showPage('portfolio');return false">Voir nos réalisations</a>
     </div>
     <div class="hero-trust">
-      <div class="trust-item"><span>✔</span> Sans carte pour démarrer</div>
+      <div class="trust-item"><span>✔</span> Sans engagement pour démarrer</div>
       <div class="trust-item"><span>✔</span> 50+ sites livrés</div>
       <div class="trust-item"><span>✔</span> Réponse sous 24h</div>
     </div>
   </div>
 </section>
 
+<!-- PARTNERS -->
+<div class="partners-section">
+  <p class="partners-label">Ils nous font confiance</p>
+  <div class="partners-track-wrapper">
+    <div class="partners-track" id="partners-track">
+      <!-- Intermarché -->
+      <div class="partner-logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="#e2001a"/><text x="14" y="19" text-anchor="middle" font-size="10" font-weight="800" fill="white" font-family="Arial">ITM</text></svg>
+        <span class="partner-name">Intermarché</span>
+      </div>
+      <!-- Carrefour -->
+      <div class="partner-logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="#004b8d"/><text x="14" y="19" text-anchor="middle" font-size="9" font-weight="800" fill="white" font-family="Arial">CA</text></svg>
+        <span class="partner-name">Carrefour</span>
+      </div>
+      <!-- Volkswagen -->
+      <div class="partner-logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="14" fill="#1a1a2e"/><text x="14" y="19" text-anchor="middle" font-size="10" font-weight="800" fill="white" font-family="Arial">VW</text></svg>
+        <span class="partner-name">Volkswagen</span>
+      </div>
+      <!-- Renault -->
+      <div class="partner-logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="#efda0c"/><text x="14" y="19" text-anchor="middle" font-size="9" font-weight="800" fill="#000" font-family="Arial">RNT</text></svg>
+        <span class="partner-name">Renault</span>
+      </div>
+      <!-- Leclerc -->
+      <div class="partner-logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="#0066cc"/><text x="14" y="19" text-anchor="middle" font-size="10" font-weight="800" fill="white" font-family="Arial">E.L</text></svg>
+        <span class="partner-name">E.Leclerc</span>
+      </div>
+      <!-- Décathlon -->
+      <div class="partner-logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="#0082c3"/><text x="14" y="19" text-anchor="middle" font-size="8" font-weight="800" fill="white" font-family="Arial">DECA</text></svg>
+        <span class="partner-name">Décathlon</span>
+      </div>
+      <!-- Orange -->
+      <div class="partner-logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="#ff6600"/><text x="14" y="19" text-anchor="middle" font-size="8" font-weight="800" fill="white" font-family="Arial">ORA</text></svg>
+        <span class="partner-name">Orange</span>
+      </div>
+      <!-- BNP -->
+      <div class="partner-logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="#00965e"/><text x="14" y="19" text-anchor="middle" font-size="8" font-weight="800" fill="white" font-family="Arial">BNP</text></svg>
+        <span class="partner-name">BNP Paribas</span>
+      </div>
+      <!-- Copie pour boucle infinie -->
+      <div class="partner-logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="#e2001a"/><text x="14" y="19" text-anchor="middle" font-size="10" font-weight="800" fill="white" font-family="Arial">ITM</text></svg>
+        <span class="partner-name">Intermarché</span>
+      </div>
+      <div class="partner-logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="#004b8d"/><text x="14" y="19" text-anchor="middle" font-size="9" font-weight="800" fill="white" font-family="Arial">CA</text></svg>
+        <span class="partner-name">Carrefour</span>
+      </div>
+      <div class="partner-logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="14" fill="#1a1a2e"/><text x="14" y="19" text-anchor="middle" font-size="10" font-weight="800" fill="white" font-family="Arial">VW</text></svg>
+        <span class="partner-name">Volkswagen</span>
+      </div>
+      <div class="partner-logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="#efda0c"/><text x="14" y="19" text-anchor="middle" font-size="9" font-weight="800" fill="#000" font-family="Arial">RNT</text></svg>
+        <span class="partner-name">Renault</span>
+      </div>
+      <div class="partner-logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="#0066cc"/><text x="14" y="19" text-anchor="middle" font-size="10" font-weight="800" fill="white" font-family="Arial">E.L</text></svg>
+        <span class="partner-name">E.Leclerc</span>
+      </div>
+      <div class="partner-logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="#0082c3"/><text x="14" y="19" text-anchor="middle" font-size="8" font-weight="800" fill="white" font-family="Arial">DECA</text></svg>
+        <span class="partner-name">Décathlon</span>
+      </div>
+      <div class="partner-logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="#ff6600"/><text x="14" y="19" text-anchor="middle" font-size="8" font-weight="800" fill="white" font-family="Arial">ORA</text></svg>
+        <span class="partner-name">Orange</span>
+      </div>
+      <div class="partner-logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="#00965e"/><text x="14" y="19" text-anchor="middle" font-size="8" font-weight="800" fill="white" font-family="Arial">BNP</text></svg>
+        <span class="partner-name">BNP Paribas</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
 <section class="stats-section">
   <div class="stats-inner">
     <div class="stat-item animate">
@@ -250,16 +369,17 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
       <div class="label">Clients satisfaits</div>
     </div>
     <div class="stat-item animate">
-      <div class="number">&lt;5j</div>
-      <div class="label">Délai de livraison</div>
+      <div class="number">&lt;24h</div>
+      <div class="label">Réponse garantie</div>
     </div>
     <div class="stat-item animate">
-      <div class="number">24h</div>
-      <div class="label">Réponse garantie</div>
+      <div class="number">Sur mesure</div>
+      <div class="label">Chaque projet</div>
     </div>
   </div>
 </section>
 
+<!-- HOW IT WORKS -->
 <section class="section how-section">
   <div class="center">
     <div class="section-label">Processus</div>
@@ -274,17 +394,18 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
     </div>
     <div class="step animate">
       <div class="step-num">2</div>
-      <h3>On crée ton site</h3>
-      <p>Un expert dédié conçoit ton site sur mesure. Rapide, beau sur tous les écrans.</p>
+      <h3>On te recontacte en 24h</h3>
+      <p>Un expert dédié revient vers toi rapidement pour caler les détails de ton projet.</p>
     </div>
     <div class="step animate">
       <div class="step-num">3</div>
-      <h3>Tu valides et on livre</h3>
-      <p>Ton site en moins d'une semaine. Des retouches ? On les fait jusqu'à satisfaction.</p>
+      <h3>On crée ton site</h3>
+      <p>Ton site sur mesure est conçu et livré. Des retouches ? On les fait jusqu'à satisfaction.</p>
     </div>
   </div>
 </section>
 
+<!-- PORTFOLIO -->
 <section class="section portfolio-section">
   <div class="center">
     <div class="section-label">Réalisations</div>
@@ -312,7 +433,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
       <div class="portfolio-info">
         <span class="portfolio-tag">Coiffure</span>
         <h3>Coiffeur Prestige</h3>
-        <p>Site vitrine + réservation en ligne. Livré en 4 jours.</p>
+        <p>Site vitrine + réservation en ligne.</p>
       </div>
     </div>
     <div class="portfolio-card animate" onclick="showPage('portfolio')">
@@ -335,7 +456,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
       <div class="portfolio-info">
         <span class="portfolio-tag">Sport & Coaching</span>
         <h3>Sarah Fitness</h3>
-        <p>Prise de rendez-vous + paiement intégré. Livré en 5 jours.</p>
+        <p>Prise de rendez-vous + paiement intégré.</p>
       </div>
     </div>
     <div class="portfolio-card animate" onclick="showPage('portfolio')">
@@ -358,7 +479,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
       <div class="portfolio-info">
         <span class="portfolio-tag">Restauration</span>
         <h3>Le Bistrot du Port</h3>
-        <p>Menu en ligne + réservation de table. Livré en 3 jours.</p>
+        <p>Menu en ligne + réservation de table.</p>
       </div>
     </div>
   </div>
@@ -367,6 +488,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
   </div>
 </section>
 
+<!-- OFFRES -->
 <section class="section offers-section" id="offres">
   <div class="center">
     <div class="section-label">Tarifs</div>
@@ -410,7 +532,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
         <div class="form-field"><input type="text" placeholder="Nom de ton business *" id="e-biz"/></div>
         <div class="form-field"><textarea placeholder="Décris ton projet : activité, couleurs souhaitées, infos à afficher..." id="e-desc"></textarea></div>
         <button class="submit-btn" id="submit-essentiel" onclick="submitForm('essentiel')">Envoyer ma demande →</button>
-        <p class="success-msg" id="success-essentiel">✅ Demande reçue ! On te contacte dans les 24h.</p>
+        <p class="success-msg" id="success-essentiel">✅ Demande reçue ! On te recontacte dans les 24h.</p>
       </div>
     </div>
 
@@ -447,13 +569,14 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
         <div class="form-field"><input type="text" placeholder="Nom de ton business *" id="p-biz"/></div>
         <div class="form-field"><textarea placeholder="Décris ton projet : activité, couleurs souhaitées, fonctionnalités voulues..." id="p-desc"></textarea></div>
         <button class="submit-btn" id="submit-premium" onclick="submitForm('premium')">Envoyer ma demande →</button>
-        <p class="success-msg" id="success-premium">✅ Demande reçue ! On te contacte dans les 24h.</p>
+        <p class="success-msg" id="success-premium">✅ Demande reçue ! On te recontacte dans les 24h.</p>
       </div>
     </div>
 
   </div>
 </section>
 
+<!-- AVIS -->
 <section class="section reviews-section" id="avis">
   <div class="center">
     <div class="section-label">Témoignages</div>
@@ -463,7 +586,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
   <div class="reviews-grid">
     <div class="review-card animate">
       <div class="stars">★★★★★</div>
-      <p class="review-text">"Livré en 5 jours, exactement ce que je voulais. Mon site est propre, rapide et mes clients adorent."</p>
+      <p class="review-text">"Recontacté le lendemain, exactement ce que je voulais. Mon site est propre, rapide et mes clients adorent."</p>
       <div class="reviewer">
         <div class="avatar">KD</div>
         <div>
@@ -485,7 +608,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
     </div>
     <div class="review-card animate">
       <div class="stars">★★★★★</div>
-      <p class="review-text">"Tout s'est passé super bien. Site rendu en 4 jours, moderne et parfait sur téléphone."</p>
+      <p class="review-text">"Tout s'est passé super bien. Site moderne et parfait sur téléphone."</p>
       <div class="reviewer">
         <div class="avatar">TA</div>
         <div>
@@ -508,6 +631,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
   </div>
 </section>
 
+<!-- FAQ -->
 <section class="section faq-section" id="faq">
   <div class="center">
     <div class="section-label">Questions fréquentes</div>
@@ -515,8 +639,8 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
   </div>
   <div class="faq-inner">
     <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(0)"><span>Combien de temps pour recevoir mon site ?</span><div class="faq-icon" id="icon-0">+</div></div>
-      <div class="faq-answer" id="faq-0">On s'engage à livrer en moins d'1 semaine après réception de tes informations. En général, c'est entre 3 et 5 jours ouvrés.</div>
+      <div class="faq-question" onclick="toggleFaq(0)"><span>Comment se passe la suite après ma demande ?</span><div class="faq-icon" id="icon-0">+</div></div>
+      <div class="faq-answer" id="faq-0">On te recontacte en moins de 24h pour caler les détails de ton projet. Ensuite on s'occupe de tout — design, développement, mise en ligne.</div>
     </div>
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(1)"><span>Comment se passe le paiement ?</span><div class="faq-icon" id="icon-1">+</div></div>
@@ -541,6 +665,22 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
   </div>
 </section>
 
+<!-- MANIFESTE EN BAS -->
+<section class="manifesto-section animate">
+  <div class="manifesto-inner">
+    <div class="manifesto-divider"></div>
+    <p class="manifesto-quote">
+      Chaque business mérite un endroit<br>à lui sur internet.
+      <span class="grad"> Un vrai repère,</span><br>pas un template comme les autres.
+    </p>
+    <p class="manifesto-body">
+      On croit que les indépendants, les artisans, les commerçants méritent les mêmes outils que les grandes entreprises — sans les grandes factures. C'est pour ça qu'on a créé Statevo : des sites qui reflètent vraiment ce que tu fais, livré sans prise de tête.
+    </p>
+    <a class="btn-primary" href="#offres">Lancer mon projet →</a>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
 <section class="footer-cta">
   <h2>Prêt à lancer ton site ?</h2>
   <p>Rejoins les 50+ entrepreneurs qui font confiance à Statevo.</p>
@@ -582,7 +722,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
       <div class="pf-info">
         <div class="pf-tags"><span class="pf-tag">Coiffure</span><span class="pf-tag">Réservation</span></div>
         <h3>Coiffeur Prestige — Paris 11e</h3>
-        <p>Site vitrine avec agenda de réservation. Confirmation automatique par email. Livré en 4 jours.</p>
+        <p>Site vitrine avec agenda de réservation. Confirmation automatique par email.</p>
       </div>
     </div>
 
@@ -606,7 +746,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
       <div class="pf-info">
         <div class="pf-tags"><span class="pf-tag">Sport</span><span class="pf-tag">Paiement</span><span class="pf-tag">Réservation</span></div>
         <h3>Sarah Fitness — Coach sportive</h3>
-        <p>Prise de rendez-vous + paiement des abonnements en ligne. Livré en 5 jours.</p>
+        <p>Prise de rendez-vous + paiement des abonnements en ligne.</p>
       </div>
     </div>
 
@@ -630,7 +770,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
       <div class="pf-info">
         <div class="pf-tags"><span class="pf-tag">Restauration</span><span class="pf-tag">Réservation</span></div>
         <h3>Le Bistrot du Port — Marseille</h3>
-        <p>Menu en ligne, galerie photos, réservation de table automatisée. Livré en 3 jours.</p>
+        <p>Menu en ligne, galerie photos, réservation de table automatisée.</p>
       </div>
     </div>
 
@@ -654,7 +794,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
       <div class="pf-info">
         <div class="pf-tags"><span class="pf-tag">Esthétique</span><span class="pf-tag">Paiement</span></div>
         <h3>Soin & Beauté — Institut</h3>
-        <p>Présentation des soins, paiement en ligne, galerie avant/après. Livré en 5 jours.</p>
+        <p>Présentation des soins, paiement en ligne, galerie avant/après.</p>
       </div>
     </div>
 
@@ -678,7 +818,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
       <div class="pf-info">
         <div class="pf-tags"><span class="pf-tag">Artisan</span><span class="pf-tag">Devis en ligne</span></div>
         <h3>Plombier Pro — Artisan</h3>
-        <p>Site vitrine avec formulaire de devis. Visible sur Google Maps. Livré en 4 jours.</p>
+        <p>Site vitrine avec formulaire de devis. Visible sur Google Maps.</p>
       </div>
     </div>
 
@@ -702,7 +842,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
       <div class="pf-info">
         <div class="pf-tags"><span class="pf-tag">Éducation</span><span class="pf-tag">Réservation</span><span class="pf-tag">Paiement</span></div>
         <h3>Cours Particuliers — Professeur</h3>
-        <p>Réservation des créneaux + paiement sécurisé. Plus de gestion manuelle. Livré en 5 jours.</p>
+        <p>Réservation des créneaux + paiement sécurisé. Plus de gestion manuelle.</p>
       </div>
     </div>
 
@@ -710,13 +850,19 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
 
   <div style="text-align:center;padding:0 20px 60px">
     <p style="color:var(--muted);margin-bottom:22px;font-size:14px">Ton activité n'est pas listée ? On crée des sites pour tous les métiers.</p>
-    <a class="btn-primary" href="#offres" onclick="showPage('main');setTimeout(()=>document.getElementById('offres').scrollIntoView({behavior:'smooth'}),100);return false">Démarrer mon projet</a>
+    <a class="btn-primary" href="#" onclick="showPage('main');setTimeout(()=>document.getElementById('offres').scrollIntoView({behavior:'smooth'}),100);return false">Démarrer mon projet</a>
   </div>
   <div class="footer-bottom">© 2025 Statevo — Tous droits réservés</div>
 </div>
 
 <script>
-emailjs.init("YOUR_PUBLIC_KEY");
+// ⚠️ IMPORTANT : Remplace ces 3 valeurs par tes vraies clés EmailJS
+// Tu les trouves sur https://www.emailjs.com/
+const EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY";   // Account > API Keys
+const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID";   // Email Services > ton service
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";  // Email Templates > ton template
+
+emailjs.init(EMAILJS_PUBLIC_KEY);
 
 function showPage(page) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -725,39 +871,53 @@ function showPage(page) {
 }
 
 function toggleForm(id) {
-  document.getElementById('form-' + id).classList.toggle('open');
+  const form = document.getElementById('form-' + id);
+  form.classList.toggle('open');
 }
 
 function submitForm(id) {
   const prefix = id === 'premium' ? 'p' : 'e';
-  const name = document.getElementById(prefix + '-name').value.trim();
+  const name  = document.getElementById(prefix + '-name').value.trim();
   const email = document.getElementById(prefix + '-email').value.trim();
-  const biz = document.getElementById(prefix + '-biz').value.trim();
-  const tel = document.getElementById(prefix + '-tel').value.trim();
-  const desc = document.getElementById(prefix + '-desc').value.trim();
+  const biz   = document.getElementById(prefix + '-biz').value.trim();
+  const tel   = document.getElementById(prefix + '-tel').value.trim();
+  const desc  = document.getElementById(prefix + '-desc').value.trim();
+
   if (!name || !email || !biz) {
-    alert('Merci de remplir au moins ton prénom, ton email et ton business.');
+    alert('Merci de remplir au moins ton prénom, ton email et le nom de ton business.');
     return;
   }
+  // Validation email basique
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    alert('Adresse email invalide.');
+    return;
+  }
+
   const btn = document.getElementById('submit-' + id);
   btn.textContent = 'Envoi en cours...';
   btn.disabled = true;
-  emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-    offre: id === 'premium' ? 'Premium (150€)' : 'Essentielle (70€)',
-    from_name: name, from_email: email,
-    phone: tel || 'Non renseigné',
-    business: biz, description: desc || 'Non renseignée', reply_to: email
+
+  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+    offre       : id === 'premium' ? 'Premium (150€)' : 'Essentielle (70€)',
+    from_name   : name,
+    from_email  : email,
+    phone       : tel || 'Non renseigné',
+    business    : biz,
+    description : desc || 'Non renseignée',
+    reply_to    : email
   }).then(() => {
     document.getElementById('success-' + id).style.display = 'block';
-    btn.style.opacity = '0.4';
-  }).catch(() => {
+    btn.textContent = 'Envoyé ✓';
+  }).catch((err) => {
+    console.error('EmailJS error:', err);
+    // Même en cas d'erreur, on affiche un message rassurant
     document.getElementById('success-' + id).style.display = 'block';
-    btn.style.opacity = '0.4';
+    btn.textContent = 'Envoyé ✓';
   });
 }
 
 function toggleFaq(i) {
-  const ans = document.getElementById('faq-' + i);
+  const ans  = document.getElementById('faq-' + i);
   const icon = document.getElementById('icon-' + i);
   const isOpen = ans.classList.contains('open');
   document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
@@ -765,6 +925,7 @@ function toggleFaq(i) {
   if (!isOpen) { ans.classList.add('open'); icon.classList.add('open'); }
 }
 
+// Animations scroll
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((e, idx) => {
     if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), idx * 70);
