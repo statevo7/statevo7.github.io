@@ -3,19 +3,114 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Statevo — Ton business mérite son repère.</title>
-<meta name="description" content="Statevo crée ton site web professionnel sur mesure. Design moderne, paiement intégré, réservation en ligne. On te recontacte en moins de 24h.">
-<meta property="og:title" content="Statevo — Ton business mérite son repère.">
-<meta property="og:description" content="Des sites web sur mesure pour les indépendants et petites entreprises. Réponse en moins de 24h.">
+<title>Statevo — Sites Web sur Mesure pour Indépendants | Dès 70€</title>
+<meta name="description" content="Statevo crée ton site web professionnel en moins d'une semaine. Design moderne, paiement intégré, réservation en ligne. Offre Essentielle dès 70€. On te recontacte en moins de 24h.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://statevo.fr">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Statevo — Sites Web sur Mesure pour Indépendants">
+<meta property="og:description" content="Des sites web sur mesure pour les indépendants et petites entreprises. Offre dès 70€. Réponse en moins de 24h.">
 <meta property="og:image" content="https://statevo.fr/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://statevo.fr">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Statevo">
+
+<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Statevo — Sites Web sur Mesure pour Indépendants">
+<meta name="twitter:description" content="Des sites web sur mesure pour les indépendants et petites entreprises. Offre dès 70€.">
+<meta name="twitter:image" content="https://statevo.fr/og.png">
+
+<!-- Structured Data — Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Statevo",
+  "url": "https://statevo.fr",
+  "logo": "https://statevo.fr/logo.png",
+  "description": "Agence web spécialisée dans la création de sites pour indépendants et petites entreprises.",
+  "email": "statevocontact@gmail.com",
+  "areaServed": "FR",
+  "serviceType": "Création de sites web"
+}
+</script>
+
+<!-- Structured Data — Service offers -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Offres Statevo",
+  "itemListElement": [
+    {
+      "@type": "Offer",
+      "position": 1,
+      "name": "Site web Essentielle",
+      "description": "Site vitrine professionnel, responsive, SEO de base inclus.",
+      "price": "70",
+      "priceCurrency": "EUR",
+      "seller": { "@type": "Organization", "name": "Statevo" }
+    },
+    {
+      "@type": "Offer",
+      "position": 2,
+      "name": "Site web Premium",
+      "description": "Site complet avec paiement en ligne, réservation automatisée et 1 mois de support.",
+      "price": "150",
+      "priceCurrency": "EUR",
+      "seller": { "@type": "Organization", "name": "Statevo" }
+    }
+  ]
+}
+</script>
+
+<!-- Structured Data — FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Comment se passe la suite après ma demande ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "On te recontacte en moins de 24h pour caler les détails de ton projet. Ensuite on s'occupe de tout — design, développement, mise en ligne." }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment se passe le paiement ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "On te contacte sous 24h pour confirmer les détails et te partager le lien de paiement sécurisé. Pas de surprise." }
+    },
+    {
+      "@type": "Question",
+      "name": "Est-ce que je peux demander des modifications ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Oui, des retouches sont comprises dans les deux offres. L'offre Premium inclut en plus 1 mois de support après livraison." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quelle est la différence entre les deux offres ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "L'Essentielle (70€) = un site vitrine pro et rapide. La Premium (150€) = tout ça + paiement sécurisé, réservation automatisée et 1 mois de support." }
+    },
+    {
+      "@type": "Question",
+      "name": "Mon site sera-t-il visible sur Google ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Oui. Tous nos sites incluent les bases SEO : balises bien renseignées, vitesse optimisée, compatibilité mobile." }
+    },
+    {
+      "@type": "Question",
+      "name": "Je n'ai aucune connaissance technique, c'est un problème ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Pas du tout. On s'occupe de tout. Tu nous donnes les infos, on fait le reste. Notre expert te tient informé à chaque étape." }
+    }
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -27,6 +122,9 @@
   --white:#ffffff;
   --off:#a0a0a0;
   --muted:#555555;
+  /* Couleurs des offres */
+  --essential-accent:#00e5ff;   /* cyan électrique */
+  --premium-accent:#c8ff00;     /* vert acide */
 }
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;color:var(--white);background:var(--bg);overflow-x:hidden;-webkit-font-smoothing:antialiased}
@@ -35,12 +133,9 @@ body{font-family:'DM Sans',sans-serif;color:var(--white);background:var(--bg);ov
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:#ffffff18;border-radius:2px}
 
-/* TEXTURE overlays SVG inline */
-.tx{position:absolute;inset:0;pointer-events:none;z-index:0}
-
 /* NAV */
 nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:rgba(10,10,10,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-.nav-logo{font-family:'Inter',sans-serif;font-size:17px;font-weight:900;color:#fff;text-decoration:none;letter-spacing:-0.5px;text-transform:uppercase}
+.nav-logo{font-family:'Inter',sans-serif;font-size:17px;font-weight:900;color:var(--essential-accent);text-decoration:none;letter-spacing:-0.5px;text-transform:uppercase}
 .nav-logo em{font-style:normal;color:#fff;opacity:0.35}
 .nav-links{display:flex;gap:32px;align-items:center}
 .nav-links a{color:var(--off);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.3px;transition:.15s;cursor:pointer}
@@ -53,33 +148,23 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 .page.active{display:block}
 #main-page{display:block}
 
-/* ═══════════════════════════════════
-   HERO — asymétrique, typographie brute
-═══════════════════════════════════ */
+/* HERO */
 .hero{min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:0 0 80px}
-.hero-texture{position:absolute;inset:0;z-index:0}
-.hero-img{position:absolute;inset:0;background:
-  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='600' height='600' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-  background-size:300px;
-  opacity:0.045;
-  mix-blend-mode:screen}
 .hero-gradient{position:absolute;inset:0;background:
   radial-gradient(ellipse 55% 70% at 75% 30%, #1a1a1a 0%, transparent 65%),
   radial-gradient(ellipse 80% 60% at 20% 80%, #141414 0%, transparent 70%),
   #0a0a0a}
-/* Ligne diagonale décorative */
+.hero-img{position:absolute;inset:0;background:
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='600' height='600' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size:300px;opacity:.045;mix-blend-mode:screen}
 .hero-line{position:absolute;top:0;right:18%;width:1px;height:100%;background:linear-gradient(180deg,transparent 0%,#ffffff12 30%,#ffffff20 60%,transparent 100%);transform:rotate(-8deg);transform-origin:top center}
 .hero-line2{position:absolute;top:0;right:35%;width:1px;height:100%;background:linear-gradient(180deg,transparent 0%,#ffffff08 40%,transparent 100%);transform:rotate(-8deg);transform-origin:top center}
 
 .hero-content{position:relative;z-index:2;width:100%;padding:0 60px}
 .hero-tag{display:inline-block;border:1px solid #ffffff25;padding:5px 14px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--off);margin-bottom:40px;font-family:'Inter',sans-serif}
-
-/* Gros titre — décalé à gauche, dépasse */
 .hero-h1{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(52px,9vw,130px);line-height:.92;letter-spacing:-4px;color:#fff;text-transform:uppercase;margin-bottom:0}
 .hero-h1 .row2{display:block;padding-left:clamp(40px,7vw,120px);color:#fff}
 .hero-h1 .row3{display:block;padding-left:clamp(80px,14vw,240px);color:#fff;opacity:0.15}
-
-/* Bloc bas — split gauche/droite */
 .hero-bottom{display:flex;align-items:flex-end;justify-content:space-between;margin-top:48px;gap:40px;flex-wrap:wrap}
 .hero-desc{max-width:340px;font-size:15px;color:var(--off);line-height:1.7;font-weight:400;border-left:2px solid #fff;padding-left:20px}
 .hero-actions{display:flex;flex-direction:column;align-items:flex-end;gap:14px}
@@ -90,9 +175,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 .hero-scroll{font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;gap:8px}
 .hero-scroll::before{content:"";width:40px;height:1px;background:var(--muted)}
 
-/* ═══════════════════════════════════
-   PARTNERS — défilant
-═══════════════════════════════════ */
+/* PARTNERS */
 .partners-bar{background:#111;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:20px 0;overflow:hidden}
 .partners-label-fixed{position:absolute;left:0;top:0;bottom:0;width:160px;background:linear-gradient(90deg,#111 70%,transparent);display:flex;align-items:center;padding-left:40px;z-index:2}
 .partners-label-fixed span{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);font-family:'Inter',sans-serif}
@@ -105,17 +188,13 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 .partner-icon{width:26px;height:26px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;font-family:'Inter',sans-serif;flex-shrink:0}
 .partner-name{font-family:'Inter',sans-serif;font-size:13px;font-weight:700;letter-spacing:-.2px;color:#fff}
 
-/* ═══════════════════════════════════
-   SECTION BASE
-═══════════════════════════════════ */
+/* SECTION BASE */
 .section{padding:100px 60px;position:relative}
 .section-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-family:'Inter',sans-serif;margin-bottom:20px}
 .section-title-big{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(32px,5vw,64px);letter-spacing:-2px;line-height:.95;color:#fff;text-transform:uppercase;margin-bottom:0}
 .section-title-big em{font-style:normal;opacity:.15}
 
-/* ═══════════════════════════════════
-   STATS — chiffres en bandes horizontales
-═══════════════════════════════════ */
+/* STATS */
 .stats-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:0 60px}
 .stat-row{display:flex;border-bottom:1px solid var(--border)}
 .stat-row:last-child{border-bottom:none}
@@ -125,9 +204,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 .stat-num{font-family:'Inter',sans-serif;font-size:52px;font-weight:900;color:#fff;letter-spacing:-3px;line-height:1}
 .stat-lbl{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:6px;font-family:'Inter',sans-serif}
 
-/* ═══════════════════════════════════
-   HOW IT WORKS — numéros géants, décalés
-═══════════════════════════════════ */
+/* HOW IT WORKS */
 .how-section{background:var(--bg);overflow:hidden}
 .how-header{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;margin-bottom:80px;flex-wrap:wrap}
 .how-header-desc{max-width:300px;font-size:14px;color:var(--off);line-height:1.75;margin-top:12px}
@@ -140,9 +217,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 .step-content p{font-size:13px;color:var(--off);line-height:1.75;max-width:480px}
 .step-tag{display:inline-block;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:3px 10px;margin-bottom:14px;font-family:'Inter',sans-serif}
 
-/* ═══════════════════════════════════
-   PORTFOLIO — grille asymétrique
-═══════════════════════════════════ */
+/* PORTFOLIO */
 .portfolio-section{background:var(--surface);border-top:1px solid var(--border)}
 .portfolio-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:60px;flex-wrap:wrap;gap:20px}
 .portfolio-grid-asym{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:auto auto;gap:2px;margin-bottom:2px}
@@ -167,27 +242,51 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 .pc-overlay-text{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#fff;font-family:'Inter',sans-serif;border-bottom:1px solid #fff;padding-bottom:2px}
 
 /* ═══════════════════════════════════
-   OFFRES — layout en L
+   OFFRES — couleurs vives par pack
 ═══════════════════════════════════ */
 .offers-section{background:var(--bg);overflow:hidden}
 .offers-layout{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:60px}
+
 .offer-card{background:var(--surface);border:1px solid var(--border);padding:44px;position:relative;overflow:hidden;transition:.3s}
 .offer-card:hover{border-color:var(--border2)}
-.offer-card.featured{border-color:#ffffff25}
-.offer-card::before{content:"";position:absolute;top:0;left:0;right:0;height:1px}
-.offer-card.featured::before{background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent)}
-.offer-badge{position:absolute;top:20px;right:20px;font-size:9px;letter-spacing:2px;text-transform:uppercase;border:1px solid #ffffff20;color:var(--off);padding:4px 10px;font-family:'Inter',sans-serif}
-.offer-name{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-family:'Inter',sans-serif;margin-bottom:20px}
-.offer-price{font-family:'Inter',sans-serif;font-size:72px;font-weight:900;letter-spacing:-4px;color:#fff;line-height:1;margin-bottom:4px}
+
+/* Barre colorée en haut */
+.offer-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px}
+.offer-card.essentielle::before{background:var(--essential-accent)}
+.offer-card.premium::before{background:var(--premium-accent)}
+
+/* Glow ambiant subtil au hover */
+.offer-card.essentielle:hover{border-color:rgba(0,229,255,.25);box-shadow:0 0 40px rgba(0,229,255,.06)}
+.offer-card.premium:hover{border-color:rgba(200,255,0,.25);box-shadow:0 0 40px rgba(200,255,0,.06)}
+
+.offer-badge{position:absolute;top:20px;right:20px;font-size:9px;letter-spacing:2px;text-transform:uppercase;border:1px solid rgba(200,255,0,.35);color:var(--premium-accent);padding:4px 10px;font-family:'Inter',sans-serif}
+
+.offer-name{font-size:11px;letter-spacing:3px;text-transform:uppercase;font-family:'Inter',sans-serif;margin-bottom:20px}
+.offer-card.essentielle .offer-name{color:var(--essential-accent)}
+.offer-card.premium .offer-name{color:var(--premium-accent)}
+
+.offer-price{font-family:'Inter',sans-serif;font-size:72px;font-weight:900;letter-spacing:-4px;line-height:1;margin-bottom:4px}
+.offer-card.essentielle .offer-price{color:var(--essential-accent)}
+.offer-card.premium .offer-price{color:var(--premium-accent)}
+
 .offer-price-sub{font-size:12px;color:var(--muted);margin-bottom:36px;letter-spacing:.3px}
+
 .offer-list{list-style:none;margin-bottom:36px;border-top:1px solid var(--border)}
 .offer-list li{padding:12px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:12px}
-.offer-check{width:16px;height:16px;border:1px solid #ffffff25;display:flex;align-items:center;justify-content:center;font-size:8px;color:#fff;flex-shrink:0;margin-top:1px}
-.offer-check.on{background:#fff;border-color:#fff;color:#000}
-.offer-check.off{opacity:.2}
+.offer-check{width:16px;height:16px;border:1px solid #ffffff25;display:flex;align-items:center;justify-content:center;font-size:8px;color:#000;flex-shrink:0;margin-top:1px}
+.offer-check.off{opacity:.2;background:transparent;color:#fff}
+.offer-card.essentielle .offer-check.on{background:var(--essential-accent);border-color:var(--essential-accent)}
+.offer-card.premium .offer-check.on{background:var(--premium-accent);border-color:var(--premium-accent)}
+
 .offer-text{font-size:13px;color:var(--off);line-height:1.4}
 .offer-text.off{opacity:.25}
 .offer-sub{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.5}
+
+/* Boutons colorés */
+.btn-essential{display:inline-block;padding:16px 40px;background:var(--essential-accent);color:#000;font-family:'Inter',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:.2s;border:none;cursor:pointer;width:100%;text-align:center}
+.btn-essential:hover{filter:brightness(1.12)}
+.btn-premium{display:inline-block;padding:16px 40px;background:var(--premium-accent);color:#000;font-family:'Inter',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:.2s;border:none;cursor:pointer;width:100%;text-align:center}
+.btn-premium:hover{filter:brightness(1.12)}
 
 /* FORM */
 .form-area{overflow:hidden;max-height:0;transition:max-height .5s ease,opacity .4s;opacity:0;margin-top:16px}
@@ -202,9 +301,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 .submit-btn:disabled{opacity:.3;cursor:not-allowed}
 .success-msg{display:none;color:#fff;margin-top:12px;font-size:12px;letter-spacing:.5px;text-align:center;border:1px solid #ffffff20;padding:10px}
 
-/* ═══════════════════════════════════
-   AVIS — liste verticale
-═══════════════════════════════════ */
+/* AVIS */
 .reviews-section{background:var(--surface);border-top:1px solid var(--border)}
 .reviews-list{display:flex;flex-direction:column;margin-top:60px;border-top:1px solid var(--border)}
 .review-item{padding:36px 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr 2fr 140px;gap:40px;align-items:start;transition:.2s}
@@ -216,9 +313,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 .review-body{font-size:14px;color:var(--off);line-height:1.8;padding-top:4px}
 .review-stars{font-size:11px;color:#fff;letter-spacing:4px;padding-top:4px}
 
-/* ═══════════════════════════════════
-   FAQ
-═══════════════════════════════════ */
+/* FAQ */
 .faq-section{background:var(--bg)}
 .faq-inner{margin-top:60px;border-top:1px solid var(--border)}
 .faq-item{border-bottom:1px solid var(--border)}
@@ -229,9 +324,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,opacity .3s,padding .3s;opacity:0;font-size:13px;color:var(--off);line-height:1.8}
 .faq-a.open{max-height:200px;opacity:1;padding-bottom:20px}
 
-/* ═══════════════════════════════════
-   MANIFESTE
-═══════════════════════════════════ */
+/* MANIFESTE */
 .manifesto-section{background:var(--surface);border-top:1px solid var(--border);padding:120px 60px;position:relative;overflow:hidden}
 .manifesto-noise{position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");background-size:250px;opacity:.03;pointer-events:none}
 .manifesto-inner{position:relative;z-index:2;max-width:800px}
@@ -240,9 +333,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 .manifesto-divider{width:60px;height:1px;background:#fff;margin-bottom:32px}
 .manifesto-body{font-size:15px;color:var(--off);line-height:1.85;max-width:480px;margin-bottom:44px}
 
-/* ═══════════════════════════════════
-   FOOTER CTA
-═══════════════════════════════════ */
+/* FOOTER CTA */
 .footer-cta{background:var(--bg);border-top:1px solid var(--border);padding:80px 60px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
 .footer-cta-left h2{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(24px,3.5vw,42px);letter-spacing:-1.5px;text-transform:uppercase;line-height:1;margin-bottom:10px}
 .footer-cta-left p{font-size:13px;color:var(--off)}
@@ -251,9 +342,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 .footer-email a:hover{color:#fff}
 .footer-bottom{background:var(--surface);border-top:1px solid var(--border);padding:16px 60px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;font-family:'Inter',sans-serif}
 
-/* ═══════════════════════════════════
-   PORTFOLIO PAGE
-═══════════════════════════════════ */
+/* PORTFOLIO PAGE */
 .portfolio-page{padding-top:58px}
 .pf-page-header{background:var(--surface);border-bottom:1px solid var(--border);padding:60px}
 .back-btn{background:none;border:none;color:var(--off);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;display:inline-flex;align-items:center;gap:8px;margin-bottom:32px;font-family:'Inter',sans-serif;padding:0;transition:.2s}
@@ -267,6 +356,14 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 .pf-tag{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:3px 9px;font-family:'Inter',sans-serif}
 .pf-info h3{font-size:14px;font-weight:600;color:#fff;margin-bottom:4px}
 .pf-info p{font-size:12px;color:var(--muted);line-height:1.6}
+
+
+/* Hero bg image overlay */
+.hero-bg-img{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=80');background-size:cover;background-position:center;opacity:0.07;mix-blend-mode:screen;z-index:1}
+
+/* Bottom section bg image */
+.manifesto-section{background:var(--surface);border-top:1px solid var(--border);padding:120px 60px;position:relative;overflow:hidden}
+.manifesto-bg-img{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80');background-size:cover;background-position:center;opacity:0.05;mix-blend-mode:screen;pointer-events:none;z-index:0}
 
 /* ANIMATE */
 .animate{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
@@ -315,6 +412,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 <!-- HERO -->
 <section class="hero">
   <div class="hero-gradient"></div>
+  <div class="hero-bg-img"></div>
   <div class="hero-img"></div>
   <div class="hero-line"></div>
   <div class="hero-line2"></div>
@@ -322,7 +420,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
     <div class="hero-tag">On vous recontacte en moins de 24h</div>
     <h1 class="hero-h1">
       Ton<br>
-      <span class="row2">Business</span>
+      <span class="row2" style="color:var(--premium-accent)">Business</span>
       <span class="row3">Mérite</span>
     </h1>
     <div class="hero-bottom">
@@ -349,7 +447,6 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
       <div class="partner-item"><div class="partner-icon" style="background:#0082c3"><span style="color:#fff">D</span></div><span class="partner-name">Décathlon</span></div>
       <div class="partner-item"><div class="partner-icon" style="background:#ff6600"><span style="color:#fff">O</span></div><span class="partner-name">Orange</span></div>
       <div class="partner-item"><div class="partner-icon" style="background:#00965e"><span style="color:#fff">B</span></div><span class="partner-name">BNP Paribas</span></div>
-      <!-- dupe for loop -->
       <div class="partner-item"><div class="partner-icon" style="background:#e2001a"><span style="color:#fff">I</span></div><span class="partner-name">Intermarché</span></div>
       <div class="partner-item"><div class="partner-icon" style="background:#004b8d"><span style="color:#fff">C</span></div><span class="partner-name">Carrefour</span></div>
       <div class="partner-item"><div class="partner-icon" style="background:#1a1a2e"><span style="color:#fff">VW</span></div><span class="partner-name">Volkswagen</span></div>
@@ -358,6 +455,11 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
       <div class="partner-item"><div class="partner-icon" style="background:#0082c3"><span style="color:#fff">D</span></div><span class="partner-name">Décathlon</span></div>
       <div class="partner-item"><div class="partner-icon" style="background:#ff6600"><span style="color:#fff">O</span></div><span class="partner-name">Orange</span></div>
       <div class="partner-item"><div class="partner-icon" style="background:#00965e"><span style="color:#fff">B</span></div><span class="partner-name">BNP Paribas</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#000000;border:1px solid #ffffff20"><span style="color:#fff">S</span></div><span class="partner-name">Sephora</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#0050aa"><span style="color:#fff">L</span></div><span class="partner-name">Lidl</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#DA291C"><span style="color:#fff">M</span></div><span class="partner-name">McDonald's</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#ef4135"><span style="color:#fff">F</span></div><span class="partner-name">Fanta</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#F40000"><span style="color:#fff">C</span></div><span class="partner-name">Coca-Cola</span></div>
     </div>
   </div>
 </div>
@@ -497,7 +599,8 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
   </div>
   <div class="offers-layout">
 
-    <div class="offer-card animate">
+    <!-- ESSENTIELLE -->
+    <div class="offer-card essentielle animate">
       <div class="offer-name">Essentielle</div>
       <div class="offer-price">70€</div>
       <div class="offer-price-sub">Site vitrine professionnel</div>
@@ -509,7 +612,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
         <li><div class="offer-check off">✕</div><div><div class="offer-text off">Paiement en ligne</div></div></li>
         <li><div class="offer-check off">✕</div><div><div class="offer-text off">Réservation automatisée</div></div></li>
       </ul>
-      <button class="btn-ghost-brutal" style="width:100%;text-align:center" onclick="toggleForm('essentiel')">Commander cette offre</button>
+      <button class="btn-essential" onclick="toggleForm('essentiel')">Commander cette offre</button>
       <div class="form-area" id="form-essentiel">
         <div class="form-field"><input type="text" placeholder="Ton prénom *" id="e-name"/></div>
         <div class="form-field"><input type="email" placeholder="Ton email *" id="e-email"/></div>
@@ -521,7 +624,8 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
       </div>
     </div>
 
-    <div class="offer-card featured animate">
+    <!-- PREMIUM -->
+    <div class="offer-card premium animate">
       <div class="offer-badge">Recommandé</div>
       <div class="offer-name">Premium</div>
       <div class="offer-price">150€</div>
@@ -533,7 +637,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
         <li><div class="offer-check on">✓</div><div><div class="offer-text">Support 1 mois inclus</div><div class="offer-sub">Modifications et corrections pendant 30 jours</div></div></li>
         <li><div class="offer-check on">✓</div><div><div class="offer-text">Expert dédié de A à Z</div></div></li>
       </ul>
-      <button class="btn-brutal" style="width:100%;text-align:center" onclick="toggleForm('premium')">Réserver cette offre</button>
+      <button class="btn-premium" onclick="toggleForm('premium')">Réserver cette offre</button>
       <div class="form-area" id="form-premium">
         <div class="form-field"><input type="text" placeholder="Ton prénom *" id="p-name"/></div>
         <div class="form-field"><input type="email" placeholder="Ton email *" id="p-email"/></div>
@@ -554,42 +658,42 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
     <div class="section-eyebrow">Témoignages</div>
     <div class="section-title-big">Ils nous ont<br>fait <em>confiance</em></div>
   </div>
-  <div class="reviews-list">
-    <div class="review-item animate">
+  <div class="reviews-list" itemscope itemtype="https://schema.org/ItemList">
+    <div class="review-item animate" itemscope itemtype="https://schema.org/Review">
       <div class="review-meta">
         <div class="review-avatar">KD</div>
-        <div class="review-name">Karim D.</div>
+        <div class="review-name" itemprop="author">Karim D.</div>
         <div class="review-role">Coiffeur indépendant</div>
       </div>
-      <p class="review-body">"Recontacté le lendemain, exactement ce que je voulais. Mon site est propre, rapide et mes clients adorent."</p>
-      <div class="review-stars">★★★★★</div>
+      <p class="review-body" itemprop="reviewBody">"Recontacté le lendemain, exactement ce que je voulais. Mon site est propre, rapide et mes clients adorent."</p>
+      <div class="review-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating"><meta itemprop="ratingValue" content="5">★★★★★</div>
     </div>
-    <div class="review-item animate">
+    <div class="review-item animate" itemscope itemtype="https://schema.org/Review">
       <div class="review-meta">
         <div class="review-avatar">SB</div>
-        <div class="review-name">Sarah B.</div>
+        <div class="review-name" itemprop="author">Sarah B.</div>
         <div class="review-role">Coach sportive</div>
       </div>
-      <p class="review-body">"Très pro du début à la fin. Le système de réservation fonctionne à la perfection."</p>
-      <div class="review-stars">★★★★★</div>
+      <p class="review-body" itemprop="reviewBody">"Très pro du début à la fin. Le système de réservation fonctionne à la perfection."</p>
+      <div class="review-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating"><meta itemprop="ratingValue" content="5">★★★★★</div>
     </div>
-    <div class="review-item animate">
+    <div class="review-item animate" itemscope itemtype="https://schema.org/Review">
       <div class="review-meta">
         <div class="review-avatar">TA</div>
-        <div class="review-name">Thomas A.</div>
+        <div class="review-name" itemprop="author">Thomas A.</div>
         <div class="review-role">Auto-entrepreneur</div>
       </div>
-      <p class="review-body">"Tout s'est passé super bien. Site moderne et parfait sur téléphone."</p>
-      <div class="review-stars">★★★★★</div>
+      <p class="review-body" itemprop="reviewBody">"Tout s'est passé super bien. Site moderne et parfait sur téléphone."</p>
+      <div class="review-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating"><meta itemprop="ratingValue" content="5">★★★★★</div>
     </div>
-    <div class="review-item animate">
+    <div class="review-item animate" itemscope itemtype="https://schema.org/Review">
       <div class="review-meta">
         <div class="review-avatar">ML</div>
-        <div class="review-name">Marc L.</div>
+        <div class="review-name" itemprop="author">Marc L.</div>
         <div class="review-role">Restaurateur</div>
       </div>
-      <p class="review-body">"Mon restaurant a doublé ses réservations en ligne depuis que le site est en ligne. Merci Statevo !"</p>
-      <div class="review-stars">★★★★★</div>
+      <p class="review-body" itemprop="reviewBody">"Mon restaurant a doublé ses réservations en ligne depuis que le site est en ligne. Merci Statevo !"</p>
+      <div class="review-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating"><meta itemprop="ratingValue" content="5">★★★★★</div>
     </div>
   </div>
 </section>
@@ -612,6 +716,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 
 <!-- MANIFESTE -->
 <section class="manifesto-section animate">
+  <div class="manifesto-bg-img"></div>
   <div class="manifesto-noise"></div>
   <div class="manifesto-inner">
     <div class="manifesto-big">
@@ -689,10 +794,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 </div>
 
 <script>
-const EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY";
-const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID";
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-emailjs.init(EMAILJS_PUBLIC_KEY);
+const DEST_EMAIL = "statevocontact@gmail.com";
 
 function showPage(page){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
@@ -712,20 +814,17 @@ function submitForm(id){
   const tel=document.getElementById(p+'-tel').value.trim();
   const desc=document.getElementById(p+'-desc').value.trim();
   if(!name||!email||!biz){alert('Merci de remplir au moins ton prénom, ton email et le nom de ton business.');return;}
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){alert('Adresse email invalide.');return;}
-  const btn=document.getElementById('submit-'+id);
-  btn.textContent='Envoi en cours...';btn.disabled=true;
-  emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_TEMPLATE_ID,{
-    offre:id==='premium'?'Premium (150€)':'Essentielle (70€)',
-    from_name:name,from_email:email,phone:tel||'Non renseigné',
-    business:biz,description:desc||'Non renseignée',reply_to:email
-  }).then(()=>{
-    document.getElementById('success-'+id).style.display='block';
-    btn.textContent='Envoyé ✓';
-  }).catch(()=>{
-    document.getElementById('success-'+id).style.display='block';
-    btn.textContent='Envoyé ✓';
-  });
+  const offre=id==='premium'?'Premium (150\u20ac)':'Essentielle (70\u20ac)';
+  const subject=encodeURIComponent('Nouvelle demande Statevo \u2014 '+offre);
+  const body=encodeURIComponent(
+    'Offre : '+offre+'\n'+
+    'Prénom : '+name+'\n'+
+    'Email : '+email+'\n'+
+    'Téléphone : '+(tel||'Non renseigné')+'\n'+
+    'Business : '+biz+'\n\n'+
+    'Description :\n'+(desc||'Non renseignée')
+  );
+  window.location.href='mailto:'+DEST_EMAIL+'?subject='+subject+'&body='+body;
 }
 
 function toggleFaq(i){
