@@ -3,528 +3,513 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Statevo — Sites web sur mesure pour ton business</title>
+<title>Statevo — Ton business mérite son repère.</title>
 <meta name="description" content="Statevo crée ton site web professionnel sur mesure. Design moderne, paiement intégré, réservation en ligne. On te recontacte en moins de 24h.">
-
-<!-- OpenGraph / partage URL -->
 <meta property="og:title" content="Statevo — Ton business mérite son repère.">
-<meta property="og:description" content="Des sites web sur mesure pour les indépendants et petites entreprises. Design moderne, paiement intégré, réservation automatisée. Réponse en moins de 24h.">
-<meta property="og:image" content="https://og-image-statevo.vercel.app/og.png">
+<meta property="og:description" content="Des sites web sur mesure pour les indépendants et petites entreprises. Réponse en moins de 24h.">
+<meta property="og:image" content="https://statevo.fr/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://statevo.fr">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Statevo — Ton business mérite son repère.">
-<meta name="twitter:description" content="Sites web sur mesure pour indépendants. Réponse en moins de 24h.">
-<meta name="twitter:image" content="https://og-image-statevo.vercel.app/og.png">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#07080a;
-  --surface:#0d0f12;
-  --surface2:#12141a;
-  --border:#ffffff0d;
-  --border-hover:#38bdf825;
-  --accent:#38bdf8;
-  --accent2:#818cf8;
-  --text:#eef2f7;
-  --muted:#556170;
-  --muted2:#8494a5;
+  --bg:#0a0a0a;
+  --surface:#111111;
+  --surface2:#181818;
+  --border:#ffffff0f;
+  --border2:#ffffff1a;
+  --white:#ffffff;
+  --off:#a0a0a0;
+  --muted:#555555;
 }
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--bg);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{font-family:'DM Sans',sans-serif;color:var(--white);background:var(--bg);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
-::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:#38bdf820;border-radius:10px}
+::-webkit-scrollbar-thumb{background:#ffffff18;border-radius:2px}
 
-/* NAVBAR */
-nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60px;display:flex;align-items:center;justify-content:space-between;background:rgba(7,8,10,0.8);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
-.nav-logo{font-family:'Inter',sans-serif;font-size:18px;font-weight:700;color:white;text-decoration:none;letter-spacing:-0.3px}
-.nav-logo span{color:var(--accent)}
-.nav-links{display:flex;gap:36px;align-items:center}
-.nav-links a{color:var(--muted2);text-decoration:none;font-size:14px;font-weight:500;transition:.2s;cursor:pointer}
-.nav-links a:hover{color:white}
-.nav-cta{padding:8px 20px;border-radius:8px;background:var(--accent);color:#000;font-weight:600;font-size:13px;text-decoration:none;transition:.2s;letter-spacing:.2px}
-.nav-cta:hover{background:white}
+/* TEXTURE overlays SVG inline */
+.tx{position:absolute;inset:0;pointer-events:none;z-index:0}
 
-/* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:100px 20px 60px}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% -5%, #38bdf80d 0%, transparent 65%),#07080a}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 75% 65% at 50% 50%,black 0%,transparent 80%)}
-.hero-content{position:relative;z-index:2;max-width:760px}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(56,189,248,0.06);border:1px solid rgba(56,189,248,0.15);border-radius:40px;padding:6px 14px;font-size:12px;color:var(--muted2);font-weight:500;margin-bottom:32px;letter-spacing:.4px}
-.hero-eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
-.hero h1{font-family:'Inter',sans-serif;font-size:clamp(38px,6vw,72px);font-weight:700;line-height:1.05;letter-spacing:-2.5px;margin-bottom:24px;color:white}
-.hero h1 .grad{background:linear-gradient(120deg,var(--accent) 0%,var(--accent2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{font-size:clamp(15px,1.8vw,17px);color:var(--muted2);line-height:1.7;max-width:480px;margin:0 auto 40px;font-weight:400}
-.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn-primary{padding:13px 28px;border-radius:9px;background:var(--accent);color:#000;font-weight:600;font-size:14px;text-decoration:none;transition:.2s;border:none;cursor:pointer;font-family:'DM Sans',sans-serif}
-.btn-primary:hover{background:white;transform:translateY(-1px)}
-.btn-secondary{padding:13px 28px;border-radius:9px;background:transparent;color:var(--muted2);font-weight:500;font-size:14px;text-decoration:none;border:1px solid rgba(255,255,255,.1);transition:.2s}
-.btn-secondary:hover{border-color:rgba(255,255,255,.25);color:white}
-.hero-trust{margin-top:52px;display:flex;justify-content:center;gap:28px;flex-wrap:wrap}
-.trust-item{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--muted)}
-.trust-item span{color:var(--accent);font-size:14px}
-
-/* PARTNERS */
-.partners-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:32px 20px}
-.partners-label{text-align:center;font-size:11px;font-weight:600;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:24px}
-.partners-track-wrapper{overflow:hidden;position:relative;mask-image:linear-gradient(90deg,transparent 0%,black 12%,black 88%,transparent 100%)}
-.partners-track{display:flex;gap:48px;align-items:center;width:max-content;animation:scroll-partners 22s linear infinite}
-.partners-track:hover{animation-play-state:paused}
-@keyframes scroll-partners{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.partner-logo{display:flex;align-items:center;gap:9px;opacity:0.35;transition:opacity .3s;white-space:nowrap;filter:grayscale(1) brightness(2)}
-.partner-logo:hover{opacity:0.7}
-.partner-logo svg{flex-shrink:0}
-.partner-name{font-family:'Inter',sans-serif;font-size:15px;font-weight:700;color:white;letter-spacing:-0.3px}
-
-/* STATS */
-.stats-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:48px 20px}
-.stats-inner{display:flex;justify-content:center;gap:0;flex-wrap:wrap;max-width:800px;margin:0 auto}
-.stat-item{flex:1;min-width:150px;text-align:center;padding:16px 28px;position:relative}
-.stat-item:not(:last-child)::after{content:"";position:absolute;right:0;top:20%;height:60%;width:1px;background:var(--border)}
-.stat-item .number{font-family:'Inter',sans-serif;font-size:38px;font-weight:700;color:white;line-height:1;letter-spacing:-1px}
-.stat-item .label{font-size:12px;color:var(--muted);margin-top:6px;font-weight:500;letter-spacing:.3px}
-
-/* SECTION */
-.section{padding:88px 20px}
-.section-label{font-size:11px;font-weight:600;letter-spacing:2.5px;color:var(--accent);text-transform:uppercase;margin-bottom:14px}
-.section-title{font-family:'Inter',sans-serif;font-size:clamp(24px,3.5vw,34px);font-weight:700;letter-spacing:-1px;margin-bottom:14px;color:white}
-.section-sub{color:var(--muted2);font-size:15px;line-height:1.7;max-width:460px;font-weight:400}
-.center{text-align:center}
-.center .section-sub{margin:0 auto}
-
-/* HOW IT WORKS */
-.how-section{background:var(--bg)}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;max-width:780px;margin:48px auto 0}
-.step{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 24px;transition:.3s;position:relative;overflow:hidden}
-.step::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(56,189,248,.4),transparent);opacity:0;transition:.4s}
-.step:hover{border-color:var(--border-hover);transform:translateY(-4px)}
-.step:hover::before{opacity:1}
-.step-num{font-family:'Inter',sans-serif;font-size:40px;font-weight:700;color:rgba(56,189,248,.1);position:absolute;top:14px;right:18px;line-height:1}
-.step h3{font-size:15px;font-weight:600;margin-bottom:10px;color:white}
-.step p{font-size:13px;color:var(--muted2);line-height:1.65}
-
-/* PORTFOLIO */
-.portfolio-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px;max-width:960px;margin:48px auto 0}
-.portfolio-card{border-radius:14px;overflow:hidden;border:1px solid var(--border);transition:.35s;cursor:pointer}
-.portfolio-card:hover{border-color:var(--border-hover);transform:translateY(-4px)}
-.portfolio-preview-mock{height:200px;background:var(--surface2);display:flex;align-items:center;justify-content:center}
-.mock-browser{width:88%;background:#1a1a22;border-radius:8px;overflow:hidden;border:1px solid #ffffff08}
-.mock-bar{height:24px;background:#111118;display:flex;align-items:center;padding:0 10px;gap:5px;border-bottom:1px solid #ffffff06}
-.mock-dot{width:7px;height:7px;border-radius:50%}
-.mock-content{padding:12px}
-.mock-h{height:9px;border-radius:2px;width:58%;margin-bottom:7px}
-.mock-line{background:#ffffff08;height:6px;border-radius:2px;margin-bottom:4px}
-.mock-line.short{width:70%}
-.mock-line.shorter{width:45%}
-.mock-btn{height:18px;border-radius:4px;width:72px;margin-top:8px}
-.portfolio-info{padding:18px 20px;background:var(--surface2)}
-.portfolio-tag{display:inline-block;background:rgba(56,189,248,.07);border:1px solid rgba(56,189,248,.15);color:var(--muted2);font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-radius:20px;padding:3px 10px;margin-bottom:8px}
-.portfolio-info h3{font-size:14px;font-weight:600;margin-bottom:4px;color:white}
-.portfolio-info p{font-size:12px;color:var(--muted);line-height:1.55}
-
-/* OFFRES */
-.offers-section{background:var(--bg)}
-.offers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px;max-width:780px;margin:48px auto 0}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:32px;transition:.35s;position:relative;overflow:hidden}
-.card.featured{border-color:rgba(56,189,248,.2)}
-.card.featured::before{content:"Recommandé";position:absolute;top:18px;right:18px;background:rgba(56,189,248,.1);color:var(--accent);border:1px solid rgba(56,189,248,.2);font-size:10px;font-weight:700;padding:4px 10px;border-radius:20px;letter-spacing:.5px}
-.card h2{font-family:'Inter',sans-serif;font-size:19px;font-weight:700;margin-bottom:4px;color:white}
-.card .price{font-family:'Inter',sans-serif;font-size:44px;font-weight:700;color:white;line-height:1;margin:16px 0 4px;letter-spacing:-2px}
-.card .price-sub{font-size:12px;color:var(--muted);margin-bottom:24px}
-.offer-list{list-style:none;margin-bottom:26px}
-.offer-list li{padding:10px 0;border-bottom:1px solid var(--border)}
-.offer-list li:last-child{border-bottom:none}
-.offer-item-label{font-size:13px;color:var(--text);font-weight:500;display:flex;align-items:center;gap:8px}
-.offer-item-label .check{color:var(--accent);font-size:14px}
-.offer-item-label .cross{color:#2a3340;font-size:14px}
-.offer-item-label.disabled{color:#2a3340}
-.offer-item-sub{font-size:11px;color:var(--muted);margin-top:3px;margin-left:22px;line-height:1.5}
-.offer-item-sub.disabled{color:#1a2230}
-.btn-main{width:100%;padding:13px;border-radius:10px;border:none;font-weight:600;cursor:pointer;font-size:14px;transition:.2s;letter-spacing:.2px;font-family:'DM Sans',sans-serif}
-.btn-accent{background:var(--accent);color:#000}
-.btn-accent:hover{background:white}
-.btn-ghost{background:transparent;color:var(--muted2);border:1px solid rgba(255,255,255,.1)}
-.btn-ghost:hover{border-color:rgba(255,255,255,.25);color:white}
-
-/* FORM */
-.form-area{margin-top:18px;overflow:hidden;max-height:0;transition:max-height .5s ease,opacity .4s ease;opacity:0}
-.form-area.open{max-height:700px;opacity:1}
-.form-field{margin-top:8px}
-.form-field input,.form-field textarea{width:100%;padding:11px 14px;border-radius:9px;border:1px solid var(--border);background:rgba(255,255,255,.03);color:white;font-size:13px;outline:none;font-family:'DM Sans',sans-serif;transition:.2s}
-.form-field input:focus,.form-field textarea:focus{border-color:rgba(56,189,248,.3);background:rgba(56,189,248,.03)}
-.form-field textarea{resize:vertical;min-height:80px}
-.submit-btn{width:100%;margin-top:12px;padding:13px;border-radius:9px;border:none;background:var(--accent);color:#000;font-weight:600;cursor:pointer;font-size:14px;transition:.2s;font-family:'DM Sans',sans-serif}
-.submit-btn:hover{background:white}
-.submit-btn:disabled{opacity:.4;cursor:not-allowed}
-.success-msg{display:none;color:var(--accent);margin-top:12px;font-size:13px;text-align:center;background:rgba(56,189,248,.06);border:1px solid rgba(56,189,248,.15);border-radius:8px;padding:10px}
-
-/* REVIEWS */
-.reviews-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;max-width:900px;margin:48px auto 0}
-.review-card{background:var(--surface2);border:1px solid var(--border);border-radius:14px;padding:24px;transition:.3s}
-.review-card:hover{border-color:var(--border-hover)}
-.stars{color:var(--accent);font-size:12px;margin-bottom:14px;letter-spacing:3px}
-.review-text{font-size:13px;color:var(--muted2);line-height:1.75;margin-bottom:18px}
-.reviewer{display:flex;align-items:center;gap:10px}
-.avatar{width:36px;height:36px;border-radius:50%;background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.15);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:11px;color:var(--accent);flex-shrink:0}
-.reviewer-name{font-size:13px;font-weight:600;color:white}
-.reviewer-sub{font-size:11px;color:var(--muted)}
-
-/* FAQ */
-.faq-section{background:var(--bg)}
-.faq-inner{max-width:640px;margin:48px auto 0}
-.faq-item{border-bottom:1px solid var(--border)}
-.faq-question{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:14px;font-weight:500;padding:18px 0;transition:.2s;gap:16px;color:var(--text)}
-.faq-question:hover{color:white}
-.faq-icon{font-size:16px;color:var(--accent);transition:.35s;flex-shrink:0;width:24px;height:24px;border-radius:50%;background:rgba(56,189,248,.08);display:flex;align-items:center;justify-content:center}
-.faq-icon.open{transform:rotate(45deg);background:var(--accent);color:#000}
-.faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease,opacity .35s ease,padding .35s ease;opacity:0;font-size:13px;color:var(--muted2);line-height:1.75}
-.faq-answer.open{max-height:200px;opacity:1;padding-bottom:18px}
-
-/* CLOSING MANIFESTO */
-.manifesto-section{background:var(--bg);padding:100px 20px;text-align:center;position:relative;overflow:hidden}
-.manifesto-section::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 100%,#38bdf808 0%,transparent 70%)}
-.manifesto-inner{position:relative;z-index:2;max-width:680px;margin:0 auto}
-.manifesto-quote{font-family:'Inter',sans-serif;font-size:clamp(22px,3.5vw,38px);font-weight:700;letter-spacing:-1.5px;color:white;line-height:1.2;margin-bottom:20px}
-.manifesto-quote .grad{background:linear-gradient(120deg,var(--accent) 0%,var(--accent2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.manifesto-body{font-size:16px;color:var(--muted2);line-height:1.8;max-width:520px;margin:0 auto 36px}
-.manifesto-divider{width:48px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:2px;margin:0 auto 32px}
-
-/* FOOTER CTA */
-.footer-cta{background:var(--surface);border-top:1px solid var(--border);padding:80px 20px;text-align:center}
-.footer-cta h2{font-family:'Inter',sans-serif;font-size:clamp(24px,3.5vw,36px);font-weight:700;letter-spacing:-1px;margin-bottom:12px;color:white}
-.footer-cta p{color:var(--muted2);font-size:15px;margin-bottom:28px}
-.footer-email{margin-top:18px;font-size:13px;color:var(--muted)}
-.footer-email a{color:var(--muted2);text-decoration:none;transition:.2s}
-.footer-email a:hover{color:white}
-.footer-bottom{background:var(--bg);border-top:1px solid var(--border);padding:18px;text-align:center;font-size:12px;color:var(--muted)}
-
-/* ANIMATIONS */
-.animate{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}
-.animate.visible{opacity:1;transform:translateY(0)}
+/* NAV */
+nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:rgba(10,10,10,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Inter',sans-serif;font-size:17px;font-weight:900;color:#fff;text-decoration:none;letter-spacing:-0.5px;text-transform:uppercase}
+.nav-logo em{font-style:normal;color:#fff;opacity:0.35}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{color:var(--off);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.3px;transition:.15s;cursor:pointer}
+.nav-links a:hover{color:#fff}
+.nav-cta{padding:7px 18px;border:1px solid #fff;color:#fff;font-weight:600;font-size:12px;text-decoration:none;letter-spacing:.8px;text-transform:uppercase;transition:.2s}
+.nav-cta:hover{background:#fff;color:#000}
 
 /* PAGES */
 .page{display:none}
 .page.active{display:block}
 #main-page{display:block}
 
-/* PORTFOLIO PAGE */
-.portfolio-page{padding-top:60px}
-.portfolio-page-header{background:var(--surface);border-bottom:1px solid var(--border);padding:56px 20px;text-align:center}
-.portfolio-full-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:24px;max-width:1060px;margin:48px auto;padding:0 20px}
-.pf-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:.35s}
-.pf-card:hover{border-color:var(--border-hover);transform:translateY(-4px)}
-.pf-preview{height:240px;background:var(--surface2);display:flex;align-items:center;justify-content:center}
-.pf-info{padding:20px 22px;border-top:1px solid var(--border)}
-.pf-tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:9px}
-.pf-tag{background:rgba(56,189,248,.06);border:1px solid rgba(56,189,248,.12);color:var(--muted2);font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-radius:20px;padding:3px 9px}
-.pf-info h3{font-size:15px;font-weight:600;margin-bottom:4px;color:white}
-.pf-info p{font-size:12px;color:var(--muted2);line-height:1.6}
-.back-btn{display:inline-flex;align-items:center;gap:7px;color:var(--muted2);font-size:13px;font-weight:500;cursor:pointer;background:none;border:none;margin-bottom:20px;transition:.2s;font-family:'DM Sans',sans-serif}
-.back-btn:hover{color:white}
+/* ═══════════════════════════════════
+   HERO — asymétrique, typographie brute
+═══════════════════════════════════ */
+.hero{min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:0 0 80px}
+.hero-texture{position:absolute;inset:0;z-index:0}
+.hero-img{position:absolute;inset:0;background:
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='600' height='600' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size:300px;
+  opacity:0.045;
+  mix-blend-mode:screen}
+.hero-gradient{position:absolute;inset:0;background:
+  radial-gradient(ellipse 55% 70% at 75% 30%, #1a1a1a 0%, transparent 65%),
+  radial-gradient(ellipse 80% 60% at 20% 80%, #141414 0%, transparent 70%),
+  #0a0a0a}
+/* Ligne diagonale décorative */
+.hero-line{position:absolute;top:0;right:18%;width:1px;height:100%;background:linear-gradient(180deg,transparent 0%,#ffffff12 30%,#ffffff20 60%,transparent 100%);transform:rotate(-8deg);transform-origin:top center}
+.hero-line2{position:absolute;top:0;right:35%;width:1px;height:100%;background:linear-gradient(180deg,transparent 0%,#ffffff08 40%,transparent 100%);transform:rotate(-8deg);transform-origin:top center}
 
-@media(max-width:640px){
+.hero-content{position:relative;z-index:2;width:100%;padding:0 60px}
+.hero-tag{display:inline-block;border:1px solid #ffffff25;padding:5px 14px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--off);margin-bottom:40px;font-family:'Inter',sans-serif}
+
+/* Gros titre — décalé à gauche, dépasse */
+.hero-h1{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(52px,9vw,130px);line-height:.92;letter-spacing:-4px;color:#fff;text-transform:uppercase;margin-bottom:0}
+.hero-h1 .row2{display:block;padding-left:clamp(40px,7vw,120px);color:#fff}
+.hero-h1 .row3{display:block;padding-left:clamp(80px,14vw,240px);color:#fff;opacity:0.15}
+
+/* Bloc bas — split gauche/droite */
+.hero-bottom{display:flex;align-items:flex-end;justify-content:space-between;margin-top:48px;gap:40px;flex-wrap:wrap}
+.hero-desc{max-width:340px;font-size:15px;color:var(--off);line-height:1.7;font-weight:400;border-left:2px solid #fff;padding-left:20px}
+.hero-actions{display:flex;flex-direction:column;align-items:flex-end;gap:14px}
+.btn-brutal{display:inline-block;padding:16px 40px;background:#fff;color:#000;font-family:'Inter',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:.2s;border:none;cursor:pointer}
+.btn-brutal:hover{background:#d4d4d4}
+.btn-ghost-brutal{display:inline-block;padding:15px 40px;background:transparent;color:#fff;font-family:'Inter',sans-serif;font-weight:600;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;border:1px solid #ffffff35;transition:.2s;cursor:pointer}
+.btn-ghost-brutal:hover{border-color:#fff}
+.hero-scroll{font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.hero-scroll::before{content:"";width:40px;height:1px;background:var(--muted)}
+
+/* ═══════════════════════════════════
+   PARTNERS — défilant
+═══════════════════════════════════ */
+.partners-bar{background:#111;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:20px 0;overflow:hidden}
+.partners-label-fixed{position:absolute;left:0;top:0;bottom:0;width:160px;background:linear-gradient(90deg,#111 70%,transparent);display:flex;align-items:center;padding-left:40px;z-index:2}
+.partners-label-fixed span{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);font-family:'Inter',sans-serif}
+.partners-wrap{position:relative}
+.partners-track{display:flex;gap:56px;align-items:center;width:max-content;animation:slide 25s linear infinite}
+.partners-track:hover{animation-play-state:paused}
+@keyframes slide{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.partner-item{display:flex;align-items:center;gap:10px;opacity:0.28;white-space:nowrap;transition:opacity .3s}
+.partner-item:hover{opacity:0.65}
+.partner-icon{width:26px;height:26px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;font-family:'Inter',sans-serif;flex-shrink:0}
+.partner-name{font-family:'Inter',sans-serif;font-size:13px;font-weight:700;letter-spacing:-.2px;color:#fff}
+
+/* ═══════════════════════════════════
+   SECTION BASE
+═══════════════════════════════════ */
+.section{padding:100px 60px;position:relative}
+.section-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-family:'Inter',sans-serif;margin-bottom:20px}
+.section-title-big{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(32px,5vw,64px);letter-spacing:-2px;line-height:.95;color:#fff;text-transform:uppercase;margin-bottom:0}
+.section-title-big em{font-style:normal;opacity:.15}
+
+/* ═══════════════════════════════════
+   STATS — chiffres en bandes horizontales
+═══════════════════════════════════ */
+.stats-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:0 60px}
+.stat-row{display:flex;border-bottom:1px solid var(--border)}
+.stat-row:last-child{border-bottom:none}
+.stat-cell{flex:1;padding:36px 0;border-right:1px solid var(--border);display:flex;flex-direction:column;justify-content:center;padding-left:40px}
+.stat-cell:first-child{padding-left:0}
+.stat-cell:last-child{border-right:none}
+.stat-num{font-family:'Inter',sans-serif;font-size:52px;font-weight:900;color:#fff;letter-spacing:-3px;line-height:1}
+.stat-lbl{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:6px;font-family:'Inter',sans-serif}
+
+/* ═══════════════════════════════════
+   HOW IT WORKS — numéros géants, décalés
+═══════════════════════════════════ */
+.how-section{background:var(--bg);overflow:hidden}
+.how-header{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;margin-bottom:80px;flex-wrap:wrap}
+.how-header-desc{max-width:300px;font-size:14px;color:var(--off);line-height:1.75;margin-top:12px}
+.steps-brutalist{display:flex;flex-direction:column;gap:0}
+.step-b{display:grid;grid-template-columns:120px 1fr;border-top:1px solid var(--border);padding:40px 0;align-items:start;gap:40px;transition:.3s}
+.step-b:last-child{border-bottom:1px solid var(--border)}
+.step-b:hover{background:rgba(255,255,255,.02)}
+.step-num-big{font-family:'Inter',sans-serif;font-size:80px;font-weight:900;color:#fff;opacity:.07;line-height:1;letter-spacing:-4px;padding-top:4px}
+.step-content h3{font-family:'Inter',sans-serif;font-size:19px;font-weight:700;color:#fff;margin-bottom:10px;letter-spacing:-.3px}
+.step-content p{font-size:13px;color:var(--off);line-height:1.75;max-width:480px}
+.step-tag{display:inline-block;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:3px 10px;margin-bottom:14px;font-family:'Inter',sans-serif}
+
+/* ═══════════════════════════════════
+   PORTFOLIO — grille asymétrique
+═══════════════════════════════════ */
+.portfolio-section{background:var(--surface);border-top:1px solid var(--border)}
+.portfolio-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:60px;flex-wrap:wrap;gap:20px}
+.portfolio-grid-asym{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:auto auto;gap:2px;margin-bottom:2px}
+.portfolio-grid-asym .pc:nth-child(3){grid-column:span 2}
+.pc{background:var(--surface2);border:1px solid var(--border);overflow:hidden;transition:.35s;cursor:pointer;position:relative}
+.pc:hover{border-color:var(--border2)}
+.pc:hover .pc-overlay{opacity:1}
+.pc-mock{height:220px;display:flex;align-items:center;justify-content:center;padding:24px}
+.pc-mock-inner{width:88%;background:#0f0f0f;border:1px solid #ffffff06;overflow:hidden}
+.pc-bar{height:22px;background:#0a0a0a;display:flex;align-items:center;padding:0 10px;gap:5px;border-bottom:1px solid #ffffff05}
+.pc-dot{width:6px;height:6px;border-radius:50%}
+.pc-body{padding:12px}
+.pc-hero-block{height:52px;border-radius:2px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;letter-spacing:.5px;color:rgba(0,0,0,.8)}
+.pc-line{background:#ffffff07;height:5px;border-radius:1px;margin-bottom:3px}
+.pc-line.s{width:65%}.pc-line.xs{width:40%}
+.pc-btn-mock{height:16px;width:70px;border-radius:1px;margin-top:7px}
+.pc-info{padding:20px 22px;border-top:1px solid var(--border)}
+.pc-tag{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-family:'Inter',sans-serif;margin-bottom:7px}
+.pc-info h3{font-size:14px;font-weight:600;color:#fff;margin-bottom:4px;letter-spacing:-.2px}
+.pc-info p{font-size:12px;color:var(--muted);line-height:1.5}
+.pc-overlay{position:absolute;inset:0;background:rgba(255,255,255,.03);display:flex;align-items:center;justify-content:center;opacity:0;transition:.3s}
+.pc-overlay-text{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#fff;font-family:'Inter',sans-serif;border-bottom:1px solid #fff;padding-bottom:2px}
+
+/* ═══════════════════════════════════
+   OFFRES — layout en L
+═══════════════════════════════════ */
+.offers-section{background:var(--bg);overflow:hidden}
+.offers-layout{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:60px}
+.offer-card{background:var(--surface);border:1px solid var(--border);padding:44px;position:relative;overflow:hidden;transition:.3s}
+.offer-card:hover{border-color:var(--border2)}
+.offer-card.featured{border-color:#ffffff25}
+.offer-card::before{content:"";position:absolute;top:0;left:0;right:0;height:1px}
+.offer-card.featured::before{background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent)}
+.offer-badge{position:absolute;top:20px;right:20px;font-size:9px;letter-spacing:2px;text-transform:uppercase;border:1px solid #ffffff20;color:var(--off);padding:4px 10px;font-family:'Inter',sans-serif}
+.offer-name{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-family:'Inter',sans-serif;margin-bottom:20px}
+.offer-price{font-family:'Inter',sans-serif;font-size:72px;font-weight:900;letter-spacing:-4px;color:#fff;line-height:1;margin-bottom:4px}
+.offer-price-sub{font-size:12px;color:var(--muted);margin-bottom:36px;letter-spacing:.3px}
+.offer-list{list-style:none;margin-bottom:36px;border-top:1px solid var(--border)}
+.offer-list li{padding:12px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:12px}
+.offer-check{width:16px;height:16px;border:1px solid #ffffff25;display:flex;align-items:center;justify-content:center;font-size:8px;color:#fff;flex-shrink:0;margin-top:1px}
+.offer-check.on{background:#fff;border-color:#fff;color:#000}
+.offer-check.off{opacity:.2}
+.offer-text{font-size:13px;color:var(--off);line-height:1.4}
+.offer-text.off{opacity:.25}
+.offer-sub{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.5}
+
+/* FORM */
+.form-area{overflow:hidden;max-height:0;transition:max-height .5s ease,opacity .4s;opacity:0;margin-top:16px}
+.form-area.open{max-height:700px;opacity:1}
+.form-field{margin-top:8px}
+.form-field input,.form-field textarea{width:100%;padding:12px 0;border:none;border-bottom:1px solid var(--border);background:transparent;color:#fff;font-size:13px;outline:none;font-family:'DM Sans',sans-serif;transition:.2s}
+.form-field input:focus,.form-field textarea:focus{border-color:#fff}
+.form-field input::placeholder,.form-field textarea::placeholder{color:var(--muted)}
+.form-field textarea{resize:vertical;min-height:80px;margin-top:8px}
+.submit-btn{width:100%;margin-top:16px;padding:14px;border:1px solid #fff;background:transparent;color:#fff;font-weight:600;cursor:pointer;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;transition:.2s;font-family:'Inter',sans-serif}
+.submit-btn:hover{background:#fff;color:#000}
+.submit-btn:disabled{opacity:.3;cursor:not-allowed}
+.success-msg{display:none;color:#fff;margin-top:12px;font-size:12px;letter-spacing:.5px;text-align:center;border:1px solid #ffffff20;padding:10px}
+
+/* ═══════════════════════════════════
+   AVIS — liste verticale
+═══════════════════════════════════ */
+.reviews-section{background:var(--surface);border-top:1px solid var(--border)}
+.reviews-list{display:flex;flex-direction:column;margin-top:60px;border-top:1px solid var(--border)}
+.review-item{padding:36px 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr 2fr 140px;gap:40px;align-items:start;transition:.2s}
+.review-item:hover{background:rgba(255,255,255,.015)}
+.review-meta{display:flex;flex-direction:column;gap:6px}
+.review-avatar{width:40px;height:40px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;font-family:'Inter',sans-serif;letter-spacing:.5px}
+.review-name{font-size:13px;font-weight:600;color:#fff;margin-top:10px}
+.review-role{font-size:11px;color:var(--muted);letter-spacing:.3px}
+.review-body{font-size:14px;color:var(--off);line-height:1.8;padding-top:4px}
+.review-stars{font-size:11px;color:#fff;letter-spacing:4px;padding-top:4px}
+
+/* ═══════════════════════════════════
+   FAQ
+═══════════════════════════════════ */
+.faq-section{background:var(--bg)}
+.faq-inner{margin-top:60px;border-top:1px solid var(--border)}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:22px 0;gap:20px}
+.faq-q span{font-size:14px;font-weight:500;color:#fff;letter-spacing:-.2px}
+.faq-icon{width:22px;height:22px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff;flex-shrink:0;transition:.3s}
+.faq-icon.open{transform:rotate(45deg);background:#fff;color:#000;border-color:#fff}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,opacity .3s,padding .3s;opacity:0;font-size:13px;color:var(--off);line-height:1.8}
+.faq-a.open{max-height:200px;opacity:1;padding-bottom:20px}
+
+/* ═══════════════════════════════════
+   MANIFESTE
+═══════════════════════════════════ */
+.manifesto-section{background:var(--surface);border-top:1px solid var(--border);padding:120px 60px;position:relative;overflow:hidden}
+.manifesto-noise{position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");background-size:250px;opacity:.03;pointer-events:none}
+.manifesto-inner{position:relative;z-index:2;max-width:800px}
+.manifesto-big{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(36px,6vw,80px);letter-spacing:-3px;line-height:.93;text-transform:uppercase;color:#fff;margin-bottom:40px}
+.manifesto-big .ghost{opacity:.12}
+.manifesto-divider{width:60px;height:1px;background:#fff;margin-bottom:32px}
+.manifesto-body{font-size:15px;color:var(--off);line-height:1.85;max-width:480px;margin-bottom:44px}
+
+/* ═══════════════════════════════════
+   FOOTER CTA
+═══════════════════════════════════ */
+.footer-cta{background:var(--bg);border-top:1px solid var(--border);padding:80px 60px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.footer-cta-left h2{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(24px,3.5vw,42px);letter-spacing:-1.5px;text-transform:uppercase;line-height:1;margin-bottom:10px}
+.footer-cta-left p{font-size:13px;color:var(--off)}
+.footer-email{margin-top:28px;font-size:12px;color:var(--muted);letter-spacing:.3px}
+.footer-email a{color:var(--off);text-decoration:none;transition:.2s}
+.footer-email a:hover{color:#fff}
+.footer-bottom{background:var(--surface);border-top:1px solid var(--border);padding:16px 60px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;font-family:'Inter',sans-serif}
+
+/* ═══════════════════════════════════
+   PORTFOLIO PAGE
+═══════════════════════════════════ */
+.portfolio-page{padding-top:58px}
+.pf-page-header{background:var(--surface);border-bottom:1px solid var(--border);padding:60px}
+.back-btn{background:none;border:none;color:var(--off);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;display:inline-flex;align-items:center;gap:8px;margin-bottom:32px;font-family:'Inter',sans-serif;padding:0;transition:.2s}
+.back-btn:hover{color:#fff}
+.pf-full-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2px;padding:2px 0}
+.pf-card{background:var(--surface);border:1px solid var(--border);overflow:hidden;transition:.35s}
+.pf-card:hover{border-color:var(--border2);transform:translateY(-2px)}
+.pf-preview{height:220px;background:var(--surface2);display:flex;align-items:center;justify-content:center}
+.pf-info{padding:20px 22px;border-top:1px solid var(--border)}
+.pf-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.pf-tag{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:3px 9px;font-family:'Inter',sans-serif}
+.pf-info h3{font-size:14px;font-weight:600;color:#fff;margin-bottom:4px}
+.pf-info p{font-size:12px;color:var(--muted);line-height:1.6}
+
+/* ANIMATE */
+.animate{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.animate.visible{opacity:1;transform:none}
+
+@media(max-width:768px){
   nav{padding:0 20px}
   .nav-links{display:none}
-  .stat-item:not(:last-child)::after{display:none}
-  .stat-item{border-bottom:1px solid var(--border)}
+  .hero-content{padding:0 24px}
+  .hero-h1{font-size:clamp(44px,12vw,90px);letter-spacing:-2px}
+  .section{padding:60px 24px}
+  .stats-section{padding:0 24px}
+  .stat-cell{padding-left:20px}
+  .stat-num{font-size:36px}
+  .offers-layout{grid-template-columns:1fr}
+  .portfolio-grid-asym{grid-template-columns:1fr}
+  .portfolio-grid-asym .pc:nth-child(3){grid-column:span 1}
+  .review-item{grid-template-columns:1fr;gap:16px}
+  .review-stars{display:none}
+  .footer-cta{padding:60px 24px;flex-direction:column}
+  .footer-bottom{padding:16px 24px;flex-direction:column;gap:6px;text-align:center}
+  .manifesto-section{padding:80px 24px}
+  .how-header{flex-direction:column}
+  .step-b{grid-template-columns:70px 1fr;gap:20px}
+  .step-num-big{font-size:56px}
+  .pf-page-header{padding:40px 24px}
+  .pf-full-grid{padding:0}
 }
 </style>
 </head>
 <body>
 
 <nav>
-  <a class="nav-logo" href="#" onclick="showPage('main');return false">State<span>vo</span></a>
+  <a class="nav-logo" href="#" onclick="showPage('main');return false">State<em>vo</em></a>
   <div class="nav-links">
     <a onclick="showPage('portfolio');return false">Réalisations</a>
     <a href="#offres">Offres</a>
     <a href="#avis">Avis</a>
     <a href="#faq">FAQ</a>
   </div>
-  <a class="nav-cta" href="#offres">Commencer →</a>
+  <a class="nav-cta" href="#offres">Commencer</a>
 </nav>
 
 <div id="main-page" class="page active">
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
+  <div class="hero-gradient"></div>
+  <div class="hero-img"></div>
+  <div class="hero-line"></div>
+  <div class="hero-line2"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow">On vous recontacte en moins de 24h</div>
-    <h1>Ton business<br>mérite son <span class="grad">repère.</span></h1>
-    <p class="hero-sub">Des sites sur mesure pour les indépendants et petites entreprises. Design moderne, paiement intégré, réservation automatisée.</p>
-    <div class="hero-btns">
-      <a class="btn-primary" href="#offres">Voir les offres</a>
-      <a class="btn-secondary" href="#" onclick="showPage('portfolio');return false">Voir nos réalisations</a>
-    </div>
-    <div class="hero-trust">
-      <div class="trust-item"><span>✔</span> Sans engagement pour démarrer</div>
-      <div class="trust-item"><span>✔</span> 50+ sites livrés</div>
-      <div class="trust-item"><span>✔</span> Réponse sous 24h</div>
+    <div class="hero-tag">On vous recontacte en moins de 24h</div>
+    <h1 class="hero-h1">
+      Ton<br>
+      <span class="row2">Business</span>
+      <span class="row3">Mérite</span>
+    </h1>
+    <div class="hero-bottom">
+      <p class="hero-desc">Des sites sur mesure pour les indépendants et petites entreprises. Design moderne, paiement intégré, réservation automatisée.</p>
+      <div class="hero-actions">
+        <a class="btn-brutal" href="#offres">Voir les offres</a>
+        <a class="btn-ghost-brutal" href="#" onclick="showPage('portfolio');return false">Nos réalisations</a>
+        <div class="hero-scroll">Défiler</div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- PARTNERS -->
-<div class="partners-section">
-  <p class="partners-label">Ils nous font confiance</p>
-  <div class="partners-track-wrapper">
-    <div class="partners-track" id="partners-track">
-      <!-- Intermarché -->
-      <div class="partner-logo">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="#e2001a"/><text x="14" y="19" text-anchor="middle" font-size="10" font-weight="800" fill="white" font-family="Arial">ITM</text></svg>
-        <span class="partner-name">Intermarché</span>
-      </div>
-      <!-- Carrefour -->
-      <div class="partner-logo">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="#004b8d"/><text x="14" y="19" text-anchor="middle" font-size="9" font-weight="800" fill="white" font-family="Arial">CA</text></svg>
-        <span class="partner-name">Carrefour</span>
-      </div>
-      <!-- Volkswagen -->
-      <div class="partner-logo">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="14" fill="#1a1a2e"/><text x="14" y="19" text-anchor="middle" font-size="10" font-weight="800" fill="white" font-family="Arial">VW</text></svg>
-        <span class="partner-name">Volkswagen</span>
-      </div>
-      <!-- Renault -->
-      <div class="partner-logo">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="#efda0c"/><text x="14" y="19" text-anchor="middle" font-size="9" font-weight="800" fill="#000" font-family="Arial">RNT</text></svg>
-        <span class="partner-name">Renault</span>
-      </div>
-      <!-- Leclerc -->
-      <div class="partner-logo">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="#0066cc"/><text x="14" y="19" text-anchor="middle" font-size="10" font-weight="800" fill="white" font-family="Arial">E.L</text></svg>
-        <span class="partner-name">E.Leclerc</span>
-      </div>
-      <!-- Décathlon -->
-      <div class="partner-logo">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="#0082c3"/><text x="14" y="19" text-anchor="middle" font-size="8" font-weight="800" fill="white" font-family="Arial">DECA</text></svg>
-        <span class="partner-name">Décathlon</span>
-      </div>
-      <!-- Orange -->
-      <div class="partner-logo">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="#ff6600"/><text x="14" y="19" text-anchor="middle" font-size="8" font-weight="800" fill="white" font-family="Arial">ORA</text></svg>
-        <span class="partner-name">Orange</span>
-      </div>
-      <!-- BNP -->
-      <div class="partner-logo">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="#00965e"/><text x="14" y="19" text-anchor="middle" font-size="8" font-weight="800" fill="white" font-family="Arial">BNP</text></svg>
-        <span class="partner-name">BNP Paribas</span>
-      </div>
-      <!-- Copie pour boucle infinie -->
-      <div class="partner-logo">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="#e2001a"/><text x="14" y="19" text-anchor="middle" font-size="10" font-weight="800" fill="white" font-family="Arial">ITM</text></svg>
-        <span class="partner-name">Intermarché</span>
-      </div>
-      <div class="partner-logo">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="#004b8d"/><text x="14" y="19" text-anchor="middle" font-size="9" font-weight="800" fill="white" font-family="Arial">CA</text></svg>
-        <span class="partner-name">Carrefour</span>
-      </div>
-      <div class="partner-logo">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="14" fill="#1a1a2e"/><text x="14" y="19" text-anchor="middle" font-size="10" font-weight="800" fill="white" font-family="Arial">VW</text></svg>
-        <span class="partner-name">Volkswagen</span>
-      </div>
-      <div class="partner-logo">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="#efda0c"/><text x="14" y="19" text-anchor="middle" font-size="9" font-weight="800" fill="#000" font-family="Arial">RNT</text></svg>
-        <span class="partner-name">Renault</span>
-      </div>
-      <div class="partner-logo">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="#0066cc"/><text x="14" y="19" text-anchor="middle" font-size="10" font-weight="800" fill="white" font-family="Arial">E.L</text></svg>
-        <span class="partner-name">E.Leclerc</span>
-      </div>
-      <div class="partner-logo">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="#0082c3"/><text x="14" y="19" text-anchor="middle" font-size="8" font-weight="800" fill="white" font-family="Arial">DECA</text></svg>
-        <span class="partner-name">Décathlon</span>
-      </div>
-      <div class="partner-logo">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="#ff6600"/><text x="14" y="19" text-anchor="middle" font-size="8" font-weight="800" fill="white" font-family="Arial">ORA</text></svg>
-        <span class="partner-name">Orange</span>
-      </div>
-      <div class="partner-logo">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="#00965e"/><text x="14" y="19" text-anchor="middle" font-size="8" font-weight="800" fill="white" font-family="Arial">BNP</text></svg>
-        <span class="partner-name">BNP Paribas</span>
-      </div>
+<div class="partners-bar">
+  <div class="partners-wrap">
+    <div class="partners-label-fixed"><span>Ils nous font confiance</span></div>
+    <div class="partners-track" style="padding-left:180px">
+      <div class="partner-item"><div class="partner-icon" style="background:#e2001a"><span style="color:#fff">I</span></div><span class="partner-name">Intermarché</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#004b8d"><span style="color:#fff">C</span></div><span class="partner-name">Carrefour</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#1a1a2e"><span style="color:#fff">VW</span></div><span class="partner-name">Volkswagen</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#efda0c"><span style="color:#000">R</span></div><span class="partner-name">Renault</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#0066cc"><span style="color:#fff">E</span></div><span class="partner-name">E.Leclerc</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#0082c3"><span style="color:#fff">D</span></div><span class="partner-name">Décathlon</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#ff6600"><span style="color:#fff">O</span></div><span class="partner-name">Orange</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#00965e"><span style="color:#fff">B</span></div><span class="partner-name">BNP Paribas</span></div>
+      <!-- dupe for loop -->
+      <div class="partner-item"><div class="partner-icon" style="background:#e2001a"><span style="color:#fff">I</span></div><span class="partner-name">Intermarché</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#004b8d"><span style="color:#fff">C</span></div><span class="partner-name">Carrefour</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#1a1a2e"><span style="color:#fff">VW</span></div><span class="partner-name">Volkswagen</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#efda0c"><span style="color:#000">R</span></div><span class="partner-name">Renault</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#0066cc"><span style="color:#fff">E</span></div><span class="partner-name">E.Leclerc</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#0082c3"><span style="color:#fff">D</span></div><span class="partner-name">Décathlon</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#ff6600"><span style="color:#fff">O</span></div><span class="partner-name">Orange</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#00965e"><span style="color:#fff">B</span></div><span class="partner-name">BNP Paribas</span></div>
     </div>
   </div>
 </div>
 
 <!-- STATS -->
-<section class="stats-section">
-  <div class="stats-inner">
-    <div class="stat-item animate">
-      <div class="number">50+</div>
-      <div class="label">Sites livrés</div>
+<div class="stats-section animate">
+  <div class="stat-row">
+    <div class="stat-cell">
+      <div class="stat-num">50+</div>
+      <div class="stat-lbl">Sites livrés</div>
     </div>
-    <div class="stat-item animate">
-      <div class="number">98%</div>
-      <div class="label">Clients satisfaits</div>
+    <div class="stat-cell">
+      <div class="stat-num">98%</div>
+      <div class="stat-lbl">Clients satisfaits</div>
     </div>
-    <div class="stat-item animate">
-      <div class="number">&lt;24h</div>
-      <div class="label">Réponse garantie</div>
+    <div class="stat-cell">
+      <div class="stat-num">&lt;24h</div>
+      <div class="stat-lbl">Réponse garantie</div>
     </div>
-    <div class="stat-item animate">
-      <div class="number">Sur mesure</div>
-      <div class="label">Chaque projet</div>
+    <div class="stat-cell">
+      <div class="stat-num">Sur-mesure</div>
+      <div class="stat-lbl">Chaque projet</div>
     </div>
   </div>
-</section>
+</div>
 
 <!-- HOW IT WORKS -->
 <section class="section how-section">
-  <div class="center">
-    <div class="section-label">Processus</div>
-    <h2 class="section-title">Simple comme bonjour</h2>
-    <p class="section-sub">Pas besoin de compétences techniques. Tu nous décris ton projet, on s'occupe du reste.</p>
+  <div class="how-header animate">
+    <div>
+      <div class="section-eyebrow">Processus</div>
+      <div class="section-title-big">Comment<br>ça <em>marche</em></div>
+    </div>
+    <p class="how-header-desc">Pas besoin de compétences techniques. Tu nous décris ton projet, on s'occupe du reste.</p>
   </div>
-  <div class="steps">
-    <div class="step animate">
-      <div class="step-num">1</div>
-      <h3>Tu remplis le formulaire</h3>
-      <p>Ton activité, tes couleurs, ce que tu veux afficher. Moins de 2 minutes.</p>
+  <div class="steps-brutalist">
+    <div class="step-b animate">
+      <div class="step-num-big">01</div>
+      <div class="step-content">
+        <div class="step-tag">Étape 1</div>
+        <h3>Tu remplis le formulaire</h3>
+        <p>Ton activité, tes couleurs, ce que tu veux afficher. Moins de 2 minutes.</p>
+      </div>
     </div>
-    <div class="step animate">
-      <div class="step-num">2</div>
-      <h3>On te recontacte en 24h</h3>
-      <p>Un expert dédié revient vers toi rapidement pour caler les détails de ton projet.</p>
+    <div class="step-b animate">
+      <div class="step-num-big">02</div>
+      <div class="step-content">
+        <div class="step-tag">Étape 2</div>
+        <h3>On te recontacte en moins de 24h</h3>
+        <p>Un expert dédié revient vers toi rapidement pour caler les détails de ton projet.</p>
+      </div>
     </div>
-    <div class="step animate">
-      <div class="step-num">3</div>
-      <h3>On crée ton site</h3>
-      <p>Ton site sur mesure est conçu et livré. Des retouches ? On les fait jusqu'à satisfaction.</p>
+    <div class="step-b animate">
+      <div class="step-num-big">03</div>
+      <div class="step-content">
+        <div class="step-tag">Étape 3</div>
+        <h3>On crée et on livre</h3>
+        <p>Ton site sur mesure est conçu et livré. Des retouches ? On les fait jusqu'à satisfaction complète.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- PORTFOLIO -->
 <section class="section portfolio-section">
-  <div class="center">
-    <div class="section-label">Réalisations</div>
-    <h2 class="section-title">Ce qu'on a déjà créé</h2>
-    <p class="section-sub">Chaque site est unique, pensé pour le métier et l'image de notre client.</p>
+  <div class="portfolio-header animate">
+    <div>
+      <div class="section-eyebrow">Réalisations</div>
+      <div class="section-title-big">Ce qu'on<br>a <em>créé</em></div>
+    </div>
+    <a class="btn-ghost-brutal" href="#" onclick="showPage('portfolio');return false" style="align-self:flex-end">Tout voir →</a>
   </div>
-  <div class="portfolio-grid">
-    <div class="portfolio-card animate" onclick="showPage('portfolio')">
-      <div class="portfolio-preview-mock">
-        <div class="mock-browser">
-          <div class="mock-bar">
-            <div class="mock-dot" style="background:#ff5f57"></div>
-            <div class="mock-dot" style="background:#febc2e"></div>
-            <div class="mock-dot" style="background:#28c840"></div>
-          </div>
-          <div class="mock-content">
-            <div style="background:linear-gradient(90deg,#38bdf8,#818cf8);height:50px;border-radius:5px;margin-bottom:9px;display:flex;align-items:center;justify-content:center;font-size:10px;color:rgba(0,0,0,.7);font-weight:700">COIFFEUR PRESTIGE</div>
-            <div class="mock-h" style="background:linear-gradient(90deg,#38bdf8,#818cf8)"></div>
-            <div class="mock-line"></div>
-            <div class="mock-line short"></div>
-            <div class="mock-btn" style="background:#38bdf8"></div>
+  <div class="portfolio-grid-asym animate">
+    <div class="pc" onclick="showPage('portfolio')">
+      <div class="pc-mock">
+        <div class="pc-mock-inner">
+          <div class="pc-bar"><div class="pc-dot" style="background:#ff5f57"></div><div class="pc-dot" style="background:#febc2e"></div><div class="pc-dot" style="background:#28c840"></div></div>
+          <div class="pc-body">
+            <div class="pc-hero-block" style="background:linear-gradient(90deg,#38bdf8,#818cf8)">✂ COIFFEUR PRESTIGE</div>
+            <div class="pc-line s"></div><div class="pc-line xs"></div>
+            <div class="pc-btn-mock" style="background:#38bdf8"></div>
           </div>
         </div>
       </div>
-      <div class="portfolio-info">
-        <span class="portfolio-tag">Coiffure</span>
+      <div class="pc-overlay"><span class="pc-overlay-text">Voir →</span></div>
+      <div class="pc-info">
+        <div class="pc-tag">Coiffure</div>
         <h3>Coiffeur Prestige</h3>
         <p>Site vitrine + réservation en ligne.</p>
       </div>
     </div>
-    <div class="portfolio-card animate" onclick="showPage('portfolio')">
-      <div class="portfolio-preview-mock">
-        <div class="mock-browser">
-          <div class="mock-bar">
-            <div class="mock-dot" style="background:#ff5f57"></div>
-            <div class="mock-dot" style="background:#febc2e"></div>
-            <div class="mock-dot" style="background:#28c840"></div>
-          </div>
-          <div class="mock-content">
-            <div style="background:linear-gradient(90deg,#10b981,#06b6d4);height:50px;border-radius:5px;margin-bottom:9px;display:flex;align-items:center;justify-content:center;font-size:10px;color:rgba(0,0,0,.7);font-weight:700">SARAH FITNESS</div>
-            <div class="mock-h" style="background:linear-gradient(90deg,#10b981,#06b6d4)"></div>
-            <div class="mock-line"></div>
-            <div class="mock-line shorter"></div>
-            <div class="mock-btn" style="background:#10b981"></div>
+    <div class="pc" onclick="showPage('portfolio')">
+      <div class="pc-mock">
+        <div class="pc-mock-inner">
+          <div class="pc-bar"><div class="pc-dot" style="background:#ff5f57"></div><div class="pc-dot" style="background:#febc2e"></div><div class="pc-dot" style="background:#28c840"></div></div>
+          <div class="pc-body">
+            <div class="pc-hero-block" style="background:linear-gradient(90deg,#10b981,#06b6d4)">💪 SARAH FITNESS</div>
+            <div class="pc-line s"></div><div class="pc-line xs"></div>
+            <div class="pc-btn-mock" style="background:#10b981"></div>
           </div>
         </div>
       </div>
-      <div class="portfolio-info">
-        <span class="portfolio-tag">Sport & Coaching</span>
+      <div class="pc-overlay"><span class="pc-overlay-text">Voir →</span></div>
+      <div class="pc-info">
+        <div class="pc-tag">Sport & Coaching</div>
         <h3>Sarah Fitness</h3>
         <p>Prise de rendez-vous + paiement intégré.</p>
       </div>
     </div>
-    <div class="portfolio-card animate" onclick="showPage('portfolio')">
-      <div class="portfolio-preview-mock">
-        <div class="mock-browser">
-          <div class="mock-bar">
-            <div class="mock-dot" style="background:#ff5f57"></div>
-            <div class="mock-dot" style="background:#febc2e"></div>
-            <div class="mock-dot" style="background:#28c840"></div>
-          </div>
-          <div class="mock-content">
-            <div style="background:linear-gradient(90deg,#f59e0b,#ef4444);height:50px;border-radius:5px;margin-bottom:9px;display:flex;align-items:center;justify-content:center;font-size:10px;color:rgba(0,0,0,.7);font-weight:700">LE BISTROT DU PORT</div>
-            <div class="mock-h" style="background:linear-gradient(90deg,#f59e0b,#ef4444)"></div>
-            <div class="mock-line"></div>
-            <div class="mock-line short"></div>
-            <div class="mock-btn" style="background:#f59e0b"></div>
+    <div class="pc" onclick="showPage('portfolio')">
+      <div class="pc-mock">
+        <div class="pc-mock-inner">
+          <div class="pc-bar"><div class="pc-dot" style="background:#ff5f57"></div><div class="pc-dot" style="background:#febc2e"></div><div class="pc-dot" style="background:#28c840"></div></div>
+          <div class="pc-body">
+            <div class="pc-hero-block" style="background:linear-gradient(90deg,#f59e0b,#ef4444)">🍽 LE BISTROT DU PORT</div>
+            <div class="pc-line s"></div><div class="pc-line xs"></div>
+            <div class="pc-btn-mock" style="background:#f59e0b"></div>
           </div>
         </div>
       </div>
-      <div class="portfolio-info">
-        <span class="portfolio-tag">Restauration</span>
+      <div class="pc-overlay"><span class="pc-overlay-text">Voir →</span></div>
+      <div class="pc-info">
+        <div class="pc-tag">Restauration</div>
         <h3>Le Bistrot du Port</h3>
-        <p>Menu en ligne + réservation de table.</p>
+        <p>Menu en ligne + réservation de table automatisée.</p>
       </div>
     </div>
-  </div>
-  <div style="text-align:center;margin-top:32px">
-    <a class="btn-secondary" href="#" onclick="showPage('portfolio');return false" style="display:inline-block;padding:12px 26px">Voir toutes les réalisations →</a>
   </div>
 </section>
 
 <!-- OFFRES -->
 <section class="section offers-section" id="offres">
-  <div class="center">
-    <div class="section-label">Tarifs</div>
-    <h2 class="section-title">Choisis ton offre</h2>
-    <p class="section-sub">Deux formules claires. Pas de frais cachés, pas de surprise.</p>
+  <div class="animate">
+    <div class="section-eyebrow">Tarifs</div>
+    <div class="section-title-big">Choisis<br>ton <em>offre</em></div>
+    <p style="color:var(--off);font-size:14px;margin-top:14px">Deux formules claires. Pas de frais cachés, pas de surprise.</p>
   </div>
-  <div class="offers-grid">
+  <div class="offers-layout">
 
-    <div class="card animate">
-      <h2>Essentielle</h2>
-      <div class="price">70€</div>
-      <p class="price-sub">Site vitrine professionnel</p>
+    <div class="offer-card animate">
+      <div class="offer-name">Essentielle</div>
+      <div class="offer-price">70€</div>
+      <div class="offer-price-sub">Site vitrine professionnel</div>
       <ul class="offer-list">
-        <li>
-          <div class="offer-item-label"><span class="check">✔</span> Site propre & moderne</div>
-          <div class="offer-item-sub">Présentation de ton activité, services et coordonnées</div>
-        </li>
-        <li>
-          <div class="offer-item-label"><span class="check">✔</span> Responsive tous écrans</div>
-          <div class="offer-item-sub">Parfait sur téléphone, tablette et ordinateur</div>
-        </li>
-        <li>
-          <div class="offer-item-label"><span class="check">✔</span> Chargement rapide</div>
-        </li>
-        <li>
-          <div class="offer-item-label"><span class="check">✔</span> Visible sur Google</div>
-          <div class="offer-item-sub">SEO de base inclus dès la livraison</div>
-        </li>
-        <li>
-          <div class="offer-item-label disabled"><span class="cross">✕</span> Paiement en ligne</div>
-        </li>
-        <li>
-          <div class="offer-item-label disabled"><span class="cross">✕</span> Réservation automatisée</div>
-        </li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Site propre & moderne</div><div class="offer-sub">Présentation de ton activité, services et coordonnées</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Responsive tous écrans</div><div class="offer-sub">Parfait sur téléphone, tablette et ordinateur</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Chargement rapide</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Visible sur Google</div><div class="offer-sub">SEO de base inclus dès la livraison</div></div></li>
+        <li><div class="offer-check off">✕</div><div><div class="offer-text off">Paiement en ligne</div></div></li>
+        <li><div class="offer-check off">✕</div><div><div class="offer-text off">Réservation automatisée</div></div></li>
       </ul>
-      <button class="btn-main btn-ghost" onclick="toggleForm('essentiel')">Commander cette offre</button>
+      <button class="btn-ghost-brutal" style="width:100%;text-align:center" onclick="toggleForm('essentiel')">Commander cette offre</button>
       <div class="form-area" id="form-essentiel">
         <div class="form-field"><input type="text" placeholder="Ton prénom *" id="e-name"/></div>
         <div class="form-field"><input type="email" placeholder="Ton email *" id="e-email"/></div>
@@ -532,36 +517,23 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
         <div class="form-field"><input type="text" placeholder="Nom de ton business *" id="e-biz"/></div>
         <div class="form-field"><textarea placeholder="Décris ton projet : activité, couleurs souhaitées, infos à afficher..." id="e-desc"></textarea></div>
         <button class="submit-btn" id="submit-essentiel" onclick="submitForm('essentiel')">Envoyer ma demande →</button>
-        <p class="success-msg" id="success-essentiel">✅ Demande reçue ! On te recontacte dans les 24h.</p>
+        <p class="success-msg" id="success-essentiel">✓ Demande reçue — on te recontacte dans les 24h.</p>
       </div>
     </div>
 
-    <div class="card featured animate">
-      <h2>Premium</h2>
-      <div class="price">150€</div>
-      <p class="price-sub">Site complet avec toutes les fonctionnalités</p>
+    <div class="offer-card featured animate">
+      <div class="offer-badge">Recommandé</div>
+      <div class="offer-name">Premium</div>
+      <div class="offer-price">150€</div>
+      <div class="offer-price-sub">Site complet avec toutes les fonctionnalités</div>
       <ul class="offer-list">
-        <li>
-          <div class="offer-item-label"><span class="check">✔</span> Tout de l'offre Essentielle</div>
-          <div class="offer-item-sub">Design sur mesure, responsive, rapide et visible Google</div>
-        </li>
-        <li>
-          <div class="offer-item-label"><span class="check">✔</span> Paiement sécurisé intégré</div>
-          <div class="offer-item-sub">Tes clients paient par carte directement sur ton site</div>
-        </li>
-        <li>
-          <div class="offer-item-label"><span class="check">✔</span> Réservation automatisée</div>
-          <div class="offer-item-sub">Tes clients réservent 24h/24, 7j/7</div>
-        </li>
-        <li>
-          <div class="offer-item-label"><span class="check">✔</span> Support 1 mois inclus</div>
-          <div class="offer-item-sub">Modifications et corrections pendant 30 jours</div>
-        </li>
-        <li>
-          <div class="offer-item-label"><span class="check">✔</span> Expert dédié de A à Z</div>
-        </li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Tout de l'offre Essentielle</div><div class="offer-sub">Design sur mesure, responsive, rapide et visible Google</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Paiement sécurisé intégré</div><div class="offer-sub">Tes clients paient par carte directement sur ton site</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Réservation automatisée</div><div class="offer-sub">Tes clients réservent 24h/24, 7j/7</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Support 1 mois inclus</div><div class="offer-sub">Modifications et corrections pendant 30 jours</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Expert dédié de A à Z</div></div></li>
       </ul>
-      <button class="btn-main btn-accent" onclick="toggleForm('premium')">Réserver cette offre</button>
+      <button class="btn-brutal" style="width:100%;text-align:center" onclick="toggleForm('premium')">Réserver cette offre</button>
       <div class="form-area" id="form-premium">
         <div class="form-field"><input type="text" placeholder="Ton prénom *" id="p-name"/></div>
         <div class="form-field"><input type="email" placeholder="Ton email *" id="p-email"/></div>
@@ -569,7 +541,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
         <div class="form-field"><input type="text" placeholder="Nom de ton business *" id="p-biz"/></div>
         <div class="form-field"><textarea placeholder="Décris ton projet : activité, couleurs souhaitées, fonctionnalités voulues..." id="p-desc"></textarea></div>
         <button class="submit-btn" id="submit-premium" onclick="submitForm('premium')">Envoyer ma demande →</button>
-        <p class="success-msg" id="success-premium">✅ Demande reçue ! On te recontacte dans les 24h.</p>
+        <p class="success-msg" id="success-premium">✓ Demande reçue — on te recontacte dans les 24h.</p>
       </div>
     </div>
 
@@ -578,360 +550,197 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:200;padding:0 48px;height:60p
 
 <!-- AVIS -->
 <section class="section reviews-section" id="avis">
-  <div class="center">
-    <div class="section-label">Témoignages</div>
-    <h2 class="section-title">Ils nous ont fait confiance</h2>
-    <p class="section-sub">Des vrais clients, des vrais résultats.</p>
+  <div class="animate">
+    <div class="section-eyebrow">Témoignages</div>
+    <div class="section-title-big">Ils nous ont<br>fait <em>confiance</em></div>
   </div>
-  <div class="reviews-grid">
-    <div class="review-card animate">
-      <div class="stars">★★★★★</div>
-      <p class="review-text">"Recontacté le lendemain, exactement ce que je voulais. Mon site est propre, rapide et mes clients adorent."</p>
-      <div class="reviewer">
-        <div class="avatar">KD</div>
-        <div>
-          <div class="reviewer-name">Karim D.</div>
-          <div class="reviewer-sub">Coiffeur indépendant</div>
-        </div>
+  <div class="reviews-list">
+    <div class="review-item animate">
+      <div class="review-meta">
+        <div class="review-avatar">KD</div>
+        <div class="review-name">Karim D.</div>
+        <div class="review-role">Coiffeur indépendant</div>
       </div>
+      <p class="review-body">"Recontacté le lendemain, exactement ce que je voulais. Mon site est propre, rapide et mes clients adorent."</p>
+      <div class="review-stars">★★★★★</div>
     </div>
-    <div class="review-card animate">
-      <div class="stars">★★★★★</div>
-      <p class="review-text">"Très pro du début à la fin. Le système de réservation fonctionne à la perfection."</p>
-      <div class="reviewer">
-        <div class="avatar">SB</div>
-        <div>
-          <div class="reviewer-name">Sarah B.</div>
-          <div class="reviewer-sub">Coach sportive</div>
-        </div>
+    <div class="review-item animate">
+      <div class="review-meta">
+        <div class="review-avatar">SB</div>
+        <div class="review-name">Sarah B.</div>
+        <div class="review-role">Coach sportive</div>
       </div>
+      <p class="review-body">"Très pro du début à la fin. Le système de réservation fonctionne à la perfection."</p>
+      <div class="review-stars">★★★★★</div>
     </div>
-    <div class="review-card animate">
-      <div class="stars">★★★★★</div>
-      <p class="review-text">"Tout s'est passé super bien. Site moderne et parfait sur téléphone."</p>
-      <div class="reviewer">
-        <div class="avatar">TA</div>
-        <div>
-          <div class="reviewer-name">Thomas A.</div>
-          <div class="reviewer-sub">Auto-entrepreneur</div>
-        </div>
+    <div class="review-item animate">
+      <div class="review-meta">
+        <div class="review-avatar">TA</div>
+        <div class="review-name">Thomas A.</div>
+        <div class="review-role">Auto-entrepreneur</div>
       </div>
+      <p class="review-body">"Tout s'est passé super bien. Site moderne et parfait sur téléphone."</p>
+      <div class="review-stars">★★★★★</div>
     </div>
-    <div class="review-card animate">
-      <div class="stars">★★★★★</div>
-      <p class="review-text">"Mon restaurant a doublé ses réservations en ligne depuis que le site est en ligne. Merci Statevo !"</p>
-      <div class="reviewer">
-        <div class="avatar">ML</div>
-        <div>
-          <div class="reviewer-name">Marc L.</div>
-          <div class="reviewer-sub">Restaurateur</div>
-        </div>
+    <div class="review-item animate">
+      <div class="review-meta">
+        <div class="review-avatar">ML</div>
+        <div class="review-name">Marc L.</div>
+        <div class="review-role">Restaurateur</div>
       </div>
+      <p class="review-body">"Mon restaurant a doublé ses réservations en ligne depuis que le site est en ligne. Merci Statevo !"</p>
+      <div class="review-stars">★★★★★</div>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
 <section class="section faq-section" id="faq">
-  <div class="center">
-    <div class="section-label">Questions fréquentes</div>
-    <h2 class="section-title">Tout ce que tu veux savoir</h2>
+  <div class="animate">
+    <div class="section-eyebrow">Questions fréquentes</div>
+    <div class="section-title-big">Tu as des<br><em>questions</em> ?</div>
   </div>
   <div class="faq-inner">
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(0)"><span>Comment se passe la suite après ma demande ?</span><div class="faq-icon" id="icon-0">+</div></div>
-      <div class="faq-answer" id="faq-0">On te recontacte en moins de 24h pour caler les détails de ton projet. Ensuite on s'occupe de tout — design, développement, mise en ligne.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(1)"><span>Comment se passe le paiement ?</span><div class="faq-icon" id="icon-1">+</div></div>
-      <div class="faq-answer" id="faq-1">On te contacte sous 24h après ta demande pour confirmer les détails et te partager le lien de paiement sécurisé. Pas de surprise.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(2)"><span>Est-ce que je peux demander des modifications ?</span><div class="faq-icon" id="icon-2">+</div></div>
-      <div class="faq-answer" id="faq-2">Oui, des retouches sont comprises dans les deux offres. L'offre Premium inclut en plus 1 mois de support après livraison.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(3)"><span>Quelle est la différence entre les deux offres ?</span><div class="faq-icon" id="icon-3">+</div></div>
-      <div class="faq-answer" id="faq-3">L'Essentielle (70€) = un site vitrine pro et rapide. La Premium (150€) = tout ça + paiement sécurisé, réservation automatisée et 1 mois de support.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(4)"><span>Mon site sera-t-il visible sur Google ?</span><div class="faq-icon" id="icon-4">+</div></div>
-      <div class="faq-answer" id="faq-4">Oui. Tous nos sites incluent les bases SEO : balises bien renseignées, vitesse optimisée, compatibilité mobile. Tu pars sur de bonnes bases.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(5)"><span>Je n'ai aucune connaissance technique, c'est un problème ?</span><div class="faq-icon" id="icon-5">+</div></div>
-      <div class="faq-answer" id="faq-5">Pas du tout. On s'occupe de tout. Tu nous donnes les infos, on fait le reste. Notre expert te tient informé à chaque étape.</div>
-    </div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(0)"><span>Comment se passe la suite après ma demande ?</span><div class="faq-icon" id="icon-0">+</div></div><div class="faq-a" id="faq-0">On te recontacte en moins de 24h pour caler les détails de ton projet. Ensuite on s'occupe de tout — design, développement, mise en ligne.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(1)"><span>Comment se passe le paiement ?</span><div class="faq-icon" id="icon-1">+</div></div><div class="faq-a" id="faq-1">On te contacte sous 24h pour confirmer les détails et te partager le lien de paiement sécurisé. Pas de surprise.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(2)"><span>Est-ce que je peux demander des modifications ?</span><div class="faq-icon" id="icon-2">+</div></div><div class="faq-a" id="faq-2">Oui, des retouches sont comprises dans les deux offres. L'offre Premium inclut en plus 1 mois de support après livraison.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(3)"><span>Quelle est la différence entre les deux offres ?</span><div class="faq-icon" id="icon-3">+</div></div><div class="faq-a" id="faq-3">L'Essentielle (70€) = un site vitrine pro et rapide. La Premium (150€) = tout ça + paiement sécurisé, réservation automatisée et 1 mois de support.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(4)"><span>Mon site sera-t-il visible sur Google ?</span><div class="faq-icon" id="icon-4">+</div></div><div class="faq-a" id="faq-4">Oui. Tous nos sites incluent les bases SEO : balises bien renseignées, vitesse optimisée, compatibilité mobile.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(5)"><span>Je n'ai aucune connaissance technique, c'est un problème ?</span><div class="faq-icon" id="icon-5">+</div></div><div class="faq-a" id="faq-5">Pas du tout. On s'occupe de tout. Tu nous donnes les infos, on fait le reste. Notre expert te tient informé à chaque étape.</div></div>
   </div>
 </section>
 
-<!-- MANIFESTE EN BAS -->
+<!-- MANIFESTE -->
 <section class="manifesto-section animate">
+  <div class="manifesto-noise"></div>
   <div class="manifesto-inner">
+    <div class="manifesto-big">
+      Chaque<br>
+      business<br>
+      <span class="ghost">mérite son</span><br>
+      repère.
+    </div>
     <div class="manifesto-divider"></div>
-    <p class="manifesto-quote">
-      Chaque business mérite un endroit<br>à lui sur internet.
-      <span class="grad"> Un vrai repère,</span><br>pas un template comme les autres.
-    </p>
-    <p class="manifesto-body">
-      On croit que les indépendants, les artisans, les commerçants méritent les mêmes outils que les grandes entreprises — sans les grandes factures. C'est pour ça qu'on a créé Statevo : des sites qui reflètent vraiment ce que tu fais, livré sans prise de tête.
-    </p>
-    <a class="btn-primary" href="#offres">Lancer mon projet →</a>
+    <p class="manifesto-body">On croit que les indépendants, les artisans, les commerçants méritent les mêmes outils que les grandes entreprises — sans les grandes factures. C'est pour ça qu'on a créé Statevo : des sites qui reflètent vraiment ce que tu fais, sans prise de tête.</p>
+    <a class="btn-brutal" href="#offres">Lancer mon projet →</a>
   </div>
 </section>
 
 <!-- FOOTER CTA -->
-<section class="footer-cta">
-  <h2>Prêt à lancer ton site ?</h2>
-  <p>Rejoins les 50+ entrepreneurs qui font confiance à Statevo.</p>
-  <a class="btn-primary" href="#offres" style="display:inline-block">Voir les offres</a>
-  <div class="footer-email" style="margin-top:20px">Une question ? <a href="mailto:statevocontact@gmail.com">statevocontact@gmail.com</a></div>
-</section>
-<div class="footer-bottom">© 2025 Statevo — Tous droits réservés</div>
-
+<div class="footer-cta">
+  <div class="footer-cta-left">
+    <h2>Prêt à lancer<br>ton site ?</h2>
+    <p>Rejoins les 50+ entrepreneurs qui font confiance à Statevo.</p>
+    <div class="footer-email">Une question ? <a href="mailto:statevocontact@gmail.com">statevocontact@gmail.com</a></div>
+  </div>
+  <a class="btn-brutal" href="#offres" style="align-self:center">Voir les offres →</a>
 </div>
+<div class="footer-bottom">
+  <span>© 2025 Statevo</span>
+  <span>Tous droits réservés</span>
+</div>
+
+</div><!-- /main-page -->
 
 <!-- PORTFOLIO PAGE -->
 <div id="portfolio-page" class="page portfolio-page">
-  <div class="portfolio-page-header">
+  <div class="pf-page-header">
     <button class="back-btn" onclick="showPage('main')">← Retour</button>
-    <div class="section-label" style="text-align:center">Nos réalisations</div>
-    <h1 class="section-title" style="text-align:center;max-width:460px;margin:0 auto 12px">Sites créés par Statevo</h1>
-    <p class="section-sub" style="text-align:center;margin:0 auto">Chaque projet est unique. Voici un aperçu de ce qu'on a réalisé pour nos clients.</p>
+    <div class="section-eyebrow" style="text-align:left">Nos réalisations</div>
+    <div class="section-title-big">Sites créés<br>par <em>Statevo</em></div>
+    <p style="color:var(--off);font-size:14px;margin-top:14px;max-width:440px">Chaque projet est unique. Voici un aperçu de ce qu'on a réalisé pour nos clients.</p>
   </div>
 
-  <div class="portfolio-full-grid">
-
+  <div class="pf-full-grid">
     <div class="pf-card">
-      <div class="pf-preview">
-        <div style="width:84%;background:#1a1a22;border-radius:8px;overflow:hidden;border:1px solid #ffffff08">
-          <div style="height:24px;background:#111118;display:flex;align-items:center;padding:0 10px;gap:5px;border-bottom:1px solid #ffffff06">
-            <div style="width:7px;height:7px;border-radius:50%;background:#ff5f57"></div>
-            <div style="width:7px;height:7px;border-radius:50%;background:#febc2e"></div>
-            <div style="width:7px;height:7px;border-radius:50%;background:#28c840"></div>
-          </div>
-          <div style="padding:12px">
-            <div style="background:linear-gradient(90deg,#38bdf8,#818cf8);height:50px;border-radius:5px;margin-bottom:9px;display:flex;align-items:center;justify-content:center;font-size:9px;color:rgba(0,0,0,.8);font-weight:700;letter-spacing:.5px">✂ COIFFEUR PRESTIGE</div>
-            <div style="background:linear-gradient(90deg,#38bdf8,#818cf8);height:7px;border-radius:2px;width:52%;margin-bottom:6px"></div>
-            <div style="background:#ffffff08;height:5px;border-radius:2px;margin-bottom:4px"></div>
-            <div style="background:#ffffff08;height:5px;border-radius:2px;width:68%;margin-bottom:9px"></div>
-            <div style="background:#38bdf8;height:18px;border-radius:4px;width:80px"></div>
-          </div>
-        </div>
-      </div>
-      <div class="pf-info">
-        <div class="pf-tags"><span class="pf-tag">Coiffure</span><span class="pf-tag">Réservation</span></div>
-        <h3>Coiffeur Prestige — Paris 11e</h3>
-        <p>Site vitrine avec agenda de réservation. Confirmation automatique par email.</p>
-      </div>
+      <div class="pf-preview"><div style="width:84%;background:#0f0f0f;border:1px solid #ffffff06;overflow:hidden"><div style="height:22px;background:#0a0a0a;display:flex;align-items:center;padding:0 10px;gap:5px"><div style="width:6px;height:6px;border-radius:50%;background:#ff5f57"></div><div style="width:6px;height:6px;border-radius:50%;background:#febc2e"></div><div style="width:6px;height:6px;border-radius:50%;background:#28c840"></div></div><div style="padding:12px"><div style="background:linear-gradient(90deg,#38bdf8,#818cf8);height:50px;border-radius:2px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;font-size:9px;color:rgba(0,0,0,.8);font-weight:700">✂ COIFFEUR PRESTIGE</div><div style="background:#ffffff07;height:5px;border-radius:1px;margin-bottom:3px"></div><div style="background:#ffffff07;height:5px;border-radius:1px;width:68%;margin-bottom:8px"></div><div style="background:#38bdf8;height:16px;border-radius:2px;width:70px"></div></div></div></div>
+      <div class="pf-info"><div class="pf-tags"><span class="pf-tag">Coiffure</span><span class="pf-tag">Réservation</span></div><h3>Coiffeur Prestige — Paris 11e</h3><p>Site vitrine avec agenda de réservation. Confirmation automatique par email.</p></div>
     </div>
-
     <div class="pf-card">
-      <div class="pf-preview">
-        <div style="width:84%;background:#1a1a22;border-radius:8px;overflow:hidden;border:1px solid #ffffff08">
-          <div style="height:24px;background:#111118;display:flex;align-items:center;padding:0 10px;gap:5px;border-bottom:1px solid #ffffff06">
-            <div style="width:7px;height:7px;border-radius:50%;background:#ff5f57"></div>
-            <div style="width:7px;height:7px;border-radius:50%;background:#febc2e"></div>
-            <div style="width:7px;height:7px;border-radius:50%;background:#28c840"></div>
-          </div>
-          <div style="padding:12px">
-            <div style="background:linear-gradient(90deg,#10b981,#06b6d4);height:50px;border-radius:5px;margin-bottom:9px;display:flex;align-items:center;justify-content:center;font-size:9px;color:rgba(0,0,0,.8);font-weight:700;letter-spacing:.5px">💪 SARAH FITNESS</div>
-            <div style="background:linear-gradient(90deg,#10b981,#06b6d4);height:7px;border-radius:2px;width:52%;margin-bottom:6px"></div>
-            <div style="background:#ffffff08;height:5px;border-radius:2px;margin-bottom:4px"></div>
-            <div style="background:#ffffff08;height:5px;border-radius:2px;width:68%;margin-bottom:9px"></div>
-            <div style="background:#10b981;height:18px;border-radius:4px;width:80px"></div>
-          </div>
-        </div>
-      </div>
-      <div class="pf-info">
-        <div class="pf-tags"><span class="pf-tag">Sport</span><span class="pf-tag">Paiement</span><span class="pf-tag">Réservation</span></div>
-        <h3>Sarah Fitness — Coach sportive</h3>
-        <p>Prise de rendez-vous + paiement des abonnements en ligne.</p>
-      </div>
+      <div class="pf-preview"><div style="width:84%;background:#0f0f0f;border:1px solid #ffffff06;overflow:hidden"><div style="height:22px;background:#0a0a0a;display:flex;align-items:center;padding:0 10px;gap:5px"><div style="width:6px;height:6px;border-radius:50%;background:#ff5f57"></div><div style="width:6px;height:6px;border-radius:50%;background:#febc2e"></div><div style="width:6px;height:6px;border-radius:50%;background:#28c840"></div></div><div style="padding:12px"><div style="background:linear-gradient(90deg,#10b981,#06b6d4);height:50px;border-radius:2px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;font-size:9px;color:rgba(0,0,0,.8);font-weight:700">💪 SARAH FITNESS</div><div style="background:#ffffff07;height:5px;border-radius:1px;margin-bottom:3px"></div><div style="background:#ffffff07;height:5px;border-radius:1px;width:68%;margin-bottom:8px"></div><div style="background:#10b981;height:16px;border-radius:2px;width:70px"></div></div></div></div>
+      <div class="pf-info"><div class="pf-tags"><span class="pf-tag">Sport</span><span class="pf-tag">Paiement</span><span class="pf-tag">Réservation</span></div><h3>Sarah Fitness — Coach sportive</h3><p>Prise de rendez-vous + paiement des abonnements en ligne.</p></div>
     </div>
-
     <div class="pf-card">
-      <div class="pf-preview">
-        <div style="width:84%;background:#1a1a22;border-radius:8px;overflow:hidden;border:1px solid #ffffff08">
-          <div style="height:24px;background:#111118;display:flex;align-items:center;padding:0 10px;gap:5px;border-bottom:1px solid #ffffff06">
-            <div style="width:7px;height:7px;border-radius:50%;background:#ff5f57"></div>
-            <div style="width:7px;height:7px;border-radius:50%;background:#febc2e"></div>
-            <div style="width:7px;height:7px;border-radius:50%;background:#28c840"></div>
-          </div>
-          <div style="padding:12px">
-            <div style="background:linear-gradient(90deg,#f59e0b,#ef4444);height:50px;border-radius:5px;margin-bottom:9px;display:flex;align-items:center;justify-content:center;font-size:9px;color:rgba(0,0,0,.8);font-weight:700;letter-spacing:.5px">🍽 LE BISTROT DU PORT</div>
-            <div style="background:linear-gradient(90deg,#f59e0b,#ef4444);height:7px;border-radius:2px;width:52%;margin-bottom:6px"></div>
-            <div style="background:#ffffff08;height:5px;border-radius:2px;margin-bottom:4px"></div>
-            <div style="background:#ffffff08;height:5px;border-radius:2px;width:68%;margin-bottom:9px"></div>
-            <div style="background:#f59e0b;height:18px;border-radius:4px;width:80px"></div>
-          </div>
-        </div>
-      </div>
-      <div class="pf-info">
-        <div class="pf-tags"><span class="pf-tag">Restauration</span><span class="pf-tag">Réservation</span></div>
-        <h3>Le Bistrot du Port — Marseille</h3>
-        <p>Menu en ligne, galerie photos, réservation de table automatisée.</p>
-      </div>
+      <div class="pf-preview"><div style="width:84%;background:#0f0f0f;border:1px solid #ffffff06;overflow:hidden"><div style="height:22px;background:#0a0a0a;display:flex;align-items:center;padding:0 10px;gap:5px"><div style="width:6px;height:6px;border-radius:50%;background:#ff5f57"></div><div style="width:6px;height:6px;border-radius:50%;background:#febc2e"></div><div style="width:6px;height:6px;border-radius:50%;background:#28c840"></div></div><div style="padding:12px"><div style="background:linear-gradient(90deg,#f59e0b,#ef4444);height:50px;border-radius:2px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;font-size:9px;color:rgba(0,0,0,.8);font-weight:700">🍽 LE BISTROT DU PORT</div><div style="background:#ffffff07;height:5px;border-radius:1px;margin-bottom:3px"></div><div style="background:#ffffff07;height:5px;border-radius:1px;width:68%;margin-bottom:8px"></div><div style="background:#f59e0b;height:16px;border-radius:2px;width:70px"></div></div></div></div>
+      <div class="pf-info"><div class="pf-tags"><span class="pf-tag">Restauration</span><span class="pf-tag">Réservation</span></div><h3>Le Bistrot du Port — Marseille</h3><p>Menu en ligne, galerie photos, réservation de table automatisée.</p></div>
     </div>
-
     <div class="pf-card">
-      <div class="pf-preview">
-        <div style="width:84%;background:#1a1a22;border-radius:8px;overflow:hidden;border:1px solid #ffffff08">
-          <div style="height:24px;background:#111118;display:flex;align-items:center;padding:0 10px;gap:5px;border-bottom:1px solid #ffffff06">
-            <div style="width:7px;height:7px;border-radius:50%;background:#ff5f57"></div>
-            <div style="width:7px;height:7px;border-radius:50%;background:#febc2e"></div>
-            <div style="width:7px;height:7px;border-radius:50%;background:#28c840"></div>
-          </div>
-          <div style="padding:12px">
-            <div style="background:linear-gradient(90deg,#8b5cf6,#ec4899);height:50px;border-radius:5px;margin-bottom:9px;display:flex;align-items:center;justify-content:center;font-size:9px;color:rgba(255,255,255,.9);font-weight:700;letter-spacing:.5px">💆 SOIN & BEAUTÉ</div>
-            <div style="background:linear-gradient(90deg,#8b5cf6,#ec4899);height:7px;border-radius:2px;width:52%;margin-bottom:6px"></div>
-            <div style="background:#ffffff08;height:5px;border-radius:2px;margin-bottom:4px"></div>
-            <div style="background:#ffffff08;height:5px;border-radius:2px;width:68%;margin-bottom:9px"></div>
-            <div style="background:#8b5cf6;height:18px;border-radius:4px;width:80px"></div>
-          </div>
-        </div>
-      </div>
-      <div class="pf-info">
-        <div class="pf-tags"><span class="pf-tag">Esthétique</span><span class="pf-tag">Paiement</span></div>
-        <h3>Soin & Beauté — Institut</h3>
-        <p>Présentation des soins, paiement en ligne, galerie avant/après.</p>
-      </div>
+      <div class="pf-preview"><div style="width:84%;background:#0f0f0f;border:1px solid #ffffff06;overflow:hidden"><div style="height:22px;background:#0a0a0a;display:flex;align-items:center;padding:0 10px;gap:5px"><div style="width:6px;height:6px;border-radius:50%;background:#ff5f57"></div><div style="width:6px;height:6px;border-radius:50%;background:#febc2e"></div><div style="width:6px;height:6px;border-radius:50%;background:#28c840"></div></div><div style="padding:12px"><div style="background:linear-gradient(90deg,#8b5cf6,#ec4899);height:50px;border-radius:2px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;font-size:9px;color:rgba(255,255,255,.9);font-weight:700">💆 SOIN & BEAUTÉ</div><div style="background:#ffffff07;height:5px;border-radius:1px;margin-bottom:3px"></div><div style="background:#ffffff07;height:5px;border-radius:1px;width:68%;margin-bottom:8px"></div><div style="background:#8b5cf6;height:16px;border-radius:2px;width:70px"></div></div></div></div>
+      <div class="pf-info"><div class="pf-tags"><span class="pf-tag">Esthétique</span><span class="pf-tag">Paiement</span></div><h3>Soin & Beauté — Institut</h3><p>Présentation des soins, paiement en ligne, galerie avant/après.</p></div>
     </div>
-
     <div class="pf-card">
-      <div class="pf-preview">
-        <div style="width:84%;background:#1a1a22;border-radius:8px;overflow:hidden;border:1px solid #ffffff08">
-          <div style="height:24px;background:#111118;display:flex;align-items:center;padding:0 10px;gap:5px;border-bottom:1px solid #ffffff06">
-            <div style="width:7px;height:7px;border-radius:50%;background:#ff5f57"></div>
-            <div style="width:7px;height:7px;border-radius:50%;background:#febc2e"></div>
-            <div style="width:7px;height:7px;border-radius:50%;background:#28c840"></div>
-          </div>
-          <div style="padding:12px">
-            <div style="background:linear-gradient(90deg,#0ea5e9,#6366f1);height:50px;border-radius:5px;margin-bottom:9px;display:flex;align-items:center;justify-content:center;font-size:9px;color:rgba(255,255,255,.9);font-weight:700;letter-spacing:.5px">🔧 PLOMBIER PRO</div>
-            <div style="background:linear-gradient(90deg,#0ea5e9,#6366f1);height:7px;border-radius:2px;width:52%;margin-bottom:6px"></div>
-            <div style="background:#ffffff08;height:5px;border-radius:2px;margin-bottom:4px"></div>
-            <div style="background:#ffffff08;height:5px;border-radius:2px;width:68%;margin-bottom:9px"></div>
-            <div style="background:#0ea5e9;height:18px;border-radius:4px;width:80px"></div>
-          </div>
-        </div>
-      </div>
-      <div class="pf-info">
-        <div class="pf-tags"><span class="pf-tag">Artisan</span><span class="pf-tag">Devis en ligne</span></div>
-        <h3>Plombier Pro — Artisan</h3>
-        <p>Site vitrine avec formulaire de devis. Visible sur Google Maps.</p>
-      </div>
+      <div class="pf-preview"><div style="width:84%;background:#0f0f0f;border:1px solid #ffffff06;overflow:hidden"><div style="height:22px;background:#0a0a0a;display:flex;align-items:center;padding:0 10px;gap:5px"><div style="width:6px;height:6px;border-radius:50%;background:#ff5f57"></div><div style="width:6px;height:6px;border-radius:50%;background:#febc2e"></div><div style="width:6px;height:6px;border-radius:50%;background:#28c840"></div></div><div style="padding:12px"><div style="background:linear-gradient(90deg,#0ea5e9,#6366f1);height:50px;border-radius:2px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;font-size:9px;color:rgba(255,255,255,.9);font-weight:700">🔧 PLOMBIER PRO</div><div style="background:#ffffff07;height:5px;border-radius:1px;margin-bottom:3px"></div><div style="background:#ffffff07;height:5px;border-radius:1px;width:68%;margin-bottom:8px"></div><div style="background:#0ea5e9;height:16px;border-radius:2px;width:70px"></div></div></div></div>
+      <div class="pf-info"><div class="pf-tags"><span class="pf-tag">Artisan</span><span class="pf-tag">Devis en ligne</span></div><h3>Plombier Pro — Artisan</h3><p>Site vitrine avec formulaire de devis. Visible sur Google Maps.</p></div>
     </div>
-
     <div class="pf-card">
-      <div class="pf-preview">
-        <div style="width:84%;background:#1a1a22;border-radius:8px;overflow:hidden;border:1px solid #ffffff08">
-          <div style="height:24px;background:#111118;display:flex;align-items:center;padding:0 10px;gap:5px;border-bottom:1px solid #ffffff06">
-            <div style="width:7px;height:7px;border-radius:50%;background:#ff5f57"></div>
-            <div style="width:7px;height:7px;border-radius:50%;background:#febc2e"></div>
-            <div style="width:7px;height:7px;border-radius:50%;background:#28c840"></div>
-          </div>
-          <div style="padding:12px">
-            <div style="background:linear-gradient(90deg,#14b8a6,#84cc16);height:50px;border-radius:5px;margin-bottom:9px;display:flex;align-items:center;justify-content:center;font-size:9px;color:rgba(0,0,0,.8);font-weight:700;letter-spacing:.5px">📚 COURS PARTICULIERS</div>
-            <div style="background:linear-gradient(90deg,#14b8a6,#84cc16);height:7px;border-radius:2px;width:52%;margin-bottom:6px"></div>
-            <div style="background:#ffffff08;height:5px;border-radius:2px;margin-bottom:4px"></div>
-            <div style="background:#ffffff08;height:5px;border-radius:2px;width:68%;margin-bottom:9px"></div>
-            <div style="background:#14b8a6;height:18px;border-radius:4px;width:80px"></div>
-          </div>
-        </div>
-      </div>
-      <div class="pf-info">
-        <div class="pf-tags"><span class="pf-tag">Éducation</span><span class="pf-tag">Réservation</span><span class="pf-tag">Paiement</span></div>
-        <h3>Cours Particuliers — Professeur</h3>
-        <p>Réservation des créneaux + paiement sécurisé. Plus de gestion manuelle.</p>
-      </div>
+      <div class="pf-preview"><div style="width:84%;background:#0f0f0f;border:1px solid #ffffff06;overflow:hidden"><div style="height:22px;background:#0a0a0a;display:flex;align-items:center;padding:0 10px;gap:5px"><div style="width:6px;height:6px;border-radius:50%;background:#ff5f57"></div><div style="width:6px;height:6px;border-radius:50%;background:#febc2e"></div><div style="width:6px;height:6px;border-radius:50%;background:#28c840"></div></div><div style="padding:12px"><div style="background:linear-gradient(90deg,#14b8a6,#84cc16);height:50px;border-radius:2px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;font-size:9px;color:rgba(0,0,0,.8);font-weight:700">📚 COURS PARTICULIERS</div><div style="background:#ffffff07;height:5px;border-radius:1px;margin-bottom:3px"></div><div style="background:#ffffff07;height:5px;border-radius:1px;width:68%;margin-bottom:8px"></div><div style="background:#14b8a6;height:16px;border-radius:2px;width:70px"></div></div></div></div>
+      <div class="pf-info"><div class="pf-tags"><span class="pf-tag">Éducation</span><span class="pf-tag">Réservation</span><span class="pf-tag">Paiement</span></div><h3>Cours Particuliers — Professeur</h3><p>Réservation des créneaux + paiement sécurisé. Plus de gestion manuelle.</p></div>
     </div>
-
   </div>
 
-  <div style="text-align:center;padding:0 20px 60px">
-    <p style="color:var(--muted);margin-bottom:22px;font-size:14px">Ton activité n'est pas listée ? On crée des sites pour tous les métiers.</p>
-    <a class="btn-primary" href="#" onclick="showPage('main');setTimeout(()=>document.getElementById('offres').scrollIntoView({behavior:'smooth'}),100);return false">Démarrer mon projet</a>
+  <div style="text-align:center;padding:60px 24px">
+    <p style="color:var(--muted);margin-bottom:22px;font-size:13px;letter-spacing:.3px">Ton activité n'est pas listée ? On crée des sites pour tous les métiers.</p>
+    <a class="btn-brutal" href="#" onclick="showPage('main');setTimeout(()=>document.getElementById('offres').scrollIntoView({behavior:'smooth'}),100);return false">Démarrer mon projet →</a>
   </div>
-  <div class="footer-bottom">© 2025 Statevo — Tous droits réservés</div>
+  <div class="footer-bottom">
+    <span>© 2025 Statevo</span>
+    <span>Tous droits réservés</span>
+  </div>
 </div>
 
 <script>
-// ⚠️ IMPORTANT : Remplace ces 3 valeurs par tes vraies clés EmailJS
-// Tu les trouves sur https://www.emailjs.com/
-const EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY";   // Account > API Keys
-const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID";   // Email Services > ton service
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";  // Email Templates > ton template
-
+const EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY";
+const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID";
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
 emailjs.init(EMAILJS_PUBLIC_KEY);
 
-function showPage(page) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById(page === 'portfolio' ? 'portfolio-page' : 'main-page').classList.add('active');
+function showPage(page){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(page==='portfolio'?'portfolio-page':'main-page').classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-function toggleForm(id) {
-  const form = document.getElementById('form-' + id);
-  form.classList.toggle('open');
+function toggleForm(id){
+  document.getElementById('form-'+id).classList.toggle('open');
 }
 
-function submitForm(id) {
-  const prefix = id === 'premium' ? 'p' : 'e';
-  const name  = document.getElementById(prefix + '-name').value.trim();
-  const email = document.getElementById(prefix + '-email').value.trim();
-  const biz   = document.getElementById(prefix + '-biz').value.trim();
-  const tel   = document.getElementById(prefix + '-tel').value.trim();
-  const desc  = document.getElementById(prefix + '-desc').value.trim();
-
-  if (!name || !email || !biz) {
-    alert('Merci de remplir au moins ton prénom, ton email et le nom de ton business.');
-    return;
-  }
-  // Validation email basique
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    alert('Adresse email invalide.');
-    return;
-  }
-
-  const btn = document.getElementById('submit-' + id);
-  btn.textContent = 'Envoi en cours...';
-  btn.disabled = true;
-
-  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-    offre       : id === 'premium' ? 'Premium (150€)' : 'Essentielle (70€)',
-    from_name   : name,
-    from_email  : email,
-    phone       : tel || 'Non renseigné',
-    business    : biz,
-    description : desc || 'Non renseignée',
-    reply_to    : email
-  }).then(() => {
-    document.getElementById('success-' + id).style.display = 'block';
-    btn.textContent = 'Envoyé ✓';
-  }).catch((err) => {
-    console.error('EmailJS error:', err);
-    // Même en cas d'erreur, on affiche un message rassurant
-    document.getElementById('success-' + id).style.display = 'block';
-    btn.textContent = 'Envoyé ✓';
+function submitForm(id){
+  const p=id==='premium'?'p':'e';
+  const name=document.getElementById(p+'-name').value.trim();
+  const email=document.getElementById(p+'-email').value.trim();
+  const biz=document.getElementById(p+'-biz').value.trim();
+  const tel=document.getElementById(p+'-tel').value.trim();
+  const desc=document.getElementById(p+'-desc').value.trim();
+  if(!name||!email||!biz){alert('Merci de remplir au moins ton prénom, ton email et le nom de ton business.');return;}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){alert('Adresse email invalide.');return;}
+  const btn=document.getElementById('submit-'+id);
+  btn.textContent='Envoi en cours...';btn.disabled=true;
+  emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_TEMPLATE_ID,{
+    offre:id==='premium'?'Premium (150€)':'Essentielle (70€)',
+    from_name:name,from_email:email,phone:tel||'Non renseigné',
+    business:biz,description:desc||'Non renseignée',reply_to:email
+  }).then(()=>{
+    document.getElementById('success-'+id).style.display='block';
+    btn.textContent='Envoyé ✓';
+  }).catch(()=>{
+    document.getElementById('success-'+id).style.display='block';
+    btn.textContent='Envoyé ✓';
   });
 }
 
-function toggleFaq(i) {
-  const ans  = document.getElementById('faq-' + i);
-  const icon = document.getElementById('icon-' + i);
-  const isOpen = ans.classList.contains('open');
-  document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
-  document.querySelectorAll('.faq-icon').forEach(ic => ic.classList.remove('open'));
-  if (!isOpen) { ans.classList.add('open'); icon.classList.add('open'); }
+function toggleFaq(i){
+  const ans=document.getElementById('faq-'+i);
+  const icon=document.getElementById('icon-'+i);
+  const was=ans.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(a=>a.classList.remove('open'));
+  document.querySelectorAll('.faq-icon').forEach(ic=>ic.classList.remove('open'));
+  if(!was){ans.classList.add('open');icon.classList.add('open');}
 }
 
-// Animations scroll
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((e, idx) => {
-    if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), idx * 70);
-  });
-}, {threshold: 0.1});
-document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*80);});
+},{threshold:0.08});
+document.querySelectorAll('.animate').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>
