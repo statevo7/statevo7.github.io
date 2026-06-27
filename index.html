@@ -176,17 +176,17 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 .hero-scroll::before{content:"";width:40px;height:1px;background:var(--muted)}
 
 /* PARTNERS */
-.partners-bar{background:#111;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:20px 0;overflow:hidden}
+.partners-bar{background:#111;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 0;overflow:hidden}
 .partners-label-fixed{position:absolute;left:0;top:0;bottom:0;width:160px;background:linear-gradient(90deg,#111 70%,transparent);display:flex;align-items:center;padding-left:40px;z-index:2}
 .partners-label-fixed span{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);font-family:'Inter',sans-serif}
 .partners-wrap{position:relative}
-.partners-track{display:flex;gap:56px;align-items:center;width:max-content;animation:slide 25s linear infinite}
+.partners-track{display:flex;gap:64px;align-items:center;width:max-content;animation:slide 30s linear infinite}
 .partners-track:hover{animation-play-state:paused}
 @keyframes slide{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .partner-item{display:flex;align-items:center;gap:10px;opacity:0.28;white-space:nowrap;transition:opacity .3s}
 .partner-item:hover{opacity:0.65}
-.partner-icon{width:26px;height:26px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;font-family:'Inter',sans-serif;flex-shrink:0}
-.partner-name{font-family:'Inter',sans-serif;font-size:13px;font-weight:700;letter-spacing:-.2px;color:#fff}
+.partner-icon{width:32px;height:32px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;font-family:'Inter',sans-serif;flex-shrink:0}
+.partner-name{font-family:'Inter',sans-serif;font-size:14px;font-weight:700;letter-spacing:-.2px;color:#fff}
 
 /* SECTION BASE */
 .section{padding:100px 60px;position:relative}
@@ -397,7 +397,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 <body>
 
 <nav>
-  <a class="nav-logo" href="#" onclick="showPage('main');return false">State<em>vo</em></a>
+  <a class="nav-logo" href="#" onclick="showPage('main');return false"><span style="color:var(--essential-accent)">Stat</span><em>evo</em></a>
   <div class="nav-links">
     
     <a href="#offres">Offres</a>
@@ -460,6 +460,9 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
       <div class="partner-item"><div class="partner-icon" style="background:#DA291C"><span style="color:#fff">M</span></div><span class="partner-name">McDonald's</span></div>
       <div class="partner-item"><div class="partner-icon" style="background:#ef4135"><span style="color:#fff">F</span></div><span class="partner-name">Fanta</span></div>
       <div class="partner-item"><div class="partner-icon" style="background:#F40000"><span style="color:#fff">C</span></div><span class="partner-name">Coca-Cola</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#ffcc00"><span style="color:#000">LP</span></div><span class="partner-name">La Poste</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#e8401c"><span style="color:#fff">T</span></div><span class="partner-name">Tasty</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#b5651d"><span style="color:#fff">C</span></div><span class="partner-name">Crousty</span></div>
     </div>
   </div>
 </div>
@@ -483,8 +486,13 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
         <li><div class="offer-check on">✓</div><div><div class="offer-text">Responsive tous écrans</div><div class="offer-sub">Parfait sur téléphone, tablette et ordinateur</div></div></li>
         <li><div class="offer-check on">✓</div><div><div class="offer-text">Chargement rapide</div></div></li>
         <li><div class="offer-check on">✓</div><div><div class="offer-text">Visible sur Google</div><div class="offer-sub">SEO de base inclus dès la livraison</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Formulaire de contact</div><div class="offer-sub">Tes clients te contactent directement depuis le site</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Lien Google Maps</div><div class="offer-sub">Retrouve-toi facilement sur la carte</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Page "À propos"</div><div class="offer-sub">Présente ton histoire et ta valeur ajoutée</div></div></li>
         <li><div class="offer-check off">✕</div><div><div class="offer-text off">Paiement en ligne</div></div></li>
         <li><div class="offer-check off">✕</div><div><div class="offer-text off">Réservation automatisée</div></div></li>
+        <li><div class="offer-check off">✕</div><div><div class="offer-text off">Assistant IA intégré</div></div></li>
+        <li><div class="offer-check off">✕</div><div><div class="offer-text off">Galerie photos</div></div></li>
       </ul>
       <button class="btn-essential" onclick="toggleForm('essentiel')">Commander cette offre</button>
       <div class="form-area" id="form-essentiel">
@@ -505,11 +513,15 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
       <div class="offer-price">150€</div>
       <div class="offer-price-sub">Site complet avec toutes les fonctionnalités</div>
       <ul class="offer-list">
-        <li><div class="offer-check on">✓</div><div><div class="offer-text">Tout de l'offre Essentielle</div><div class="offer-sub">Design sur mesure, responsive, rapide et visible Google</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Tout de l'offre Essentielle</div><div class="offer-sub">Site moderne, responsive, rapide, SEO, contact, Maps, À propos</div></div></li>
         <li><div class="offer-check on">✓</div><div><div class="offer-text">Paiement sécurisé intégré</div><div class="offer-sub">Tes clients paient par carte directement sur ton site</div></div></li>
         <li><div class="offer-check on">✓</div><div><div class="offer-text">Réservation automatisée</div><div class="offer-sub">Tes clients réservent 24h/24, 7j/7</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Assistant IA intégré</div><div class="offer-sub">Un chatbot intelligent répond à tes clients à ta place</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Galerie photos</div><div class="offer-sub">Mets en valeur tes réalisations et ton univers</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Lien réseaux sociaux</div><div class="offer-sub">Instagram, Facebook, TikTok... tout est connecté</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Newsletter</div><div class="offer-sub">Fidélise tes clients avec des emails automatiques</div></div></li>
         <li><div class="offer-check on">✓</div><div><div class="offer-text">Support 1 mois inclus</div><div class="offer-sub">Modifications et corrections pendant 30 jours</div></div></li>
-        <li><div class="offer-check on">✓</div><div><div class="offer-text">Expert dédié de A à Z</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Expert dédié de A à Z</div><div class="offer-sub">Un seul interlocuteur du brief à la mise en ligne</div></div></li>
       </ul>
       <button class="btn-premium" onclick="toggleForm('premium')">Réserver cette offre</button>
       <div class="form-area" id="form-premium">
