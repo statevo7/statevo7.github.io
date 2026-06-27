@@ -679,7 +679,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 </div>
 <div class="footer-bottom">
   <span>© Statevo 2024–2029 — Agence reconnue et approuvée, plus de 50 entrepreneurs accompagnés depuis notre lancement.</span>
-  <span>Tous droits réservés</span>
+  <span>Tous droits réservés</span> — <a onclick="showPage('mentions');return false" style="color:var(--muted);text-decoration:none;cursor:pointer;transition:.2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">Mentions légales</a>
 </div>
 
 </div><!-- /main-page -->
@@ -712,7 +712,8 @@ const DEST_EMAIL = "statevocontact@gmail.com";
 
 function showPage(page){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.getElementById(page==='portfolio'?'portfolio-page':'main-page').classList.add('active');
+  const pageId = page==='portfolio'?'portfolio-page':page==='mentions'?'mentions-page':'main-page';
+  document.getElementById(pageId).classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -824,7 +825,7 @@ async function sendMsg(){
       body:JSON.stringify({
         model:'claude-haiku-4-5-20251001',
         max_tokens:400,
-        system:"Tu es l'assistant de Statevo, une agence web qui crée des sites sur mesure pour indépendants et petites entreprises. Offre Essentielle à 70€ (site vitrine, responsive, SEO). Offre Premium à 150€ (tout + paiement en ligne, réservation automatisée, 1 mois de support). Délai : moins d'une semaine. Réponse garantie sous 24h. Réponds en français, de façon courte et directe.",
+        system:"Tu es l'assistant de Statevo, une agence web. Tu réponds UNIQUEMENT aux questions sur nos deux offres : Essentielle à 70€ (site vitrine, responsive, SEO) et Premium à 150€ (+ paiement en ligne, réservation automatisée, 1 mois de support). Délai moins d'une semaine. Réponse sous 24h. Tu ne fais PAS de devis, tu ne promets rien d'autre que ce qui est dans les deux offres. Si la question sort de ce cadre, redirige vers le formulaire de commande sur le site. Réponds en français, court et direct.",
         messages: chatHistory
       })
     });
@@ -839,6 +840,45 @@ async function sendMsg(){
   }
 }
 </script>
+
+
+<!-- MENTIONS LÉGALES PAGE -->
+<div id="mentions-page" class="page" style="padding-top:58px">
+  <div style="background:var(--surface);border-bottom:1px solid var(--border);padding:60px">
+    <button class="back-btn" onclick="showPage('main')">← Retour</button>
+    <div class="section-eyebrow">Légal</div>
+    <div class="section-title-big">Mentions<br><em>légales</em></div>
+  </div>
+  <div style="padding:60px;max-width:720px;line-height:1.9;font-size:14px;color:var(--off)">
+
+    <h2 style="font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:#fff;margin:0 0 12px;letter-spacing:-.3px">Éditeur du site</h2>
+    <p>Le site <strong style="color:#fff">statevo.fr</strong> est édité par Statevo, agence de création de sites web.<br>
+    Email : <a href="mailto:statevocontact@gmail.com" style="color:var(--essential-accent);text-decoration:none">statevocontact@gmail.com</a></p>
+
+    <h2 style="font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:#fff;margin:36px 0 12px;letter-spacing:-.3px">Hébergement</h2>
+    <p>Le site est hébergé par <strong style="color:#fff">GitHub Pages</strong><br>
+    GitHub, Inc. — 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis<br>
+    <a href="https://pages.github.com" style="color:var(--essential-accent);text-decoration:none">pages.github.com</a></p>
+
+    <h2 style="font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:#fff;margin:36px 0 12px;letter-spacing:-.3px">Propriété intellectuelle</h2>
+    <p>L'ensemble du contenu de ce site (textes, visuels, design) est la propriété exclusive de Statevo. Toute reproduction, même partielle, est interdite sans autorisation préalable.</p>
+
+    <h2 style="font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:#fff;margin:36px 0 12px;letter-spacing:-.3px">Données personnelles</h2>
+    <p>Les informations collectées via le formulaire de contact (prénom, email, téléphone, description du projet) sont utilisées uniquement pour répondre à ta demande. Elles ne sont ni vendues, ni transmises à des tiers.<br><br>
+    Conformément au RGPD, tu disposes d'un droit d'accès, de rectification et de suppression de tes données. Pour exercer ce droit : <a href="mailto:statevocontact@gmail.com" style="color:var(--essential-accent);text-decoration:none">statevocontact@gmail.com</a></p>
+
+    <h2 style="font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:#fff;margin:36px 0 12px;letter-spacing:-.3px">Cookies</h2>
+    <p>Ce site n'utilise pas de cookies de tracking ou publicitaires.</p>
+
+    <h2 style="font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:#fff;margin:36px 0 12px;letter-spacing:-.3px">Responsabilité</h2>
+    <p>Statevo s'efforce de maintenir les informations de ce site à jour. Toutefois, nous ne pouvons garantir l'exactitude, la complétude ou l'actualité des informations diffusées.</p>
+
+  </div>
+  <div class="footer-bottom">
+    <span>© Statevo 2024–2029 — Agence reconnue et approuvée, plus de 50 entrepreneurs accompagnés depuis notre lancement.</span>
+    <span>Tous droits réservés</span>
+  </div>
+</div>
 
 </body>
 </html>
