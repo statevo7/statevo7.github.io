@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Statevo — Sites Web sur Mesure pour Indépendants | Dès 70€</title>
-<meta name="description" content="Statevo crée ton site web professionnel en moins d'une semaine. Design moderne, paiement intégré, réservation en ligne. Offre Essentielle dès 70€. On te recontacte en moins de 24h.">
+<meta name="description" content="Création de site internet pour indépendants. Site vitrine moderne, responsive, SEO inclus. Packs Essentielle 70€ et Premium 150€. Livraison en moins de 7 jours.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://statevo.fr">
 
@@ -121,14 +121,23 @@
   --border:#ffffff0f;
   --border2:#ffffff1a;
   --white:#ffffff;
-  --off:#a0a0a0;
+  --off:#b8b8b8;   /* contraste amélioré */
   --muted:#555555;
   /* Couleurs des offres */
   --essential-accent:#00e5ff;   /* cyan électrique */
   --premium-accent:#c8ff00;     /* vert acide */
 }
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;color:var(--white);background:var(--bg);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{font-family:'DM Sans',sans-serif;color:var(--white);background:var(--bg);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+
+/* Amélioration générale de la lisibilité */
+p, li, .faq-a { line-height: 1.8; }
+
+/* Focus visible pour l'accessibilité */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--essential-accent);
+  outline-offset: 2px;
+}
 
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-track{background:var(--bg)}
@@ -165,9 +174,9 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 .hero-tag{display:inline-block;border:1px solid #ffffff25;padding:5px 14px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--off);margin-bottom:40px;font-family:'Inter',sans-serif}
 .hero-h1{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(52px,9vw,130px);line-height:.92;letter-spacing:-4px;color:#fff;text-transform:uppercase;margin-bottom:0}
 .hero-h1 .row2{display:block;padding-left:clamp(40px,7vw,120px);color:#fff}
-.hero-h1 .row3{display:block;padding-left:clamp(80px,14vw,240px);color:#fff;opacity:0.15}
+.hero-h1 .row3{display:block;padding-left:clamp(80px,14vw,240px);color:#fff;opacity:0.25} /* rendu plus lisible */
 .hero-bottom{display:flex;align-items:flex-end;justify-content:space-between;margin-top:48px;gap:40px;flex-wrap:wrap}
-.hero-desc{max-width:340px;font-size:15px;color:var(--off);line-height:1.7;font-weight:400;border-left:2px solid #fff;padding-left:20px}
+.hero-desc{max-width:340px;font-size:15px;color:var(--off);line-height:1.8;font-weight:400;border-left:2px solid #fff;padding-left:20px}
 .hero-actions{display:flex;flex-direction:column;align-items:flex-end;gap:14px}
 .btn-brutal{display:inline-block;padding:16px 40px;background:#fff;color:#000;font-family:'Inter',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:.2s;border:none;cursor:pointer}
 .btn-brutal:hover{background:#d4d4d4}
@@ -208,39 +217,15 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 /* HOW IT WORKS */
 .how-section{background:var(--bg);overflow:hidden}
 .how-header{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;margin-bottom:80px;flex-wrap:wrap}
-.how-header-desc{max-width:300px;font-size:14px;color:var(--off);line-height:1.75;margin-top:12px}
+.how-header-desc{max-width:300px;font-size:14px;color:var(--off);line-height:1.8;margin-top:12px}
 .steps-brutalist{display:flex;flex-direction:column;gap:0}
 .step-b{display:grid;grid-template-columns:120px 1fr;border-top:1px solid var(--border);padding:40px 0;align-items:start;gap:40px;transition:.3s}
 .step-b:last-child{border-bottom:1px solid var(--border)}
 .step-b:hover{background:rgba(255,255,255,.02)}
 .step-num-big{font-family:'Inter',sans-serif;font-size:80px;font-weight:900;color:#fff;opacity:.07;line-height:1;letter-spacing:-4px;padding-top:4px}
 .step-content h3{font-family:'Inter',sans-serif;font-size:19px;font-weight:700;color:#fff;margin-bottom:10px;letter-spacing:-.3px}
-.step-content p{font-size:13px;color:var(--off);line-height:1.75;max-width:480px}
+.step-content p{font-size:13px;color:var(--off);line-height:1.8;max-width:480px}
 .step-tag{display:inline-block;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:3px 10px;margin-bottom:14px;font-family:'Inter',sans-serif}
-
-/* PORTFOLIO */
-.portfolio-section{background:var(--surface);border-top:1px solid var(--border)}
-.portfolio-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:60px;flex-wrap:wrap;gap:20px}
-.portfolio-grid-asym{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:auto auto;gap:2px;margin-bottom:2px}
-.portfolio-grid-asym .pc:nth-child(3){grid-column:span 2}
-.pc{background:var(--surface2);border:1px solid var(--border);overflow:hidden;transition:.35s;cursor:pointer;position:relative}
-.pc:hover{border-color:var(--border2)}
-.pc:hover .pc-overlay{opacity:1}
-.pc-mock{height:220px;display:flex;align-items:center;justify-content:center;padding:24px}
-.pc-mock-inner{width:88%;background:#0f0f0f;border:1px solid #ffffff06;overflow:hidden}
-.pc-bar{height:22px;background:#0a0a0a;display:flex;align-items:center;padding:0 10px;gap:5px;border-bottom:1px solid #ffffff05}
-.pc-dot{width:6px;height:6px;border-radius:50%}
-.pc-body{padding:12px}
-.pc-hero-block{height:52px;border-radius:2px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;letter-spacing:.5px;color:rgba(0,0,0,.8)}
-.pc-line{background:#ffffff07;height:5px;border-radius:1px;margin-bottom:3px}
-.pc-line.s{width:65%}.pc-line.xs{width:40%}
-.pc-btn-mock{height:16px;width:70px;border-radius:1px;margin-top:7px}
-.pc-info{padding:20px 22px;border-top:1px solid var(--border)}
-.pc-tag{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-family:'Inter',sans-serif;margin-bottom:7px}
-.pc-info h3{font-size:14px;font-weight:600;color:#fff;margin-bottom:4px;letter-spacing:-.2px}
-.pc-info p{font-size:12px;color:var(--muted);line-height:1.5}
-.pc-overlay{position:absolute;inset:0;background:rgba(255,255,255,.03);display:flex;align-items:center;justify-content:center;opacity:0;transition:.3s}
-.pc-overlay-text{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#fff;font-family:'Inter',sans-serif;border-bottom:1px solid #fff;padding-bottom:2px}
 
 /* ═══════════════════════════════════
    OFFRES — couleurs vives par pack
@@ -279,9 +264,9 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 .offer-card.essentielle .offer-check.on{background:var(--essential-accent);border-color:var(--essential-accent)}
 .offer-card.premium .offer-check.on{background:var(--premium-accent);border-color:var(--premium-accent)}
 
-.offer-text{font-size:13px;color:var(--off);line-height:1.4}
-.offer-text.off{opacity:.25}
-.offer-sub{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.5}
+.offer-text{font-size:13px;color:var(--off);line-height:1.5}
+.offer-text.off{opacity:.3}
+.offer-sub{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.6}
 
 /* Boutons colorés */
 .btn-essential{display:inline-block;padding:16px 40px;background:var(--essential-accent);color:#000;font-family:'Inter',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:.2s;border:none;cursor:pointer;width:100%;text-align:center}
@@ -301,6 +286,21 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 .submit-btn:hover{background:#fff;color:#000}
 .submit-btn:disabled{opacity:.3;cursor:not-allowed}
 .success-msg{display:none;color:#fff;margin-top:12px;font-size:12px;letter-spacing:.5px;text-align:center;border:1px solid #ffffff20;padding:10px}
+
+/* CALCULATRICE */
+.calculator-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.calculator-box{background:var(--bg);border:1px solid var(--border);padding:40px;margin-top:40px}
+.calc-options{display:flex;flex-direction:column;gap:16px;margin-bottom:30px}
+.calc-option{display:flex;align-items:center;gap:14px}
+.calc-option input[type="checkbox"]{appearance:none;width:20px;height:20px;border:1px solid var(--border);background:transparent;cursor:pointer;display:grid;place-content:center;transition:.2s}
+.calc-option input[type="checkbox"]::before{content:"";width:12px;height:12px;background:var(--premium-accent);transform:scale(0);transition:.15s}
+.calc-option input[type="checkbox"]:checked{border-color:var(--premium-accent)}
+.calc-option input[type="checkbox"]:checked::before{transform:scale(1)}
+.calc-option label{font-size:14px;color:var(--off);cursor:pointer;user-select:none;line-height:1.6}
+.calc-result{font-family:'Inter',sans-serif;text-align:center;padding:24px;border:1px solid var(--border);margin-top:20px;transition:.3s}
+.calc-result.premium-highlight{border-color:var(--premium-accent);box-shadow:0 0 20px rgba(200,255,0,.1)}
+.calc-result .pack-name{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.calc-result .pack-price{font-size:40px;font-weight:900;letter-spacing:-2px;color:var(--white)}
 
 /* AVIS */
 .reviews-section{background:var(--surface);border-top:1px solid var(--border)}
@@ -330,9 +330,9 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 .manifesto-noise{position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");background-size:250px;opacity:.03;pointer-events:none}
 .manifesto-inner{position:relative;z-index:2;max-width:800px}
 .manifesto-big{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(36px,6vw,80px);letter-spacing:-3px;line-height:.93;text-transform:uppercase;color:#fff;margin-bottom:40px}
-.manifesto-big .ghost{opacity:.12}
+.manifesto-big .ghost{opacity:.15}
 .manifesto-divider{width:60px;height:1px;background:#fff;margin-bottom:32px}
-.manifesto-body{font-size:15px;color:var(--off);line-height:1.85;max-width:480px;margin-bottom:44px}
+.manifesto-body{font-size:15px;color:var(--off);line-height:1.9;max-width:480px;margin-bottom:44px}
 
 /* FOOTER CTA */
 .footer-cta{background:var(--bg);border-top:1px solid var(--border);padding:80px 60px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
@@ -342,22 +342,6 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 .footer-email a{color:var(--off);text-decoration:none;transition:.2s}
 .footer-email a:hover{color:#fff}
 .footer-bottom{background:var(--surface);border-top:1px solid var(--border);padding:16px 60px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;font-family:'Inter',sans-serif}
-
-/* PORTFOLIO PAGE */
-.portfolio-page{padding-top:58px}
-.pf-page-header{background:var(--surface);border-bottom:1px solid var(--border);padding:60px}
-.back-btn{background:none;border:none;color:var(--off);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;display:inline-flex;align-items:center;gap:8px;margin-bottom:32px;font-family:'Inter',sans-serif;padding:0;transition:.2s}
-.back-btn:hover{color:#fff}
-.pf-full-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2px;padding:2px 0}
-.pf-card{background:var(--surface);border:1px solid var(--border);overflow:hidden;transition:.35s}
-.pf-card:hover{border-color:var(--border2);transform:translateY(-2px)}
-.pf-preview{height:220px;background:var(--surface2);display:flex;align-items:center;justify-content:center}
-.pf-info{padding:20px 22px;border-top:1px solid var(--border)}
-.pf-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
-.pf-tag{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:3px 9px;font-family:'Inter',sans-serif}
-.pf-info h3{font-size:14px;font-weight:600;color:#fff;margin-bottom:4px}
-.pf-info p{font-size:12px;color:var(--muted);line-height:1.6}
-
 
 /* Hero bg image overlay */
 .hero-bg-img{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=80');background-size:cover;background-position:center;opacity:0.07;mix-blend-mode:screen;z-index:1}
@@ -380,8 +364,6 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
   .stat-cell{padding-left:20px}
   .stat-num{font-size:36px}
   .offers-layout{grid-template-columns:1fr}
-  .portfolio-grid-asym{grid-template-columns:1fr}
-  .portfolio-grid-asym .pc:nth-child(3){grid-column:span 1}
   .review-item{grid-template-columns:1fr;gap:16px}
   .review-stars{display:none}
   .footer-cta{padding:60px 24px;flex-direction:column}
@@ -390,8 +372,6 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
   .how-header{flex-direction:column}
   .step-b{grid-template-columns:70px 1fr;gap:20px}
   .step-num-big{font-size:56px}
-  .pf-page-header{padding:40px 24px}
-  .pf-full-grid{padding:0}
 }
 </style>
 </head>
@@ -400,8 +380,8 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 <nav>
   <a class="nav-logo" href="#" onclick="showPage('main');return false"><span style="color:var(--essential-accent)">Stat</span><em>evo</em></a>
   <div class="nav-links">
-    
     <a href="#offres">Offres</a>
+    <a href="#calculatrice">Calculatrice</a>
     <a href="#avis">Avis</a>
     <a href="#faq">FAQ</a>
   </div>
@@ -432,7 +412,6 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
       <p class="hero-desc">Des sites sur mesure pour les indépendants et petites entreprises. Design moderne, paiement intégré, réservation automatisée.</p>
       <div class="hero-actions">
         <a class="btn-brutal" href="#offres">Voir les offres</a>
-        
         <div class="hero-scroll">Défiler</div>
       </div>
     </div>
@@ -543,7 +522,44 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
   </div>
 </section>
 
-
+<!-- CALCULATRICE DE PRESTATION -->
+<section class="section calculator-section animate" id="calculatrice">
+  <div class="section-eyebrow">Outil</div>
+  <div class="section-title-big">Quel pack<br>pour <em>toi</em> ?</div>
+  <p style="color:var(--off);font-size:14px;margin-top:14px;max-width:500px">Coche les options qui t'intéressent. On te dira tout de suite quel pack correspond à ton besoin — et son prix.</p>
+  <div class="calculator-box">
+    <div class="calc-options">
+      <div class="calc-option">
+        <input type="checkbox" id="opt-paiement" onchange="updateCalculator()">
+        <label for="opt-paiement">Paiement en ligne sécurisé</label>
+      </div>
+      <div class="calc-option">
+        <input type="checkbox" id="opt-reservation" onchange="updateCalculator()">
+        <label for="opt-reservation">Réservation automatisée (24h/24)</label>
+      </div>
+      <div class="calc-option">
+        <input type="checkbox" id="opt-ia" onchange="updateCalculator()">
+        <label for="opt-ia">Assistant IA / chatbot</label>
+      </div>
+      <div class="calc-option">
+        <input type="checkbox" id="opt-galerie" onchange="updateCalculator()">
+        <label for="opt-galerie">Galerie photos</label>
+      </div>
+      <div class="calc-option">
+        <input type="checkbox" id="opt-newsletter" onchange="updateCalculator()">
+        <label for="opt-newsletter">Newsletter & réseaux sociaux</label>
+      </div>
+    </div>
+    <div class="calc-result" id="calc-result">
+      <div class="pack-name">Pack recommandé</div>
+      <div class="pack-price" id="calc-price">—</div>
+      <div style="color:var(--muted);font-size:12px;margin-top:6px" id="calc-desc"></div>
+    </div>
+    <div style="text-align:center;margin-top:24px">
+      <a class="btn-brutal" href="#offres">Voir les offres en détail</a>
+    </div>
+  </div>
+</section>
 
 <!-- HOW IT WORKS -->
 <section class="section how-section">
@@ -581,8 +597,6 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
     </div>
   </div>
 </section>
-
-
 
 <!-- AVIS -->
 <section class="section reviews-section" id="avis">
@@ -703,25 +717,40 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 
 </div><!-- /main-page -->
 
-</div><!-- /main-page -->
-
-<!-- PORTFOLIO PAGE -->
-<div id="portfolio-page" class="page portfolio-page">
-  <div class="pf-page-header">
-    <button class="back-btn" onclick="showPage('main')">← Retour</button>
-    <div class="section-eyebrow" style="text-align:left">Nos réalisations</div>
-    <div class="section-title-big">Sites créés<br>par <em>Statevo</em></div>
-    <p style="color:var(--off);font-size:14px;margin-top:14px;max-width:440px">Chaque projet est unique. Voici un aperçu de ce qu'on a réalisé pour nos clients.</p>
+<!-- MENTIONS LÉGALES PAGE -->
+<div id="mentions-page" class="page" style="padding-top:58px">
+  <div style="background:var(--surface);border-bottom:1px solid var(--border);padding:60px">
+    <button class="back-btn" onclick="showPage('main')" style="background:none;border:none;color:var(--off);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;display:inline-flex;align-items:center;gap:8px;margin-bottom:32px;font-family:'Inter',sans-serif;padding:0;transition:.2s">← Retour</button>
+    <div class="section-eyebrow">Légal</div>
+    <div class="section-title-big">Mentions<br><em>légales</em></div>
   </div>
+  <div style="padding:60px;max-width:720px;line-height:1.9;font-size:14px;color:var(--off)">
 
-  
+    <h2 style="font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:#fff;margin:0 0 12px;letter-spacing:-.3px">Éditeur du site</h2>
+    <p>Le site <strong style="color:#fff">statevo.fr</strong> est édité par Statevo, agence de création de sites web.<br>
+    Email : <a href="mailto:statevocontact@gmail.com" style="color:var(--essential-accent);text-decoration:none">statevocontact@gmail.com</a></p>
 
-  <div style="text-align:center;padding:60px 24px">
-    <p style="color:var(--muted);margin-bottom:22px;font-size:13px;letter-spacing:.3px">Ton activité n'est pas listée ? On crée des sites pour tous les métiers.</p>
-    <a class="btn-brutal" href="#" onclick="showPage('main');setTimeout(()=>document.getElementById('offres').scrollIntoView({behavior:'smooth'}),100);return false">Démarrer mon projet →</a>
+    <h2 style="font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:#fff;margin:36px 0 12px;letter-spacing:-.3px">Hébergement</h2>
+    <p>Le site est hébergé par <strong style="color:#fff">GitHub Pages</strong><br>
+    GitHub, Inc. — 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis<br>
+    <a href="https://pages.github.com" style="color:var(--essential-accent);text-decoration:none">pages.github.com</a></p>
+
+    <h2 style="font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:#fff;margin:36px 0 12px;letter-spacing:-.3px">Propriété intellectuelle</h2>
+    <p>L'ensemble du contenu de ce site (textes, visuels, design) est la propriété exclusive de Statevo. Toute reproduction, même partielle, est interdite sans autorisation préalable.</p>
+
+    <h2 style="font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:#fff;margin:36px 0 12px;letter-spacing:-.3px">Données personnelles</h2>
+    <p>Les informations collectées via le formulaire de contact (prénom, email, téléphone, description du projet) sont utilisées uniquement pour répondre à ta demande. Elles ne sont ni vendues, ni transmises à des tiers.<br><br>
+    Conformément au RGPD, tu disposes d'un droit d'accès, de rectification et de suppression de tes données. Pour exercer ce droit : <a href="mailto:statevocontact@gmail.com" style="color:var(--essential-accent);text-decoration:none">statevocontact@gmail.com</a></p>
+
+    <h2 style="font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:#fff;margin:36px 0 12px;letter-spacing:-.3px">Cookies</h2>
+    <p>Ce site n'utilise pas de cookies de tracking ou publicitaires.</p>
+
+    <h2 style="font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:#fff;margin:36px 0 12px;letter-spacing:-.3px">Responsabilité</h2>
+    <p>Statevo s'efforce de maintenir les informations de ce site à jour. Toutefois, nous ne pouvons garantir l'exactitude, la complétude ou l'actualité des informations diffusées.</p>
+
   </div>
   <div class="footer-bottom">
-    <span>© 2025 Statevo</span>
+    <span>© Statevo 2024–2029 — Agence reconnue et approuvée, plus de 50 entrepreneurs accompagnés depuis notre lancement.</span>
     <span>Tous droits réservés</span>
   </div>
 </div>
@@ -731,7 +760,7 @@ const DEST_EMAIL = "statevocontact@gmail.com";
 
 function showPage(page){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  const pageId = page==='portfolio'?'portfolio-page':page==='mentions'?'mentions-page':'main-page';
+  const pageId = page==='mentions'?'mentions-page':'main-page';
   document.getElementById(pageId).classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
 }
@@ -770,134 +799,32 @@ function toggleFaq(i){
   if(!was){ans.classList.add('open');icon.classList.add('open');}
 }
 
+// Calculatrice
+function updateCalculator(){
+  const needPremium = document.getElementById('opt-paiement').checked ||
+                      document.getElementById('opt-reservation').checked ||
+                      document.getElementById('opt-ia').checked ||
+                      document.getElementById('opt-galerie').checked ||
+                      document.getElementById('opt-newsletter').checked;
+  const resultDiv = document.getElementById('calc-result');
+  const priceSpan = document.getElementById('calc-price');
+  const desc = document.getElementById('calc-desc');
+  if (needPremium) {
+    priceSpan.textContent = '150€';
+    desc.textContent = 'Pack Premium — toutes les fonctionnalités incluses';
+    resultDiv.classList.add('premium-highlight');
+  } else {
+    priceSpan.textContent = '70€';
+    desc.textContent = "Pack Essentielle — l'essentiel pour être visible";
+    resultDiv.classList.remove('premium-highlight');
+  }
+}
+
 const obs=new IntersectionObserver((entries)=>{
   entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*80);});
 },{threshold:0.08});
 document.querySelectorAll('.animate').forEach(el=>obs.observe(el));
 </script>
-
-<!-- ASSISTANT IA -->
-<div id="chat-bubble" onclick="toggleChat()" style="position:fixed;bottom:28px;right:28px;z-index:1000;width:52px;height:52px;background:var(--premium-accent);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 0 20px rgba(200,255,0,0.3);transition:.2s">
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-</div>
-
-<div id="chat-window" style="display:none;position:fixed;bottom:90px;right:28px;z-index:1000;width:340px;max-height:480px;background:#111;border:1px solid #ffffff15;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,0.6)">
-  <div style="padding:16px 20px;border-bottom:1px solid #ffffff10;display:flex;justify-content:space-between;align-items:center">
-    <div>
-      <div style="font-family:'Inter',sans-serif;font-size:13px;font-weight:700;color:#fff">Assistant Statevo</div>
-      <div style="font-size:11px;color:var(--muted);margin-top:2px">Répond instantanément</div>
-    </div>
-    <div onclick="toggleChat()" style="cursor:pointer;color:var(--muted);font-size:18px;line-height:1">×</div>
-  </div>
-  <div id="chat-messages" style="flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;max-height:320px">
-    <div style="background:#1a1a1a;padding:12px 14px;font-size:13px;color:var(--off);line-height:1.6;border-left:2px solid var(--premium-accent)">
-      Bonjour 👋 Je suis l'assistant Statevo. Pose-moi tes questions sur nos offres, délais, ou ton projet !
-    </div>
-  </div>
-  <div style="padding:12px;border-top:1px solid #ffffff10;display:flex;gap:8px">
-    <input id="chat-input" type="text" placeholder="Ton message..." onkeydown="if(event.key==='Enter')sendMsg()" style="flex:1;background:transparent;border:none;border-bottom:1px solid #ffffff20;color:#fff;font-size:13px;padding:6px 0;outline:none;font-family:'DM Sans',sans-serif"/>
-    <button onclick="sendMsg()" style="background:var(--premium-accent);border:none;color:#000;font-weight:700;font-size:11px;letter-spacing:1px;padding:6px 14px;cursor:pointer;font-family:'Inter',sans-serif">→</button>
-  </div>
-</div>
-
-<script>
-const ANTHROPIC_KEY = "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";
-let chatOpen = false;
-let chatHistory = [];
-
-function toggleChat(){
-  chatOpen = !chatOpen;
-  document.getElementById('chat-window').style.display = chatOpen ? 'flex' : 'none';
-  document.getElementById('chat-window').style.flexDirection = 'column';
-  if(chatOpen) document.getElementById('chat-input').focus();
-}
-
-function addMsg(role, text){
-  const msgs = document.getElementById('chat-messages');
-  const div = document.createElement('div');
-  div.style.cssText = role === 'user'
-    ? 'background:#1e1e1e;padding:10px 14px;font-size:13px;color:#fff;line-height:1.6;text-align:right;border-right:2px solid var(--essential-accent)'
-    : 'background:#1a1a1a;padding:10px 14px;font-size:13px;color:var(--off);line-height:1.6;border-left:2px solid var(--premium-accent)';
-  div.textContent = text;
-  msgs.appendChild(div);
-  msgs.scrollTop = msgs.scrollHeight;
-}
-
-async function sendMsg(){
-  const input = document.getElementById('chat-input');
-  const text = input.value.trim();
-  if(!text) return;
-  input.value = '';
-  addMsg('user', text);
-  chatHistory.push({role:'user', content:text});
-
-  const typing = document.createElement('div');
-  typing.id = 'typing';
-  typing.style.cssText = 'background:#1a1a1a;padding:10px 14px;font-size:13px;color:var(--muted);border-left:2px solid var(--premium-accent)';
-  typing.textContent = '...';
-  document.getElementById('chat-messages').appendChild(typing);
-
-  try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method:'POST',
-      headers:{'Content-Type':'application/json','x-api-key':ANTHROPIC_KEY,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
-      body:JSON.stringify({
-        model:'claude-haiku-4-5-20251001',
-        max_tokens:400,
-        system:"Tu es l'assistant de Statevo, une agence web. Tu réponds UNIQUEMENT aux questions sur nos deux offres : Essentielle à 70€ (site vitrine, responsive, SEO) et Premium à 150€ (+ paiement en ligne, réservation automatisée, 1 mois de support). Délai moins d'une semaine. Réponse sous 24h. Tu ne fais PAS de devis, tu ne promets rien d'autre que ce qui est dans les deux offres. Si la question sort de ce cadre, redirige vers le formulaire de commande sur le site. Réponds en français, court et direct.",
-        messages: chatHistory
-      })
-    });
-    const data = await res.json();
-    document.getElementById('typing')?.remove();
-    const reply = data.content[0].text;
-    chatHistory.push({role:'assistant', content:reply});
-    addMsg('assistant', reply);
-  } catch(e) {
-    document.getElementById('typing')?.remove();
-    addMsg('assistant', "Désolé, une erreur est survenue. Contacte-nous sur statevocontact@gmail.com !");
-  }
-}
-</script>
-
-
-<!-- MENTIONS LÉGALES PAGE -->
-<div id="mentions-page" class="page" style="padding-top:58px">
-  <div style="background:var(--surface);border-bottom:1px solid var(--border);padding:60px">
-    <button class="back-btn" onclick="showPage('main')">← Retour</button>
-    <div class="section-eyebrow">Légal</div>
-    <div class="section-title-big">Mentions<br><em>légales</em></div>
-  </div>
-  <div style="padding:60px;max-width:720px;line-height:1.9;font-size:14px;color:var(--off)">
-
-    <h2 style="font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:#fff;margin:0 0 12px;letter-spacing:-.3px">Éditeur du site</h2>
-    <p>Le site <strong style="color:#fff">statevo.fr</strong> est édité par Statevo, agence de création de sites web.<br>
-    Email : <a href="mailto:statevocontact@gmail.com" style="color:var(--essential-accent);text-decoration:none">statevocontact@gmail.com</a></p>
-
-    <h2 style="font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:#fff;margin:36px 0 12px;letter-spacing:-.3px">Hébergement</h2>
-    <p>Le site est hébergé par <strong style="color:#fff">GitHub Pages</strong><br>
-    GitHub, Inc. — 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis<br>
-    <a href="https://pages.github.com" style="color:var(--essential-accent);text-decoration:none">pages.github.com</a></p>
-
-    <h2 style="font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:#fff;margin:36px 0 12px;letter-spacing:-.3px">Propriété intellectuelle</h2>
-    <p>L'ensemble du contenu de ce site (textes, visuels, design) est la propriété exclusive de Statevo. Toute reproduction, même partielle, est interdite sans autorisation préalable.</p>
-
-    <h2 style="font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:#fff;margin:36px 0 12px;letter-spacing:-.3px">Données personnelles</h2>
-    <p>Les informations collectées via le formulaire de contact (prénom, email, téléphone, description du projet) sont utilisées uniquement pour répondre à ta demande. Elles ne sont ni vendues, ni transmises à des tiers.<br><br>
-    Conformément au RGPD, tu disposes d'un droit d'accès, de rectification et de suppression de tes données. Pour exercer ce droit : <a href="mailto:statevocontact@gmail.com" style="color:var(--essential-accent);text-decoration:none">statevocontact@gmail.com</a></p>
-
-    <h2 style="font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:#fff;margin:36px 0 12px;letter-spacing:-.3px">Cookies</h2>
-    <p>Ce site n'utilise pas de cookies de tracking ou publicitaires.</p>
-
-    <h2 style="font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:#fff;margin:36px 0 12px;letter-spacing:-.3px">Responsabilité</h2>
-    <p>Statevo s'efforce de maintenir les informations de ce site à jour. Toutefois, nous ne pouvons garantir l'exactitude, la complétude ou l'actualité des informations diffusées.</p>
-
-  </div>
-  <div class="footer-bottom">
-    <span>© Statevo 2024–2029 — Agence reconnue et approuvée, plus de 50 entrepreneurs accompagnés depuis notre lancement.</span>
-    <span>Tous droits réservés</span>
-  </div>
-</div>
 
 </body>
 </html>
