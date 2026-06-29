@@ -1,137 +1,903 @@
-import fs from 'fs';
-import path from 'path';
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Statevo — Sites Web sur Mesure pour Indépendants | Dès 70€</title>
+<meta name="description" content="Statevo crée ton site web professionnel en moins d'une semaine. Design moderne, paiement intégré, réservation en ligne. Offre Essentielle dès 70€. On te recontacte en moins de 24h.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://statevo.fr">
 
-export interface Order {
-  id: string;
-  name: string;
-  email: string;
-  phone: string;
-  business: string;
-  description: string;
-  offerType: 'essentielle' | 'premium';
-  amount: number; // en centimes d'euros
-  status: 'pending' | 'succeeded' | 'failed';
-  paymentIntentId: string;
-  createdAt: string;
-  updatedAt: string;
+<!-- Open Graph -->
+<meta property="og:title" content="Statevo — Sites Web sur Mesure pour Indépendants">
+<meta property="og:description" content="Des sites web sur mesure pour les indépendants et petites entreprises. Offre dès 70€. Réponse en moins de 24h.">
+<meta property="og:image" content="https://statevo.fr/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://statevo.fr">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Statevo">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Statevo — Sites Web sur Mesure pour Indépendants">
+<meta name="twitter:description" content="Des sites web sur mesure pour les indépendants et petites entreprises. Offre dès 70€.">
+<meta name="twitter:image" content="https://statevo.fr/og.png">
+
+<!-- Structured Data — Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Statevo",
+  "url": "https://statevo.fr",
+  "logo": "https://statevo.fr/logo.png",
+  "description": "Agence web spécialisée dans la création de sites pour indépendants et petites entreprises.",
+  "email": "statevocontact@gmail.com",
+  "areaServed": "FR",
+  "serviceType": "Création de sites web"
+}
+</script>
+
+<!-- Structured Data — Service offers -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Offres Statevo",
+  "itemListElement": [
+    {
+      "@type": "Offer",
+      "position": 1,
+      "name": "Site web Essentielle",
+      "description": "Site vitrine professionnel, responsive, SEO de base inclus.",
+      "price": "70",
+      "priceCurrency": "EUR",
+      "seller": { "@type": "Organization", "name": "Statevo" }
+    },
+    {
+      "@type": "Offer",
+      "position": 2,
+      "name": "Site web Premium",
+      "description": "Site complet avec paiement en ligne, réservation automatisée et 1 mois de support.",
+      "price": "150",
+      "priceCurrency": "EUR",
+      "seller": { "@type": "Organization", "name": "Statevo" }
+    }
+  ]
+}
+</script>
+
+<!-- Structured Data — FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Comment se passe la suite après ma demande ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "On te recontacte en moins de 24h pour caler les détails de ton projet. Ensuite on s'occupe de tout — design, développement, mise en ligne." }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment se passe le paiement ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "On te contacte sous 24h pour confirmer les détails et te partager le lien de paiement sécurisé. Pas de surprise." }
+    },
+    {
+      "@type": "Question",
+      "name": "Est-ce que je peux demander des modifications ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Oui, des retouches sont comprises dans les deux offres. L'offre Premium inclut en plus 1 mois de support après livraison." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quelle est la différence entre les deux offres ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "L'Essentielle (70€) = un site vitrine pro et rapide. La Premium (150€) = tout ça + paiement sécurisé, réservation automatisée et 1 mois de support." }
+    },
+    {
+      "@type": "Question",
+      "name": "Mon site sera-t-il visible sur Google ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Oui. Tous nos sites incluent les bases SEO : balises bien renseignées, vitesse optimisée, compatibilité mobile." }
+    },
+    {
+      "@type": "Question",
+      "name": "Je n'ai aucune connaissance technique, c'est un problème ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Pas du tout. On s'occupe de tout. Tu nous donnes les infos, on fait le reste. Notre expert te tient informé à chaque étape." }
+    }
+  ]
+}
+</script>
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230a0a0a'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='Inter,sans-serif' font-weight='900' fill='%2300e5ff'>S</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0a;
+  --surface:#111111;
+  --surface2:#181818;
+  --border:#ffffff0f;
+  --border2:#ffffff1a;
+  --white:#ffffff;
+  --off:#a0a0a0;
+  --muted:#555555;
+  /* Couleurs des offres */
+  --essential-accent:#00e5ff;   /* cyan électrique */
+  --premium-accent:#c8ff00;     /* vert acide */
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--white);background:var(--bg);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:#ffffff18;border-radius:2px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:rgba(10,10,10,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Inter',sans-serif;font-size:17px;font-weight:900;color:var(--essential-accent);text-decoration:none;letter-spacing:-0.5px;text-transform:uppercase}
+.nav-logo em{font-style:normal;color:#fff;opacity:0.35}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{color:var(--off);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.3px;transition:.15s;cursor:pointer}
+.nav-links a:hover{color:#fff}
+.nav-cta{padding:7px 18px;border:1px solid #fff;color:#fff;font-weight:600;font-size:12px;text-decoration:none;letter-spacing:.8px;text-transform:uppercase;transition:.2s}
+.nav-cta:hover{background:#fff;color:#000}
+
+/* PAGES */
+.page{display:none}
+.page.active{display:block}
+#main-page{display:block}
+
+/* HERO */
+.hero{min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:0 0 80px}
+.hero-gradient{position:absolute;inset:0;background:
+  radial-gradient(ellipse 55% 70% at 75% 30%, #1a1a1a 0%, transparent 65%),
+  radial-gradient(ellipse 80% 60% at 20% 80%, #141414 0%, transparent 70%),
+  #0a0a0a}
+.hero-img{position:absolute;inset:0;background:
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='600' height='600' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size:300px;opacity:.045;mix-blend-mode:screen}
+.hero-line{position:absolute;top:0;right:18%;width:1px;height:100%;background:linear-gradient(180deg,transparent 0%,#ffffff12 30%,#ffffff20 60%,transparent 100%);transform:rotate(-8deg);transform-origin:top center}
+.hero-line2{position:absolute;top:0;right:35%;width:1px;height:100%;background:linear-gradient(180deg,transparent 0%,#ffffff08 40%,transparent 100%);transform:rotate(-8deg);transform-origin:top center}
+
+.hero-content{position:relative;z-index:2;width:100%;padding:0 60px}
+.hero-tag{display:inline-block;border:1px solid #ffffff25;padding:5px 14px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--off);margin-bottom:40px;font-family:'Inter',sans-serif}
+.hero-h1{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(52px,9vw,130px);line-height:.92;letter-spacing:-4px;color:#fff;text-transform:uppercase;margin-bottom:0}
+.hero-h1 .row2{display:block;padding-left:clamp(40px,7vw,120px);color:#fff}
+.hero-h1 .row3{display:block;padding-left:clamp(80px,14vw,240px);color:#fff;opacity:0.15}
+.hero-bottom{display:flex;align-items:flex-end;justify-content:space-between;margin-top:48px;gap:40px;flex-wrap:wrap}
+.hero-desc{max-width:340px;font-size:15px;color:var(--off);line-height:1.7;font-weight:400;border-left:2px solid #fff;padding-left:20px}
+.hero-actions{display:flex;flex-direction:column;align-items:flex-end;gap:14px}
+.btn-brutal{display:inline-block;padding:16px 40px;background:#fff;color:#000;font-family:'Inter',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:.2s;border:none;cursor:pointer}
+.btn-brutal:hover{background:#d4d4d4}
+.btn-ghost-brutal{display:inline-block;padding:15px 40px;background:transparent;color:#fff;font-family:'Inter',sans-serif;font-weight:600;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;border:1px solid #ffffff35;transition:.2s;cursor:pointer}
+.btn-ghost-brutal:hover{border-color:#fff}
+.hero-scroll{font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.hero-scroll::before{content:"";width:40px;height:1px;background:var(--muted)}
+
+/* PARTNERS */
+.partners-bar{background:#111;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 0;overflow:hidden}
+.partners-label-fixed{position:absolute;left:0;top:0;bottom:0;width:160px;background:linear-gradient(90deg,#111 70%,transparent);display:flex;align-items:center;padding-left:40px;z-index:2}
+.partners-label-fixed span{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);font-family:'Inter',sans-serif}
+.partners-wrap{position:relative}
+.partners-track{display:flex;gap:64px;align-items:center;width:max-content;animation:slide 30s linear infinite}
+.partners-track:hover{animation-play-state:paused}
+@keyframes slide{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.partner-item{display:flex;align-items:center;gap:10px;opacity:0.28;white-space:nowrap;transition:opacity .3s}
+.partner-item:hover{opacity:0.65}
+.partner-icon{width:32px;height:32px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;font-family:'Inter',sans-serif;flex-shrink:0}
+.partner-name{font-family:'Inter',sans-serif;font-size:14px;font-weight:700;letter-spacing:-.2px;color:#fff}
+
+/* SECTION BASE */
+.section{padding:100px 60px;position:relative}
+.section-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-family:'Inter',sans-serif;margin-bottom:20px}
+.section-title-big{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(32px,5vw,64px);letter-spacing:-2px;line-height:.95;color:#fff;text-transform:uppercase;margin-bottom:0}
+.section-title-big em{font-style:normal;opacity:.15}
+
+/* STATS */
+.stats-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:0 60px}
+.stat-row{display:flex;border-bottom:1px solid var(--border)}
+.stat-row:last-child{border-bottom:none}
+.stat-cell{flex:1;padding:36px 0;border-right:1px solid var(--border);display:flex;flex-direction:column;justify-content:center;padding-left:40px}
+.stat-cell:first-child{padding-left:0}
+.stat-cell:last-child{border-right:none}
+.stat-num{font-family:'Inter',sans-serif;font-size:52px;font-weight:900;color:#fff;letter-spacing:-3px;line-height:1}
+.stat-lbl{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:6px;font-family:'Inter',sans-serif}
+
+/* HOW IT WORKS */
+.how-section{background:var(--bg);overflow:hidden}
+.how-header{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;margin-bottom:80px;flex-wrap:wrap}
+.how-header-desc{max-width:300px;font-size:14px;color:var(--off);line-height:1.75;margin-top:12px}
+.steps-brutalist{display:flex;flex-direction:column;gap:0}
+.step-b{display:grid;grid-template-columns:120px 1fr;border-top:1px solid var(--border);padding:40px 0;align-items:start;gap:40px;transition:.3s}
+.step-b:last-child{border-bottom:1px solid var(--border)}
+.step-b:hover{background:rgba(255,255,255,.02)}
+.step-num-big{font-family:'Inter',sans-serif;font-size:80px;font-weight:900;color:#fff;opacity:.07;line-height:1;letter-spacing:-4px;padding-top:4px}
+.step-content h3{font-family:'Inter',sans-serif;font-size:19px;font-weight:700;color:#fff;margin-bottom:10px;letter-spacing:-.3px}
+.step-content p{font-size:13px;color:var(--off);line-height:1.75;max-width:480px}
+.step-tag{display:inline-block;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:3px 10px;margin-bottom:14px;font-family:'Inter',sans-serif}
+
+/* PORTFOLIO */
+.portfolio-section{background:var(--surface);border-top:1px solid var(--border)}
+.portfolio-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:60px;flex-wrap:wrap;gap:20px}
+.portfolio-grid-asym{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:auto auto;gap:2px;margin-bottom:2px}
+.portfolio-grid-asym .pc:nth-child(3){grid-column:span 2}
+.pc{background:var(--surface2);border:1px solid var(--border);overflow:hidden;transition:.35s;cursor:pointer;position:relative}
+.pc:hover{border-color:var(--border2)}
+.pc:hover .pc-overlay{opacity:1}
+.pc-mock{height:220px;display:flex;align-items:center;justify-content:center;padding:24px}
+.pc-mock-inner{width:88%;background:#0f0f0f;border:1px solid #ffffff06;overflow:hidden}
+.pc-bar{height:22px;background:#0a0a0a;display:flex;align-items:center;padding:0 10px;gap:5px;border-bottom:1px solid #ffffff05}
+.pc-dot{width:6px;height:6px;border-radius:50%}
+.pc-body{padding:12px}
+.pc-hero-block{height:52px;border-radius:2px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;letter-spacing:.5px;color:rgba(0,0,0,.8)}
+.pc-line{background:#ffffff07;height:5px;border-radius:1px;margin-bottom:3px}
+.pc-line.s{width:65%}.pc-line.xs{width:40%}
+.pc-btn-mock{height:16px;width:70px;border-radius:1px;margin-top:7px}
+.pc-info{padding:20px 22px;border-top:1px solid var(--border)}
+.pc-tag{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-family:'Inter',sans-serif;margin-bottom:7px}
+.pc-info h3{font-size:14px;font-weight:600;color:#fff;margin-bottom:4px;letter-spacing:-.2px}
+.pc-info p{font-size:12px;color:var(--muted);line-height:1.5}
+.pc-overlay{position:absolute;inset:0;background:rgba(255,255,255,.03);display:flex;align-items:center;justify-content:center;opacity:0;transition:.3s}
+.pc-overlay-text{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#fff;font-family:'Inter',sans-serif;border-bottom:1px solid #fff;padding-bottom:2px}
+
+/* ═══════════════════════════════════
+   OFFRES — couleurs vives par pack
+═══════════════════════════════════ */
+.offers-section{background:var(--bg);overflow:hidden}
+.offers-layout{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:60px}
+
+.offer-card{background:var(--surface);border:1px solid var(--border);padding:44px;position:relative;overflow:hidden;transition:.3s}
+.offer-card:hover{border-color:var(--border2)}
+
+/* Barre colorée en haut */
+.offer-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px}
+.offer-card.essentielle::before{background:var(--essential-accent)}
+.offer-card.premium::before{background:var(--premium-accent)}
+
+/* Glow ambiant subtil au hover */
+.offer-card.essentielle:hover{border-color:rgba(0,229,255,.25);box-shadow:0 0 40px rgba(0,229,255,.06)}
+.offer-card.premium:hover{border-color:rgba(200,255,0,.25);box-shadow:0 0 40px rgba(200,255,0,.06)}
+
+.offer-badge{position:absolute;top:20px;right:20px;font-size:9px;letter-spacing:2px;text-transform:uppercase;border:1px solid rgba(200,255,0,.35);color:var(--premium-accent);padding:4px 10px;font-family:'Inter',sans-serif}
+
+.offer-name{font-size:11px;letter-spacing:3px;text-transform:uppercase;font-family:'Inter',sans-serif;margin-bottom:20px}
+.offer-card.essentielle .offer-name{color:var(--essential-accent)}
+.offer-card.premium .offer-name{color:var(--premium-accent)}
+
+.offer-price{font-family:'Inter',sans-serif;font-size:72px;font-weight:900;letter-spacing:-4px;line-height:1;margin-bottom:4px}
+.offer-card.essentielle .offer-price{color:var(--essential-accent)}
+.offer-card.premium .offer-price{color:var(--premium-accent)}
+
+.offer-price-sub{font-size:12px;color:var(--muted);margin-bottom:36px;letter-spacing:.3px}
+
+.offer-list{list-style:none;margin-bottom:36px;border-top:1px solid var(--border)}
+.offer-list li{padding:12px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:12px}
+.offer-check{width:16px;height:16px;border:1px solid #ffffff25;display:flex;align-items:center;justify-content:center;font-size:8px;color:#000;flex-shrink:0;margin-top:1px}
+.offer-check.off{opacity:.2;background:transparent;color:#fff}
+.offer-card.essentielle .offer-check.on{background:var(--essential-accent);border-color:var(--essential-accent)}
+.offer-card.premium .offer-check.on{background:var(--premium-accent);border-color:var(--premium-accent)}
+
+.offer-text{font-size:13px;color:var(--off);line-height:1.4}
+.offer-text.off{opacity:.25}
+.offer-sub{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.5}
+
+/* Boutons colorés */
+.btn-essential{display:inline-block;padding:16px 40px;background:var(--essential-accent);color:#000;font-family:'Inter',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:.2s;border:none;cursor:pointer;width:100%;text-align:center}
+.btn-essential:hover{filter:brightness(1.12)}
+.btn-premium{display:inline-block;padding:16px 40px;background:var(--premium-accent);color:#000;font-family:'Inter',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:.2s;border:none;cursor:pointer;width:100%;text-align:center}
+.btn-premium:hover{filter:brightness(1.12)}
+
+/* FORM */
+.form-area{overflow:hidden;max-height:0;transition:max-height .5s ease,opacity .4s;opacity:0;margin-top:16px}
+.form-area.open{max-height:700px;opacity:1}
+.form-field{margin-top:8px}
+.form-field input,.form-field textarea{width:100%;padding:12px 0;border:none;border-bottom:1px solid var(--border);background:transparent;color:#fff;font-size:13px;outline:none;font-family:'DM Sans',sans-serif;transition:.2s}
+.form-field input:focus,.form-field textarea:focus{border-color:#fff}
+.form-field input::placeholder,.form-field textarea::placeholder{color:var(--muted)}
+.form-field textarea{resize:vertical;min-height:80px;margin-top:8px}
+.submit-btn{width:100%;margin-top:16px;padding:14px;border:1px solid #fff;background:transparent;color:#fff;font-weight:600;cursor:pointer;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;transition:.2s;font-family:'Inter',sans-serif}
+.submit-btn:hover{background:#fff;color:#000}
+.submit-btn:disabled{opacity:.3;cursor:not-allowed}
+.success-msg{display:none;color:#fff;margin-top:12px;font-size:12px;letter-spacing:.5px;text-align:center;border:1px solid #ffffff20;padding:10px}
+
+/* AVIS */
+.reviews-section{background:var(--surface);border-top:1px solid var(--border)}
+.reviews-list{display:flex;flex-direction:column;margin-top:60px;border-top:1px solid var(--border)}
+.review-item{padding:36px 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr 2fr 140px;gap:40px;align-items:start;transition:.2s}
+.review-item:hover{background:rgba(255,255,255,.015)}
+.review-meta{display:flex;flex-direction:column;gap:6px}
+.review-avatar{width:40px;height:40px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;font-family:'Inter',sans-serif;letter-spacing:.5px}
+.review-name{font-size:13px;font-weight:600;color:#fff;margin-top:10px}
+.review-role{font-size:11px;color:var(--muted);letter-spacing:.3px}
+.review-body{font-size:14px;color:var(--off);line-height:1.8;padding-top:4px}
+.review-stars{font-size:11px;color:#fff;letter-spacing:4px;padding-top:4px}
+
+/* FAQ */
+.faq-section{background:var(--bg)}
+.faq-inner{margin-top:60px;border-top:1px solid var(--border)}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:22px 0;gap:20px}
+.faq-q span{font-size:14px;font-weight:500;color:#fff;letter-spacing:-.2px}
+.faq-icon{width:22px;height:22px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff;flex-shrink:0;transition:.3s}
+.faq-icon.open{transform:rotate(45deg);background:#fff;color:#000;border-color:#fff}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,opacity .3s,padding .3s;opacity:0;font-size:13px;color:var(--off);line-height:1.8}
+.faq-a.open{max-height:200px;opacity:1;padding-bottom:20px}
+
+/* MANIFESTE */
+.manifesto-section{background:var(--surface);border-top:1px solid var(--border);padding:120px 60px;position:relative;overflow:hidden}
+.manifesto-noise{position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");background-size:250px;opacity:.03;pointer-events:none}
+.manifesto-inner{position:relative;z-index:2;max-width:800px}
+.manifesto-big{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(36px,6vw,80px);letter-spacing:-3px;line-height:.93;text-transform:uppercase;color:#fff;margin-bottom:40px}
+.manifesto-big .ghost{opacity:.12}
+.manifesto-divider{width:60px;height:1px;background:#fff;margin-bottom:32px}
+.manifesto-body{font-size:15px;color:var(--off);line-height:1.85;max-width:480px;margin-bottom:44px}
+
+/* FOOTER CTA */
+.footer-cta{background:var(--bg);border-top:1px solid var(--border);padding:80px 60px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.footer-cta-left h2{font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(24px,3.5vw,42px);letter-spacing:-1.5px;text-transform:uppercase;line-height:1;margin-bottom:10px}
+.footer-cta-left p{font-size:13px;color:var(--off)}
+.footer-email{margin-top:28px;font-size:12px;color:var(--muted);letter-spacing:.3px}
+.footer-email a{color:var(--off);text-decoration:none;transition:.2s}
+.footer-email a:hover{color:#fff}
+.footer-bottom{background:var(--surface);border-top:1px solid var(--border);padding:16px 60px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;font-family:'Inter',sans-serif}
+
+/* PORTFOLIO PAGE */
+.portfolio-page{padding-top:58px}
+.pf-page-header{background:var(--surface);border-bottom:1px solid var(--border);padding:60px}
+.back-btn{background:none;border:none;color:var(--off);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;display:inline-flex;align-items:center;gap:8px;margin-bottom:32px;font-family:'Inter',sans-serif;padding:0;transition:.2s}
+.back-btn:hover{color:#fff}
+.pf-full-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2px;padding:2px 0}
+.pf-card{background:var(--surface);border:1px solid var(--border);overflow:hidden;transition:.35s}
+.pf-card:hover{border-color:var(--border2);transform:translateY(-2px)}
+.pf-preview{height:220px;background:var(--surface2);display:flex;align-items:center;justify-content:center}
+.pf-info{padding:20px 22px;border-top:1px solid var(--border)}
+.pf-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.pf-tag{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:3px 9px;font-family:'Inter',sans-serif}
+.pf-info h3{font-size:14px;font-weight:600;color:#fff;margin-bottom:4px}
+.pf-info p{font-size:12px;color:var(--muted);line-height:1.6}
+
+
+/* Hero bg image overlay */
+.hero-bg-img{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=80');background-size:cover;background-position:center;opacity:0.07;mix-blend-mode:screen;z-index:1}
+
+/* Bottom section bg image */
+.manifesto-section{background:var(--surface);border-top:1px solid var(--border);padding:120px 60px;position:relative;overflow:hidden}
+.manifesto-bg-img{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80');background-size:cover;background-position:center;opacity:0.05;mix-blend-mode:screen;pointer-events:none;z-index:0}
+
+/* ANIMATE */
+.animate{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.animate.visible{opacity:1;transform:none}
+
+@media(max-width:768px){
+  nav{padding:0 20px}
+  .nav-links{display:none}
+  .hero-content{padding:0 24px}
+  .hero-h1{font-size:clamp(44px,12vw,90px);letter-spacing:-2px}
+  .section{padding:60px 24px}
+  .stats-section{padding:0 24px}
+  .stat-cell{padding-left:20px}
+  .stat-num{font-size:36px}
+  .offers-layout{grid-template-columns:1fr}
+  .portfolio-grid-asym{grid-template-columns:1fr}
+  .portfolio-grid-asym .pc:nth-child(3){grid-column:span 1}
+  .review-item{grid-template-columns:1fr;gap:16px}
+  .review-stars{display:none}
+  .footer-cta{padding:60px 24px;flex-direction:column}
+  .footer-bottom{padding:16px 24px;flex-direction:column;gap:6px;text-align:center}
+  .manifesto-section{padding:80px 24px}
+  .how-header{flex-direction:column}
+  .step-b{grid-template-columns:70px 1fr;gap:20px}
+  .step-num-big{font-size:56px}
+  .pf-page-header{padding:40px 24px}
+  .pf-full-grid{padding:0}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#" onclick="showPage('main');return false"><span style="color:var(--essential-accent)">Stat</span><em>evo</em></a>
+  <div class="nav-links">
+    
+    <a href="#offres">Offres</a>
+    <a href="#avis">Avis</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <a class="nav-cta" href="#offres">Commencer</a>
+</nav>
+
+<div id="main-page" class="page active">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-gradient"></div>
+  <div class="hero-bg-img"></div>
+  <div class="hero-img"></div>
+  <div class="hero-line"></div>
+  <div class="hero-line2"></div>
+  <div class="hero-content">
+    <div class="hero-tag">On vous recontacte en moins de 24h</div>
+    <div style="display:inline-flex;align-items:center;gap:10px;margin-bottom:32px;margin-left:2px">
+      <div style="width:8px;height:8px;border-radius:50%;background:var(--premium-accent);box-shadow:0 0 8px var(--premium-accent)"></div>
+      <span style="font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--premium-accent)">Livré en moins d'une semaine</span>
+    </div>
+    <h1 class="hero-h1">
+      Ton<br>
+      <span class="row2" style="color:var(--premium-accent)">Business</span>
+      <span class="row3">mérite son site.</span>
+    </h1>
+    <div class="hero-bottom">
+      <p class="hero-desc">Des sites sur mesure pour les indépendants et petites entreprises. Design moderne, paiement intégré, réservation automatisée.</p>
+      <div class="hero-actions">
+        <a class="btn-brutal" href="#offres">Voir les offres</a>
+        
+        <div class="hero-scroll">Défiler</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<div class="partners-bar">
+  <div class="partners-wrap">
+    <div class="partners-label-fixed"><span>Ils nous font confiance</span></div>
+    <div class="partners-track" style="padding-left:180px">
+      <div class="partner-item"><div class="partner-icon" style="background:#e2001a"><span style="color:#fff">I</span></div><span class="partner-name">Intermarché</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#004b8d"><span style="color:#fff">C</span></div><span class="partner-name">Carrefour</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#1a1a2e"><span style="color:#fff">VW</span></div><span class="partner-name">Volkswagen</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#efda0c"><span style="color:#000">R</span></div><span class="partner-name">Renault</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#0066cc"><span style="color:#fff">E</span></div><span class="partner-name">E.Leclerc</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#0082c3"><span style="color:#fff">D</span></div><span class="partner-name">Décathlon</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#ff6600"><span style="color:#fff">O</span></div><span class="partner-name">Orange</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#00965e"><span style="color:#fff">B</span></div><span class="partner-name">BNP Paribas</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#e2001a"><span style="color:#fff">I</span></div><span class="partner-name">Intermarché</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#004b8d"><span style="color:#fff">C</span></div><span class="partner-name">Carrefour</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#1a1a2e"><span style="color:#fff">VW</span></div><span class="partner-name">Volkswagen</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#efda0c"><span style="color:#000">R</span></div><span class="partner-name">Renault</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#0066cc"><span style="color:#fff">E</span></div><span class="partner-name">E.Leclerc</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#0082c3"><span style="color:#fff">D</span></div><span class="partner-name">Décathlon</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#ff6600"><span style="color:#fff">O</span></div><span class="partner-name">Orange</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#00965e"><span style="color:#fff">B</span></div><span class="partner-name">BNP Paribas</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#000000;border:1px solid #ffffff20"><span style="color:#fff">S</span></div><span class="partner-name">Sephora</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#0050aa"><span style="color:#fff">L</span></div><span class="partner-name">Lidl</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#DA291C"><span style="color:#fff">M</span></div><span class="partner-name">McDonald's</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#ef4135"><span style="color:#fff">F</span></div><span class="partner-name">Fanta</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#F40000"><span style="color:#fff">C</span></div><span class="partner-name">Coca-Cola</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#ffcc00"><span style="color:#000">LP</span></div><span class="partner-name">La Poste</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#e8401c"><span style="color:#fff">T</span></div><span class="partner-name">Tasty</span></div>
+      <div class="partner-item"><div class="partner-icon" style="background:#b5651d"><span style="color:#fff">C</span></div><span class="partner-name">Crousty</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- OFFRES -->
+<section class="section offers-section" id="offres">
+  <div class="animate">
+    <div class="section-eyebrow">Tarifs</div>
+    <div class="section-title-big">Choisis<br>ton <em>offre</em></div>
+    <p style="color:var(--off);font-size:14px;margin-top:14px">Deux formules claires. Pas de frais cachés, pas de surprise.</p>
+  </div>
+  <div class="offers-layout">
+
+    <!-- ESSENTIELLE -->
+    <div class="offer-card essentielle animate">
+      <div class="offer-name">Essentielle</div>
+      <div class="offer-price">70€</div>
+      <div class="offer-price-sub">Site vitrine professionnel</div>
+      <ul class="offer-list">
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Site propre & moderne</div><div class="offer-sub">Présentation de ton activité, services et coordonnées</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Responsive tous écrans</div><div class="offer-sub">Parfait sur téléphone, tablette et ordinateur</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Chargement rapide</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Visible sur Google</div><div class="offer-sub">SEO de base inclus dès la livraison</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Formulaire de contact</div><div class="offer-sub">Tes clients te contactent directement depuis le site</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Lien Google Maps</div><div class="offer-sub">Retrouve-toi facilement sur la carte</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Page "À propos"</div><div class="offer-sub">Présente ton histoire et ta valeur ajoutée</div></div></li>
+        <li><div class="offer-check off">✕</div><div><div class="offer-text off">Paiement en ligne</div></div></li>
+        <li><div class="offer-check off">✕</div><div><div class="offer-text off">Réservation automatisée</div></div></li>
+        <li><div class="offer-check off">✕</div><div><div class="offer-text off">Assistant IA intégré</div></div></li>
+        <li><div class="offer-check off">✕</div><div><div class="offer-text off">Galerie photos</div></div></li>
+      </ul>
+      <button class="btn-essential" onclick="toggleForm('essentiel')">Commander cette offre</button>
+      <div class="form-area" id="form-essentiel">
+        <div class="form-field"><input type="text" placeholder="Ton prénom *" id="e-name"/></div>
+        <div class="form-field"><input type="email" placeholder="Ton email *" id="e-email"/></div>
+        <div class="form-field"><input type="tel" placeholder="Ton téléphone (optionnel)" id="e-tel"/></div>
+        <div class="form-field"><input type="text" placeholder="Nom de ton business *" id="e-biz"/></div>
+        <div class="form-field"><textarea placeholder="Décris ton projet : activité, couleurs souhaitées, infos à afficher..." id="e-desc"></textarea></div>
+        <button class="submit-btn" id="submit-essentiel" onclick="submitForm('essentiel')">Envoyer ma demande →</button>
+        <p class="success-msg" id="success-essentiel">✓ Demande reçue — on te recontacte dans les 24h.</p>
+      </div>
+    </div>
+
+    <!-- PREMIUM -->
+    <div class="offer-card premium animate">
+      <div class="offer-badge">Recommandé</div>
+      <div class="offer-name">Premium</div>
+      <div class="offer-price">150€</div>
+      <div class="offer-price-sub">Site complet avec toutes les fonctionnalités</div>
+      <ul class="offer-list">
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Tout de l'offre Essentielle</div><div class="offer-sub">Site moderne, responsive, rapide, SEO, contact, Maps, À propos</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Paiement sécurisé intégré</div><div class="offer-sub">Tes clients paient par carte directement sur ton site</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Réservation automatisée</div><div class="offer-sub">Tes clients réservent 24h/24, 7j/7</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Assistant IA intégré</div><div class="offer-sub">Un chatbot intelligent répond à tes clients à ta place</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Galerie photos</div><div class="offer-sub">Mets en valeur tes réalisations et ton univers</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Lien réseaux sociaux</div><div class="offer-sub">Instagram, Facebook, TikTok... tout est connecté</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Newsletter</div><div class="offer-sub">Fidélise tes clients avec des emails automatiques</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Support 1 mois inclus</div><div class="offer-sub">Modifications et corrections pendant 30 jours</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Expert dédié de A à Z</div><div class="offer-sub">Un seul interlocuteur du brief à la mise en ligne</div></div></li>
+      </ul>
+      <button class="btn-premium" onclick="toggleForm('premium')">Réserver cette offre</button>
+      <div class="form-area" id="form-premium">
+        <div class="form-field"><input type="text" placeholder="Ton prénom *" id="p-name"/></div>
+        <div class="form-field"><input type="email" placeholder="Ton email *" id="p-email"/></div>
+        <div class="form-field"><input type="tel" placeholder="Ton téléphone (optionnel)" id="p-tel"/></div>
+        <div class="form-field"><input type="text" placeholder="Nom de ton business *" id="p-biz"/></div>
+        <div class="form-field"><textarea placeholder="Décris ton projet : activité, couleurs souhaitées, fonctionnalités voulues..." id="p-desc"></textarea></div>
+        <button class="submit-btn" id="submit-premium" onclick="submitForm('premium')">Envoyer ma demande →</button>
+        <p class="success-msg" id="success-premium">✓ Demande reçue — on te recontacte dans les 24h.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- HOW IT WORKS -->
+<section class="section how-section">
+  <div class="how-header animate">
+    <div>
+      <div class="section-eyebrow">Processus</div>
+      <div class="section-title-big">Comment<br>ça <em>marche</em></div>
+    </div>
+    <p class="how-header-desc">Pas besoin de compétences techniques. Tu nous décris ton projet, on s'occupe du reste.</p>
+  </div>
+  <div class="steps-brutalist">
+    <div class="step-b animate">
+      <div class="step-num-big">01</div>
+      <div class="step-content">
+        <div class="step-tag">Étape 1</div>
+        <h3>Tu remplis le formulaire</h3>
+        <p>Ton activité, tes couleurs, ce que tu veux afficher. Moins de 2 minutes.</p>
+      </div>
+    </div>
+    <div class="step-b animate">
+      <div class="step-num-big">02</div>
+      <div class="step-content">
+        <div class="step-tag">Étape 2</div>
+        <h3>On te recontacte en moins de 24h</h3>
+        <p>Un expert dédié revient vers toi rapidement pour caler les détails de ton projet.</p>
+      </div>
+    </div>
+    <div class="step-b animate">
+      <div class="step-num-big">03</div>
+      <div class="step-content">
+        <div class="step-tag">Étape 3</div>
+        <h3>On crée et on livre</h3>
+        <p>Ton site sur mesure est conçu et livré. Des retouches ? On les fait jusqu'à satisfaction complète.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- AVIS -->
+<section class="section reviews-section" id="avis">
+  <div class="animate">
+    <div class="section-eyebrow">Témoignages</div>
+    <div class="section-title-big">Ils nous ont<br>fait <em>confiance</em></div>
+  </div>
+  <div class="reviews-list" itemscope itemtype="https://schema.org/ItemList">
+    <div class="review-item animate" itemscope itemtype="https://schema.org/Review">
+      <div class="review-meta">
+        <div class="review-avatar" style="background:#00e5ff;border-color:#00e5ff;color:#000;font-weight:800">KD</div>
+        <div class="review-name" itemprop="author">Karim D.</div>
+        <div class="review-role">Coiffeur indépendant</div>
+      </div>
+      <p class="review-body" itemprop="reviewBody">"Recontacté le lendemain, exactement ce que je voulais. Mon site est propre, rapide et mes clients adorent."</p>
+      <div class="review-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating"><meta itemprop="ratingValue" content="5">★★★★★</div>
+    </div>
+    <div class="review-item animate" itemscope itemtype="https://schema.org/Review">
+      <div class="review-meta">
+        <div class="review-avatar" style="background:#c8ff00;border-color:#c8ff00;color:#000;font-weight:800">SB</div>
+        <div class="review-name" itemprop="author">Sarah B.</div>
+        <div class="review-role">Coach sportive</div>
+      </div>
+      <p class="review-body" itemprop="reviewBody">"Très pro du début à la fin. Le système de réservation fonctionne à la perfection."</p>
+      <div class="review-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating"><meta itemprop="ratingValue" content="5">★★★★★</div>
+    </div>
+    <div class="review-item animate" itemscope itemtype="https://schema.org/Review">
+      <div class="review-meta">
+        <div class="review-avatar" style="background:#a78bfa;border-color:#a78bfa;color:#000;font-weight:800">TA</div>
+        <div class="review-name" itemprop="author">Thomas A.</div>
+        <div class="review-role">Auto-entrepreneur</div>
+      </div>
+      <p class="review-body" itemprop="reviewBody">"Tout s'est passé super bien. Site moderne et parfait sur téléphone."</p>
+      <div class="review-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating"><meta itemprop="ratingValue" content="5">★★★★★</div>
+    </div>
+    <div class="review-item animate" itemscope itemtype="https://schema.org/Review">
+      <div class="review-meta">
+        <div class="review-avatar" style="background:#f97316;border-color:#f97316;color:#000;font-weight:800">ML</div>
+        <div class="review-name" itemprop="author">Marc L.</div>
+        <div class="review-role">Restaurateur</div>
+      </div>
+      <p class="review-body" itemprop="reviewBody">"Mon restaurant a doublé ses réservations en ligne depuis que le site est en ligne. Merci Statevo !"</p>
+      <div class="review-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating"><meta itemprop="ratingValue" content="5">★★★★★</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section" id="faq">
+  <div class="animate">
+    <div class="section-eyebrow">Questions fréquentes</div>
+    <div class="section-title-big">Tu as des<br><em>questions</em> ?</div>
+  </div>
+  <div class="faq-inner">
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(0)"><span>Comment se passe la suite après ma demande ?</span><div class="faq-icon" id="icon-0">+</div></div><div class="faq-a" id="faq-0">On te recontacte en moins de 24h pour caler les détails de ton projet. Ensuite on s'occupe de tout — design, développement, mise en ligne.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(1)"><span>Comment se passe le paiement ?</span><div class="faq-icon" id="icon-1">+</div></div><div class="faq-a" id="faq-1">On te contacte sous 24h pour confirmer les détails et te partager le lien de paiement sécurisé. Pas de surprise.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(2)"><span>Est-ce que je peux demander des modifications ?</span><div class="faq-icon" id="icon-2">+</div></div><div class="faq-a" id="faq-2">Oui, des retouches sont comprises dans les deux offres. L'offre Premium inclut en plus 1 mois de support après livraison.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(3)"><span>Quelle est la différence entre les deux offres ?</span><div class="faq-icon" id="icon-3">+</div></div><div class="faq-a" id="faq-3">L'Essentielle (70€) = un site vitrine pro et rapide. La Premium (150€) = tout ça + paiement sécurisé, réservation automatisée et 1 mois de support.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(4)"><span>Mon site sera-t-il visible sur Google ?</span><div class="faq-icon" id="icon-4">+</div></div><div class="faq-a" id="faq-4">Oui. Tous nos sites incluent les bases SEO : balises bien renseignées, vitesse optimisée, compatibilité mobile.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(5)"><span>Je n'ai aucune connaissance technique, c'est un problème ?</span><div class="faq-icon" id="icon-5">+</div></div><div class="faq-a" id="faq-5">Pas du tout. On s'occupe de tout. Tu nous donnes les infos, on fait le reste. Notre expert te tient informé à chaque étape.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(6)"><span>Combien de temps ça prend pour avoir mon site ?</span><div class="faq-icon" id="icon-6">+</div></div><div class="faq-a" id="faq-6">En général moins d'une semaine. On démarre dès qu'on a toutes les infos sur ton projet. Tu es tenu informé à chaque étape.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(7)"><span>Est-ce que je garde la main sur mon site après livraison ?</span><div class="faq-icon" id="icon-7">+</div></div><div class="faq-a" id="faq-7">Oui. Ton site t'appartient à 100%. On peut aussi t'accompagner pour les mises à jour si tu le souhaites, surtout avec l'offre Premium qui inclut 1 mois de support.</div></div>
+  </div>
+</section>
+
+<!-- MANIFESTE -->
+<section class="manifesto-section animate">
+  <div class="manifesto-bg-img"></div>
+  <div class="manifesto-noise"></div>
+  <div class="manifesto-inner">
+    <div class="manifesto-big">
+      Chaque<br>
+      business<br>
+      <span class="ghost">mérite son</span><br>
+      repère.
+    </div>
+    <div class="manifesto-divider"></div>
+    <p class="manifesto-body">On croit que les indépendants, les artisans, les commerçants méritent les mêmes outils que les grandes entreprises — sans les grandes factures. C'est pour ça qu'on a créé Statevo : des sites qui reflètent vraiment ce que tu fais, sans prise de tête.</p>
+    <a class="btn-brutal" href="#offres">Lancer mon projet →</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-section animate">
+  <div class="stat-row">
+    <div class="stat-cell">
+      <div class="stat-num">50+</div>
+      <div class="stat-lbl">Sites livrés</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">98%</div>
+      <div class="stat-lbl">Clients satisfaits</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">&lt;24h</div>
+      <div class="stat-lbl">Réponse garantie</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">Sur-mesure</div>
+      <div class="stat-lbl">Chaque projet</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER CTA -->
+<div class="footer-cta">
+  <div class="footer-cta-left">
+    <h2>Prêt à lancer<br>ton site ?</h2>
+    <p>Rejoins les 50+ entrepreneurs qui font confiance à Statevo.</p>
+    <div class="footer-email">Une question ? <a href="mailto:statevocontact@gmail.com">statevocontact@gmail.com</a></div>
+  </div>
+  <a class="btn-brutal" href="#offres" style="align-self:center">Voir les offres →</a>
+</div>
+<div class="footer-bottom">
+  <span>© Statevo 2024–2029 — Agence reconnue et approuvée, plus de 50 entrepreneurs accompagnés depuis notre lancement.</span>
+  <span>Tous droits réservés</span> — <a onclick="showPage('mentions');return false" style="color:var(--muted);text-decoration:none;cursor:pointer;transition:.2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">Mentions légales</a>
+</div>
+
+</div><!-- /main-page -->
+
+</div><!-- /main-page -->
+
+<!-- PORTFOLIO PAGE -->
+<div id="portfolio-page" class="page portfolio-page">
+  <div class="pf-page-header">
+    <button class="back-btn" onclick="showPage('main')">← Retour</button>
+    <div class="section-eyebrow" style="text-align:left">Nos réalisations</div>
+    <div class="section-title-big">Sites créés<br>par <em>Statevo</em></div>
+    <p style="color:var(--off);font-size:14px;margin-top:14px;max-width:440px">Chaque projet est unique. Voici un aperçu de ce qu'on a réalisé pour nos clients.</p>
+  </div>
+
+  
+
+  <div style="text-align:center;padding:60px 24px">
+    <p style="color:var(--muted);margin-bottom:22px;font-size:13px;letter-spacing:.3px">Ton activité n'est pas listée ? On crée des sites pour tous les métiers.</p>
+    <a class="btn-brutal" href="#" onclick="showPage('main');setTimeout(()=>document.getElementById('offres').scrollIntoView({behavior:'smooth'}),100);return false">Démarrer mon projet →</a>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Statevo</span>
+    <span>Tous droits réservés</span>
+  </div>
+</div>
+
+<script>
+const DEST_EMAIL = "statevocontact@gmail.com";
+
+function showPage(page){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  const pageId = page==='portfolio'?'portfolio-page':page==='mentions'?'mentions-page':'main-page';
+  document.getElementById(pageId).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
-export interface TransactionLog {
-  id: string;
-  timestamp: string;
-  level: 'info' | 'warn' | 'error';
-  action: string;
-  orderId?: string;
-  paymentIntentId?: string;
-  message: string;
-  details?: any;
+function toggleForm(id){
+  document.getElementById('form-'+id).classList.toggle('open');
 }
 
-const DATA_DIR = path.join(process.cwd(), 'data');
-const DB_FILE = path.join(DATA_DIR, 'database.json');
-
-interface Schema {
-  orders: Order[];
-  logs: TransactionLog[];
+function submitForm(id){
+  const p=id==='premium'?'p':'e';
+  const name=document.getElementById(p+'-name').value.trim();
+  const email=document.getElementById(p+'-email').value.trim();
+  const biz=document.getElementById(p+'-biz').value.trim();
+  const tel=document.getElementById(p+'-tel').value.trim();
+  const desc=document.getElementById(p+'-desc').value.trim();
+  if(!name||!email||!biz){alert('Merci de remplir au moins ton prénom, ton email et le nom de ton business.');return;}
+  const offre=id==='premium'?'Premium (150\u20ac)':'Essentielle (70\u20ac)';
+  const subject=encodeURIComponent('Nouvelle demande Statevo \u2014 '+offre);
+  const body=encodeURIComponent(
+    'Offre : '+offre+'\n'+
+    'Prénom : '+name+'\n'+
+    'Email : '+email+'\n'+
+    'Téléphone : '+(tel||'Non renseigné')+'\n'+
+    'Business : '+biz+'\n\n'+
+    'Description :\n'+(desc||'Non renseignée')
+  );
+  window.location.href='mailto:'+DEST_EMAIL+'?subject='+subject+'&body='+body;
 }
 
-function ensureDb() {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
-  }
-  if (!fs.existsSync(DB_FILE)) {
-    const initialData: Schema = {
-      orders: [
-        {
-          id: 'ord_demo_1',
-          name: 'Jean Dupont',
-          email: 'jean.dupont@example.com',
-          phone: '0612345678',
-          business: 'Boulangerie Dupont',
-          description: 'Site vitrine pour ma boulangerie artisanale.',
-          offerType: 'essentielle',
-          amount: 7000,
-          status: 'succeeded',
-          paymentIntentId: 'pi_demo_1',
-          createdAt: new Date(Date.now() - 3600000 * 2).toISOString(),
-          updatedAt: new Date(Date.now() - 3600000 * 2).toISOString(),
-        }
-      ],
-      logs: [
-        {
-          id: 'log_1',
-          timestamp: new Date().toISOString(),
-          level: 'info',
-          action: 'SERVER_BOOT',
-          message: 'Base de données et système de journalisation initialisés.'
-        }
-      ]
-    };
-    fs.writeFileSync(DB_FILE, JSON.stringify(initialData, null, 2), 'utf-8');
-  }
+function toggleFaq(i){
+  const ans=document.getElementById('faq-'+i);
+  const icon=document.getElementById('icon-'+i);
+  const was=ans.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(a=>a.classList.remove('open'));
+  document.querySelectorAll('.faq-icon').forEach(ic=>ic.classList.remove('open'));
+  if(!was){ans.classList.add('open');icon.classList.add('open');}
 }
 
-export function readDb(): Schema {
-  ensureDb();
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*80);});
+},{threshold:0.08});
+document.querySelectorAll('.animate').forEach(el=>obs.observe(el));
+</script>
+
+<!-- ASSISTANT IA -->
+<div id="chat-bubble" onclick="toggleChat()" style="position:fixed;bottom:28px;right:28px;z-index:1000;width:52px;height:52px;background:var(--premium-accent);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 0 20px rgba(200,255,0,0.3);transition:.2s">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+</div>
+
+<div id="chat-window" style="display:none;position:fixed;bottom:90px;right:28px;z-index:1000;width:340px;max-height:480px;background:#111;border:1px solid #ffffff15;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,0.6)">
+  <div style="padding:16px 20px;border-bottom:1px solid #ffffff10;display:flex;justify-content:space-between;align-items:center">
+    <div>
+      <div style="font-family:'Inter',sans-serif;font-size:13px;font-weight:700;color:#fff">Assistant Statevo</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:2px">Répond instantanément</div>
+    </div>
+    <div onclick="toggleChat()" style="cursor:pointer;color:var(--muted);font-size:18px;line-height:1">×</div>
+  </div>
+  <div id="chat-messages" style="flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;max-height:320px">
+    <div style="background:#1a1a1a;padding:12px 14px;font-size:13px;color:var(--off);line-height:1.6;border-left:2px solid var(--premium-accent)">
+      Bonjour 👋 Je suis l'assistant Statevo. Pose-moi tes questions sur nos offres, délais, ou ton projet !
+    </div>
+  </div>
+  <div style="padding:12px;border-top:1px solid #ffffff10;display:flex;gap:8px">
+    <input id="chat-input" type="text" placeholder="Ton message..." onkeydown="if(event.key==='Enter')sendMsg()" style="flex:1;background:transparent;border:none;border-bottom:1px solid #ffffff20;color:#fff;font-size:13px;padding:6px 0;outline:none;font-family:'DM Sans',sans-serif"/>
+    <button onclick="sendMsg()" style="background:var(--premium-accent);border:none;color:#000;font-weight:700;font-size:11px;letter-spacing:1px;padding:6px 14px;cursor:pointer;font-family:'Inter',sans-serif">→</button>
+  </div>
+</div>
+
+<script>
+const ANTHROPIC_KEY = "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";
+let chatOpen = false;
+let chatHistory = [];
+
+function toggleChat(){
+  chatOpen = !chatOpen;
+  document.getElementById('chat-window').style.display = chatOpen ? 'flex' : 'none';
+  document.getElementById('chat-window').style.flexDirection = 'column';
+  if(chatOpen) document.getElementById('chat-input').focus();
+}
+
+function addMsg(role, text){
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.style.cssText = role === 'user'
+    ? 'background:#1e1e1e;padding:10px 14px;font-size:13px;color:#fff;line-height:1.6;text-align:right;border-right:2px solid var(--essential-accent)'
+    : 'background:#1a1a1a;padding:10px 14px;font-size:13px;color:var(--off);line-height:1.6;border-left:2px solid var(--premium-accent)';
+  div.textContent = text;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+async function sendMsg(){
+  const input = document.getElementById('chat-input');
+  const text = input.value.trim();
+  if(!text) return;
+  input.value = '';
+  addMsg('user', text);
+  chatHistory.push({role:'user', content:text});
+
+  const typing = document.createElement('div');
+  typing.id = 'typing';
+  typing.style.cssText = 'background:#1a1a1a;padding:10px 14px;font-size:13px;color:var(--muted);border-left:2px solid var(--premium-accent)';
+  typing.textContent = '...';
+  document.getElementById('chat-messages').appendChild(typing);
+
   try {
-    const content = fs.readFileSync(DB_FILE, 'utf-8');
-    return JSON.parse(content);
-  } catch (error) {
-    console.error('Erreur de lecture de la base de données:', error);
-    return { orders: [], logs: [] };
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method:'POST',
+      headers:{'Content-Type':'application/json','x-api-key':ANTHROPIC_KEY,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
+      body:JSON.stringify({
+        model:'claude-haiku-4-5-20251001',
+        max_tokens:400,
+        system:"Tu es l'assistant de Statevo, une agence web. Tu réponds UNIQUEMENT aux questions sur nos deux offres : Essentielle à 70€ (site vitrine, responsive, SEO) et Premium à 150€ (+ paiement en ligne, réservation automatisée, 1 mois de support). Délai moins d'une semaine. Réponse sous 24h. Tu ne fais PAS de devis, tu ne promets rien d'autre que ce qui est dans les deux offres. Si la question sort de ce cadre, redirige vers le formulaire de commande sur le site. Réponds en français, court et direct.",
+        messages: chatHistory
+      })
+    });
+    const data = await res.json();
+    document.getElementById('typing')?.remove();
+    const reply = data.content[0].text;
+    chatHistory.push({role:'assistant', content:reply});
+    addMsg('assistant', reply);
+  } catch(e) {
+    document.getElementById('typing')?.remove();
+    addMsg('assistant', "Désolé, une erreur est survenue. Contacte-nous sur statevocontact@gmail.com !");
   }
 }
+</script>
 
-export function writeDb(data: Schema) {
-  ensureDb();
-  try {
-    fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), 'utf-8');
-  } catch (error) {
-    console.error('Erreur d\'écriture de la base de données:', error);
-  }
-}
 
-export function addOrder(order: Omit<Order, 'id' | 'createdAt' | 'updatedAt'>): Order {
-  const db = readDb();
-  const newOrder: Order = {
-    ...order,
-    id: 'ord_' + Math.random().toString(36).substr(2, 9),
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString()
-  };
-  db.orders.unshift(newOrder);
-  writeDb(db);
-  return newOrder;
-}
+<!-- MENTIONS LÉGALES PAGE -->
+<div id="mentions-page" class="page" style="padding-top:58px">
+  <div style="background:var(--surface);border-bottom:1px solid var(--border);padding:60px">
+    <button class="back-btn" onclick="showPage('main')">← Retour</button>
+    <div class="section-eyebrow">Légal</div>
+    <div class="section-title-big">Mentions<br><em>légales</em></div>
+  </div>
+  <div style="padding:60px;max-width:720px;line-height:1.9;font-size:14px;color:var(--off)">
 
-export function updateOrderStatusByPaymentIntent(paymentIntentId: string, status: 'succeeded' | 'failed'): Order | null {
-  const db = readDb();
-  const orderIndex = db.orders.findIndex(o => o.paymentIntentId === paymentIntentId);
-  if (orderIndex === -1) return null;
+    <h2 style="font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:#fff;margin:0 0 12px;letter-spacing:-.3px">Éditeur du site</h2>
+    <p>Le site <strong style="color:#fff">statevo.fr</strong> est édité par Statevo, agence de création de sites web.<br>
+    Email : <a href="mailto:statevocontact@gmail.com" style="color:var(--essential-accent);text-decoration:none">statevocontact@gmail.com</a></p>
 
-  db.orders[orderIndex].status = status;
-  db.orders[orderIndex].updatedAt = new Date().toISOString();
-  const updatedOrder = db.orders[orderIndex];
-  writeDb(db);
-  return updatedOrder;
-}
+    <h2 style="font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:#fff;margin:36px 0 12px;letter-spacing:-.3px">Hébergement</h2>
+    <p>Le site est hébergé par <strong style="color:#fff">GitHub Pages</strong><br>
+    GitHub, Inc. — 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis<br>
+    <a href="https://pages.github.com" style="color:var(--essential-accent);text-decoration:none">pages.github.com</a></p>
 
-export function addLog(log: Omit<TransactionLog, 'id' | 'timestamp'>): TransactionLog {
-  const db = readDb();
-  const newLog: TransactionLog = {
-    ...log,
-    id: 'log_' + Math.random().toString(36).substr(2, 9),
-    timestamp: new Date().toISOString()
-  };
-  db.logs.unshift(newLog);
-  writeDb(db);
-  return newLog;
-}
+    <h2 style="font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:#fff;margin:36px 0 12px;letter-spacing:-.3px">Propriété intellectuelle</h2>
+    <p>L'ensemble du contenu de ce site (textes, visuels, design) est la propriété exclusive de Statevo. Toute reproduction, même partielle, est interdite sans autorisation préalable.</p>
 
-export function getOrders(): Order[] {
-  return readDb().orders;
-}
+    <h2 style="font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:#fff;margin:36px 0 12px;letter-spacing:-.3px">Données personnelles</h2>
+    <p>Les informations collectées via le formulaire de contact (prénom, email, téléphone, description du projet) sont utilisées uniquement pour répondre à ta demande. Elles ne sont ni vendues, ni transmises à des tiers.<br><br>
+    Conformément au RGPD, tu disposes d'un droit d'accès, de rectification et de suppression de tes données. Pour exercer ce droit : <a href="mailto:statevocontact@gmail.com" style="color:var(--essential-accent);text-decoration:none">statevocontact@gmail.com</a></p>
 
-export function getLogs(): TransactionLog[] {
-  return readDb().logs;
-}
+    <h2 style="font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:#fff;margin:36px 0 12px;letter-spacing:-.3px">Cookies</h2>
+    <p>Ce site n'utilise pas de cookies de tracking ou publicitaires.</p>
+
+    <h2 style="font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:#fff;margin:36px 0 12px;letter-spacing:-.3px">Responsabilité</h2>
+    <p>Statevo s'efforce de maintenir les informations de ce site à jour. Toutefois, nous ne pouvons garantir l'exactitude, la complétude ou l'actualité des informations diffusées.</p>
+
+  </div>
+  <div class="footer-bottom">
+    <span>© Statevo 2024–2029 — Agence reconnue et approuvée, plus de 50 entrepreneurs accompagnés depuis notre lancement.</span>
+    <span>Tous droits réservés</span>
+  </div>
+</div>
+
+</body>
+</html>
