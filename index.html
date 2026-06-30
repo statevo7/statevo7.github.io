@@ -230,7 +230,9 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 /* ═══════════════════════════════════
    OFFRES — couleurs vives par pack
 ═══════════════════════════════════ */
-.offers-section{background:var(--bg);overflow:hidden}
+.offers-section{background:var(--bg);overflow:hidden;position:relative}
+.offers-bg-img{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80');background-size:cover;background-position:center;opacity:0.045;mix-blend-mode:screen;pointer-events:none;z-index:0}
+.offers-section > *{position:relative;z-index:1}
 .offers-layout{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:60px}
 
 .offer-card{background:var(--surface);border:1px solid var(--border);padding:44px;position:relative;overflow:hidden;transition:.3s}
@@ -276,7 +278,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 
 /* FORM */
 .form-area{overflow:hidden;max-height:0;transition:max-height .5s ease,opacity .4s;opacity:0;margin-top:16px}
-.form-area.open{max-height:700px;opacity:1}
+.form-area.open{max-height:800px;opacity:1}
 .form-field{margin-top:8px}
 .form-field input,.form-field textarea{width:100%;padding:12px 0;border:none;border-bottom:1px solid var(--border);background:transparent;color:#fff;font-size:13px;outline:none;font-family:'DM Sans',sans-serif;transition:.2s}
 .form-field input:focus,.form-field textarea:focus{border-color:#fff}
@@ -303,7 +305,9 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 .calc-result .pack-price{font-size:40px;font-weight:900;letter-spacing:-2px;color:var(--white)}
 
 /* AVIS */
-.reviews-section{background:var(--surface);border-top:1px solid var(--border)}
+.reviews-section{background:var(--surface);border-top:1px solid var(--border);position:relative;overflow:hidden}
+.reviews-bg-img{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&q=80');background-size:cover;background-position:center;opacity:0.04;mix-blend-mode:screen;pointer-events:none;z-index:0}
+.reviews-section > *{position:relative;z-index:1}
 .reviews-list{display:flex;flex-direction:column;margin-top:60px;border-top:1px solid var(--border)}
 .review-item{padding:36px 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr 2fr 140px;gap:40px;align-items:start;transition:.2s}
 .review-item:hover{background:rgba(255,255,255,.015)}
@@ -347,7 +351,6 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 .hero-bg-img{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=80');background-size:cover;background-position:center;opacity:0.07;mix-blend-mode:screen;z-index:1}
 
 /* Bottom section bg image */
-.manifesto-section{background:var(--surface);border-top:1px solid var(--border);padding:120px 60px;position:relative;overflow:hidden}
 .manifesto-bg-img{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80');background-size:cover;background-position:center;opacity:0.05;mix-blend-mode:screen;pointer-events:none;z-index:0}
 
 /* ANIMATE */
@@ -421,8 +424,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 <!-- PARTNERS -->
 <div class="partners-bar">
   <div class="partners-wrap">
-    <div class="partners-label-fixed"><span>Ils nous font confiance</span></div>
-    <div class="partners-track" style="padding-left:180px">
+    <div class="partners-track" style="padding-left:40px">
       <div class="partner-item"><div class="partner-icon" style="background:#e2001a"><span style="color:#fff">I</span></div><span class="partner-name">Intermarché</span></div>
       <div class="partner-item"><div class="partner-icon" style="background:#004b8d"><span style="color:#fff">C</span></div><span class="partner-name">Carrefour</span></div>
       <div class="partner-item"><div class="partner-icon" style="background:#1a1a2e"><span style="color:#fff">VW</span></div><span class="partner-name">Volkswagen</span></div>
@@ -453,10 +455,10 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 
 <!-- OFFRES -->
 <section class="section offers-section" id="offres">
+  <div class="offers-bg-img"></div>
   <div class="animate">
     <div class="section-eyebrow">Tarifs</div>
     <div class="section-title-big">Choisis<br>ton <em>offre</em></div>
-    <p style="color:var(--off);font-size:14px;margin-top:14px">Deux formules claires. Pas de frais cachés, pas de surprise.</p>
   </div>
   <div class="offers-layout">
 
@@ -471,7 +473,6 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
         <li><div class="offer-check on">✓</div><div><div class="offer-text">Chargement rapide</div></div></li>
         <li><div class="offer-check on">✓</div><div><div class="offer-text">Visible sur Google</div><div class="offer-sub">SEO de base inclus dès la livraison</div></div></li>
         <li><div class="offer-check on">✓</div><div><div class="offer-text">Formulaire de contact</div><div class="offer-sub">Tes clients te contactent directement depuis le site</div></div></li>
-        <li><div class="offer-check on">✓</div><div><div class="offer-text">Lien Google Maps</div><div class="offer-sub">Retrouve-toi facilement sur la carte</div></div></li>
         <li><div class="offer-check on">✓</div><div><div class="offer-text">Page "À propos"</div><div class="offer-sub">Présente ton histoire et ta valeur ajoutée</div></div></li>
         <li><div class="offer-check off">✕</div><div><div class="offer-text off">Paiement en ligne</div></div></li>
         <li><div class="offer-check off">✕</div><div><div class="offer-text off">Réservation automatisée</div></div></li>
@@ -485,6 +486,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
         <div class="form-field"><input type="tel" placeholder="Ton téléphone (optionnel)" id="e-tel"/></div>
         <div class="form-field"><input type="text" placeholder="Nom de ton business *" id="e-biz"/></div>
         <div class="form-field"><textarea placeholder="Décris ton projet : activité, couleurs souhaitées, infos à afficher..." id="e-desc"></textarea></div>
+        <div class="form-field"><input type="text" placeholder="Code de réduction (optionnel)" id="e-promo"/></div>
         <button class="submit-btn" id="submit-essentiel" onclick="submitForm('essentiel')">Envoyer ma demande →</button>
         <p class="success-msg" id="success-essentiel">✓ Demande reçue — on te recontacte dans les 24h.</p>
       </div>
@@ -497,7 +499,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
       <div class="offer-price">150€</div>
       <div class="offer-price-sub">Site complet avec toutes les fonctionnalités</div>
       <ul class="offer-list">
-        <li><div class="offer-check on">✓</div><div><div class="offer-text">Tout de l'offre Essentielle</div><div class="offer-sub">Site moderne, responsive, rapide, SEO, contact, Maps, À propos</div></div></li>
+        <li><div class="offer-check on">✓</div><div><div class="offer-text">Tout de l'offre Essentielle</div><div class="offer-sub">Site moderne, responsive, rapide, SEO, contact, À propos</div></div></li>
         <li><div class="offer-check on">✓</div><div><div class="offer-text">Paiement sécurisé intégré</div><div class="offer-sub">Tes clients paient par carte directement sur ton site</div></div></li>
         <li><div class="offer-check on">✓</div><div><div class="offer-text">Réservation automatisée</div><div class="offer-sub">Tes clients réservent 24h/24, 7j/7</div></div></li>
         <li><div class="offer-check on">✓</div><div><div class="offer-text">Assistant IA intégré</div><div class="offer-sub">Un chatbot intelligent répond à tes clients à ta place</div></div></li>
@@ -514,6 +516,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
         <div class="form-field"><input type="tel" placeholder="Ton téléphone (optionnel)" id="p-tel"/></div>
         <div class="form-field"><input type="text" placeholder="Nom de ton business *" id="p-biz"/></div>
         <div class="form-field"><textarea placeholder="Décris ton projet : activité, couleurs souhaitées, fonctionnalités voulues..." id="p-desc"></textarea></div>
+        <div class="form-field"><input type="text" placeholder="Code de réduction (optionnel)" id="p-promo"/></div>
         <button class="submit-btn" id="submit-premium" onclick="submitForm('premium')">Envoyer ma demande →</button>
         <p class="success-msg" id="success-premium">✓ Demande reçue — on te recontacte dans les 24h.</p>
       </div>
@@ -600,6 +603,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 
 <!-- AVIS -->
 <section class="section reviews-section" id="avis">
+  <div class="reviews-bg-img"></div>
   <div class="animate">
     <div class="section-eyebrow">Témoignages</div>
     <div class="section-title-big">Ils nous ont<br>fait <em>confiance</em></div>
@@ -621,24 +625,6 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
         <div class="review-role">Coach sportive</div>
       </div>
       <p class="review-body" itemprop="reviewBody">"Très pro du début à la fin. Le système de réservation fonctionne à la perfection."</p>
-      <div class="review-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating"><meta itemprop="ratingValue" content="5">★★★★★</div>
-    </div>
-    <div class="review-item animate" itemscope itemtype="https://schema.org/Review">
-      <div class="review-meta">
-        <div class="review-avatar" style="background:#a78bfa;border-color:#a78bfa;color:#000;font-weight:800">TA</div>
-        <div class="review-name" itemprop="author">Thomas A.</div>
-        <div class="review-role">Auto-entrepreneur</div>
-      </div>
-      <p class="review-body" itemprop="reviewBody">"Tout s'est passé super bien. Site moderne et parfait sur téléphone."</p>
-      <div class="review-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating"><meta itemprop="ratingValue" content="5">★★★★★</div>
-    </div>
-    <div class="review-item animate" itemscope itemtype="https://schema.org/Review">
-      <div class="review-meta">
-        <div class="review-avatar" style="background:#f97316;border-color:#f97316;color:#000;font-weight:800">ML</div>
-        <div class="review-name" itemprop="author">Marc L.</div>
-        <div class="review-role">Restaurateur</div>
-      </div>
-      <p class="review-body" itemprop="reviewBody">"Mon restaurant a doublé ses réservations en ligne depuis que le site est en ligne. Merci Statevo !"</p>
       <div class="review-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating"><meta itemprop="ratingValue" content="5">★★★★★</div>
     </div>
   </div>
@@ -776,6 +762,7 @@ function submitForm(id){
   const biz=document.getElementById(p+'-biz').value.trim();
   const tel=document.getElementById(p+'-tel').value.trim();
   const desc=document.getElementById(p+'-desc').value.trim();
+  const promo=document.getElementById(p+'-promo').value.trim();
   if(!name||!email||!biz){alert('Merci de remplir au moins ton prénom, ton email et le nom de ton business.');return;}
   const offre=id==='premium'?'Premium (150\u20ac)':'Essentielle (70\u20ac)';
   const subject=encodeURIComponent('Nouvelle demande Statevo \u2014 '+offre);
@@ -784,7 +771,8 @@ function submitForm(id){
     'Prénom : '+name+'\n'+
     'Email : '+email+'\n'+
     'Téléphone : '+(tel||'Non renseigné')+'\n'+
-    'Business : '+biz+'\n\n'+
+    'Business : '+biz+'\n'+
+    'Code de réduction : '+(promo||'Aucun')+'\n\n'+
     'Description :\n'+(desc||'Non renseignée')
   );
   window.location.href='mailto:'+DEST_EMAIL+'?subject='+subject+'&body='+body;
