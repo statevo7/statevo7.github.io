@@ -442,7 +442,7 @@ const slotPremium = document.getElementById("slotPremium");
 const carouselIndicator = document.getElementById("carouselIndicator");
 let activePack = "essentiel";
 
-function applyPack(pack){
+function applyPack(pack, immediate){
 if(pack===activePack) return;
 activePack = pack;
 if(pack==="essentiel"){
@@ -450,13 +450,15 @@ slotEssential.classList.add("slot-front");slotEssential.classList.remove("slot-b
 slotPremium.classList.add("slot-back");slotPremium.classList.remove("slot-front");
 scene.classList.add("theme-essential");scene.classList.remove("theme-premium");
 carouselIndicator.textContent = "Essentielle \u2014 70EUR";
-activateEssential();
+resetParticles();
+if(immediate) activateEssential(); else setTimeout(activateEssential,650);
 }else{
 slotPremium.classList.add("slot-front");slotPremium.classList.remove("slot-back");
 slotEssential.classList.add("slot-back");slotEssential.classList.remove("slot-front");
 scene.classList.add("theme-premium");scene.classList.remove("theme-essential");
 carouselIndicator.textContent = "Premium \u2014 150EUR";
-activatePremium();
+resetParticles();
+if(immediate) activatePremium(); else setTimeout(activatePremium,650);
 }
 }
 function nextPack(){applyPack(activePack==="essentiel"?"premium":"essentiel");}
