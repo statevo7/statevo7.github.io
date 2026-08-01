@@ -35,7 +35,20 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 #p-support{top:55%;right:2%;transform:translate3d(300px,30px,-280px) rotateY(-60deg)}
 #p-social{bottom:35%;left:8%;transform:translate3d(-180px,80px,-320px) rotateX(45deg)}
 #p-expert{top:30%;right:8%;transform:translate3d(220px,-60px,-380px) rotateY(-30deg)}
-.cards-stage{position:relative;display:flex;gap:80px;transform-style:preserve-3d;z-index:10;padding:40px}
+.cards-stage{position:relative;width:900px;max-width:100%;min-height:660px;transform-style:preserve-3d;z-index:10;margin:0 auto}
+.card-slot{position:absolute;top:0;left:50%;width:400px;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.34,1.2,.36,1),opacity .6s ease,filter .6s ease}
+.card-slot.slot-front{transform:translate(-50%,0) translateZ(0) translateX(0) scale(1) rotateY(0deg);z-index:10;opacity:1;filter:none}
+.card-slot.slot-back{transform:translate(-50%,0) translateZ(-380px) translateX(160px) scale(.72) rotateY(-16deg);z-index:5;opacity:.45;filter:brightness(.5) blur(.5px);pointer-events:none}
+.carousel-nav{position:absolute;top:50%;left:0;right:0;transform:translateY(-50%);display:flex;justify-content:space-between;padding:0 4%;z-index:35;pointer-events:none}
+.carousel-arrow{pointer-events:auto;width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,0.15);background:rgba(10,10,10,0.6);backdrop-filter:blur(10px);color:#fff;font-size:24px;font-family:Inter,sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.25s}
+.carousel-arrow:hover{background:#fff;color:#000;border-color:#fff;transform:scale(1.08)}
+.carousel-indicator{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);z-index:35;font-family:Inter,sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--off);border:1px solid rgba(255,255,255,0.15);padding:8px 18px;border-radius:20px;background:rgba(10,10,10,0.5);backdrop-filter:blur(8px);cursor:pointer;transition:.3s}
+.carousel-indicator:hover{border-color:rgba(255,255,255,0.4);color:#fff}
+.wall,.floor-reflect{transition:box-shadow .8s ease,border-color .8s ease,background .8s ease}
+.hero-3d.theme-essential .wall{border-color:rgba(0,229,255,0.18);box-shadow:inset 0 0 100px rgba(0,0,0,0.8),0 0 160px rgba(0,229,255,0.14)}
+.hero-3d.theme-essential .floor-reflect{background:linear-gradient(180deg,rgba(0,229,255,0.07) 0%,transparent 60%)}
+.hero-3d.theme-premium .wall{border-color:rgba(200,255,0,0.18);box-shadow:inset 0 0 100px rgba(0,0,0,0.8),0 0 160px rgba(200,255,0,0.14)}
+.hero-3d.theme-premium .floor-reflect{background:linear-gradient(180deg,rgba(200,255,0,0.07) 0%,transparent 60%)}
 .pack-card{position:relative;width:400px;background:linear-gradient(180deg,rgba(20,20,20,0.95) 0%,rgba(12,12,12,0.98) 100%);border-radius:28px;padding:44px;transform-style:preserve-3d;transition:transform 0.15s ease-out,box-shadow 0.6s ease;border:1px solid rgba(255,255,255,0.06);will-change:transform}
 .pack-card::before{content:"";position:absolute;inset:0;border-radius:28px;background:linear-gradient(135deg,rgba(255,255,255,0.08) 0%,transparent 40%,transparent 60%,rgba(255,255,255,0.03) 100%);transform:translateZ(2px);pointer-events:none;z-index:2}
 .pack-card::after{content:"";position:absolute;top:0;left:20px;right:20px;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.3) 50%,transparent 100%);transform:translateZ(3px)}
@@ -170,8 +183,25 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 .footer-bottom{background:var(--surface);border-top:1px solid var(--border);padding:16px 60px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;font-family:Inter,sans-serif}
 .animate{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
 .animate.visible{opacity:1;transform:none}
-@media(max-width:1024px){.cards-stage{gap:40px;transform:scale(0.85)}.pack-card{width:360px;padding:36px}}
-@media(max-width:768px){nav{padding:0 20px}.nav-links{display:none}.section{padding:60px 24px}.stats-section{padding:0 24px}.stat-cell{padding-left:20px}.stat-num{font-size:36px}.review-item{grid-template-columns:1fr;gap:16px}.review-stars{display:none}.footer-cta{padding:60px 24px;flex-direction:column}.footer-bottom{padding:16px 24px;flex-direction:column;gap:6px;text-align:center}.manifesto-section{padding:80px 24px}.how-header{flex-direction:column}.step-b{grid-template-columns:70px 1fr;gap:20px}.step-num-big{font-size:56px}.hero-3d{min-height:auto;padding:120px 20px 60px;perspective:none;height:auto}.cards-stage{flex-direction:column;gap:40px;transform:none!important}.pack-card{width:100%;max-width:400px;animation:none!important;transform:none!important}.card-shadow{display:none}.wall{display:none}.floor-reflect{display:none}.hero-3d-title{position:relative;top:auto;margin-bottom:40px;transform:none}.hero-hint{display:none}.feature-particle{display:none}}
+@media(max-width:1024px){.cards-stage{transform:scale(0.85)}.pack-card{width:360px;padding:36px}.card-slot.slot-back{transform:translate(-50%,0) translateZ(-380px) translateX(120px) scale(.72) rotateY(-16deg)}}
+@media(max-width:768px){
+nav{padding:0 20px}.nav-links{display:none}.section{padding:60px 24px}.stats-section{padding:0 24px}.stat-cell{padding-left:20px}.stat-num{font-size:36px}.review-item{grid-template-columns:1fr;gap:16px}.review-stars{display:none}.footer-cta{padding:60px 24px;flex-direction:column}.footer-bottom{padding:16px 24px;flex-direction:column;gap:6px;text-align:center}.manifesto-section{padding:80px 24px}.how-header{flex-direction:column}.step-b{grid-template-columns:70px 1fr;gap:20px}.step-num-big{font-size:56px}
+.hero-3d{min-height:auto;padding:130px 16px 90px;perspective:none;height:auto;display:block}
+.hero-3d-title{position:relative;top:auto;left:auto;margin:0 auto 32px;transform:none;text-align:center;width:100%}
+.cards-stage{position:relative;width:100%;min-height:0;transform:none!important;margin:0}
+.card-slot{position:relative;top:auto;left:auto;width:100%;transform:none!important;transition:opacity .35s ease;filter:none!important;opacity:1}
+.card-slot.slot-back{display:none}
+.pack-card{width:100%;max-width:420px;margin:0 auto;padding:32px 26px;animation:none!important;transform:none!important}
+.pack-price{font-size:60px;letter-spacing:-3px}
+.card-shadow{display:none}
+.wall{display:none}
+.floor-reflect{display:none}
+.hero-hint{display:none}
+.feature-particle{display:none}
+.carousel-nav{position:static;transform:none;padding:0;justify-content:center;gap:16px;margin-top:24px}
+.carousel-arrow{width:44px;height:44px;font-size:20px;position:static}
+.carousel-indicator{position:static;transform:none;display:block;width:max-content;margin:14px auto 0}
+}
 </style>
 <base target="_blank">
 </head>
@@ -204,6 +234,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 <h1><span class="cyan">Essentiel</span> <span class="ghost">ou</span><br><span class="green">Premium</span> <span class="ghost">?</span></h1>
 </div>
 <div class="cards-stage" id="cardsStage">
+<div class="card-slot" id="slotEssential">
 <div class="pack-card essentielle" id="cardEssential">
 <div class="card-shadow" id="shadowEssential"></div>
 <div class="pack-name">Essentielle</div>
@@ -232,6 +263,8 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 <p class="success-msg-3d" id="success-essentiel">&#10003; Demande recue &mdash; on te recontacte dans les 24h.</p>
 </div>
 </div>
+</div>
+<div class="card-slot" id="slotPremium">
 <div class="pack-card premium" id="cardPremium">
 <div class="card-shadow" id="shadowPremium"></div>
 <div class="pack-badge">Recommande</div>
@@ -261,8 +294,14 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:58px;display:flex;
 </div>
 </div>
 </div>
+</div>
+<div class="carousel-nav">
+<button class="carousel-arrow carousel-arrow-left" onclick="prevPack()" aria-label="Pack precedent">&#8249;</button>
+<button class="carousel-arrow carousel-arrow-right" onclick="nextPack()" aria-label="Pack suivant">&#8250;</button>
+</div>
+<div class="carousel-indicator" id="carouselIndicator" onclick="nextPack()">Essentielle &mdash; 70EUR</div>
 <div class="hero-hint">
-<div class="hero-hint-text">Penchez la souris vers la droite</div>
+<div class="hero-hint-text">Clique sur les fleches pour comparer les packs</div>
 <div class="hero-hint-arrow">&rarr;</div>
 </div>
 </section>
@@ -377,7 +416,6 @@ const features = [
 {id:"expert",particle:"p-expert",slot:"slot-expert",essential:null}
 ];
 
-let currentState = "neutral";
 let mouseX = 0.5, mouseY = 0.5;
 let smoothX = 0.5, smoothY = 0.5;
 function lerp(a,b,t){return a+(b-a)*t}
@@ -393,14 +431,53 @@ cardPremium.style.setProperty("--rx",rotX+"deg");
 cardPremium.style.setProperty("--ry",(rotY+5)+"deg");
 if(shadowEssential) shadowEssential.style.transform = "translateZ(-180px) translateX("+(rotY*-0.5)+"px) translateY("+(rotX*0.5)+"px)";
 if(shadowPremium) shadowPremium.style.transform = "translateZ(-180px) translateX("+(rotY*-0.5)+"px) translateY("+(rotX*0.5)+"px)";
-if(smoothX>0.58){if(currentState!=="premium"){currentState="premium";activatePremium();}}
-else if(smoothX<0.42){if(currentState!=="essential"){currentState="essential";activateEssential();}}
-else{if(currentState!=="neutral"){currentState="neutral";resetParticles();}}
 requestAnimationFrame(animate3D);
 }
 
 document.addEventListener("mousemove",(e)=>{mouseX=e.clientX/window.innerWidth;mouseY=e.clientY/window.innerHeight;});
-document.addEventListener("touchmove",(e)=>{if(e.touches.length>0){mouseX=e.touches[0].clientX/window.innerWidth;mouseY=e.touches[0].clientY/window.innerHeight;}},{passive:true});
+
+/* --- Carousel: un pack devant, un pack derriere, decor lie au pack actif --- */
+const slotEssential = document.getElementById("slotEssential");
+const slotPremium = document.getElementById("slotPremium");
+const carouselIndicator = document.getElementById("carouselIndicator");
+let activePack = "essentiel";
+
+function applyPack(pack){
+if(pack===activePack) return;
+activePack = pack;
+if(pack==="essentiel"){
+slotEssential.classList.add("slot-front");slotEssential.classList.remove("slot-back");
+slotPremium.classList.add("slot-back");slotPremium.classList.remove("slot-front");
+scene.classList.add("theme-essential");scene.classList.remove("theme-premium");
+carouselIndicator.textContent = "Essentielle \u2014 70EUR";
+activateEssential();
+}else{
+slotPremium.classList.add("slot-front");slotPremium.classList.remove("slot-back");
+slotEssential.classList.add("slot-back");slotEssential.classList.remove("slot-front");
+scene.classList.add("theme-premium");scene.classList.remove("theme-essential");
+carouselIndicator.textContent = "Premium \u2014 150EUR";
+activatePremium();
+}
+}
+function nextPack(){applyPack(activePack==="essentiel"?"premium":"essentiel");}
+function prevPack(){applyPack(activePack==="essentiel"?"premium":"essentiel");}
+
+/* swipe tactile pour changer de pack sur mobile/tablette */
+let touchStartX = null;
+const cardsStageEl = document.getElementById("cardsStage");
+cardsStageEl.addEventListener("touchstart",(e)=>{touchStartX = e.touches[0].clientX;},{passive:true});
+cardsStageEl.addEventListener("touchend",(e)=>{
+if(touchStartX===null) return;
+const diff = e.changedTouches[0].clientX - touchStartX;
+if(Math.abs(diff) > 40){ diff < 0 ? nextPack() : prevPack(); }
+touchStartX = null;
+},{passive:true});
+
+/* etat initial : Essentielle devant, Premium derriere */
+slotEssential.classList.add("slot-front");
+slotPremium.classList.add("slot-back");
+scene.classList.add("theme-essential");
+activateEssential();
 
 function activatePremium(){
 const sceneRect = scene.getBoundingClientRect();
