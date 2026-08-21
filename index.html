@@ -11,7 +11,8 @@
 <meta property="og:url" content="https://www.statevo.fr">
 <meta property="og:image" content="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80">
 <link rel="canonical" href="https://www.statevo.fr">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<meta name="theme-color" content="#F4F4EF">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231F5E4C'/><text x='50' y='68' font-size='60' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>S</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&q=80">
@@ -129,21 +130,26 @@
   --premium-soft:#F6EEDD;
   --off:#6A6A6A;
 }
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
 body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 .serif{font-family:'Fraunces',serif}
 .mono{font-family:'IBM Plex Mono',monospace}
 a{color:inherit}
+
+/* SCROLL PROGRESS */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;background:var(--essential);z-index:1000;width:0;transition:width .1s linear}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:rgba(244,244,239,0.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav-logo{font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--ink);text-decoration:none;letter-spacing:-.5px}
 .nav-logo span{color:var(--essential)}
 .nav-links{display:flex;gap:34px;align-items:center}
-.nav-links a{color:var(--ink-soft);text-decoration:none;font-size:13.5px;font-weight:500;transition:.15s}
+.nav-links a{color:var(--ink-soft);text-decoration:none;font-size:13.5px;font-weight:500;transition:.15s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--essential);transition:width .2s}
 .nav-links a:hover{color:var(--ink)}
+.nav-links a:hover::after{width:100%}
 .nav-cta{padding:9px 20px;border-radius:100px;background:var(--ink);color:#fff;font-weight:600;font-size:12.5px;text-decoration:none;letter-spacing:.2px;transition:.2s}
-.nav-cta:hover{background:var(--essential)}
+.nav-cta:hover{background:var(--essential);transform:translateY(-1px)}
 .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:600}
 .nav-toggle span{display:block;width:22px;height:2px;background:var(--ink);margin:4px 0;transition:.2s}
 .nav-toggle.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
@@ -152,7 +158,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:64px;display:flex;
 
 /* HERO */
 .hero{padding:150px 40px 70px;max-width:1180px;margin:0 auto;text-align:center;position:relative;background-image:url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center}
-.hero::before{content:"";position:absolute;inset:0;background:rgba(244,244,239,0.78);z-index:0}
+.hero::before{content:"";position:absolute;inset:0;background:rgba(244,244,239,0.72);z-index:0}
 .hero>*{position:relative;z-index:1}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:1px;color:var(--essential);font-weight:600;background:var(--essential-soft);padding:6px 16px;border-radius:100px;margin-bottom:22px}
 .hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(34px,5.4vw,64px);line-height:1.05;letter-spacing:-1.5px;color:var(--ink);max-width:780px;margin:0 auto 20px}
@@ -199,9 +205,9 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:64px;display:flex;
 .dt-foot-empty{border-right:none}
 .btn-devis{width:100%;padding:13px;border:none;border-radius:10px;font-weight:700;font-size:12.5px;letter-spacing:.3px;cursor:pointer;font-family:'Inter',sans-serif;transition:.2s}
 .btn-devis.essential{background:var(--essential);color:#fff}
-.btn-devis.essential:hover{background:#164739}
+.btn-devis.essential:hover{background:#164739;transform:translateY(-2px)}
 .btn-devis.premium{background:var(--premium);color:#fff}
-.btn-devis.premium:hover{background:#7a521a}
+.btn-devis.premium:hover{background:#7a521a;transform:translateY(-2px)}
 .reassurance{font-size:11px;color:var(--muted);text-align:center;margin-top:8px}
 
 .devis-form-zone{grid-column:1 / -1;overflow:hidden;max-height:0;opacity:0;transition:all .45s ease}
@@ -214,7 +220,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:64px;display:flex;
 .form-field textarea{resize:vertical;min-height:60px}
 .form-field input::placeholder,.form-field textarea::placeholder{color:var(--muted)}
 .submit-devis{margin-top:6px;padding:12px 22px;border:none;border-radius:9px;background:var(--ink);color:#fff;font-weight:600;font-size:12.5px;cursor:pointer;transition:.2s}
-.submit-devis:hover{background:var(--essential)}
+.submit-devis:hover{background:var(--essential);transform:translateY(-2px)}
 .success-devis{display:none;margin-top:10px;font-size:12.5px;color:var(--essential);font-weight:500}
 .char-count{font-size:11px;color:var(--muted);text-align:right;margin-top:2px}
 
@@ -229,15 +235,13 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:64px;display:flex;
 .devis-table .col-notch{left:calc(100% - 156px)}
 .devis-form-inner{padding:22px 16px}
 }
-
-/* TRUST BAR */
-.trust-bar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;overflow:hidden;background:var(--paper)}
-.trust-track{display:flex;gap:56px;align-items:center;width:max-content;animation:slide 32s linear infinite}
-.trust-track:hover{animation-play-state:paused}
-@keyframes slide{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.trust-item{display:flex;align-items:center;gap:9px;opacity:.55;white-space:nowrap}
-.trust-icon{width:26px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;font-family:'Inter',sans-serif;color:#fff;flex-shrink:0}
-.trust-name{font-size:13px;font-weight:600;color:var(--ink)}
+@media(max-width:400px){
+.devis-table{grid-template-columns:1fr 60px 60px}
+.dt-cell{padding:10px 4px}
+.pack-price-mini{font-size:18px}
+.pack-tag{font-size:9px}
+.dt-header{padding:16px 8px}
+}
 
 /* SECTIONS */
 .section{padding:90px 40px;max-width:1180px;margin:0 auto}
@@ -336,7 +340,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:64px;display:flex;
 .manifesto-big em{font-style:italic;color:var(--essential)}
 .manifesto-body{font-size:14.5px;color:var(--ink-soft);line-height:1.8;margin:22px 0 26px;max-width:440px}
 .btn-dark{display:inline-block;padding:14px 30px;background:var(--ink);color:#fff;font-weight:600;font-size:13px;text-decoration:none;border-radius:100px;transition:.2s}
-.btn-dark:hover{background:var(--essential)}
+.btn-dark:hover{background:var(--essential);transform:translateY(-2px)}
 .criteria-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px 24px}
 .criteria-block{border-top:1px solid var(--line);padding-top:14px}
 .criteria-block h4{font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:6px}
@@ -363,7 +367,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:64px;display:flex;
 /* ANIM */
 .animate{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
 .animate.visible{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.trust-track,.step,.review,.animate{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+@media (prefers-reduced-motion:reduce){.step,.review,.animate{transition-duration:.01ms!important;animation-duration:.01ms!important}}
 
 /* ACCESSIBILITY */
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
@@ -382,7 +386,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* PRINT */
 @media print{
-  nav, .hero, .trust-bar, .calc-section, .reviews-section, .examples-grid, .faq-inner, .manifesto, .stats-section, .footer-cta, .footer-bottom, .back-to-top, .mobile-cta-bar, .devis-form-zone, .dt-foot, .btn-devis, .nav-toggle{display:none !important}
+  nav, .hero, .calc-section, .reviews-section, .examples-grid, .faq-inner, .manifesto, .stats-section, .footer-cta, .footer-bottom, .back-to-top, .mobile-cta-bar, .devis-form-zone, .dt-foot, .btn-devis, .nav-toggle, .scroll-progress{display:none !important}
   body{background:#fff}
   .devis-ticket{box-shadow:none;border:none;border-radius:0}
   .devis-table{grid-template-columns:1fr 100px 100px}
@@ -410,10 +414,21 @@ nav{padding:0 16px}.nav-links{display:none;position:absolute;top:64px;left:0;rig
 .devis-head{padding:16px 18px}
 .devis-form-inner{padding:20px 18px}
 .mobile-cta-bar{display:block}
+body{padding-bottom:80px}
+.back-to-top{bottom:80px}
+}
+@media(max-width:400px){
+.hero{padding:90px 12px 40px}
+.section{padding:50px 12px}
+.hero h1{font-size:30px}
+.hero-sub{font-size:14.5px}
+.criteria-row{gap:8px 12px}
+.criteria-chip{font-size:11px}
 }
 </style>
 </head>
 <body>
+<div class="scroll-progress" id="scrollProgress"></div>
 <nav>
 <a class="nav-logo" href="#"><span>Stat</span>evo</a>
 <div class="nav-links" id="navLinks">
@@ -561,25 +576,6 @@ nav{padding:0 16px}.nav-links{display:none;position:absolute;top:64px;left:0;rig
 </div>
 </section>
 
-<!-- TRUST BAR -->
-<div class="trust-bar">
-<div class="trust-track" style="padding-left:40px">
-<div class="trust-item"><div class="trust-icon" style="background:#e2001a">I</div><span class="trust-name">Intermarché</span></div>
-<div class="trust-item"><div class="trust-icon" style="background:#004b8d">C</div><span class="trust-name">Carrefour</span></div>
-<div class="trust-item"><div class="trust-icon" style="background:#1a1a2e">VW</div><span class="trust-name">Volkswagen</span></div>
-<div class="trust-item"><div class="trust-icon" style="background:#c39a1f">R</div><span class="trust-name">Renault</span></div>
-<div class="trust-item"><div class="trust-icon" style="background:#0066cc">E</div><span class="trust-name">E.Leclerc</span></div>
-<div class="trust-item"><div class="trust-icon" style="background:#0082c3">D</div><span class="trust-name">Decathlon</span></div>
-<div class="trust-item"><div class="trust-icon" style="background:#ff6600">O</div><span class="trust-name">Orange</span></div>
-<div class="trust-item"><div class="trust-icon" style="background:#00965e">B</div><span class="trust-name">BNP Paribas</span></div>
-<div class="trust-item"><div class="trust-icon" style="background:#e2001a">I</div><span class="trust-name">Intermarché</span></div>
-<div class="trust-item"><div class="trust-icon" style="background:#004b8d">C</div><span class="trust-name">Carrefour</span></div>
-<div class="trust-item"><div class="trust-icon" style="background:#1a1a2e">VW</div><span class="trust-name">Volkswagen</span></div>
-<div class="trust-item"><div class="trust-icon" style="background:#c39a1f">R</div><span class="trust-name">Renault</span></div>
-<div class="trust-item"><div class="trust-icon" style="background:#0066cc">E</div><span class="trust-name">E.Leclerc</span></div>
-<div class="trust-item"><div class="trust-icon" style="background:#0082c3">D</div><span class="trust-name">Decathlon</span></div>
-</div></div>
-
 <!-- CALCULATRICE -->
 <section class="calc-section">
 <div class="section" id="calculatrice" style="padding-bottom:90px">
@@ -718,7 +714,7 @@ nav{padding:0 16px}.nav-links{display:none;position:absolute;top:64px;left:0;rig
 <div class="footer-cta-left">
 <h2>Prêt à lancer ton site ?</h2>
 <p>Rejoins les 50+ entrepreneurs qui font confiance à Statevo.</p>
-<div class="footer-email">Une question ? <a href="mailto:statevocontact@gmail.com">statevocontact@gmail.com</a></div>
+<div class="footer-email">Une question ? <a href="mailto:statevocontact@gmail.com">statevocontact@gmail.com</a> <button id="copyEmail" style="background:none;border:1px solid var(--line);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:11px;color:var(--ink-soft);margin-left:6px;">Copier</button></div>
 </div>
 <a href="#offres" class="btn-dark">Voir les offres &rarr;</a>
 </div>
@@ -738,6 +734,15 @@ nav{padding:0 16px}.nav-links{display:none;position:absolute;top:64px;left:0;rig
 
 <script>
 const DEST_EMAIL = "statevocontact@gmail.com";
+
+// Scroll progress
+const scrollProgress = document.getElementById('scrollProgress');
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  scrollProgress.style.width = progress + '%';
+});
 
 // Mobile menu toggle
 const navToggle = document.getElementById('navToggle');
@@ -760,6 +765,32 @@ window.addEventListener('scroll', () => {
 backToTop.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+// Copy email
+const copyEmailBtn = document.getElementById('copyEmail');
+if (copyEmailBtn) {
+  copyEmailBtn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(DEST_EMAIL);
+      copyEmailBtn.textContent = 'Copié ✓';
+      setTimeout(() => {
+        copyEmailBtn.textContent = 'Copier';
+      }, 2000);
+    } catch (err) {
+      // Fallback for older browsers
+      const textArea = document.createElement('textarea');
+      textArea.value = DEST_EMAIL;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      copyEmailBtn.textContent = 'Copié ✓';
+      setTimeout(() => {
+        copyEmailBtn.textContent = 'Copier';
+      }, 2000);
+    }
+  });
+}
 
 function toggleForm(id){
   const form = document.getElementById("form-" + id);
