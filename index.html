@@ -4,9 +4,116 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Statevo — Sites web pour indépendants & commerçants</title>
+<meta name="description" content="Statevo crée des sites web professionnels pour indépendants et commerçants à partir de 80€. Livraison rapide, prix fixe, sans jargon technique.">
+<meta property="og:title" content="Statevo — Sites web pour indépendants & commerçants">
+<meta property="og:description" content="Un site pro qui te ressemble, à partir de 80€. Livraison rapide, prix fixe, zéro jargon technique.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.statevo.fr">
+<meta property="og:image" content="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80">
+<link rel="canonical" href="https://www.statevo.fr">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&q=80">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Statevo",
+  "description": "Sites web pour indépendants et commerçants à partir de 80€.",
+  "email": "statevocontact@gmail.com",
+  "priceRange": "€€",
+  "url": "https://www.statevo.fr",
+  "areaServed": "France",
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "name": "Pack Essentielle",
+      "price": "80",
+      "priceCurrency": "EUR"
+    },
+    {
+      "@type": "Offer",
+      "name": "Pack Premium",
+      "price": "190",
+      "priceCurrency": "EUR"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Comment se passe la suite après ma demande ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On te recontacte en moins de 24h pour caler les détails de ton projet. Ensuite on s'occupe de tout."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment se passe le paiement ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On te contacte sous 24h pour confirmer les détails et te partager le lien de paiement sécurisé."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Est-ce que je peux demander des modifications ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, des retouches sont comprises dans les deux offres. L'offre Premium inclut en plus 1 mois de support."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quelle est la différence entre les deux offres ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'Essentielle (80€) = un site vitrine pro, galerie photos, réseaux sociaux et support 1 jour. La Premium (190€) = tout ça + paiement sécurisé, réservation automatisée, assistant IA et support 1 mois."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mon site sera-t-il visible sur Google ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Tous nos sites incluent les bases SEO : balises bien renseignées, vitesse optimisée, compatibilité mobile."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Je n'ai aucune connaissance technique, c'est un problème ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pas du tout. On s'occupe de tout. Tu nous donnes les infos, on fait le reste."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien de temps ça prend pour avoir mon site ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En général moins d'une semaine. On démarre dès qu'on a toutes les infos sur ton projet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Est-ce que je garde la main sur mon site après livraison ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Ton site t'appartient à 100%. On peut aussi t'accompagner pour les mises à jour."
+      }
+    }
+  ]
+}
+</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -14,13 +121,13 @@
   --paper:#FFFFFF;
   --ink:#15181D;
   --ink-soft:#63666D;
-  --muted:#9A9border-box;
+  --muted:#9A9A9A;
   --line:#E2E0D6;
   --essential:#1F5E4C;
   --essential-soft:#E7F1EC;
   --premium:#96661E;
   --premium-soft:#F6EEDD;
-  --off:#B9B6AA;
+  --off:#6A6A6A;
 }
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -37,10 +144,15 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:64px;display:flex;
 .nav-links a:hover{color:var(--ink)}
 .nav-cta{padding:9px 20px;border-radius:100px;background:var(--ink);color:#fff;font-weight:600;font-size:12.5px;text-decoration:none;letter-spacing:.2px;transition:.2s}
 .nav-cta:hover{background:var(--essential)}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:600}
+.nav-toggle span{display:block;width:22px;height:2px;background:var(--ink);margin:4px 0;transition:.2s}
+.nav-toggle.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav-toggle.open span:nth-child(2){opacity:0}
+.nav-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 
 /* HERO */
-.hero{padding:150px 40px 70px;max-width:1180px;margin:0 auto;text-align:center;position:relative;background-image:url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1920&q=80');background-size:cover;background-position:center}
-.hero::before{content:"";position:absolute;inset:0;background:rgba(244,244,239,0.88);z-index:0}
+.hero{padding:150px 40px 70px;max-width:1180px;margin:0 auto;text-align:center;position:relative;background-image:url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center}
+.hero::before{content:"";position:absolute;inset:0;background:rgba(244,244,239,0.78);z-index:0}
 .hero>*{position:relative;z-index:1}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:1px;color:var(--essential);font-weight:600;background:var(--essential-soft);padding:6px 16px;border-radius:100px;margin-bottom:22px}
 .hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(34px,5.4vw,64px);line-height:1.05;letter-spacing:-1.5px;color:var(--ink);max-width:780px;margin:0 auto 20px}
@@ -90,6 +202,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:64px;display:flex;
 .btn-devis.essential:hover{background:#164739}
 .btn-devis.premium{background:var(--premium);color:#fff}
 .btn-devis.premium:hover{background:#7a521a}
+.reassurance{font-size:11px;color:var(--muted);text-align:center;margin-top:8px}
 
 .devis-form-zone{grid-column:1 / -1;overflow:hidden;max-height:0;opacity:0;transition:all .45s ease}
 .devis-form-zone.open{max-height:520px;opacity:1;border-top:1px dashed var(--line)}
@@ -103,6 +216,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:64px;display:flex;
 .submit-devis{margin-top:6px;padding:12px 22px;border:none;border-radius:9px;background:var(--ink);color:#fff;font-weight:600;font-size:12.5px;cursor:pointer;transition:.2s}
 .submit-devis:hover{background:var(--essential)}
 .success-devis{display:none;margin-top:10px;font-size:12.5px;color:var(--essential);font-weight:500}
+.char-count{font-size:11px;color:var(--muted);text-align:right;margin-top:2px}
 
 /* MOBILE table adapt */
 @media(max-width:700px){
@@ -119,6 +233,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:64px;display:flex;
 /* TRUST BAR */
 .trust-bar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;overflow:hidden;background:var(--paper)}
 .trust-track{display:flex;gap:56px;align-items:center;width:max-content;animation:slide 32s linear infinite}
+.trust-track:hover{animation-play-state:paused}
 @keyframes slide{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .trust-item{display:flex;align-items:center;gap:9px;opacity:.55;white-space:nowrap}
 .trust-icon{width:26px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;font-family:'Inter',sans-serif;color:#fff;flex-shrink:0}
@@ -126,7 +241,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:64px;display:flex;
 
 /* SECTIONS */
 .section{padding:90px 40px;max-width:1180px;margin:0 auto}
-.section-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--essential);margin-bottom:14px;font-weight:600}
+.section-eyebrow{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--essential);margin-bottom:14px;font-weight:600}
 .section-title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,4.2vw,44px);letter-spacing:-1px;line-height:1.08;color:var(--ink)}
 .section-title em{font-style:italic;color:var(--essential)}
 .section-desc{font-size:15px;color:var(--ink-soft);margin-top:14px;max-width:480px;line-height:1.7}
@@ -151,7 +266,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:64px;display:flex;
 .receipt-top{text-align:center;border-bottom:1px dashed var(--line);padding-bottom:14px;margin-bottom:14px}
 .receipt-top .tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);letter-spacing:1px}
 .receipt-top .pack-name{font-family:'Fraunces',serif;font-size:19px;font-weight:600;margin-top:4px}
-.receipt-price{font-family:'IBM Plex Mono',monospace;text-align:center;font-size:38px;font-weight:600;color:var(--essential);letter-spacing:-1px;margin:6px 0 4px}
+.receipt-price{font-family:'IBM Plex Mono',monospace;text-align:center;font-size:38px;font-weight:600;color:var(--essential);letter-spacing:-1px;margin:6px 0 4px;transition:color .3s ease}
 .receipt-price.is-premium{color:var(--premium)}
 .receipt-desc{text-align:center;font-size:12.5px;color:var(--ink-soft);margin-bottom:14px}
 .receipt-features{display:flex;flex-direction:column;gap:7px;border-top:1px dashed var(--line);padding-top:14px}
@@ -207,7 +322,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:64px;display:flex;
 .faq-inner{margin-top:36px}
 .faq-item{border-top:1px solid var(--line)}
 .faq-item:last-child{border-bottom:1px solid var(--line)}
-.faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:20px 0;gap:16px}
+.faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:20px 0;gap:16px;background:none;border:none;width:100%;text-align:left}
 .faq-q span{font-size:14.5px;font-weight:600;color:var(--ink)}
 .faq-icon{width:24px;height:24px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--ink);flex-shrink:0;transition:.25s}
 .faq-icon.open{transform:rotate(45deg);background:var(--essential);color:#fff;border-color:var(--essential)}
@@ -250,12 +365,37 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:64px;display:flex;
 .animate.visible{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.trust-track,.step,.review,.animate{transition-duration:.01ms!important;animation-duration:.01ms!important}}
 
+/* ACCESSIBILITY */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--essential);
+  outline-offset: 2px;
+}
+
+/* STICKY MOBILE CTA */
+.mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--paper);border-top:1px solid var(--line);padding:10px 16px;z-index:400;box-shadow:0 -4px 10px rgba(0,0,0,0.05)}
+.mobile-cta-bar .btn-dark{width:100%;text-align:center;padding:12px;font-size:13px}
+
+/* BACK TO TOP */
+.back-to-top{position:fixed;bottom:20px;right:20px;width:44px;height:44px;border-radius:50%;background:var(--essential);color:#fff;border:none;cursor:pointer;display:none;align-items:center;justify-content:center;font-size:20px;z-index:300;box-shadow:0 4px 10px rgba(0,0,0,0.2);transition:.3s}
+.back-to-top:hover{background:var(--ink)}
+.back-to-top.visible{display:flex}
+
+/* PRINT */
+@media print{
+  nav, .hero, .trust-bar, .calc-section, .reviews-section, .examples-grid, .faq-inner, .manifesto, .stats-section, .footer-cta, .footer-bottom, .back-to-top, .mobile-cta-bar, .devis-form-zone, .dt-foot, .btn-devis, .nav-toggle{display:none !important}
+  body{background:#fff}
+  .devis-ticket{box-shadow:none;border:none;border-radius:0}
+  .devis-table{grid-template-columns:1fr 100px 100px}
+}
+
 @media(max-width:900px){
 .calc-grid{grid-template-columns:1fr}
 .manifesto-inner{grid-template-columns:1fr}
 }
 @media(max-width:768px){
-nav{padding:0 16px}.nav-links{display:none}
+nav{padding:0 16px}.nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--paper);flex-direction:column;align-items:flex-start;padding:20px;gap:16px;box-shadow:0 10px 20px rgba(0,0,0,0.1);border-bottom:1px solid var(--line)}
+.nav-links.open{display:flex}
+.nav-toggle{display:block}
 .hero{padding:110px 16px 50px}
 .section{padding:60px 16px}
 .stat-row{flex-direction:column}
@@ -269,19 +409,23 @@ nav{padding:0 16px}.nav-links{display:none}
 .examples-grid{grid-template-columns:1fr}
 .devis-head{padding:16px 18px}
 .devis-form-inner{padding:20px 18px}
+.mobile-cta-bar{display:block}
 }
 </style>
 </head>
 <body>
 <nav>
 <a class="nav-logo" href="#"><span>Stat</span>evo</a>
-<div class="nav-links">
+<div class="nav-links" id="navLinks">
 <a href="#offres">Offres</a>
 <a href="#calculatrice">Calculatrice</a>
 <a href="#avis">Avis</a>
 <a href="#faq">FAQ</a>
 </div>
 <a class="nav-cta" href="#offres">Commencer</a>
+<button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+  <span></span><span></span><span></span>
+</button>
 </nav>
 
 <section class="hero">
@@ -379,31 +523,37 @@ nav{padding:0 16px}.nav-links{display:none}
     <div class="dt-cell dt-check is-premium"><span class="check-on">✓</span></div>
 
     <div class="dt-cell dt-foot-empty" style="border-bottom:none"></div>
-    <div class="dt-cell dt-foot" style="border-bottom:none"><button class="btn-devis essential" onclick="toggleForm('essentiel')">Commander</button></div>
-    <div class="dt-cell dt-foot" style="border-bottom:none"><button class="btn-devis premium" onclick="toggleForm('premium')">Réserver</button></div>
+    <div class="dt-cell dt-foot" style="border-bottom:none">
+      <button class="btn-devis essential" onclick="toggleForm('essentiel')">Commander</button>
+      <p class="reassurance">Paiement après validation de ton projet</p>
+    </div>
+    <div class="dt-cell dt-foot" style="border-bottom:none">
+      <button class="btn-devis premium" onclick="toggleForm('premium')">Réserver</button>
+      <p class="reassurance">Paiement après validation de ton projet</p>
+    </div>
 
     <div class="devis-form-zone" id="form-essentiel">
       <div class="devis-form-inner">
         <h4>Offre Essentielle — 80€</h4>
-        <div class="form-field"><input type="text" placeholder="Ton prénom *" id="e-name"/></div>
-        <div class="form-field"><input type="email" placeholder="Ton email *" id="e-email"/></div>
-        <div class="form-field"><input type="tel" placeholder="Ton téléphone (optionnel)" id="e-tel"/></div>
-        <div class="form-field"><input type="text" placeholder="Nom de ton business *" id="e-biz"/></div>
-        <div class="form-field"><textarea placeholder="Décris ton projet..." id="e-desc"></textarea></div>
+        <div class="form-field"><input type="text" placeholder="Ton prénom *" id="e-name" required></div>
+        <div class="form-field"><input type="email" placeholder="Ton email *" id="e-email" required></div>
+        <div class="form-field"><input type="tel" placeholder="Ton téléphone (optionnel)" id="e-tel" pattern="[0-9+ ]{6,}" title="Numéro de téléphone valide"></div>
+        <div class="form-field"><input type="text" placeholder="Nom de ton business *" id="e-biz" required></div>
+        <div class="form-field"><textarea placeholder="Décris ton projet..." id="e-desc" maxlength="500"></textarea><div class="char-count" id="e-count">0/500</div></div>
         <button class="submit-devis" onclick="submitForm('essentiel')">Envoyer ma demande &rarr;</button>
-        <p class="success-devis" id="success-essentiel">✓ Demande reçue — on te recontacte dans les 24h.</p>
+        <p class="success-devis" id="success-essentiel" aria-live="polite">✓ Demande reçue — on te recontacte dans les 24h.</p>
       </div>
     </div>
     <div class="devis-form-zone" id="form-premium">
       <div class="devis-form-inner">
         <h4>Offre Premium — 190€</h4>
-        <div class="form-field"><input type="text" placeholder="Ton prénom *" id="p-name"/></div>
-        <div class="form-field"><input type="email" placeholder="Ton email *" id="p-email"/></div>
-        <div class="form-field"><input type="tel" placeholder="Ton téléphone (optionnel)" id="p-tel"/></div>
-        <div class="form-field"><input type="text" placeholder="Nom de ton business *" id="p-biz"/></div>
-        <div class="form-field"><textarea placeholder="Décris ton projet..." id="p-desc"></textarea></div>
+        <div class="form-field"><input type="text" placeholder="Ton prénom *" id="p-name" required></div>
+        <div class="form-field"><input type="email" placeholder="Ton email *" id="p-email" required></div>
+        <div class="form-field"><input type="tel" placeholder="Ton téléphone (optionnel)" id="p-tel" pattern="[0-9+ ]{6,}" title="Numéro de téléphone valide"></div>
+        <div class="form-field"><input type="text" placeholder="Nom de ton business *" id="p-biz" required></div>
+        <div class="form-field"><textarea placeholder="Décris ton projet..." id="p-desc" maxlength="500"></textarea><div class="char-count" id="p-count">0/500</div></div>
         <button class="submit-devis" onclick="submitForm('premium')">Envoyer ma demande &rarr;</button>
-        <p class="success-devis" id="success-premium">✓ Demande reçue — on te recontacte dans les 24h.</p>
+        <p class="success-devis" id="success-premium" aria-live="polite">✓ Demande reçue — on te recontacte dans les 24h.</p>
       </div>
     </div>
   </div>
@@ -433,8 +583,8 @@ nav{padding:0 16px}.nav-links{display:none}
 <!-- CALCULATRICE -->
 <section class="calc-section">
 <div class="section" id="calculatrice" style="padding-bottom:90px">
-<div class="section-eyebrow">Outil</div>
-<div class="section-title">Quel pack <em>pour toi</em> ?</div>
+<span class="section-eyebrow">Outil</span>
+<h2 class="section-title">Quel pack <em>pour toi</em> ?</h2>
 <p class="section-desc">Coche les options qui t'intéressent, on te sort le devis correspondant instantanément.</p>
 <div class="calc-grid">
 <div class="calc-options">
@@ -455,7 +605,7 @@ nav{padding:0 16px}.nav-links{display:none}
 
 <!-- PROCESSUS -->
 <section class="section">
-<div class="animate"><div class="section-eyebrow">Processus</div><div class="section-title">Comment ça <em>marche</em></div>
+<div class="animate"><span class="section-eyebrow">Processus</span><h2 class="section-title">Comment ça <em>marche</em></h2>
 <p class="section-desc">Pas besoin de compétences techniques. Tu nous décris ton projet, on s'occupe du reste.</p></div>
 <div class="steps">
 <div class="step animate"><div class="step-num">01</div><div class="step-content"><h3>Tu remplis le formulaire</h3><p>Ton activité, tes couleurs, ce que tu veux afficher. Moins de 2 minutes.</p></div></div>
@@ -467,7 +617,7 @@ nav{padding:0 16px}.nav-links{display:none}
 <!-- AVIS -->
 <section class="reviews-section">
 <div class="section" id="avis">
-<div class="animate"><div class="section-eyebrow">Témoignages</div><div class="section-title">Ils nous ont fait <em>confiance</em></div></div>
+<div class="animate"><span class="section-eyebrow">Témoignages</span><h2 class="section-title">Ils nous ont fait <em>confiance</em></h2></div>
 <div class="reviews-list">
 <div class="review animate"><div><div class="review-avatar" style="background:var(--essential)">KD</div><div class="review-name">Karim D.</div><div class="review-role">Coiffeur indépendant</div></div><p class="review-body">« Recontacté le lendemain, exactement ce que je voulais. Mon site est propre, rapide et mes clients adorent. »</p><div class="review-stars">★★★★★</div></div>
 <div class="review animate"><div><div class="review-avatar" style="background:var(--premium)">SB</div><div class="review-name">Sarah B.</div><div class="review-role">Coach sportive</div></div><p class="review-body">« Très pro du début à la fin. Le système de réservation fonctionne à la perfection. »</p><div class="review-stars">★★★★★</div></div>
@@ -477,7 +627,7 @@ nav{padding:0 16px}.nav-links{display:none}
 
 <!-- EXEMPLES -->
 <section class="section" id="exemples">
-<div class="animate"><div class="section-eyebrow">Portfolio</div><div class="section-title">Nos <em>réalisations</em></div>
+<div class="animate"><span class="section-eyebrow">Portfolio</span><h2 class="section-title">Nos <em>réalisations</em></h2>
 <p class="section-desc">Des exemples de sites modernes, professionnels et sur-mesure que nous avons conçus.</p></div>
 <div class="examples-grid">
   <div class="example-card">
@@ -525,16 +675,16 @@ nav{padding:0 16px}.nav-links{display:none}
 
 <!-- FAQ -->
 <section class="section" id="faq">
-<div class="animate"><div class="section-eyebrow">Questions fréquentes</div><div class="section-title">Tu as des <em>questions</em> ?</div></div>
+<div class="animate"><span class="section-eyebrow">Questions fréquentes</span><h2 class="section-title">Tu as des <em>questions</em> ?</h2></div>
 <div class="faq-inner">
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(0)"><span>Comment se passe la suite après ma demande ?</span><div class="faq-icon" id="icon-0">+</div></div><div class="faq-a" id="faq-0">On te recontacte en moins de 24h pour caler les détails de ton projet. Ensuite on s'occupe de tout.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(1)"><span>Comment se passe le paiement ?</span><div class="faq-icon" id="icon-1">+</div></div><div class="faq-a" id="faq-1">On te contacte sous 24h pour confirmer les détails et te partager le lien de paiement sécurisé.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(2)"><span>Est-ce que je peux demander des modifications ?</span><div class="faq-icon" id="icon-2">+</div></div><div class="faq-a" id="faq-2">Oui, des retouches sont comprises dans les deux offres. L'offre Premium inclut en plus 1 mois de support.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(3)"><span>Quelle est la différence entre les deux offres ?</span><div class="faq-icon" id="icon-3">+</div></div><div class="faq-a" id="faq-3">L'Essentielle (80€) = un site vitrine pro, galerie photos, réseaux sociaux et support 1 jour. La Premium (190€) = tout ça + paiement sécurisé, réservation automatisée, assistant IA et support 1 mois.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(4)"><span>Mon site sera-t-il visible sur Google ?</span><div class="faq-icon" id="icon-4">+</div></div><div class="faq-a" id="faq-4">Oui. Tous nos sites incluent les bases SEO : balises bien renseignées, vitesse optimisée, compatibilité mobile.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(5)"><span>Je n'ai aucune connaissance technique, c'est un problème ?</span><div class="faq-icon" id="icon-5">+</div></div><div class="faq-a" id="faq-5">Pas du tout. On s'occupe de tout. Tu nous donnes les infos, on fait le reste.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(6)"><span>Combien de temps ça prend pour avoir mon site ?</span><div class="faq-icon" id="icon-6">+</div></div><div class="faq-a" id="faq-6">En général moins d'une semaine. On démarre dès qu'on a toutes les infos sur ton projet.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(7)"><span>Est-ce que je garde la main sur mon site après livraison ?</span><div class="faq-icon" id="icon-7">+</div></div><div class="faq-a" id="faq-7">Oui. Ton site t'appartient à 100%. On peut aussi t'accompagner pour les mises à jour.</div></div>
+<div class="faq-item"><button class="faq-q" onclick="toggleFaq(0)" aria-expanded="false"><span>Comment se passe la suite après ma demande ?</span><span class="faq-icon" id="icon-0">+</span></button><div class="faq-a" id="faq-0">On te recontacte en moins de 24h pour caler les détails de ton projet. Ensuite on s'occupe de tout.</div></div>
+<div class="faq-item"><button class="faq-q" onclick="toggleFaq(1)" aria-expanded="false"><span>Comment se passe le paiement ?</span><span class="faq-icon" id="icon-1">+</span></button><div class="faq-a" id="faq-1">On te contacte sous 24h pour confirmer les détails et te partager le lien de paiement sécurisé.</div></div>
+<div class="faq-item"><button class="faq-q" onclick="toggleFaq(2)" aria-expanded="false"><span>Est-ce que je peux demander des modifications ?</span><span class="faq-icon" id="icon-2">+</span></button><div class="faq-a" id="faq-2">Oui, des retouches sont comprises dans les deux offres. L'offre Premium inclut en plus 1 mois de support.</div></div>
+<div class="faq-item"><button class="faq-q" onclick="toggleFaq(3)" aria-expanded="false"><span>Quelle est la différence entre les deux offres ?</span><span class="faq-icon" id="icon-3">+</span></button><div class="faq-a" id="faq-3">L'Essentielle (80€) = un site vitrine pro, galerie photos, réseaux sociaux et support 1 jour. La Premium (190€) = tout ça + paiement sécurisé, réservation automatisée, assistant IA et support 1 mois.</div></div>
+<div class="faq-item"><button class="faq-q" onclick="toggleFaq(4)" aria-expanded="false"><span>Mon site sera-t-il visible sur Google ?</span><span class="faq-icon" id="icon-4">+</span></button><div class="faq-a" id="faq-4">Oui. Tous nos sites incluent les bases SEO : balises bien renseignées, vitesse optimisée, compatibilité mobile.</div></div>
+<div class="faq-item"><button class="faq-q" onclick="toggleFaq(5)" aria-expanded="false"><span>Je n'ai aucune connaissance technique, c'est un problème ?</span><span class="faq-icon" id="icon-5">+</span></button><div class="faq-a" id="faq-5">Pas du tout. On s'occupe de tout. Tu nous donnes les infos, on fait le reste.</div></div>
+<div class="faq-item"><button class="faq-q" onclick="toggleFaq(6)" aria-expanded="false"><span>Combien de temps ça prend pour avoir mon site ?</span><span class="faq-icon" id="icon-6">+</span></button><div class="faq-a" id="faq-6">En général moins d'une semaine. On démarre dès qu'on a toutes les infos sur ton projet.</div></div>
+<div class="faq-item"><button class="faq-q" onclick="toggleFaq(7)" aria-expanded="false"><span>Est-ce que je garde la main sur mon site après livraison ?</span><span class="faq-icon" id="icon-7">+</span></button><div class="faq-a" id="faq-7">Oui. Ton site t'appartient à 100%. On peut aussi t'accompagner pour les mises à jour.</div></div>
 </div>
 </section>
 
@@ -578,8 +728,38 @@ nav{padding:0 16px}.nav-links{display:none}
 <span>Tous droits réservés</span>
 </div>
 
+<!-- Mobile sticky CTA -->
+<div class="mobile-cta-bar">
+<a href="#offres" class="btn-dark">Réserver mon site</a>
+</div>
+
+<!-- Back to top -->
+<button class="back-to-top" id="backToTop" aria-label="Remonter en haut">↑</button>
+
 <script>
 const DEST_EMAIL = "statevocontact@gmail.com";
+
+// Mobile menu toggle
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  navToggle.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', navLinks.classList.contains('open'));
+});
+
+// Back to top
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) {
+    backToTop.classList.add('visible');
+  } else {
+    backToTop.classList.remove('visible');
+  }
+});
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
 function toggleForm(id){
   const form = document.getElementById("form-" + id);
@@ -615,6 +795,19 @@ function submitForm(id){
   );
   window.location.href = "mailto:" + DEST_EMAIL + "?subject=" + subject + "&body=" + body;
 }
+
+// Character counters
+function setupCharCount(textareaId, countId) {
+  const textarea = document.getElementById(textareaId);
+  const count = document.getElementById(countId);
+  if (textarea && count) {
+    textarea.addEventListener('input', () => {
+      count.textContent = textarea.value.length + '/500';
+    });
+  }
+}
+setupCharCount('e-desc', 'e-count');
+setupCharCount('p-desc', 'p-count');
 
 // CALCULATRICE
 const calcFeaturesContainer = document.getElementById("calc-features");
@@ -702,14 +895,17 @@ function updateCalculator(){
 
 function toggleFaq(i){
   const ans = document.getElementById("faq-" + i);
+  const btn = ans.previousElementSibling;
   const icon = document.getElementById("icon-" + i);
   if (!ans) return;
   const wasOpen = ans.classList.contains("open");
   document.querySelectorAll(".faq-a").forEach(a => a.classList.remove("open"));
   document.querySelectorAll(".faq-icon").forEach(ic => ic.classList.remove("open"));
+  document.querySelectorAll(".faq-q").forEach(b => b.setAttribute("aria-expanded", "false"));
   if (!wasOpen) {
     ans.classList.add("open");
     if (icon) icon.classList.add("open");
+    if (btn) btn.setAttribute("aria-expanded", "true");
   }
 }
 
