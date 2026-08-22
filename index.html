@@ -124,10 +124,10 @@
   --ink-soft:#63666D;
   --muted:#9A9A9A;
   --line:#E2E0D6;
-  --essential:#1F5E4C;
-  --essential-soft:#E7F1EC;
-  --premium:#96661E;
-  --premium-soft:#F6EEDD;
+  --essential:#2B7A9E;
+  --essential-soft:#E0F0FA;
+  --premium:#1A2B4A;
+  --premium-soft:#E2E8F5;
   --off:#6A6A6A;
 }
 html{scroll-behavior:smooth;scroll-padding-top:80px}
@@ -384,6 +384,162 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .back-to-top:hover{background:var(--ink)}
 .back-to-top.visible{display:flex}
 
+/* ===== TECH DECORATIONS ===== */
+.tech-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+.tech-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.08;
+  animation: orbFloat 8s ease-in-out infinite;
+}
+.tech-glow-orb.orb-1 {
+  width: 200px; height: 200px;
+  background: #2B7A9E;
+  top: 10%; right: 15%;
+  animation-delay: 0s;
+}
+.tech-glow-orb.orb-2 {
+  width: 150px; height: 150px;
+  background: #1A2B4A;
+  bottom: 20%; left: 10%;
+  animation-delay: 2s;
+}
+.tech-glow-orb.orb-3 {
+  width: 100px; height: 100px;
+  background: #2B7A9E;
+  top: 50%; left: 40%;
+  animation-delay: 4s;
+}
+@keyframes orbFloat {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.08; }
+  50% { transform: translateY(-20px) scale(1.1); opacity: 0.12; }
+}
+
+/* Grid lines decoration */
+.tech-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(43,122,158,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(43,122,158,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+}
+
+/* Scanline effect */
+.tech-scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(43,122,158,0.3), transparent);
+  pointer-events: none;
+  z-index: 1;
+  animation: scanMove 4s linear infinite;
+  opacity: 0;
+}
+@keyframes scanMove {
+  0% { top: 0; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+/* Floating dots */
+.tech-dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(43,122,158,0.25);
+  pointer-events: none;
+  z-index: 0;
+  animation: dotPulse 3s ease-in-out infinite;
+}
+@keyframes dotPulse {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.5); }
+}
+
+/* Connector lines for constellation effect */
+.constellation-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Make sections relative for absolute children */
+.manifesto { position: relative; overflow: hidden; }
+.footer-cta { position: relative; overflow: hidden; }
+
+/* ===== SMOKE PARTICLES ===== */
+.hero-smoke-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  background: rgba(244,244,239,0.35) !important;
+}
+
+/* Fumée au-dessus des packs */
+.packs-smoke-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+.devis-wrap {
+  position: relative;
+}
+.devis-ticket {
+  position: relative;
+  z-index: 3;
+}
+
+/* Ambient glow pour la fumée */
+.smoke-glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.15;
+  transition: opacity 0.5s ease;
+}
+
 /* PRINT */
 @media print{
   nav, .hero, .calc-section, .reviews-section, .examples-grid, .faq-inner, .manifesto, .stats-section, .footer-cta, .footer-bottom, .back-to-top, .mobile-cta-bar, .devis-form-zone, .dt-foot, .btn-devis, .nav-toggle, .scroll-progress{display:none !important}
@@ -426,6 +582,7 @@ body{padding-bottom:80px}
 .criteria-chip{font-size:11px}
 }
 </style>
+<base target="_blank">
 </head>
 <body>
 <div class="scroll-progress" id="scrollProgress"></div>
@@ -443,7 +600,8 @@ body{padding-bottom:80px}
 </button>
 </nav>
 
-<section class="hero">
+<section class="hero"><canvas class="hero-smoke-canvas" id="smokeCanvas"></canvas>
+
 <div class="eyebrow">Sites web pour indépendants &amp; commerçants</div>
 <h1>Un site pro qui te ressemble, <em>à partir de 80€.</em></h1>
 <p class="hero-sub">Tu décris ton activité, on s'occupe de tout. Livraison rapide, prix fixe, zéro jargon technique.</p>
@@ -456,6 +614,7 @@ body{padding-bottom:80px}
 </div>
 
 <div class="devis-wrap" id="offres">
+<canvas class="packs-smoke-canvas" id="packsSmokeCanvas"></canvas>
 <div class="devis-ticket">
   <div class="devis-head">
     <div class="devis-head-left">
@@ -686,6 +845,18 @@ body{padding-bottom:80px}
 
 <!-- MANIFESTE -->
 <section class="manifesto">
+<canvas class="tech-canvas" id="manifestoTechCanvas"></canvas>
+<div class="tech-grid"></div>
+<div class="tech-glow-orb orb-1"></div>
+<div class="tech-glow-orb orb-2"></div>
+<div class="tech-glow-orb orb-3"></div>
+<div class="tech-scanline"></div>
+<div class="tech-dot" style="top:15%;left:8%"></div>
+<div class="tech-dot" style="top:35%;right:12%;animation-delay:1s"></div>
+<div class="tech-dot" style="top:65%;left:25%;animation-delay:2s"></div>
+<div class="tech-dot" style="top:80%;right:30%;animation-delay:0.5s"></div>
+<div class="tech-dot" style="top:45%;left:60%;animation-delay:1.5s"></div>
+
 <div class="manifesto-inner">
 <div class="animate">
 <div class="manifesto-big">Chaque business <em>mérite</em> son représentant.</div>
@@ -711,6 +882,12 @@ body{padding-bottom:80px}
 
 <!-- FOOTER -->
 <div class="footer-cta">
+<canvas class="constellation-canvas" id="footerConstellationCanvas"></canvas>
+<div class="tech-grid"></div>
+<div class="tech-dot" style="top:20%;left:15%"></div>
+<div class="tech-dot" style="top:60%;right:20%;animation-delay:1.2s"></div>
+<div class="tech-dot" style="top:40%;left:70%;animation-delay:0.8s"></div>
+
 <div class="footer-cta-left">
 <h2>Prêt à lancer ton site ?</h2>
 <p>Rejoins les 50+ entrepreneurs qui font confiance à Statevo.</p>
@@ -950,6 +1127,259 @@ const obs = new IntersectionObserver((entries) => {
 document.querySelectorAll(".animate").forEach(el => obs.observe(el));
 
 updateCalculator();
+</script>
+
+<script>
+/* ===== SMOKE PARTICLE SYSTEM v2 ===== */
+(function() {
+
+  // ========== UTILITAIRES ==========
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  // ========== SYSTÈME HERO ==========
+  const heroCanvas = document.getElementById('smokeCanvas');
+  const hero = document.querySelector('.hero');
+  let heroCtx, heroW, heroH, heroParticles = [], heroMouseX = 0, heroMouseY = 0;
+  let scrollVel = 0, lastScrollY = window.scrollY || 0, frame = 0;
+
+  const HERO_COUNT = 160;
+
+  function resizeHero() {
+    if (!hero || !heroCanvas) return;
+    const rect = hero.getBoundingClientRect();
+    heroW = rect.width; heroH = rect.height;
+    const dpr = window.devicePixelRatio || 1;
+    heroCanvas.width = heroW * dpr; heroCanvas.height = heroH * dpr;
+    heroCtx = heroCanvas.getContext('2d');
+    heroCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  class HeroParticle {
+    constructor() { this.reset(); this.y = Math.random() * heroH; }
+    reset() {
+      this.x = Math.random() * heroW;
+      this.y = -20 - Math.random() * 60;
+      this.vx = (Math.random() - 0.5) * 0.9;
+      this.vy = Math.random() * 0.6 + 0.2;
+      this.radius = Math.random() * 16 + 5;
+      this.opacity = Math.random() * 0.45 + 0.12;
+      this.life = Math.random() * 220 + 100;
+      this.maxLife = this.life;
+      this.noiseOff = Math.random() * 1000;
+      this.hue = Math.random() > 0.6 ? 160 : (Math.random() > 0.5 ? 35 : 200); // vert, doré, ou bleu-gris
+    }
+    update() {
+      this.noiseOff += 0.01;
+      this.vy += 0.04; // gravité douce
+
+      const dx = this.x - heroMouseX, dy = this.y - heroMouseY;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      if (dist < 180 && dist > 0) {
+        const f = (180 - dist) / 180;
+        this.vx += (dx/dist) * f * 0.6;
+        this.vy += (dy/dist) * f * 0.6;
+      }
+      this.vy += scrollVel * 0.1;
+      this.vx += scrollVel * 0.05 * (Math.random() - 0.5);
+      this.vx *= 0.985; this.vy *= 0.99;
+      this.vx += Math.sin(this.noiseOff) * 0.025;
+      this.x += this.vx; this.y += this.vy; this.life--;
+      if (this.y > heroH + 30 || this.life <= 0 || this.x < -60 || this.x > heroW + 60) this.reset();
+    }
+    draw(ctx) {
+      const lifeR = this.life / this.maxLife;
+      const op = this.opacity * lifeR;
+      const dx = this.x - heroMouseX, dy = this.y - heroMouseY;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      const light = Math.max(0, 1 - dist / 280);
+
+      const grad = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius * 2.8);
+
+      if (this.hue === 160) { // vert Statevo
+        const r = Math.floor(25 + light * 50), g = Math.floor(120 + light * 80), b = Math.floor(90 + light * 60);
+        grad.addColorStop(0, `rgba(${r},${g},${b},${op * 0.9})`);
+        grad.addColorStop(0.3, `rgba(${r},${g},${b},${op * 0.35})`);
+        grad.addColorStop(1, `rgba(${r},${g},${b},0)`);
+      } else if (this.hue === 35) { // doré premium
+        const r = Math.floor(180 + light * 60), g = Math.floor(140 + light * 40), b = Math.floor(60 + light * 30);
+        grad.addColorStop(0, `rgba(${r},${g},${b},${op * 0.8})`);
+        grad.addColorStop(0.3, `rgba(${r},${g},${b},${op * 0.3})`);
+        grad.addColorStop(1, `rgba(${r},${g},${b},0)`);
+      } else { // bleu-gris froid
+        const r = Math.floor(160 + light * 40), g = Math.floor(170 + light * 30), b = Math.floor(190 + light * 40);
+        grad.addColorStop(0, `rgba(${r},${g},${b},${op * 0.7})`);
+        grad.addColorStop(0.3, `rgba(${r},${g},${b},${op * 0.25})`);
+        grad.addColorStop(1, `rgba(${r},${g},${b},0)`);
+      }
+
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius * 2.8, 0, Math.PI * 2);
+      ctx.fillStyle = grad;
+      ctx.fill();
+    }
+  }
+
+  function initHero() {
+    resizeHero();
+    heroParticles = [];
+    for (let i = 0; i < HERO_COUNT; i++) heroParticles.push(new HeroParticle());
+  }
+
+  function drawHeroLight() {
+    const lg = heroCtx.createRadialGradient(heroMouseX, heroMouseY, 0, heroMouseX, heroMouseY, 280);
+    lg.addColorStop(0, 'rgba(43,122,158,0.14)');
+    lg.addColorStop(0.3, 'rgba(43,122,158,0.07)');
+    lg.addColorStop(0.7, 'rgba(26,43,74,0.04)');
+    lg.addColorStop(1, 'rgba(43,122,158,0)');
+    heroCtx.fillStyle = lg; heroCtx.fillRect(0, 0, heroW, heroH);
+
+    // Glow cursor
+    const glow = heroCtx.createRadialGradient(heroMouseX, heroMouseY, 0, heroMouseX, heroMouseY, 50);
+    glow.addColorStop(0, 'rgba(255,245,220,0.25)');
+    glow.addColorStop(0.5, 'rgba(43,122,158,0.12)');
+    glow.addColorStop(1, 'rgba(43,122,158,0)');
+    heroCtx.beginPath(); heroCtx.arc(heroMouseX, heroMouseY, 50, 0, Math.PI*2);
+    heroCtx.fillStyle = glow; heroCtx.fill();
+  }
+
+  function animateHero() {
+    if (!heroCtx) return;
+    heroCtx.clearRect(0, 0, heroW, heroH);
+    frame++;
+    scrollVel *= 0.88;
+    heroParticles.forEach(p => { p.update(); p.draw(heroCtx); });
+    drawHeroLight();
+    requestAnimationFrame(animateHero);
+  }
+
+  if (hero && heroCanvas) {
+    hero.addEventListener('mousemove', e => {
+      const r = hero.getBoundingClientRect();
+      heroMouseX = e.clientX - r.left; heroMouseY = e.clientY - r.top;
+    });
+    hero.addEventListener('mouseleave', () => { heroMouseX = heroW/2; heroMouseY = heroH/2; });
+  }
+
+  // ========== SYSTÈME PACKS (au-dessus des offres) ==========
+  const packsCanvas = document.getElementById('packsSmokeCanvas');
+  const packsWrap = document.querySelector('.devis-wrap');
+  let packsCtx, packsW, packsH, packsParticles = [], packsMouseX = 0, packsMouseY = 0;
+  const PACKS_COUNT = 80;
+
+  function resizePacks() {
+    if (!packsWrap || !packsCanvas) return;
+    const rect = packsWrap.getBoundingClientRect();
+    packsW = rect.width; packsH = rect.height;
+    const dpr = window.devicePixelRatio || 1;
+    packsCanvas.width = packsW * dpr; packsCanvas.height = packsH * dpr;
+    packsCtx = packsCanvas.getContext('2d');
+    packsCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  class PacksParticle {
+    constructor() { this.reset(); this.y = Math.random() * packsH; }
+    reset() {
+      this.x = Math.random() * packsW;
+      this.y = packsH + 20 + Math.random() * 40; // partent du bas et montent !
+      this.vx = (Math.random() - 0.5) * 0.5;
+      this.vy = -(Math.random() * 0.4 + 0.15); // monte
+      this.radius = Math.random() * 10 + 3;
+      this.opacity = Math.random() * 0.35 + 0.1;
+      this.life = Math.random() * 180 + 80;
+      this.maxLife = this.life;
+      this.noiseOff = Math.random() * 1000;
+      this.isGold = Math.random() > 0.5;
+    }
+    update() {
+      this.noiseOff += 0.008;
+      this.vy -= 0.015; // légère poussée vers le haut (anti-gravité)
+
+      const dx = this.x - packsMouseX, dy = this.y - packsMouseY;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      if (dist < 120 && dist > 0) {
+        const f = (120 - dist) / 120;
+        this.vx += (dx/dist) * f * 0.35;
+        this.vy += (dy/dist) * f * 0.35;
+      }
+      this.vx *= 0.99; this.vy *= 0.995;
+      this.vx += Math.sin(this.noiseOff) * 0.02;
+      this.x += this.vx; this.y += this.vy; this.life--;
+      if (this.y < -30 || this.life <= 0 || this.x < -40 || this.x > packsW + 40) this.reset();
+    }
+    draw(ctx) {
+      const lifeR = this.life / this.maxLife;
+      const op = this.opacity * lifeR;
+      const dx = this.x - packsMouseX, dy = this.y - packsMouseY;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      const light = Math.max(0, 1 - dist / 200);
+
+      const grad = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius * 2.2);
+
+      if (this.isGold) {
+        const r = Math.floor(200 + light * 55), g = Math.floor(160 + light * 50), b = Math.floor(80 + light * 40);
+        grad.addColorStop(0, `rgba(${r},${g},${b},${op * 0.85})`);
+        grad.addColorStop(0.4, `rgba(${r},${g},${b},${op * 0.3})`);
+        grad.addColorStop(1, `rgba(${r},${g},${b},0)`);
+      } else {
+        const r = Math.floor(30 + light * 60), g = Math.floor(110 + light * 90), b = Math.floor(85 + light * 70);
+        grad.addColorStop(0, `rgba(${r},${g},${b},${op * 0.85})`);
+        grad.addColorStop(0.4, `rgba(${r},${g},${b},${op * 0.3})`);
+        grad.addColorStop(1, `rgba(${r},${g},${b},0)`);
+      }
+
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius * 2.2, 0, Math.PI * 2);
+      ctx.fillStyle = grad;
+      ctx.fill();
+    }
+  }
+
+  function initPacks() {
+    resizePacks();
+    packsParticles = [];
+    for (let i = 0; i < PACKS_COUNT; i++) packsParticles.push(new PacksParticle());
+  }
+
+  function drawPacksLight() {
+    const lg = packsCtx.createRadialGradient(packsMouseX, packsMouseY, 0, packsMouseX, packsMouseY, 200);
+    lg.addColorStop(0, 'rgba(26,43,74,0.10)');
+    lg.addColorStop(0.5, 'rgba(43,122,158,0.05)');
+    lg.addColorStop(1, 'rgba(26,43,74,0)');
+    packsCtx.fillStyle = lg; packsCtx.fillRect(0, 0, packsW, packsH);
+  }
+
+  function animatePacks() {
+    if (!packsCtx) return;
+    packsCtx.clearRect(0, 0, packsW, packsH);
+    packsParticles.forEach(p => { p.update(); p.draw(packsCtx); });
+    drawPacksLight();
+    requestAnimationFrame(animatePacks);
+  }
+
+  if (packsWrap && packsCanvas) {
+    packsWrap.addEventListener('mousemove', e => {
+      const r = packsWrap.getBoundingClientRect();
+      packsMouseX = e.clientX - r.left; packsMouseY = e.clientY - r.top;
+    });
+    packsWrap.addEventListener('mouseleave', () => { packsMouseX = packsW/2; packsMouseY = packsH/2; });
+  }
+
+  // ========== GLOBAL EVENTS ==========
+  window.addEventListener('scroll', () => {
+    const cy = window.scrollY || 0;
+    scrollVel = cy - lastScrollY;
+    lastScrollY = cy;
+  });
+  window.addEventListener('resize', () => { resizeHero(); resizePacks(); });
+
+  // ========== INIT ==========
+  heroMouseX = window.innerWidth / 2; heroMouseY = 200;
+  packsMouseX = 400; packsMouseY = 300;
+
+  initHero(); animateHero();
+  initPacks(); animatePacks();
+
+})();
 </script>
 </body>
 </html>
