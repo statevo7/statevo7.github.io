@@ -93,8 +93,8 @@ a{color:inherit}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:rgba(244,244,239,0.7);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border-bottom:1px solid var(--glass-border)}
-.nav-logo{font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--ink);text-decoration:none;letter-spacing:-.5px;display:flex;align-items:center}
-.nav-logo svg{margin-right:8px}
+.nav-logo{font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--ink);text-decoration:none;letter-spacing:-.5px;display:flex;align-items:center;gap:8px}
+.nav-logo svg{flex-shrink:0}
 .nav-logo span{color:var(--essential)}
 .nav-links{display:flex;gap:34px;align-items:center}
 .nav-links a{color:var(--ink-soft);text-decoration:none;font-size:13.5px;font-weight:500;transition:.15s;position:relative}
@@ -688,9 +688,25 @@ body{padding-bottom:80px}
 <div class="scroll-progress" id="scrollProgress"></div>
 <nav>
 <a class="nav-logo" href="#">
-  <svg width="26" height="26" viewBox="0 0 100 100" style="vertical-align:middle;">
-    <rect width="100" height="100" rx="20" fill="#1F5E4C"/>
-    <text x="50" y="68" font-size="60" font-family="Arial" font-weight="bold" fill="white" text-anchor="middle">S</text>
+  <!-- ===== NOUVEAU LOGO : S BLEU BRILLANT SUR FOND BLEU NUIT ===== -->
+  <svg width="28" height="28" viewBox="0 0 100 100" style="vertical-align:middle;">
+    <defs>
+      <!-- Dégradé bleu brillant pour le "S" -->
+      <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#00D4FF"/>
+        <stop offset="100%" stop-color="#007BFF"/>
+      </linearGradient>
+      <!-- Effet de lueur (brillant) -->
+      <filter id="logoGlow" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#00D4FF" flood-opacity="0.9"/>
+      </filter>
+    </defs>
+    <!-- Fond bleu nuit profond avec coins arrondis -->
+    <rect width="100" height="100" rx="22" fill="#0A192F" />
+    <!-- Petite bordure subtile pour le relief -->
+    <rect width="94" height="94" x="3" y="3" rx="19" fill="none" stroke="#1E3A5F" stroke-width="1.5" />
+    <!-- Lettre S brillante avec lueur -->
+    <text x="50" y="72" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="66" font-weight="900" fill="url(#logoGrad)" filter="url(#logoGlow)" text-anchor="middle">S</text>
   </svg>
   <span>Stat</span>evo
 </a>
@@ -1625,65 +1641,4 @@ updateCalculator();
       const r = packsWrap.getBoundingClientRect();
       packsMouseX = e.clientX - r.left; packsMouseY = e.clientY - r.top;
     });
-    packsWrap.addEventListener('mouseleave', () => { packsMouseX = packsW/2; packsMouseY = packsH/2; });
-  }
-
-  window.addEventListener('scroll', () => {
-    const cy = window.scrollY || 0;
-    scrollVel = cy - lastScrollY;
-    lastScrollY = cy;
-  });
-  window.addEventListener('resize', () => { resizeHero(); resizePacks(); });
-
-  heroMouseX = window.innerWidth / 2; heroMouseY = 200;
-  packsMouseX = 400; packsMouseY = 300;
-
-  initHero(); animateHero();
-  initPacks(); animatePacks();
-
-})();
-</script>
-<script>
-/* ===================== STATEVO ENHANCEMENTS v2 ===================== */
-(function(){
-  'use strict';
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var fine = window.matchMedia('(pointer: fine)').matches;
-
-  /* Cursor glow */
-  if (fine && !reduce) {
-    var glow = document.createElement('div');
-    glow.className = 'cursor-glow';
-    document.body.appendChild(glow);
-    var gx = window.innerWidth / 2, gy = 220, cx = gx, cy = gy, last = performance.now();
-    window.addEventListener('mousemove', function(e){
-      gx = e.clientX; gy = e.clientY; glow.classList.remove('is-hidden');
-    }, {passive: true});
-    window.addEventListener('mouseout', function(){ glow.classList.add('is-hidden'); });
-    (function loop(now){
-      var dt = Math.min(0.05, (now - last) / 1000); last = now;
-      var f = 1 - Math.pow(0.02, dt);
-      cx += (gx - cx) * f; cy += (gy - cy) * f;
-      glow.style.transform = 'translate3d(' + (cx - 160) + 'px,' + (cy - 160) + 'px,0)';
-      requestAnimationFrame(loop);
-    })(performance.now());
-  }
-
-  /* 3D tilt with spring (gravity) return + magnetic buttons */
-  if (fine && !reduce) {
-    var tilts = document.querySelectorAll('.devis-ticket, .example-card, .receipt, .faq-inner');
-    tilts.forEach(function(el){
-      var trx = 0, tryy = 0, rx = 0, ry = 0, vx = 0, vy = 0;
-      el.classList.add('tilt3d');
-      el.addEventListener('mousemove', function(e){
-        var r = el.getBoundingClientRect();
-        var px = (e.clientX - r.left) / r.width - 0.5;
-        var py = (e.clientY - r.top) / r.height - 0.5;
-        tryy = px * 7; trx = -py * 6;
-      }, {passive: true});
-      el.addEventListener('mouseleave', function(){ trx = 0; tryy = 0; });
-      (function tick(){
-        vx = (vx + (tryy - ry) * 0.05) * 0.88;
-        vy = (vy + (trx - rx) * 0.05) * 0.88;
-        rx += vy; ry += vx;
-        el.style.transform = 'perspective(1100px) rotateX(' + rx.toFixed(3) + 'deg) rotateY(' + ry.toFixed(3
+    packsWrap.addEventListener('mouseleave
