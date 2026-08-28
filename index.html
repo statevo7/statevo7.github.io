@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -10,7 +9,7 @@
 <meta property="og:description" content="Un site pro qui te ressemble, à partir de 80€. Livraison rapide, prix fixe, zéro jargon technique.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.statevo.fr">
-<meta property="og:image" content="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=90">
+<meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%231F5E4C'/%3E%3Ccircle cx='600' cy='250' r='120' fill='white' opacity='0.15'/%3E%3Ctext x='600' y='330' font-size='180' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3Ctext x='600' y='430' font-size='36' font-family='Arial' fill='white' text-anchor='middle'%3EStatevo — Sites web pro%3C/text%3E%3C/svg%3E">
 <link rel="canonical" href="https://www.statevo.fr">
 <meta name="theme-color" content="#F4F4EF">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231F5E4C'/><text x='50' y='68' font-size='60' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>S</text></svg>">
@@ -94,7 +93,8 @@ a{color:inherit}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:rgba(244,244,239,0.7);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border-bottom:1px solid var(--glass-border)}
-.nav-logo{font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--ink);text-decoration:none;letter-spacing:-.5px}
+.nav-logo{font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--ink);text-decoration:none;letter-spacing:-.5px;display:flex;align-items:center}
+.nav-logo svg{margin-right:8px}
 .nav-logo span{color:var(--essential)}
 .nav-links{display:flex;gap:34px;align-items:center}
 .nav-links a{color:var(--ink-soft);text-decoration:none;font-size:13.5px;font-weight:500;transition:.15s;position:relative}
@@ -137,73 +137,264 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:64px;display:flex;
 .devis-head .title{font-family:'Fraunces',serif;font-weight:600;font-size:17px;margin-top:2px}
 .devis-head .stamp{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--essential);border:1.5px dashed var(--essential);border-radius:8px;padding:6px 12px;transform:rotate(-3deg);font-weight:600;letter-spacing:.5px;background:rgba(255,255,255,0.4)}
 
-.devis-table{display:grid;grid-template-columns:1fr 148px 148px;position:relative}
-.devis-table .col-notch{position:absolute;top:0;bottom:0;left:calc(100% - 296px);width:1px;border-left:1px dashed rgba(21,24,29,0.14);z-index:2}
-.devis-table .col-notch::before,.devis-table .col-notch::after{content:"";position:absolute;left:50%;transform:translateX(-50%);width:22px;height:22px;background:var(--bg);border-radius:50%}
-.devis-table .col-notch::before{top:-11px}
-.devis-table .col-notch::after{bottom:-11px}
-
-.dt-row{display:contents}
-.dt-cell{padding:16px 14px;display:flex;align-items:center;border-bottom:1px solid rgba(21,24,29,0.08);transition:background .2s}
-.dt-cell:hover{background:rgba(43,122,158,0.06)}
-.dt-label{padding-left:28px;flex-direction:column;align-items:flex-start;gap:2px}
-.dt-label .lbl{font-size:14px;color:var(--ink);font-weight:600;line-height:1.3}
-.dt-label .sub{font-size:11.5px;color:var(--ink-soft);line-height:1.35;opacity:.85}
-.dt-cell.dt-check{justify-content:center}
-.dt-header{padding:22px 14px;border-bottom:1px solid rgba(21,24,29,0.1);flex-direction:column;align-items:center;gap:6px;position:relative;background:rgba(255,255,255,0.35)}
-.dt-header.dt-label-head{align-items:flex-start;padding-left:28px;background:transparent}
-.pack-badge-mini{position:absolute;top:-11px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;font-weight:600;letter-spacing:1px;color:#fff;background:var(--premium);padding:4px 10px;border-radius:100px;box-shadow:0 4px 12px -4px rgba(26,43,74,0.5)}
-.pack-tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--essential);font-weight:600}
-.dt-header.premium-head .pack-tag{color:var(--premium)}
-.pack-price-mini{font-family:'IBM Plex Mono',monospace;font-size:30px;font-weight:600;color:var(--ink);letter-spacing:-1px}
-.pack-price-sub-mini{font-size:10.5px;color:var(--muted)}
-
-.check-on{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--essential-soft);color:var(--essential);font-size:12px;box-shadow:0 0 0 3px rgba(43,122,158,0.08)}
-.dt-cell.dt-check.is-premium .check-on{background:var(--premium-soft);color:var(--premium);box-shadow:0 0 0 3px rgba(26,43,74,0.08)}
-.check-off{color:var(--off);font-size:14px;font-weight:600}
-
-.dt-foot{padding:22px 16px}
-.dt-foot-empty{border-right:none}
-.btn-devis{width:100%;padding:13px;border:none;border-radius:10px;font-weight:700;font-size:12.5px;letter-spacing:.3px;cursor:pointer;font-family:'Inter',sans-serif;transition:.2s}
-.btn-devis.essential{background:var(--essential);color:#fff;box-shadow:0 10px 24px -12px rgba(43,122,158,0.6)}
-.btn-devis.essential:hover{background:#164739;transform:translateY(-2px)}
-.btn-devis.premium{background:var(--premium);color:#fff;box-shadow:0 10px 24px -12px rgba(26,43,74,0.6)}
-.btn-devis.premium:hover{background:#0f1c33;transform:translateY(-2px)}
-.reassurance{font-size:11px;color:var(--muted);text-align:center;margin-top:8px}
-
-.devis-form-zone{grid-column:1 / -1;overflow:hidden;max-height:0;opacity:0;transition:all .45s ease}
-.devis-form-zone.open{max-height:520px;opacity:1;border-top:1px dashed rgba(21,24,29,0.14)}
-.devis-form-inner{padding:26px 28px;max-width:420px}
-.devis-form-inner h4{font-family:'Fraunces',serif;font-size:16px;margin-bottom:14px}
-.form-field{margin-bottom:10px}
-.form-field input,.form-field textarea{width:100%;padding:11px 13px;border:1px solid rgba(21,24,29,0.14);border-radius:9px;background:rgba(255,255,255,0.6);color:var(--ink);font-size:13.5px;outline:none;font-family:'Inter',sans-serif;transition:.15s}
-.form-field input:focus,.form-field textarea:focus{border-color:var(--essential);background:#fff}
-.form-field textarea{resize:vertical;min-height:60px}
-.form-field input::placeholder,.form-field textarea::placeholder{color:var(--muted)}
-.submit-devis{margin-top:6px;padding:12px 22px;border:none;border-radius:9px;background:var(--ink);color:#fff;font-weight:600;font-size:12.5px;cursor:pointer;transition:.2s}
-.submit-devis:hover{background:var(--essential);transform:translateY(-2px)}
-.success-devis{display:none;margin-top:10px;font-size:12.5px;color:var(--essential);font-weight:500}
-.char-count{font-size:11px;color:var(--muted);text-align:right;margin-top:2px}
-
-/* MOBILE table adapt — glass card stack, NO info hidden */
-@media(max-width:700px){
-.devis-table{grid-template-columns:1fr 92px 92px}
-.dt-label{padding-left:16px}
-.dt-label .sub{display:block;font-size:10.5px}
-.dt-header.dt-label-head{padding-left:16px}
-.pack-price-mini{font-size:22px}
-.dt-cell{padding:12px 6px}
-.devis-table .col-notch{left:calc(100% - 184px)}
-.devis-form-inner{padding:22px 16px}
+/* ===== DEUX CARTES SÉPARÉES ===== */
+.pack-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 30px;
 }
-@media(max-width:420px){
-.devis-table{grid-template-columns:1fr 72px 72px}
-.dt-cell{padding:10px 4px}
-.pack-price-mini{font-size:17px}
-.pack-tag{font-size:8.5px}
-.dt-header{padding:14px 4px}
-.dt-label .lbl{font-size:12.5px}
-.dt-label .sub{font-size:9.5px}
+.pack-card {
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 22px;
+  padding: 28px 24px;
+  box-shadow: var(--glass-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.pack-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 55px -25px rgba(21,24,29,0.32);
+}
+.pack-card-header {
+  text-align: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px dashed rgba(21,24,29,0.14);
+}
+.premium-card .pack-card-header {
+  background: linear-gradient(180deg, rgba(26,43,74,0.06), rgba(26,43,74,0.12));
+  border-bottom: 1px solid rgba(26,43,74,0.2);
+}
+.pack-card-header .pack-tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--essential);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+.premium-card .pack-card-header .pack-tag {
+  color: var(--premium);
+}
+.pack-price {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 42px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -1px;
+  display: block;
+}
+.premium-card .pack-price {
+  background: linear-gradient(135deg, #8a6d1f, var(--gold) 45%, #e7c778);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.pack-price-sub {
+  font-size: 12px;
+  color: var(--muted);
+  display: block;
+  margin-top: 4px;
+}
+.pack-features {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+.pack-features li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 4px 8px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+.pack-features li > span:first-child {
+  flex-shrink: 0;
+  width: 20px;
+  text-align: center;
+  font-weight: 700;
+}
+.pack-features .check-on {
+  color: var(--essential);
+}
+.premium-card .pack-features .check-on {
+  color: var(--premium);
+}
+.pack-features .check-off {
+  color: var(--off);
+}
+.pack-features .sub {
+  display: block;
+  width: 100%;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+  padding-left: 28px;
+}
+.pack-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.pack-actions .btn-devis {
+  flex: 1;
+  text-align: center;
+}
+.btn-devis {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 12.5px;
+  letter-spacing: .3px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: .2s;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn-devis.essential {
+  background: var(--essential);
+  color: #fff;
+  box-shadow: 0 10px 24px -12px rgba(43,122,158,0.6);
+}
+.btn-devis.essential:hover {
+  background: #164739;
+  transform: translateY(-2px);
+}
+.btn-devis.premium {
+  background: var(--premium);
+  color: #fff;
+  box-shadow: 0 10px 24px -12px rgba(26,43,74,0.6);
+}
+.btn-devis.premium:hover {
+  background: #0f1c33;
+  transform: translateY(-2px);
+}
+.btn-devis.outline {
+  background: transparent;
+  border: 1.5px solid currentColor;
+  color: var(--ink);
+}
+.btn-devis.outline:hover {
+  background: rgba(0,0,0,0.04);
+}
+.reassurance {
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 8px;
+}
+.devis-form-zone {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: all .45s ease;
+}
+.devis-form-zone.open {
+  max-height: 520px;
+  opacity: 1;
+  border-top: 1px dashed rgba(21,24,29,0.14);
+}
+.devis-form-inner {
+  padding: 26px 28px;
+  max-width: 100%;
+}
+.devis-form-inner h4 {
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+.form-field {
+  margin-bottom: 10px;
+}
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid rgba(21,24,29,0.14);
+  border-radius: 9px;
+  background: rgba(255,255,255,0.6);
+  color: var(--ink);
+  font-size: 13.5px;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  transition: .15s;
+}
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--essential);
+  background: #fff;
+}
+.form-field textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: var(--muted);
+}
+.submit-devis {
+  margin-top: 6px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 9px;
+  background: var(--ink);
+  color: #fff;
+  font-weight: 600;
+  font-size: 12.5px;
+  cursor: pointer;
+  transition: .2s;
+}
+.submit-devis:hover {
+  background: var(--essential);
+  transform: translateY(-2px);
+}
+.success-devis {
+  display: none;
+  margin-top: 10px;
+  font-size: 12.5px;
+  color: var(--essential);
+  font-weight: 500;
+}
+.char-count {
+  font-size: 11px;
+  color: var(--muted);
+  text-align: right;
+  margin-top: 2px;
+}
+
+/* ===== NOTE FRAIS SUPPLÉMENTAIRES ===== */
+.additional-fees-note {
+  margin: 0 30px 30px;
+  padding: 14px 18px;
+  background: rgba(255,255,255,0.5);
+  border: 1px dashed rgba(21,24,29,0.2);
+  border-radius: 12px;
+  font-size: 12px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  text-align: center;
+}
+.additional-fees-note strong {
+  color: var(--ink);
+  font-weight: 600;
 }
 
 /* SECTIONS */
@@ -385,7 +576,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   nav, .hero, .calc-section, .reviews-section, .examples-grid, .faq-inner, .manifesto, .stats-section, .footer-cta, .footer-bottom, .back-to-top, .mobile-cta-bar, .devis-form-zone, .dt-foot, .btn-devis, .nav-toggle, .scroll-progress, .bg-mesh, .lang-switch{display:none !important}
   body{background:#fff}
   .devis-ticket{box-shadow:none;border:none;border-radius:0}
-  .devis-table{grid-template-columns:1fr 100px 100px}
+  .pack-cards{grid-template-columns:1fr 1fr;gap:10px;padding:0}
+  .pack-card{box-shadow:none;border:1px solid #ddd;border-radius:8px;padding:15px}
+  .pack-price{font-size:28px}
+  .additional-fees-note{display:none}
 }
 
 @media(max-width:900px){
@@ -414,6 +608,8 @@ nav{padding:0 16px}
 body{padding-bottom:80px}
 .back-to-top{bottom:80px}
 .faq-inner{padding:4px 16px}
+.pack-cards{grid-template-columns:1fr;padding:16px}
+.additional-fees-note{margin:0 16px 16px}
 }
 @media(max-width:400px){
 .hero{padding:90px 12px 40px}
@@ -443,8 +639,18 @@ body{padding-bottom:80px}
 .shine::after{content:"";position:absolute;top:0;left:-130%;width:55%;height:100%;background:linear-gradient(115deg,transparent,rgba(255,255,255,0.38),transparent);transform:skewX(-20deg);animation:shineSweep 3.4s ease-in-out infinite;z-index:2}
 @keyframes shineSweep{0%{left:-130%}55%,100%{left:170%}}
 
-.pack-badge-mini{background:linear-gradient(135deg,var(--premium),#2f4d8c);letter-spacing:.6px;animation:badgePulse 2.6s ease-in-out infinite}
-@keyframes badgePulse{0%,100%{box-shadow:0 0 0 0 rgba(47,77,140,0.5),0 6px 14px -6px rgba(26,43,74,0.5)}50%{box-shadow:0 0 0 10px rgba(47,77,140,0),0 6px 14px -6px rgba(26,43,74,0.5)}}
+/* BADGE RECOMMANDÉ ALLÉGÉ */
+.pack-badge-mini{
+  background: linear-gradient(135deg, #E8EDF5, #F4F7FA);
+  color: var(--premium);
+  letter-spacing:.6px;
+  animation: badgePulse 2.6s ease-in-out infinite;
+  border: 1px solid rgba(26,43,74,0.15);
+}
+@keyframes badgePulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(26,43,74,0.15), 0 4px 8px -4px rgba(26,43,74,0.2)}
+  50%{box-shadow:0 0 0 6px rgba(26,43,74,0.05), 0 4px 8px -4px rgba(26,43,74,0.2)}
+}
 
 .dt-header{background:linear-gradient(180deg,rgba(255,255,255,0.6),rgba(255,255,255,0.32))}
 .dt-header.premium-head{background:linear-gradient(180deg,rgba(26,43,74,0.07),rgba(26,43,74,0.14));border-bottom:1px solid rgba(26,43,74,0.2)}
@@ -481,7 +687,13 @@ body{padding-bottom:80px}
 
 <div class="scroll-progress" id="scrollProgress"></div>
 <nav>
-<a class="nav-logo" href="#"><span>Stat</span>evo</a>
+<a class="nav-logo" href="#">
+  <svg width="26" height="26" viewBox="0 0 100 100" style="vertical-align:middle;">
+    <rect width="100" height="100" rx="20" fill="#1F5E4C"/>
+    <text x="50" y="68" font-size="60" font-family="Arial" font-weight="bold" fill="white" text-anchor="middle">S</text>
+  </svg>
+  <span>Stat</span>evo
+</a>
 <div class="nav-links" id="navLinks">
 <a href="#offres" data-i18n="nav_offres">Offres</a>
 <a href="#calculatrice" data-i18n="nav_calc">Calculatrice</a>
@@ -523,113 +735,98 @@ body{padding-bottom:80px}
     <div class="stamp" data-i18n="devis_stamp">✓ Réponse 24h</div>
   </div>
 
-  <div class="devis-table">
-    <div class="col-notch"></div>
-
-    <div class="dt-header dt-label-head"><span class="pack-tag" style="color:var(--ink-soft)" data-i18n="th_features">Fonctionnalités</span></div>
-    <div class="dt-header">
-      <span class="pack-tag" data-i18n="th_essential">Essentielle</span>
-      <span class="pack-price-mini">80€</span>
-      <span class="pack-price-sub-mini" data-i18n="th_essential_sub">Site vitrine pro</span>
-    </div>
-    <div class="dt-header premium-head">
-      <div class="pack-badge-mini" data-i18n="th_recommended">Recommandé</div>
-      <span class="pack-tag" data-i18n="th_premium">Premium</span>
-      <span class="pack-price-mini">190€</span>
-      <span class="pack-price-sub-mini" data-i18n="th_premium_sub">Le site complet</span>
-    </div>
-
-    <div class="dt-cell dt-label"><span class="lbl" data-i18n="f1_l">Site propre &amp; moderne</span><span class="sub" data-i18n="f1_s">Présentation soignée de ton activité</span></div>
-    <div class="dt-cell dt-check"><span class="check-on">✓</span></div>
-    <div class="dt-cell dt-check is-premium"><span class="check-on">✓</span></div>
-
-    <div class="dt-cell dt-label"><span class="lbl" data-i18n="f2_l">Responsive tous écrans</span><span class="sub" data-i18n="f2_s">Mobile, tablette, ordinateur</span></div>
-    <div class="dt-cell dt-check"><span class="check-on">✓</span></div>
-    <div class="dt-cell dt-check is-premium"><span class="check-on">✓</span></div>
-
-    <div class="dt-cell dt-label"><span class="lbl" data-i18n="f3_l">Chargement rapide</span><span class="sub"></span></div>
-    <div class="dt-cell dt-check"><span class="check-on">✓</span></div>
-    <div class="dt-cell dt-check is-premium"><span class="check-on">✓</span></div>
-
-    <div class="dt-cell dt-label"><span class="lbl" data-i18n="f4_l">Visible sur Google</span><span class="sub" data-i18n="f4_s">SEO de base inclus</span></div>
-    <div class="dt-cell dt-check"><span class="check-on">✓</span></div>
-    <div class="dt-cell dt-check is-premium"><span class="check-on">✓</span></div>
-
-    <div class="dt-cell dt-label"><span class="lbl" data-i18n="f5_l">Formulaire de contact</span><span class="sub" data-i18n="f5_s">Tes clients te contactent directement</span></div>
-    <div class="dt-cell dt-check"><span class="check-on">✓</span></div>
-    <div class="dt-cell dt-check is-premium"><span class="check-on">✓</span></div>
-
-    <div class="dt-cell dt-label"><span class="lbl" data-i18n="f6_l">Page « À propos »</span><span class="sub" data-i18n="f6_s">Présente ton histoire</span></div>
-    <div class="dt-cell dt-check"><span class="check-on">✓</span></div>
-    <div class="dt-cell dt-check is-premium"><span class="check-on">✓</span></div>
-
-    <div class="dt-cell dt-label"><span class="lbl" data-i18n="f7_l">Galerie photos</span><span class="sub" data-i18n="f7_s">Mets en valeur tes réalisations</span></div>
-    <div class="dt-cell dt-check"><span class="check-on">✓</span></div>
-    <div class="dt-cell dt-check is-premium"><span class="check-on">✓</span></div>
-
-    <div class="dt-cell dt-label"><span class="lbl" data-i18n="f8_l">Réseaux sociaux</span><span class="sub" data-i18n="f8_s">Instagram, Facebook, TikTok...</span></div>
-    <div class="dt-cell dt-check"><span class="check-on">✓</span></div>
-    <div class="dt-cell dt-check is-premium"><span class="check-on">✓</span></div>
-
-    <div class="dt-cell dt-label"><span class="lbl" data-i18n="f9_l">Paiement en ligne sécurisé</span><span class="sub" data-i18n="f9_s">Tes clients paient par carte</span></div>
-    <div class="dt-cell dt-check"><span class="check-off">–</span></div>
-    <div class="dt-cell dt-check is-premium"><span class="check-on">✓</span></div>
-
-    <div class="dt-cell dt-label"><span class="lbl" data-i18n="f10_l">Réservation automatisée</span><span class="sub" data-i18n="f10_s">24h/24, 7j/7</span></div>
-    <div class="dt-cell dt-check"><span class="check-off">–</span></div>
-    <div class="dt-cell dt-check is-premium"><span class="check-on">✓</span></div>
-
-    <div class="dt-cell dt-label"><span class="lbl" data-i18n="f11_l">Assistant IA intégré</span><span class="sub" data-i18n="f11_s">Répond à ta place</span></div>
-    <div class="dt-cell dt-check"><span class="check-off">–</span></div>
-    <div class="dt-cell dt-check is-premium"><span class="check-on">✓</span></div>
-
-    <div class="dt-cell dt-label"><span class="lbl" data-i18n="f12_l">Newsletter</span><span class="sub" data-i18n="f12_s">Fidélise tes clients</span></div>
-    <div class="dt-cell dt-check"><span class="check-off">–</span></div>
-    <div class="dt-cell dt-check is-premium"><span class="check-on">✓</span></div>
-
-    <div class="dt-cell dt-label"><span class="lbl" data-i18n="f13_l">Support inclus</span><span class="sub" data-i18n="f13_s">1 jour (Essentielle) · 1 mois (Premium)</span></div>
-    <div class="dt-cell dt-check"><span class="check-on">✓</span></div>
-    <div class="dt-cell dt-check is-premium"><span class="check-on">✓</span></div>
-
-    <div class="dt-cell dt-label"><span class="lbl" data-i18n="f14_l">Expert dédié de A à Z</span><span class="sub" data-i18n="f14_s">Un seul interlocuteur</span></div>
-    <div class="dt-cell dt-check"><span class="check-off">–</span></div>
-    <div class="dt-cell dt-check is-premium"><span class="check-on">✓</span></div>
-
-    <div class="dt-cell dt-foot-empty" style="border-bottom:none"></div>
-    <div class="dt-cell dt-foot" style="border-bottom:none">
-      <button class="btn-devis essential" onclick="toggleForm('essentiel')" data-i18n="btn_order">Commander</button>
-      <p class="reassurance" data-i18n="reassurance">Paiement après validation de ton projet</p>
-    </div>
-    <div class="dt-cell dt-foot" style="border-bottom:none">
-      <button class="btn-devis premium" onclick="toggleForm('premium')" data-i18n="btn_reserve">Réserver</button>
-      <p class="reassurance" data-i18n="reassurance">Paiement après validation de ton projet</p>
-    </div>
-
-    <div class="devis-form-zone" id="form-essentiel">
-      <div class="devis-form-inner">
-        <h4 data-i18n="form_title_e">Offre Essentielle — 80€</h4>
-        <div class="form-field"><input type="text" placeholder="Ton prénom *" data-i18n-placeholder="ph_name" id="e-name" required></div>
-        <div class="form-field"><input type="email" placeholder="Ton email *" data-i18n-placeholder="ph_email" id="e-email" required></div>
-        <div class="form-field"><input type="tel" placeholder="Ton téléphone (optionnel)" data-i18n-placeholder="ph_tel" id="e-tel" pattern="[0-9+ ]{6,}" title="Numéro de téléphone valide"></div>
-        <div class="form-field"><input type="text" placeholder="Nom de ton business *" data-i18n-placeholder="ph_biz" id="e-biz" required></div>
-        <div class="form-field"><textarea placeholder="Décris ton projet..." data-i18n-placeholder="ph_desc" id="e-desc" maxlength="500"></textarea><div class="char-count" id="e-count">0/500</div></div>
-        <button class="submit-devis" onclick="submitForm('essentiel')" data-i18n="btn_send">Envoyer ma demande &rarr;</button>
-        <p class="success-devis" id="success-essentiel" aria-live="polite" data-i18n="success_msg">✓ Demande reçue — on te recontacte dans les 24h.</p>
+  <div class="pack-cards">
+    <!-- Carte Essentielle -->
+    <div class="pack-card essential-card">
+      <div class="pack-card-header">
+        <span class="pack-tag" data-i18n="th_essential">Essentielle</span>
+        <span class="pack-price">80€</span>
+        <span class="pack-price-sub" data-i18n="th_essential_sub">Site vitrine pro</span>
+      </div>
+      <ul class="pack-features">
+        <li><span class="check-on">✓</span><span data-i18n="f1_l">Site propre &amp; moderne</span><span class="sub" data-i18n="f1_s">Présentation soignée de ton activité</span></li>
+        <li><span class="check-on">✓</span><span data-i18n="f2_l">Responsive tous écrans</span><span class="sub" data-i18n="f2_s">Mobile, tablette, ordinateur</span></li>
+        <li><span class="check-on">✓</span><span data-i18n="f3_l">Chargement rapide</span></li>
+        <li><span class="check-on">✓</span><span data-i18n="f4_l">Visible sur Google</span><span class="sub" data-i18n="f4_s">SEO de base inclus</span></li>
+        <li><span class="check-on">✓</span><span data-i18n="f5_l">Formulaire de contact</span><span class="sub" data-i18n="f5_s">Tes clients te contactent directement</span></li>
+        <li><span class="check-on">✓</span><span data-i18n="f6_l">Page « À propos »</span><span class="sub" data-i18n="f6_s">Présente ton histoire</span></li>
+        <li><span class="check-on">✓</span><span data-i18n="f7_l">Galerie photos</span><span class="sub" data-i18n="f7_s">Mets en valeur tes réalisations</span></li>
+        <li><span class="check-on">✓</span><span data-i18n="f8_l">Réseaux sociaux</span><span class="sub" data-i18n="f8_s">Instagram, Facebook, TikTok...</span></li>
+        <li><span class="check-off">–</span><span data-i18n="f9_l">Paiement en ligne sécurisé</span><span class="sub" data-i18n="f9_s">Tes clients paient par carte</span></li>
+        <li><span class="check-off">–</span><span data-i18n="f10_l">Réservation automatisée</span><span class="sub" data-i18n="f10_s">24h/24, 7j/7</span></li>
+        <li><span class="check-off">–</span><span data-i18n="f11_l">Assistant IA intégré</span><span class="sub" data-i18n="f11_s">Répond à ta place</span></li>
+        <li><span class="check-off">–</span><span data-i18n="f12_l">Newsletter</span><span class="sub" data-i18n="f12_s">Fidélise tes clients</span></li>
+        <li><span class="check-on">✓</span><span data-i18n="f13_l">Support inclus</span><span class="sub" data-i18n="f13_s">1 jour (Essentielle)</span></li>
+        <li><span class="check-off">–</span><span data-i18n="f14_l">Expert dédié de A à Z</span><span class="sub" data-i18n="f14_s">Un seul interlocuteur</span></li>
+      </ul>
+      <div class="pack-actions">
+        <a href="https://buy.stripe.com/aFacN6dkv0QcdrwfrU6kg03" target="_blank" class="btn-devis essential" data-i18n="btn_order">Commander</a>
+        <button class="btn-devis essential outline" onclick="toggleForm('essentiel')" data-i18n="btn_reserve">Réserver</button>
+      </div>
+      <p class="reassurance" data-i18n="reassurance">🔒 Paiement sécurisé</p>
+      <div class="devis-form-zone" id="form-essentiel">
+        <div class="devis-form-inner">
+          <h4 data-i18n="form_title_e">Offre Essentielle — 80€</h4>
+          <div class="form-field"><input type="text" placeholder="Ton prénom *" data-i18n-placeholder="ph_name" id="e-name" required></div>
+          <div class="form-field"><input type="email" placeholder="Ton email *" data-i18n-placeholder="ph_email" id="e-email" required></div>
+          <div class="form-field"><input type="tel" placeholder="Ton téléphone (optionnel)" data-i18n-placeholder="ph_tel" id="e-tel" pattern="[0-9+ ]{6,}" title="Numéro de téléphone valide"></div>
+          <div class="form-field"><input type="text" placeholder="Nom de ton business *" data-i18n-placeholder="ph_biz" id="e-biz" required></div>
+          <div class="form-field"><textarea placeholder="Décris ton projet..." data-i18n-placeholder="ph_desc" id="e-desc" maxlength="500"></textarea><div class="char-count" id="e-count">0/500</div></div>
+          <button class="submit-devis" onclick="submitForm('essentiel')" data-i18n="btn_send">Envoyer ma demande &rarr;</button>
+          <p class="success-devis" id="success-essentiel" aria-live="polite" data-i18n="success_msg">✓ Demande reçue — on te recontacte dans les 24h.</p>
+        </div>
       </div>
     </div>
-    <div class="devis-form-zone" id="form-premium">
-      <div class="devis-form-inner">
-        <h4 data-i18n="form_title_p">Offre Premium — 190€</h4>
-        <div class="form-field"><input type="text" placeholder="Ton prénom *" data-i18n-placeholder="ph_name" id="p-name" required></div>
-        <div class="form-field"><input type="email" placeholder="Ton email *" data-i18n-placeholder="ph_email" id="p-email" required></div>
-        <div class="form-field"><input type="tel" placeholder="Ton téléphone (optionnel)" data-i18n-placeholder="ph_tel" id="p-tel" pattern="[0-9+ ]{6,}" title="Numéro de téléphone valide"></div>
-        <div class="form-field"><input type="text" placeholder="Nom de ton business *" data-i18n-placeholder="ph_biz" id="p-biz" required></div>
-        <div class="form-field"><textarea placeholder="Décris ton projet..." data-i18n-placeholder="ph_desc" id="p-desc" maxlength="500"></textarea><div class="char-count" id="p-count">0/500</div></div>
-        <button class="submit-devis" onclick="submitForm('premium')" data-i18n="btn_send">Envoyer ma demande &rarr;</button>
-        <p class="success-devis" id="success-premium" aria-live="polite" data-i18n="success_msg">✓ Demande reçue — on te recontacte dans les 24h.</p>
+
+    <!-- Carte Premium -->
+    <div class="pack-card premium-card">
+      <div class="pack-card-header premium-head">
+        <div class="pack-badge-mini" data-i18n="th_recommended">Recommandé</div>
+        <span class="pack-tag" data-i18n="th_premium">Premium</span>
+        <span class="pack-price">190€</span>
+        <span class="pack-price-sub" data-i18n="th_premium_sub">Le site complet</span>
+      </div>
+      <ul class="pack-features">
+        <li><span class="check-on">✓</span><span data-i18n="f1_l">Site propre &amp; moderne</span><span class="sub" data-i18n="f1_s">Présentation soignée de ton activité</span></li>
+        <li><span class="check-on">✓</span><span data-i18n="f2_l">Responsive tous écrans</span><span class="sub" data-i18n="f2_s">Mobile, tablette, ordinateur</span></li>
+        <li><span class="check-on">✓</span><span data-i18n="f3_l">Chargement rapide</span></li>
+        <li><span class="check-on">✓</span><span data-i18n="f4_l">Visible sur Google</span><span class="sub" data-i18n="f4_s">SEO de base inclus</span></li>
+        <li><span class="check-on">✓</span><span data-i18n="f5_l">Formulaire de contact</span><span class="sub" data-i18n="f5_s">Tes clients te contactent directement</span></li>
+        <li><span class="check-on">✓</span><span data-i18n="f6_l">Page « À propos »</span><span class="sub" data-i18n="f6_s">Présente ton histoire</span></li>
+        <li><span class="check-on">✓</span><span data-i18n="f7_l">Galerie photos</span><span class="sub" data-i18n="f7_s">Mets en valeur tes réalisations</span></li>
+        <li><span class="check-on">✓</span><span data-i18n="f8_l">Réseaux sociaux</span><span class="sub" data-i18n="f8_s">Instagram, Facebook, TikTok...</span></li>
+        <li><span class="check-on">✓</span><span data-i18n="f9_l">Paiement en ligne sécurisé</span><span class="sub" data-i18n="f9_s">Tes clients paient par carte</span></li>
+        <li><span class="check-on">✓</span><span data-i18n="f10_l">Réservation automatisée</span><span class="sub" data-i18n="f10_s">24h/24, 7j/7</span></li>
+        <li><span class="check-on">✓</span><span data-i18n="f11_l">Assistant IA intégré</span><span class="sub" data-i18n="f11_s">Répond à ta place</span></li>
+        <li><span class="check-on">✓</span><span data-i18n="f12_l">Newsletter</span><span class="sub" data-i18n="f12_s">Fidélise tes clients</span></li>
+        <li><span class="check-on">✓</span><span data-i18n="f13_l">Support inclus</span><span class="sub" data-i18n="f13_s">1 mois (Premium)</span></li>
+        <li><span class="check-on">✓</span><span data-i18n="f14_l">Expert dédié de A à Z</span><span class="sub" data-i18n="f14_s">Un seul interlocuteur</span></li>
+      </ul>
+      <div class="pack-actions">
+        <a href="https://buy.stripe.com/28EcN60xJaqM2MSenQ6kg02" target="_blank" class="btn-devis premium" data-i18n="btn_order">Commander</a>
+        <button class="btn-devis premium outline" onclick="toggleForm('premium')" data-i18n="btn_reserve">Réserver</button>
+      </div>
+      <p class="reassurance" data-i18n="reassurance">🔒 Paiement sécurisé</p>
+      <div class="devis-form-zone" id="form-premium">
+        <div class="devis-form-inner">
+          <h4 data-i18n="form_title_p">Offre Premium — 190€</h4>
+          <div class="form-field"><input type="text" placeholder="Ton prénom *" data-i18n-placeholder="ph_name" id="p-name" required></div>
+          <div class="form-field"><input type="email" placeholder="Ton email *" data-i18n-placeholder="ph_email" id="p-email" required></div>
+          <div class="form-field"><input type="tel" placeholder="Ton téléphone (optionnel)" data-i18n-placeholder="ph_tel" id="p-tel" pattern="[0-9+ ]{6,}" title="Numéro de téléphone valide"></div>
+          <div class="form-field"><input type="text" placeholder="Nom de ton business *" data-i18n-placeholder="ph_biz" id="p-biz" required></div>
+          <div class="form-field"><textarea placeholder="Décris ton projet..." data-i18n-placeholder="ph_desc" id="p-desc" maxlength="500"></textarea><div class="char-count" id="p-count">0/500</div></div>
+          <button class="submit-devis" onclick="submitForm('premium')" data-i18n="btn_send">Envoyer ma demande &rarr;</button>
+          <p class="success-devis" id="success-premium" aria-live="polite" data-i18n="success_msg">✓ Demande reçue — on te recontacte dans les 24h.</p>
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- Note frais supplémentaires -->
+  <div class="additional-fees-note" data-i18n="additional_fees_note">
+    Des frais supplémentaires peuvent s'appliquer selon le pack choisi et les options ajoutées (ex. : assistant IA nécessitant une clé API payante). Nous vous informerons clairement avant toute facturation. Notre équipe travaille avec les meilleures partenaires pour que les frais en plus soient les plus compétitifs comme les prix de nos services.
+  </div>
+
 </div>
 </div>
 </section>
@@ -836,10 +1033,11 @@ const translations = {
     f12_l:"Newsletter", f12_s:"Fidélise tes clients",
     f13_l:"Support inclus", f13_s:"1 jour (Essentielle) · 1 mois (Premium)",
     f14_l:"Expert dédié de A à Z", f14_s:"Un seul interlocuteur",
-    btn_order:"Commander", btn_reserve:"Réserver", reassurance:"Paiement après validation de ton projet",
+    btn_order:"Commander", btn_reserve:"Réserver", reassurance:"🔒 Paiement sécurisé",
     form_title_e:"Offre Essentielle — 80€", form_title_p:"Offre Premium — 190€",
     ph_name:"Ton prénom *", ph_email:"Ton email *", ph_tel:"Ton téléphone (optionnel)", ph_biz:"Nom de ton business *", ph_desc:"Décris ton projet...",
     btn_send:"Envoyer ma demande &rarr;", success_msg:"✓ Demande reçue — on te recontacte dans les 24h.",
+    additional_fees_note:"Des frais supplémentaires peuvent s'appliquer selon le pack choisi et les options ajoutées (ex. : assistant IA nécessitant une clé API payante). Nous vous informerons clairement avant toute facturation. Notre équipe travaille avec les meilleures partenaires pour que les frais en plus soient les plus compétitifs comme les prix de nos services.",
     calc_eyebrow:"Outil", calc_title:'Quel pack <em>pour toi</em> ?', calc_desc:"Coche les options qui t'intéressent, on te sort le devis correspondant instantanément.",
     opt1:"Paiement en ligne sécurisé", opt2:"Réservation automatisée (24h/24)", opt3:"Assistant IA / chatbot", opt4:"Newsletter &amp; réseaux sociaux",
     receipt_tag:"STATEVO · TICKET DEVIS", pack_recommended:"Pack recommandé",
@@ -902,10 +1100,11 @@ const translations = {
     f12_l:"Newsletter", f12_s:"Build customer loyalty",
     f13_l:"Support included", f13_s:"1 day (Essential) · 1 month (Premium)",
     f14_l:"Dedicated expert end-to-end", f14_s:"A single point of contact",
-    btn_order:"Order now", btn_reserve:"Reserve now", reassurance:"Payment only after your project is validated",
+    btn_order:"Order now", btn_reserve:"Reserve now", reassurance:"🔒 Secure payment",
     form_title_e:"Essential plan — €80", form_title_p:"Premium plan — €190",
     ph_name:"Your first name *", ph_email:"Your email *", ph_tel:"Your phone (optional)", ph_biz:"Your business name *", ph_desc:"Describe your project...",
     btn_send:"Send my request &rarr;", success_msg:"✓ Request received — we'll get back to you within 24h.",
+    additional_fees_note:"Additional fees may apply depending on the chosen plan and added options (e.g., AI assistant requiring a paid API key). We will inform you clearly before any billing. Our team works with the best partners to ensure additional fees are as competitive as our service prices.",
     calc_eyebrow:"Tool", calc_title:'Which plan <em>fits you</em>?', calc_desc:"Tick the options you're interested in, get an instant matching quote.",
     opt1:"Secure online payment", opt2:"Automated booking (24/7)", opt3:"AI assistant / chatbot", opt4:"Newsletter &amp; social media",
     receipt_tag:"STATEVO · QUOTE RECEIPT", pack_recommended:"Recommended plan",
@@ -1487,130 +1686,4 @@ updateCalculator();
         vx = (vx + (tryy - ry) * 0.05) * 0.88;
         vy = (vy + (trx - rx) * 0.05) * 0.88;
         rx += vy; ry += vx;
-        el.style.transform = 'perspective(1100px) rotateX(' + rx.toFixed(3) + 'deg) rotateY(' + ry.toFixed(3) + 'deg)';
-        requestAnimationFrame(tick);
-      })();
-    });
-
-    document.querySelectorAll('.btn-dark, .btn-devis, .nav-cta, .lang-btn, .submit-devis').forEach(function(b){
-      b.classList.add('mag');
-      b.addEventListener('mousemove', function(e){
-        var r = b.getBoundingClientRect();
-        b.style.transform = 'translate(' + ((e.clientX - r.left - r.width/2) * 0.2) + 'px,' + ((e.clientY - r.top - r.height/2) * 0.25) + 'px)';
-      }, {passive: true});
-      b.addEventListener('mouseleave', function(){ b.style.transform = ''; });
-    });
-
-    /* Gravity orbs that float and bounce */
-    var PAL = ['rgba(43,122,158,0.42)','rgba(26,43,74,0.42)','rgba(201,162,75,0.38)'];
-    function gravityField(parent, count){
-      if (!parent) return;
-      parent.classList.add('has-gravity');
-      var field = document.createElement('div');
-      field.className = 'gravity-field';
-      parent.appendChild(field);
-      var orbs = [];
-      for (var i = 0; i < count; i++){
-        var o = document.createElement('div');
-        o.className = 'gravity-orb';
-        var s = 26 + Math.random() * 64;
-        o.style.width = s + 'px'; o.style.height = s + 'px';
-        o.style.background = 'radial-gradient(circle at 65% 35%, rgba(255,255,255,0.95), ' + PAL[i % PAL.length] + ')';
-        field.appendChild(o);
-        orbs.push({el: o, x: Math.random()*100, y: Math.random()*85, vx:(Math.random()-0.5)*1.8, vy:-Math.random()*2.2, rot: Math.random()*360, vr:(Math.random()-0.5)*4});
-      }
-      (function torb(){
-        if (!document.hidden){
-          orbs.forEach(function(b){
-            b.vy += 0.06;
-            b.y += b.vy; b.x += b.vx; b.vx *= 0.994; b.rot += b.vr;
-            if (b.y > 100){ b.y = 100; b.vy *= -0.6; b.vx += (Math.random()-0.5)*0.5; }
-            if (b.y < 0){ b.y = 0; b.vy = Math.abs(b.vy) * 0.4; }
-            if (b.x > 103) b.x = -3; if (b.x < -3) b.x = 103;
-            b.el.style.transform = 'translate(' + (b.x * parent.clientWidth / 100) + 'px,' + (b.y * (parent.clientHeight || 600) / 100) + 'px) rotate(' + b.rot + 'deg)';
-          });
-        }
-        requestAnimationFrame(torb);
-      })();
-    }
-    gravityField(document.querySelector('.hero'), 9);
-    gravityField(document.querySelector('.calc-section .section'), 7);
-    gravityField(document.querySelector('.footer-cta'), 7);
-  }
-
-  /* Premium polish */
-  document.querySelectorAll('.pack-badge-mini, .btn-devis.premium').forEach(function(el){ el.classList.add('shine'); });
-
-  /* Animated stat counters */
-  var statsObs = new IntersectionObserver(function(entries){
-    entries.forEach(function(en){
-      if (!en.isIntersecting) return;
-      var el = en.target; statsObs.unobserve(el);
-      var txt = el.textContent.trim();
-      var m = txt.match(/^(\d+)\s*(.*)$/);
-      if (!m) return;
-      var target = parseInt(m[1], 10), suffix = m[2], t0 = performance.now();
-      (function count(t){
-        var p = Math.min(1, (t - t0) / 1200), e = 1 - Math.pow(1 - p, 3);
-        el.textContent = Math.round(target * e) + suffix;
-        if (p < 1) requestAnimationFrame(count);
-      })(t0);
-    });
-  }, { threshold: 0.4 });
-
-  /* Calculator: meter + price pop + confetti */
-  var receipt = document.getElementById('calc-result');
-  var meter = document.createElement('div');
-  meter.className = 'calc-meter';
-  meter.innerHTML = '<div class="calc-meter-fill" id="calc-meter-fill"></div><div class="calc-meter-lbl"><span>' + (document.documentElement.lang === 'en' ? 'Essential' : 'Essentielle') + '</span><span class="calc-meter-pct" id="calc-meter-pct">0%</span><span>Premium</span></div>';
-  var descSpan = document.getElementById('calc-desc');
-  if (descSpan && descSpan.parentNode) descSpan.parentNode.insertBefore(meter, descSpan.nextSibling);
-
-  var prevPrice = '';
-  function confettiBurst(){
-    if (reduce) return;
-    for (var i = 0; i < 14; i++){
-      var c = document.createElement('span');
-      c.className = 'confetti';
-      c.style.background = ['#2B7A9E','#1A2B4A','#c9a24b','#e7c778','#e0f0fa'][i % 5];
-      c.style.left = (Math.random() * 100) + '%';
-      c.style.setProperty('--cfx', ((Math.random()-0.5)*140) + 'px');
-      c.style.setProperty('--cfr', ((Math.random()-0.5)*540) + 'deg');
-      c.style.animationDelay = (Math.random()*0.18) + 's';
-      receipt.appendChild(c);
-      (function(cc){ setTimeout(function(){ if (cc.parentNode) cc.parentNode.removeChild(cc); }, 1500); })(c);
-    }
-  }
-
-  var origCalc = window.updateCalculator;
-  window.updateCalculator = function(){
-    origCalc.call(this);
-    var price = document.getElementById('calc-price');
-    if (price){
-      var nowPrice = price.textContent;
-      if (nowPrice !== prevPrice){
-        prevPrice = nowPrice;
-        price.classList.remove('price-pop'); void price.offsetWidth; price.classList.add('price-pop');
-        if (nowPrice.indexOf('190') !== -1) confettiBurst();
-      }
-    }
-    var checks = document.querySelectorAll('.calc-option input[type="checkbox"]');
-    var on = 0;
-    checks.forEach(function(c){ if (c.checked) on++; });
-    var pct = checks.length ? Math.round((on / checks.length) * 100) : 0;
-    var fill = document.getElementById('calc-meter-fill');
-    var pctEl = document.getElementById('calc-meter-pct');
-    if (fill){
-      fill.style.width = pct + '%';
-      fill.classList.toggle('is-premium', pct === 100);
-    }
-    if (pctEl) pctEl.textContent = pct + '%';
-  };
-
-  document.querySelectorAll('.stat-num').forEach(function(el){ statsObs.observe(el); });
-  window.updateCalculator();
-})();
-</script>
-</body>
-</html>
-
+        el.style.transform = 'perspective(1100px) rotateX(' + rx.toFixed(3) + 'deg) rotateY(' + ry.toFixed(3
