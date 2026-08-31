@@ -39,7 +39,7 @@
   "@type": "FAQPage",
   "mainEntity": [
     { "@type": "Question", "name": "Comment se passe la suite après ma demande ?", "acceptedAnswer": { "@type": "Answer", "text": "On te recontacte en moins de 24h pour caler les détails de ton projet. Ensuite on s'occupe de tout." } },
-    { "@type": "Question", "name": "Comment se passe le paiement ?", "acceptedAnswer": { "@type": "Answer", "text": "On te contacte sous 24h pour confirmer les détails et te partager le lien de paiement sécurisé." } },
+    { "@type": "Question", "name": "Comment se passe le paiement ?", "acceptedAnswer": { "@type": "Answer", "text": "Deux options : tu paies directement en ligne via le bouton Payer (paiement sécurisé Stripe), ou tu cliques sur Commander pour nous décrire ton projet d'abord — on te recontacte alors sous 24h avec le lien de paiement." } },
     { "@type": "Question", "name": "Est-ce que je peux demander des modifications ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, des retouches sont comprises dans les deux offres. L'offre Premium inclut en plus 1 mois de support." } },
     { "@type": "Question", "name": "Quelle est la différence entre les deux offres ?", "acceptedAnswer": { "@type": "Answer", "text": "L'Essentielle (80€) = un site vitrine pro, galerie photos, réseaux sociaux et support 1 jour. La Premium (190€) = tout ça + paiement sécurisé, réservation automatisée, assistant IA et support 1 mois." } },
     { "@type": "Question", "name": "Mon site sera-t-il visible sur Google ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui. Tous nos sites incluent les bases SEO : balises bien renseignées, vitesse optimisée, compatibilité mobile." } },
@@ -380,23 +380,6 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:64px;display:flex;
   margin-top: 2px;
 }
 
-/* ===== NOTE FRAIS SUPPLÉMENTAIRES ===== */
-.additional-fees-note {
-  margin: 0 30px 30px;
-  padding: 14px 18px;
-  background: rgba(255,255,255,0.5);
-  border: 1px dashed rgba(21,24,29,0.2);
-  border-radius: 12px;
-  font-size: 12px;
-  color: var(--ink-soft);
-  line-height: 1.6;
-  text-align: center;
-}
-.additional-fees-note strong {
-  color: var(--ink);
-  font-weight: 600;
-}
-
 /* SECTIONS */
 .section{padding:90px 40px;max-width:1180px;margin:0 auto}
 .section-eyebrow{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--essential);margin-bottom:14px;font-weight:600}
@@ -529,6 +512,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   outline: 2px solid var(--essential);
   outline-offset: 2px;
 }
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
 /* STICKY MOBILE CTA */
 .mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,0.85);backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:10px 16px;z-index:400;box-shadow:0 -4px 10px rgba(0,0,0,0.05)}
@@ -579,7 +563,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .pack-cards{grid-template-columns:1fr 1fr;gap:10px;padding:0}
   .pack-card{box-shadow:none;border:1px solid #ddd;border-radius:8px;padding:15px}
   .pack-price{font-size:28px}
-  .additional-fees-note{display:none}
 }
 
 @media(max-width:900px){
@@ -609,7 +592,6 @@ body{padding-bottom:80px}
 .back-to-top{bottom:80px}
 .faq-inner{padding:4px 16px}
 .pack-cards{grid-template-columns:1fr;padding:16px}
-.additional-fees-note{margin:0 16px 16px}
 }
 @media(max-width:400px){
 .hero{padding:90px 12px 40px}
@@ -679,7 +661,6 @@ body{padding-bottom:80px}
 .btn-devis{position:relative}
 @media (prefers-reduced-motion:reduce){.cursor-glow,.gravity-orb,.confetti{display:none!important}.shine::after,.pack-badge-mini{animation:none}}
 </style>
-<base target="_blank">
 </head>
 <body>
 
@@ -760,24 +741,24 @@ body{padding-bottom:80px}
         <span class="pack-price-sub" data-i18n="th_essential_sub">Site vitrine pro</span>
       </div>
       <ul class="pack-features">
-        <li><span class="check-on">✓</span><span data-i18n="f1_l">Site propre &amp; moderne</span><span class="sub" data-i18n="f1_s">Présentation soignée de ton activité</span></li>
-        <li><span class="check-on">✓</span><span data-i18n="f2_l">Responsive tous écrans</span><span class="sub" data-i18n="f2_s">Mobile, tablette, ordinateur</span></li>
-        <li><span class="check-on">✓</span><span data-i18n="f3_l">Chargement rapide</span></li>
-        <li><span class="check-on">✓</span><span data-i18n="f4_l">Visible sur Google</span><span class="sub" data-i18n="f4_s">SEO de base inclus</span></li>
-        <li><span class="check-on">✓</span><span data-i18n="f5_l">Formulaire de contact</span><span class="sub" data-i18n="f5_s">Tes clients te contactent directement</span></li>
-        <li><span class="check-on">✓</span><span data-i18n="f6_l">Page « À propos »</span><span class="sub" data-i18n="f6_s">Présente ton histoire</span></li>
-        <li><span class="check-on">✓</span><span data-i18n="f7_l">Galerie photos</span><span class="sub" data-i18n="f7_s">Mets en valeur tes réalisations</span></li>
-        <li><span class="check-on">✓</span><span data-i18n="f8_l">Réseaux sociaux</span><span class="sub" data-i18n="f8_s">Instagram, Facebook, TikTok...</span></li>
-        <li><span class="check-off">–</span><span data-i18n="f9_l">Paiement en ligne sécurisé</span><span class="sub" data-i18n="f9_s">Tes clients paient par carte</span></li>
-        <li><span class="check-off">–</span><span data-i18n="f10_l">Réservation automatisée</span><span class="sub" data-i18n="f10_s">24h/24, 7j/7</span></li>
-        <li><span class="check-off">–</span><span data-i18n="f11_l">Assistant IA intégré</span><span class="sub" data-i18n="f11_s">Répond à ta place</span></li>
-        <li><span class="check-off">–</span><span data-i18n="f12_l">Newsletter</span><span class="sub" data-i18n="f12_s">Fidélise tes clients</span></li>
-        <li><span class="check-on">✓</span><span data-i18n="f13_l">Support inclus</span><span class="sub" data-i18n="f13_s">1 jour (Essentielle)</span></li>
-        <li><span class="check-off">–</span><span data-i18n="f14_l">Expert dédié de A à Z</span><span class="sub" data-i18n="f14_s">Un seul interlocuteur</span></li>
+        <li><span class="check-on" aria-hidden="true">✓</span><span class="sr-only">Inclus : </span><span data-i18n="f1_l">Site propre &amp; moderne</span><span class="sub" data-i18n="f1_s">Présentation soignée de ton activité</span></li>
+        <li><span class="check-on" aria-hidden="true">✓</span><span class="sr-only">Inclus : </span><span data-i18n="f2_l">Responsive tous écrans</span><span class="sub" data-i18n="f2_s">Mobile, tablette, ordinateur</span></li>
+        <li><span class="check-on" aria-hidden="true">✓</span><span class="sr-only">Inclus : </span><span data-i18n="f3_l">Chargement rapide</span></li>
+        <li><span class="check-on" aria-hidden="true">✓</span><span class="sr-only">Inclus : </span><span data-i18n="f4_l">Visible sur Google</span><span class="sub" data-i18n="f4_s">SEO de base inclus</span></li>
+        <li><span class="check-on" aria-hidden="true">✓</span><span class="sr-only">Inclus : </span><span data-i18n="f5_l">Formulaire de contact</span><span class="sub" data-i18n="f5_s">Tes clients te contactent directement</span></li>
+        <li><span class="check-on" aria-hidden="true">✓</span><span class="sr-only">Inclus : </span><span data-i18n="f6_l">Page « À propos »</span><span class="sub" data-i18n="f6_s">Présente ton histoire</span></li>
+        <li><span class="check-on" aria-hidden="true">✓</span><span class="sr-only">Inclus : </span><span data-i18n="f7_l">Galerie photos</span><span class="sub" data-i18n="f7_s">Mets en valeur tes réalisations</span></li>
+        <li><span class="check-on" aria-hidden="true">✓</span><span class="sr-only">Inclus : </span><span data-i18n="f8_l">Réseaux sociaux</span><span class="sub" data-i18n="f8_s">Instagram, Facebook, TikTok...</span></li>
+        <li><span class="check-off" aria-hidden="true">–</span><span class="sr-only">Non inclus : </span><span data-i18n="f9_l">Paiement en ligne sécurisé</span><span class="sub" data-i18n="f9_s">Tes clients paient par carte</span></li>
+        <li><span class="check-off" aria-hidden="true">–</span><span class="sr-only">Non inclus : </span><span data-i18n="f10_l">Réservation automatisée</span><span class="sub" data-i18n="f10_s">24h/24, 7j/7</span></li>
+        <li><span class="check-off" aria-hidden="true">–</span><span class="sr-only">Non inclus : </span><span data-i18n="f11_l">Assistant IA intégré</span><span class="sub" data-i18n="f11_s">Répond à ta place</span></li>
+        <li><span class="check-off" aria-hidden="true">–</span><span class="sr-only">Non inclus : </span><span data-i18n="f12_l">Newsletter</span><span class="sub" data-i18n="f12_s">Fidélise tes clients</span></li>
+        <li><span class="check-on" aria-hidden="true">✓</span><span class="sr-only">Inclus : </span><span data-i18n="f13_l">Support inclus</span><span class="sub" data-i18n="f13_s">1 jour (Essentielle)</span></li>
+        <li><span class="check-off" aria-hidden="true">–</span><span class="sr-only">Non inclus : </span><span data-i18n="f14_l">Expert dédié de A à Z</span><span class="sub" data-i18n="f14_s">Un seul interlocuteur</span></li>
       </ul>
       <div class="pack-actions">
-        <a href="https://buy.stripe.com/aFacN6dkv0QcdrwfrU6kg03" target="_blank" class="btn-devis essential" data-i18n="btn_order">Commander</a>
-        <button class="btn-devis essential outline" onclick="toggleForm('essentiel')" data-i18n="btn_reserve">Réserver</button>
+        <a href="https://buy.stripe.com/aFacN6dkv0QcdrwfrU6kg03" target="_blank" rel="noopener" class="btn-devis essential" data-i18n="btn_order">Payer</a>
+        <button class="btn-devis essential outline" onclick="toggleForm('essentiel')" data-i18n="btn_reserve">Commander</button>
       </div>
       <p class="reassurance" data-i18n="reassurance">🔒 Paiement sécurisé</p>
       <div class="devis-form-zone" id="form-essentiel">
@@ -803,24 +784,24 @@ body{padding-bottom:80px}
         <span class="pack-price-sub" data-i18n="th_premium_sub">Le site complet</span>
       </div>
       <ul class="pack-features">
-        <li><span class="check-on">✓</span><span data-i18n="f1_l">Site propre &amp; moderne</span><span class="sub" data-i18n="f1_s">Présentation soignée de ton activité</span></li>
-        <li><span class="check-on">✓</span><span data-i18n="f2_l">Responsive tous écrans</span><span class="sub" data-i18n="f2_s">Mobile, tablette, ordinateur</span></li>
-        <li><span class="check-on">✓</span><span data-i18n="f3_l">Chargement rapide</span></li>
-        <li><span class="check-on">✓</span><span data-i18n="f4_l">Visible sur Google</span><span class="sub" data-i18n="f4_s">SEO de base inclus</span></li>
-        <li><span class="check-on">✓</span><span data-i18n="f5_l">Formulaire de contact</span><span class="sub" data-i18n="f5_s">Tes clients te contactent directement</span></li>
-        <li><span class="check-on">✓</span><span data-i18n="f6_l">Page « À propos »</span><span class="sub" data-i18n="f6_s">Présente ton histoire</span></li>
-        <li><span class="check-on">✓</span><span data-i18n="f7_l">Galerie photos</span><span class="sub" data-i18n="f7_s">Mets en valeur tes réalisations</span></li>
-        <li><span class="check-on">✓</span><span data-i18n="f8_l">Réseaux sociaux</span><span class="sub" data-i18n="f8_s">Instagram, Facebook, TikTok...</span></li>
-        <li><span class="check-on">✓</span><span data-i18n="f9_l">Paiement en ligne sécurisé</span><span class="sub" data-i18n="f9_s">Tes clients paient par carte</span></li>
-        <li><span class="check-on">✓</span><span data-i18n="f10_l">Réservation automatisée</span><span class="sub" data-i18n="f10_s">24h/24, 7j/7</span></li>
-        <li><span class="check-on">✓</span><span data-i18n="f11_l">Assistant IA intégré</span><span class="sub" data-i18n="f11_s">Répond à ta place</span></li>
-        <li><span class="check-on">✓</span><span data-i18n="f12_l">Newsletter</span><span class="sub" data-i18n="f12_s">Fidélise tes clients</span></li>
-        <li><span class="check-on">✓</span><span data-i18n="f13_l">Support inclus</span><span class="sub" data-i18n="f13_s">1 mois (Premium)</span></li>
-        <li><span class="check-on">✓</span><span data-i18n="f14_l">Expert dédié de A à Z</span><span class="sub" data-i18n="f14_s">Un seul interlocuteur</span></li>
+        <li><span class="check-on" aria-hidden="true">✓</span><span class="sr-only">Inclus : </span><span data-i18n="f1_l">Site propre &amp; moderne</span><span class="sub" data-i18n="f1_s">Présentation soignée de ton activité</span></li>
+        <li><span class="check-on" aria-hidden="true">✓</span><span class="sr-only">Inclus : </span><span data-i18n="f2_l">Responsive tous écrans</span><span class="sub" data-i18n="f2_s">Mobile, tablette, ordinateur</span></li>
+        <li><span class="check-on" aria-hidden="true">✓</span><span class="sr-only">Inclus : </span><span data-i18n="f3_l">Chargement rapide</span></li>
+        <li><span class="check-on" aria-hidden="true">✓</span><span class="sr-only">Inclus : </span><span data-i18n="f4_l">Visible sur Google</span><span class="sub" data-i18n="f4_s">SEO de base inclus</span></li>
+        <li><span class="check-on" aria-hidden="true">✓</span><span class="sr-only">Inclus : </span><span data-i18n="f5_l">Formulaire de contact</span><span class="sub" data-i18n="f5_s">Tes clients te contactent directement</span></li>
+        <li><span class="check-on" aria-hidden="true">✓</span><span class="sr-only">Inclus : </span><span data-i18n="f6_l">Page « À propos »</span><span class="sub" data-i18n="f6_s">Présente ton histoire</span></li>
+        <li><span class="check-on" aria-hidden="true">✓</span><span class="sr-only">Inclus : </span><span data-i18n="f7_l">Galerie photos</span><span class="sub" data-i18n="f7_s">Mets en valeur tes réalisations</span></li>
+        <li><span class="check-on" aria-hidden="true">✓</span><span class="sr-only">Inclus : </span><span data-i18n="f8_l">Réseaux sociaux</span><span class="sub" data-i18n="f8_s">Instagram, Facebook, TikTok...</span></li>
+        <li><span class="check-on" aria-hidden="true">✓</span><span class="sr-only">Inclus : </span><span data-i18n="f9_l">Paiement en ligne sécurisé</span><span class="sub" data-i18n="f9_s">Tes clients paient par carte</span></li>
+        <li><span class="check-on" aria-hidden="true">✓</span><span class="sr-only">Inclus : </span><span data-i18n="f10_l">Réservation automatisée</span><span class="sub" data-i18n="f10_s">24h/24, 7j/7</span></li>
+        <li><span class="check-on" aria-hidden="true">✓</span><span class="sr-only">Inclus : </span><span data-i18n="f11_l">Assistant IA intégré</span><span class="sub" data-i18n="f11_s">Répond à ta place</span></li>
+        <li><span class="check-on" aria-hidden="true">✓</span><span class="sr-only">Inclus : </span><span data-i18n="f12_l">Newsletter</span><span class="sub" data-i18n="f12_s">Fidélise tes clients</span></li>
+        <li><span class="check-on" aria-hidden="true">✓</span><span class="sr-only">Inclus : </span><span data-i18n="f13_l">Support inclus</span><span class="sub" data-i18n="f13_s">1 mois (Premium)</span></li>
+        <li><span class="check-on" aria-hidden="true">✓</span><span class="sr-only">Inclus : </span><span data-i18n="f14_l">Expert dédié de A à Z</span><span class="sub" data-i18n="f14_s">Un seul interlocuteur</span></li>
       </ul>
       <div class="pack-actions">
-        <a href="https://buy.stripe.com/28EcN60xJaqM2MSenQ6kg02" target="_blank" class="btn-devis premium" data-i18n="btn_order">Commander</a>
-        <button class="btn-devis premium outline" onclick="toggleForm('premium')" data-i18n="btn_reserve">Réserver</button>
+        <a href="https://buy.stripe.com/28EcN60xJaqM2MSenQ6kg02" target="_blank" rel="noopener" class="btn-devis premium" data-i18n="btn_order">Payer</a>
+        <button class="btn-devis premium outline" onclick="toggleForm('premium')" data-i18n="btn_reserve">Commander</button>
       </div>
       <p class="reassurance" data-i18n="reassurance">🔒 Paiement sécurisé</p>
       <div class="devis-form-zone" id="form-premium">
@@ -836,11 +817,6 @@ body{padding-bottom:80px}
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- Note frais supplémentaires -->
-  <div class="additional-fees-note" data-i18n="additional_fees_note">
-    Des frais supplémentaires peuvent s'appliquer selon le pack choisi et les options ajoutées (ex. : assistant IA nécessitant une clé API payante). Nous vous informerons clairement avant toute facturation. Notre équipe travaille avec les meilleures partenaires pour que les frais en plus soient les plus compétitifs comme les prix de nos services.
   </div>
 
 </div>
@@ -945,7 +921,7 @@ body{padding-bottom:80px}
 <div class="animate"><span class="section-eyebrow" data-i18n="faq_eyebrow">Questions fréquentes</span><h2 class="section-title" data-i18n-html="faq_title">Tu as des <em>questions</em> ?</h2></div>
 <div class="faq-inner">
 <div class="faq-item"><button class="faq-q" onclick="toggleFaq(0)" aria-expanded="false"><span data-i18n="faq0_q">Comment se passe la suite après ma demande ?</span><span class="faq-icon" id="icon-0">+</span></button><div class="faq-a" id="faq-0" data-i18n="faq0_a">On te recontacte en moins de 24h pour caler les détails de ton projet. Ensuite on s'occupe de tout.</div></div>
-<div class="faq-item"><button class="faq-q" onclick="toggleFaq(1)" aria-expanded="false"><span data-i18n="faq1_q">Comment se passe le paiement ?</span><span class="faq-icon" id="icon-1">+</span></button><div class="faq-a" id="faq-1" data-i18n="faq1_a">On te contacte sous 24h pour confirmer les détails et te partager le lien de paiement sécurisé.</div></div>
+<div class="faq-item"><button class="faq-q" onclick="toggleFaq(1)" aria-expanded="false"><span data-i18n="faq1_q">Comment se passe le paiement ?</span><span class="faq-icon" id="icon-1">+</span></button><div class="faq-a" id="faq-1" data-i18n="faq1_a">Deux options : tu paies directement en ligne via le bouton « Payer » (paiement sécurisé Stripe), ou tu cliques sur « Commander » pour nous décrire ton projet d'abord — on te recontacte alors sous 24h avec le lien de paiement.</div></div>
 <div class="faq-item"><button class="faq-q" onclick="toggleFaq(2)" aria-expanded="false"><span data-i18n="faq2_q">Est-ce que je peux demander des modifications ?</span><span class="faq-icon" id="icon-2">+</span></button><div class="faq-a" id="faq-2" data-i18n="faq2_a">Oui, des retouches sont comprises dans les deux offres. L'offre Premium inclut en plus 1 mois de support.</div></div>
 <div class="faq-item"><button class="faq-q" onclick="toggleFaq(3)" aria-expanded="false"><span data-i18n="faq3_q">Quelle est la différence entre les deux offres ?</span><span class="faq-icon" id="icon-3">+</span></button><div class="faq-a" id="faq-3" data-i18n="faq3_a">L'Essentielle (80€) = un site vitrine pro, galerie photos, réseaux sociaux et support 1 jour. La Premium (190€) = tout ça + paiement sécurisé, réservation automatisée, assistant IA et support 1 mois.</div></div>
 <div class="faq-item"><button class="faq-q" onclick="toggleFaq(4)" aria-expanded="false"><span data-i18n="faq4_q">Mon site sera-t-il visible sur Google ?</span><span class="faq-icon" id="icon-4">+</span></button><div class="faq-a" id="faq-4" data-i18n="faq4_a">Oui. Tous nos sites incluent les bases SEO : balises bien renseignées, vitesse optimisée, compatibilité mobile.</div></div>
@@ -1049,11 +1025,10 @@ const translations = {
     f12_l:"Newsletter", f12_s:"Fidélise tes clients",
     f13_l:"Support inclus", f13_s:"1 jour (Essentielle) · 1 mois (Premium)",
     f14_l:"Expert dédié de A à Z", f14_s:"Un seul interlocuteur",
-    btn_order:"Commander", btn_reserve:"Réserver", reassurance:"🔒 Paiement sécurisé",
+    btn_order:"Payer", btn_reserve:"Commander", reassurance:"🔒 Paiement sécurisé",
     form_title_e:"Offre Essentielle — 80€", form_title_p:"Offre Premium — 190€",
     ph_name:"Ton prénom *", ph_email:"Ton email *", ph_tel:"Ton téléphone (optionnel)", ph_biz:"Nom de ton business *", ph_desc:"Décris ton projet...",
     btn_send:"Envoyer ma demande &rarr;", success_msg:"✓ Demande reçue — on te recontacte dans les 24h.",
-    additional_fees_note:"Des frais supplémentaires peuvent s'appliquer selon le pack choisi et les options ajoutées (ex. : assistant IA nécessitant une clé API payante). Nous vous informerons clairement avant toute facturation. Notre équipe travaille avec les meilleures partenaires pour que les frais en plus soient les plus compétitifs comme les prix de nos services.",
     calc_eyebrow:"Outil", calc_title:'Quel pack <em>pour toi</em> ?', calc_desc:"Coche les options qui t'intéressent, on te sort le devis correspondant instantanément.",
     opt1:"Paiement en ligne sécurisé", opt2:"Réservation automatisée (24h/24)", opt3:"Assistant IA / chatbot", opt4:"Newsletter &amp; réseaux sociaux",
     receipt_tag:"STATEVO · TICKET DEVIS", pack_recommended:"Pack recommandé",
@@ -1073,7 +1048,7 @@ const translations = {
     ex3_title:"Restaurant Gastronomique", ex3_desc:"Réservation en ligne, menus, galerie photos et avis clients.", ex3_tag:"Restauration · Réservation",
     faq_eyebrow:"Questions fréquentes", faq_title:'Tu as des <em>questions</em> ?',
     faq0_q:"Comment se passe la suite après ma demande ?", faq0_a:"On te recontacte en moins de 24h pour caler les détails de ton projet. Ensuite on s'occupe de tout.",
-    faq1_q:"Comment se passe le paiement ?", faq1_a:"On te contacte sous 24h pour confirmer les détails et te partager le lien de paiement sécurisé.",
+    faq1_q:"Comment se passe le paiement ?", faq1_a:"Deux options : tu paies directement en ligne via le bouton « Payer » (paiement sécurisé Stripe), ou tu cliques sur « Commander » pour nous décrire ton projet d'abord — on te recontacte alors sous 24h avec le lien de paiement.",
     faq2_q:"Est-ce que je peux demander des modifications ?", faq2_a:"Oui, des retouches sont comprises dans les deux offres. L'offre Premium inclut en plus 1 mois de support.",
     faq3_q:"Quelle est la différence entre les deux offres ?", faq3_a:"L'Essentielle (80€) = un site vitrine pro, galerie photos, réseaux sociaux et support 1 jour. La Premium (190€) = tout ça + paiement sécurisé, réservation automatisée, assistant IA et support 1 mois.",
     faq4_q:"Mon site sera-t-il visible sur Google ?", faq4_a:"Oui. Tous nos sites incluent les bases SEO : balises bien renseignées, vitesse optimisée, compatibilité mobile.",
@@ -1116,11 +1091,10 @@ const translations = {
     f12_l:"Newsletter", f12_s:"Build customer loyalty",
     f13_l:"Support included", f13_s:"1 day (Essential) · 1 month (Premium)",
     f14_l:"Dedicated expert end-to-end", f14_s:"A single point of contact",
-    btn_order:"Order now", btn_reserve:"Reserve now", reassurance:"🔒 Secure payment",
+    btn_order:"Pay now", btn_reserve:"Order now", reassurance:"🔒 Secure payment",
     form_title_e:"Essential plan — €80", form_title_p:"Premium plan — €190",
     ph_name:"Your first name *", ph_email:"Your email *", ph_tel:"Your phone (optional)", ph_biz:"Your business name *", ph_desc:"Describe your project...",
     btn_send:"Send my request &rarr;", success_msg:"✓ Request received — we'll get back to you within 24h.",
-    additional_fees_note:"Additional fees may apply depending on the chosen plan and added options (e.g., AI assistant requiring a paid API key). We will inform you clearly before any billing. Our team works with the best partners to ensure additional fees are as competitive as our service prices.",
     calc_eyebrow:"Tool", calc_title:'Which plan <em>fits you</em>?', calc_desc:"Tick the options you're interested in, get an instant matching quote.",
     opt1:"Secure online payment", opt2:"Automated booking (24/7)", opt3:"AI assistant / chatbot", opt4:"Newsletter &amp; social media",
     receipt_tag:"STATEVO · QUOTE RECEIPT", pack_recommended:"Recommended plan",
@@ -1140,7 +1114,7 @@ const translations = {
     ex3_title:"Fine Dining Restaurant", ex3_desc:"Online booking, menus, photo gallery, and customer reviews.", ex3_tag:"Restaurant · Booking",
     faq_eyebrow:"FAQ", faq_title:'Got <em>questions</em>?',
     faq0_q:"What happens after my request?", faq0_a:"We get back to you within 24h to nail down your project's details. Then we handle everything.",
-    faq1_q:"How does payment work?", faq1_a:"We contact you within 24h to confirm the details and share a secure payment link.",
+    faq1_q:"How does payment work?", faq1_a:"Two options: pay directly online via the \"Pay now\" button (secure Stripe payment), or click \"Order now\" to tell us about your project first — we'll get back to you within 24h with the payment link.",
     faq2_q:"Can I ask for changes?", faq2_a:"Yes, revisions are included in both plans. The Premium plan also includes 1 month of support.",
     faq3_q:"What's the difference between the two plans?", faq3_a:"Essential (€80) = a pro showcase site, photo gallery, social media, and 1-day support. Premium (€190) = all that plus secure payment, automated booking, AI assistant, and 1-month support.",
     faq4_q:"Will my site show up on Google?", faq4_a:"Yes. All our sites include SEO basics: proper tagging, optimized speed, mobile compatibility.",
@@ -1417,6 +1391,9 @@ updateCalculator();
 /* ===== SMOKE PARTICLE SYSTEM v2 ===== */
 (function() {
 
+  let pageVisible = !document.hidden;
+  document.addEventListener('visibilitychange', () => { pageVisible = !document.hidden; });
+
   function lerp(a, b, t) { return a + (b - a) * t; }
 
   const heroCanvas = document.getElementById('smokeCanvas');
@@ -1523,14 +1500,15 @@ updateCalculator();
     heroCtx.fillStyle = glow; heroCtx.fill();
   }
 
+  let heroVisible = true;
   function animateHero() {
-    if (!heroCtx) return;
+    requestAnimationFrame(animateHero);
+    if (!heroCtx || !pageVisible || !heroVisible) return;
     heroCtx.clearRect(0, 0, heroW, heroH);
     frame++;
     scrollVel *= 0.88;
     heroParticles.forEach(p => { p.update(); p.draw(heroCtx); });
     drawHeroLight();
-    requestAnimationFrame(animateHero);
   }
 
   if (hero && heroCanvas) {
@@ -1539,6 +1517,7 @@ updateCalculator();
       heroMouseX = e.clientX - r.left; heroMouseY = e.clientY - r.top;
     });
     hero.addEventListener('mouseleave', () => { heroMouseX = heroW/2; heroMouseY = heroH/2; });
+    new IntersectionObserver(([entry]) => { heroVisible = entry.isIntersecting; }, { threshold: 0 }).observe(hero);
   }
 
   const packsCanvas = document.getElementById('packsSmokeCanvas');
@@ -1628,15 +1607,17 @@ updateCalculator();
     packsCtx.fillStyle = lg; packsCtx.fillRect(0, 0, packsW, packsH);
   }
 
+  let packsVisible = true;
   function animatePacks() {
-    if (!packsCtx) return;
+    requestAnimationFrame(animatePacks);
+    if (!packsCtx || !pageVisible || !packsVisible) return;
     packsCtx.clearRect(0, 0, packsW, packsH);
     packsParticles.forEach(p => { p.update(); p.draw(packsCtx); });
     drawPacksLight();
-    requestAnimationFrame(animatePacks);
   }
 
   if (packsWrap && packsCanvas) {
+    new IntersectionObserver(([entry]) => { packsVisible = entry.isIntersecting; }, { threshold: 0 }).observe(packsWrap);
     packsWrap.addEventListener('mousemove', e => {
       const r = packsWrap.getBoundingClientRect();
       packsMouseX = e.clientX - r.left; packsMouseY = e.clientY - r.top;
