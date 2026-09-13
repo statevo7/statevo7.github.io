@@ -35,34 +35,38 @@ RÈGLES (mode étendu activé) :
 `;
 }
 
-export default async function handler(req, res) {
-  // Autorise les appels depuis ton propre site uniquement (adapte si besoin)
+module.exports = async (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   if (req.method === 'OPTIONS') {
-    return res.status(200).end();
+    res.status(200).end();
+    return;
   }
 
   if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+    res.status(405).json({ error: 'Method not allowed' });
+    return;
   }
 
   try {
-    const { messages, unlocked } = req.body || {};
+    const body = req.body || {};
+    const messages = body.messages;
+    const unlockedFlag = body.unlocked;
 
     if (!Array.isArray(messages)) {
-      return res.status(400).json({ error: 'messages manquant ou invalide' });
+      res.status(400).json({ error: 'messages manquant ou invalide' });
+      return;
     }
 
-    // Détecte le mot secret dans le dernier message utilisateur
     const lastUserMsg = [...messages].reverse().find(m => m.role === 'user');
-    const isUnlocked = unlocked || (lastUserMsg && lastUserMsg.content.toLowerCase().includes(SECRET_WORD));
+    const isUnlocked = unlockedFlag || (lastUserMsg && lastUserMsg.content.toLowerCase().includes(SECRET_WORD));
 
     const apiKey = process.env.MISTRAL_API_KEY;
     if (!apiKey) {
-      return res.status(500).json({ error: 'Clé API non configurée sur le serveur' });
+      res.status(500).json({ error: 'Clé API non configurée sur le serveur' });
+      return;
     }
 
     const payload = {
@@ -82,14 +86,15 @@ export default async function handler(req, res) {
 
     if (!mistralRes.ok) {
       const errText = await mistralRes.text();
-      return res.status(mistralRes.status).json({ error: 'Erreur Mistral', details: errText });
+      res.status(mistralRes.status).json({ error: 'Erreur Mistral', details: errText });
+      return;
     }
 
     const data = await mistralRes.json();
-    const reply = data.choices?.[0]?.message?.content || "Désolé, je n'ai pas pu répondre.";
+    const reply = (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) || "Désolé, je n'ai pas pu répondre.";
 
-    return res.status(200).json({ reply, unlocked: isUnlocked });
+    res.status(200).json({ reply: reply, unlocked: isUnlocked });
   } catch (err) {
-    return res.status(500).json({ error: 'Erreur serveur', details: String(err) });
+    res.status(500).json({ error: 'Erreur serveur', details: String(err) });
   }
-}
+};
