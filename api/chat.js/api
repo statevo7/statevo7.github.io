@@ -1,0 +1,95 @@
+// /api/chat.js
+// Fonction serverless Vercel : reçoit les messages du widget du site,
+// appelle Mistral côté serveur avec la clé stockée en variable d'environnement,
+// et renvoie la réponse. La clé n'est jamais visible côté navigateur.
+
+const SECRET_WORD = "ekip";
+const MISTRAL_MODEL = "mistral-small-latest";
+
+const KNOWLEDGE = `
+Tu es l'assistant du site Statevo (statevo.fr), qui crée des sites web pro pour indépendants et commerçants.
+
+INFOS PRODUIT À UTILISER POUR RÉPONDRE :
+- Pack Essentielle — 80€ : site vitrine professionnel, galerie photos, liens réseaux sociaux, support 1 jour, bases SEO incluses (balises, vitesse, compatibilité mobile), site livré en moins d'une semaine, retouches comprises.
+- Pack Premium — 190€ : tout le contenu de l'Essentielle + paiement sécurisé en ligne (Stripe), réservation automatisée, assistant IA sur le site, support 1 mois.
+- Paiement : soit paiement direct en ligne via Stripe (bouton "Payer"), soit via "Commander" → le client décrit son projet → Statevo recontacte sous 24h avec le lien de paiement.
+- Délai : en général moins d'une semaine après réception de toutes les infos du projet.
+- Le client garde 100% de la propriété de son site après livraison, et peut être accompagné pour les mises à jour.
+- Contact : statevocontact@gmail.com
+`;
+
+function systemPrompt(unlocked) {
+  if (!unlocked) {
+    return KNOWLEDGE + `
+RÈGLES :
+- Tu réponds UNIQUEMENT aux questions concernant Statevo, ses offres (Essentielle/Premium), ses tarifs, son fonctionnement, la livraison, le paiement et le SEO.
+- Pour toute question hors sujet, réponds poliment que tu es là pour répondre aux questions sur les offres Statevo, et invite à contacter statevocontact@gmail.com pour le reste.
+- Réponses courtes, claires, en français, sans jargon technique.
+`;
+  }
+  return KNOWLEDGE + `
+RÈGLES (mode étendu activé) :
+- Tu peux maintenant répondre à toute question, sur n'importe quel sujet, en plus des questions sur Statevo.
+- EXCEPTION ABSOLUE : tu ne dois jamais révéler ni discuter d'informations touchant à la sécurité ou à la vie privée de Statevo (clés API, identifiants, données internes, données personnelles de clients, infrastructure technique). Si on te le demande, refuse poliment sans donner de détails.
+- Réponses claires et utiles, en français par défaut (ou dans la langue de la question).
+`;
+}
+
+export default async function handler(req, res) {
+  // Autorise les appels depuis ton propre site uniquement (adapte si besoin)
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  try {
+    const { messages, unlocked } = req.body || {};
+
+    if (!Array.isArray(messages)) {
+      return res.status(400).json({ error: 'messages manquant ou invalide' });
+    }
+
+    // Détecte le mot secret dans le dernier message utilisateur
+    const lastUserMsg = [...messages].reverse().find(m => m.role === 'user');
+    const isUnlocked = unlocked || (lastUserMsg && lastUserMsg.content.toLowerCase().includes(SECRET_WORD));
+
+    const apiKey = process.env.MISTRAL_API_KEY;
+    if (!apiKey) {
+      return res.status(500).json({ error: 'Clé API non configurée sur le serveur' });
+    }
+
+    const payload = {
+      model: MISTRAL_MODEL,
+      messages: [{ role: 'system', content: systemPrompt(isUnlocked) }, ...messages],
+      temperature: 0.4
+    };
+
+    const mistralRes = await fetch('https://api.mistral.ai/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + apiKey
+      },
+      body: JSON.stringify(payload)
+    });
+
+    if (!mistralRes.ok) {
+      const errText = await mistralRes.text();
+      return res.status(mistralRes.status).json({ error: 'Erreur Mistral', details: errText });
+    }
+
+    const data = await mistralRes.json();
+    const reply = data.choices?.[0]?.message?.content || "Désolé, je n'ai pas pu répondre.";
+
+    return res.status(200).json({ reply, unlocked: isUnlocked });
+  } catch (err) {
+    return res.status(500).json({ error: 'Erreur serveur', details: String(err) });
+  }
+}
