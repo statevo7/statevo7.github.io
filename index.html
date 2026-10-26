@@ -14,13 +14,13 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%237C5CFF'/><text x='50' y='70' font-size='60' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>S</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Statevo","description":"Sites web pour indépendants et commerçants à partir de 80€.","email":"statevocontact@gmail.com","priceRange":"€€","url":"https://www.statevo.fr","areaServed":"France","makesOffer":[{"@type":"Offer","name":"Pack Essentielle","price":"80","priceCurrency":"EUR"},{"@type":"Offer","name":"Pack Premium","price":"190","priceCurrency":"EUR"}]}</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#06070B;--s1:#0D1017;--s2:#141925;--line:rgba(255,255,255,.07);--tx:#EDEFF5;--mu:#7C8497;--ac:#7C5CFF;--cy:#22D3EE;--glow:rgba(124,92,255,.35)}
 html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{font-family:Inter,sans-serif;background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6;position:relative}
 h1,h2,h3,.sg{font-family:'Space Grotesk',sans-serif}
 a{color:inherit}
 .grad{background:linear-gradient(120deg,var(--ac),var(--cy));-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -35,17 +35,29 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:64px;display:flex;ali
 .btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px -8px var(--glow)}
 .btn.ghost{background:transparent;border:1px solid var(--line);box-shadow:none;color:var(--tx)}
 .btn.ghost:hover{border-color:var(--ac)}
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:120px 40px 80px;overflow:hidden}
-#gl{position:absolute;inset:0;width:100%;height:100%}
-.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,transparent 20%,var(--bg) 85%),linear-gradient(to bottom,transparent 70%,var(--bg));pointer-events:none}
-.hero-in{position:relative;z-index:2;max-width:1180px;margin:0 auto;width:100%}
+
+/* ===== STARFIELD ===== */
+#starfield{position:fixed;inset:0;width:100vw;height:100vh;display:block;z-index:-1;pointer-events:none;overflow:hidden;background:transparent}
+
+/* ===== BACKGROUND VISUALS ===== */
+#smoke-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.9}
+#code-rain{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.45}
+
+/* ===== HERO avec image de fond ===== */
+.hero{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;padding:120px 40px 80px;overflow:hidden;
+  background:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,7,11,.82),rgba(6,7,11,.92));z-index:0;pointer-events:none}
+#gl{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,transparent 20%,var(--bg) 85%),linear-gradient(to bottom,transparent 70%,var(--bg));pointer-events:none;z-index:2}
+.hero-in{position:relative;z-index:3;max-width:1180px;margin:0 auto;width:100%}
 .eyebrow{display:inline-block;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--cy);border:1px solid rgba(34,211,238,.25);background:rgba(34,211,238,.06);padding:6px 16px;border-radius:100px;margin-bottom:24px;font-weight:600}
 .hero h1{font-size:clamp(38px,6vw,76px);line-height:1.02;letter-spacing:-2.5px;max-width:720px;margin-bottom:22px}
 .hero p.sub{font-size:17px;color:var(--mu);max-width:500px;margin-bottom:34px}
 .hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:34px}
 .chips{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:13px;color:var(--mu)}
 .chips span:before{content:"✓ ";color:var(--cy)}
-.sec{padding:100px 40px;max-width:1180px;margin:0 auto}
+.sec{padding:100px 40px;max-width:1180px;margin:0 auto;position:relative;z-index:1}
 .eb{display:block;font-size:11.5px;letter-spacing:2px;text-transform:uppercase;color:var(--ac);font-weight:600;margin-bottom:12px}
 .st{font-size:clamp(30px,4.4vw,48px);letter-spacing:-1.5px;line-height:1.08}
 .sd{color:var(--mu);margin-top:14px;max-width:480px}
@@ -66,7 +78,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:64px;display:flex;ali
 .fl li.no{color:#4a5160;text-decoration:line-through}
 .fl li.no:before{content:"–";color:#4a5160}
 .fl small{color:var(--mu);font-size:11.5px;display:block}
-.plan .btn{width:100%;text-align:center}
+.plan-btns{display:flex;gap:10px}
+.plan-btns .btn{flex:1;width:auto;text-align:center;padding:11px 14px;font-size:12.5px}
 .note{font-size:11.5px;color:var(--mu);text-align:center;margin-top:10px}
 #form{max-height:0;overflow:hidden;opacity:0;transition:all .45s ease}
 #form.open{max-height:640px;opacity:1;margin-top:24px}
@@ -93,6 +106,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:64px;display:flex;ali
 .card .who{margin-top:18px;font-size:13px;font-weight:600}
 .card .who span{color:var(--mu);font-weight:400}
 .stars{color:var(--cy);letter-spacing:3px;font-size:12px;margin-bottom:12px}
+.card.has-img{padding:0;display:flex;flex-direction:column}
+.card-img{height:180px;background-size:cover;background-position:center;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.card-img:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(13,16,23,.6));pointer-events:none}
+.card.has-img .card-body{padding:24px 28px 30px}
 .faq{margin-top:40px;padding:6px 26px}
 .fq{border-top:1px solid var(--line)}
 .fq:first-child{border:0}
@@ -101,32 +118,49 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:64px;display:flex;ali
 .fq.o button:after{transform:rotate(45deg)}
 .fq div{max-height:0;overflow:hidden;opacity:0;color:var(--mu);font-size:14px;transition:.35s}
 .fq.o div{max-height:200px;opacity:1;padding-bottom:20px}
-.man{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
+.man{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center;position:relative}
 .man h2{font-size:clamp(30px,4.6vw,52px);letter-spacing:-1.8px;line-height:1.08}
 .man p{color:var(--mu);margin:20px 0 28px;max-width:440px}
 .kp{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .kp .t{padding:22px}
 .kp h4{font-size:14.5px;margin-bottom:4px}
 .kp p{font-size:12.5px;margin:0;color:var(--mu)}
-.stats{display:flex;border-block:1px solid var(--line);max-width:1180px;margin:0 auto}
+.stats{display:flex;border-block:1px solid var(--line);max-width:1180px;margin:0 auto;position:relative;z-index:1;background:rgba(6,7,11,.4);backdrop-filter:blur(4px)}
 .stats div{flex:1;padding:36px 40px;border-right:1px solid var(--line)}
 .stats div:last-child{border:0}
 .stats b{display:block;font:700 40px 'Space Grotesk';letter-spacing:-1px}
 .stats span{font-size:11.5px;letter-spacing:1px;color:var(--mu);font-weight:600}
-.fcta{max-width:1180px;margin:0 auto;padding:90px 40px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap}
+
+/* ===== CTA finale avec image de fond ===== */
+.fcta{max-width:1180px;margin:40px auto;padding:90px 60px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;position:relative;z-index:1;overflow:hidden;border-radius:24px;border:1px solid var(--line);
+  background:linear-gradient(rgba(6,7,11,.82),rgba(6,7,11,.92)),url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+}
+.fcta>*{position:relative;z-index:1}
 .fcta h2{font-size:clamp(28px,4vw,44px);letter-spacing:-1.5px}
 .fcta p{color:var(--mu);margin-top:6px}
 .fcta a.m{color:var(--mu);font-size:13px}
-.fb{border-top:1px solid var(--line);padding:18px 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:11.5px;color:#5b6274}
+.fb{border-top:1px solid var(--line);padding:18px 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:11.5px;color:#5b6274;position:relative;z-index:1}
 .rv{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
 .rv.on{opacity:1;transform:none}
 #cur{position:fixed;top:0;left:0;width:10px;height:10px;margin:-5px;border-radius:50%;background:var(--cy);box-shadow:0 0 18px 4px rgba(34,211,238,.5);pointer-events:none;z-index:2000;mix-blend-mode:screen}
-@media(max-width:860px){.plans,.calc,.man{grid-template-columns:1fr}.links{display:none}nav{padding:0 18px}.hero,.sec,.fcta{padding-left:20px;padding-right:20px}.stats{flex-direction:column}.stats div{border-right:0;border-bottom:1px solid var(--line);padding:24px 20px}.kp{grid-template-columns:1fr}.fb{padding:16px 20px}}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.rv{opacity:1;transform:none}}
+
+/* ===== TYPEWRITER CODE BLOCKS ===== */
+.tw{font-family:'JetBrains Mono','Fira Code','Courier New',monospace;font-size:12.5px;line-height:1.75;color:#8f9dbe;white-space:pre;pointer-events:none;user-select:none;padding:16px 20px;border:1px solid var(--line);border-radius:14px;background:rgba(13,16,23,.55);backdrop-filter:blur(8px);overflow:hidden;box-shadow:0 20px 60px -30px rgba(0,0,0,.8)}
+.tw-cursor{color:var(--cy);animation:tw-blink 1s steps(2) infinite;font-weight:400}
+@keyframes tw-blink{50%{opacity:0}}
+.tw-float{position:absolute;z-index:0;opacity:.55;pointer-events:none}
+
+@media(max-width:860px){.plans,.calc,.man{grid-template-columns:1fr}.links{display:none}nav{padding:0 18px}.hero,.sec,.fcta{padding-left:20px;padding-right:20px}.stats{flex-direction:column}.stats div{border-right:0;border-bottom:1px solid var(--line);padding:24px 20px}.kp{grid-template-columns:1fr}.fb{padding:16px 20px}.fcta{padding:60px 24px;text-align:center}.tw-float{display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.rv{opacity:1;transform:none}.tw-float{display:none}}
 </style>
 </head>
 <body>
+
+<canvas id="starfield" aria-hidden="true"></canvas>
+
 <div id="bar"></div>
+<canvas id="smoke-bg" aria-hidden="true"></canvas>
+<canvas id="code-rain" aria-hidden="true"></canvas>
 <nav>
   <a class="logo" href="#"><b>Stat</b>evo</a>
   <div class="links"><a href="#offres">Offres</a><a href="#calculatrice">Calculatrice</a><a href="#avis">Avis</a><a href="#faq">FAQ</a></div>
@@ -172,7 +206,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:64px;display:flex;ali
 
 <section class="sec">
   <div class="rv"><span class="eb">Processus</span><h2 class="st">Comment ça <span class="grad">marche</span></h2><p class="sd">Pas besoin de compétences techniques. Tu nous décris ton projet, on s'occupe du reste.</p></div>
-  <div style="margin-top:40px">
+  <div class="tw tw-float" data-tw style="top:20px;right:20px;width:min(320px,42vw)"></div>
+  <div style="margin-top:40px;position:relative">
     <div class="step rv"><i>01</i><div><h3>Tu remplis le formulaire</h3><p>Ton activité, tes couleurs, ce que tu veux afficher. Moins de 2 minutes.</p></div></div>
     <div class="step rv"><i>02</i><div><h3>On te recontacte en moins de 24h</h3><p>Un expert dédié revient vers toi pour caler les détails de ton projet.</p></div></div>
     <div class="step rv"><i>03</i><div><h3>On crée et on livre</h3><p>Ton site sur mesure est conçu et livré. Des retouches ? On les fait jusqu'à satisfaction complète.</p></div></div>
@@ -190,9 +225,30 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:64px;display:flex;ali
 <section class="sec">
   <div class="rv"><span class="eb">Portfolio</span><h2 class="st">Nos <span class="grad">réalisations</span></h2><p class="sd">Des exemples de sites modernes, professionnels et sur-mesure que nous avons conçus.</p></div>
   <div class="grid3">
-    <div class="t card rv"><div class="pk">Vitrine · Design</div><h3 style="margin-top:8px">Studio Créatif</h3><p>Site vitrine pour une agence de communication avec portfolio interactif.</p></div>
-    <div class="t card rv"><div class="pk">E-commerce · Paiement</div><h3 style="margin-top:8px">Boutique en ligne</h3><p>E-commerce complet avec catalogue, panier et paiement sécurisé.</p></div>
-    <div class="t card rv"><div class="pk">Restauration · Réservation</div><h3 style="margin-top:8px">Restaurant Gastronomique</h3><p>Réservation en ligne, menus, galerie photos et avis clients.</p></div>
+    <div class="t card has-img rv">
+      <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80')"></div>
+      <div class="card-body">
+        <div class="pk">Vitrine · Design</div>
+        <h3 style="margin-top:8px">Studio Créatif</h3>
+        <p>Site vitrine pour une agence de communication avec portfolio interactif.</p>
+      </div>
+    </div>
+    <div class="t card has-img rv">
+      <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80')"></div>
+      <div class="card-body">
+        <div class="pk">E-commerce · Paiement</div>
+        <h3 style="margin-top:8px">Boutique en ligne</h3>
+        <p>E-commerce complet avec catalogue, panier et paiement sécurisé.</p>
+      </div>
+    </div>
+    <div class="t card has-img rv">
+      <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80')"></div>
+      <div class="card-body">
+        <div class="pk">Restauration · Réservation</div>
+        <h3 style="margin-top:8px">Restaurant Gastronomique</h3>
+        <p>Réservation en ligne, menus, galerie photos et avis clients.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -211,24 +267,32 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:64px;display:flex;ali
   </div>
 </div></section>
 
-<div class="stats rv"><div><b>50+</b><span>SITES LIVRÉS</span></div><div><b>&lt;24h</b><span>RÉPONSE GARANTIE</span></div><div><b>Sur-mesure</b><span>CHAQUE PROJET</span></div></div>
+<div class="stats rv">
+  <div><b>50+</b><span>SITES LIVRÉS</span></div>
+  <div><b>&lt;24h</b><span>RÉPONSE GARANTIE</span></div>
+  <div><b>Sur-mesure</b><span>CHAQUE PROJET</span></div>
+</div>
 
-<div class="fcta">
+<div class="fcta rv">
   <div><h2>Prêt à lancer ton site ?</h2><p>Rejoins les 50+ entrepreneurs qui font confiance à Statevo.</p><p style="margin-top:16px;font-size:13px">Une question ? <a class="m" href="mailto:statevocontact@gmail.com">statevocontact@gmail.com</a></p></div>
   <a class="btn" href="#offres">Voir les offres →</a>
 </div>
-<div class="fb"><span>© Statevo 2024–2029 — Agence reconnue et approuvée, plus de 50 entrepreneurs accompagnés.</span><span>Tous droits réservés</span></div>
+<div class="fb"><span>© Statevo 2026 — Agence reconnue et approuvée, plus de 50 entrepreneurs accompagnés.</span><span>Tous droits réservés</span></div>
 <div id="cur"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 var MAIL="statevocontact@gmail.com",$=function(s){return document.querySelector(s)};
+var STRIPE_ESSENTIELLE="https://buy.stripe.com/aFacN6dkv0QcdrwfrU6kg03";
+var STRIPE_PREMIUM="https://buy.stripe.com/28EcN60xJaqM2MSenQ6kg02";
+
 var BASE=[["Site propre & moderne","Présentation soignée de ton activité"],["Responsive tous écrans","Mobile, tablette, ordinateur"],["Chargement rapide"],["Visible sur Google","SEO de base inclus"],["Formulaire de contact"],["Page « À propos »"],["Galerie photos"],["Réseaux sociaux","Instagram, Facebook, TikTok..."]];
 var PRO=[["Paiement en ligne sécurisé","Tes clients paient par carte"],["Réservation automatisée","24h/24, 7j/7"],["Assistant IA intégré","Répond à ta place"],["Newsletter","Fidélise tes clients"],["Expert dédié de A à Z","Un seul interlocuteur"]];
 var li=function(a,c){return a.map(function(f){return '<li'+(c?' class="'+c+'"':'')+'>'+'<span>'+f[0]+(f[1]?'<small>'+f[1]+'</small>':'')+'</span></li>'}).join('')};
+
 $('#plans').innerHTML=
- '<div class="t plan rv"><div class="pk">Essentielle</div><div class="price">80€</div><div class="psub">Site vitrine pro · support 1 jour</div><ul class="fl">'+li(BASE)+li(PRO,'no')+'</ul><button class="btn ghost" onclick="openF(\'Essentielle\',80)">Commander</button><p class="note">Paiement après validation de ton projet</p></div>'+
- '<div class="t plan pro rv"><span class="badge">Recommandé</span><div class="pk">Premium</div><div class="price grad">190€</div><div class="psub">Le site complet · support 1 mois</div><ul class="fl">'+li(BASE)+li(PRO)+'</ul><button class="btn" onclick="openF(\'Premium\',190)">Réserver</button><p class="note">Paiement après validation de ton projet</p></div>';
+ '<div class="t plan rv"><div class="pk">Essentielle</div><div class="price">80€</div><div class="psub">Site vitrine pro · support 1 jour</div><ul class="fl">'+li(BASE)+li(PRO,'no')+'</ul><div class="plan-btns"><button class="btn ghost" onclick="openF(\'Essentielle\',80)">Commander</button><a href="'+STRIPE_ESSENTIELLE+'" target="_blank" rel="noopener" class="btn">Acheter</a></div><p class="note">🔒 Paiement sécurisé Stripe · ou Commander pour être conseillé</p></div>'+
+ '<div class="t plan pro rv"><span class="badge">Recommandé</span><div class="pk">Premium</div><div class="price grad">190€</div><div class="psub">Le site complet · support 1 mois</div><ul class="fl">'+li(BASE)+li(PRO)+'</ul><div class="plan-btns"><button class="btn" onclick="openF(\'Premium\',190)">Commander</button><a href="'+STRIPE_PREMIUM+'" target="_blank" rel="noopener" class="btn">Acheter</a></div><p class="note">🔒 Paiement sécurisé Stripe · ou Commander pour être conseillé</p></div>';
 
 var plan="";
 function openF(n,p){var f=$('#form'),same=f.classList.contains('open')&&plan==n;plan=n;$('#ft').textContent='Offre '+n+' — '+p+'€';f.classList.toggle('open',!same);if(!same)setTimeout(function(){f.scrollIntoView({behavior:'smooth',block:'center'})},200)}
@@ -244,19 +308,17 @@ function calc(){var pro=[].some.call(document.querySelectorAll('.co'),function(c
  $('#cf').innerHTML=li(pro?PRO:BASE)}
 document.querySelectorAll('.co').forEach(function(c){c.onchange=calc});calc();
 
-var FAQ=[["Comment se passe la suite après ma demande ?","On te recontacte en moins de 24h pour caler les détails de ton projet. Ensuite on s'occupe de tout."],["Comment se passe le paiement ?","On te contacte sous 24h pour confirmer les détails et te partager le lien de paiement sécurisé."],["Est-ce que je peux demander des modifications ?","Oui, des retouches sont comprises dans les deux offres. L'offre Premium inclut en plus 1 mois de support."],["Quelle est la différence entre les deux offres ?","L'Essentielle (80€) = un site vitrine pro, galerie photos, réseaux sociaux et support 1 jour. La Premium (190€) = tout ça + paiement sécurisé, réservation automatisée, assistant IA et support 1 mois."],["Mon site sera-t-il visible sur Google ?","Oui. Tous nos sites incluent les bases SEO : balises bien renseignées, vitesse optimisée, compatibilité mobile."],["Je n'ai aucune connaissance technique, c'est un problème ?","Pas du tout. On s'occupe de tout. Tu nous donnes les infos, on fait le reste."],["Combien de temps ça prend pour avoir mon site ?","En général moins d'une semaine. On démarre dès qu'on a toutes les infos sur ton projet."],["Est-ce que je garde la main sur mon site après livraison ?","Oui. Ton site t'appartient à 100%. On peut aussi t'accompagner pour les mises à jour."]];
+var FAQ=[["Comment se passe la suite après ma demande ?","On te recontacte en moins de 24h pour caler les détails de ton projet. Ensuite on s'occupe de tout."],["Comment se passe le paiement ?","Deux options : tu paies directement en ligne via le bouton « Acheter » (paiement sécurisé Stripe), ou tu cliques sur « Commander » pour nous décrire ton projet d'abord — on te recontacte alors sous 24h."],["Est-ce que je peux demander des modifications ?","Oui, des retouches sont comprises dans les deux offres. L'offre Premium inclut en plus 1 mois de support."],["Quelle est la différence entre les deux offres ?","L'Essentielle (80€) = un site vitrine pro, galerie photos, réseaux sociaux et support 1 jour. La Premium (190€) = tout ça + paiement sécurisé, réservation automatisée, assistant IA et support 1 mois."],["Mon site sera-t-il visible sur Google ?","Oui. Tous nos sites incluent les bases SEO : balises bien renseignées, vitesse optimisée, compatibilité mobile."],["Je n'ai aucune connaissance technique, c'est un problème ?","Pas du tout. On s'occupe de tout. Tu nous donnes les infos, on fait le reste."],["Combien de temps ça prend pour avoir mon site ?","En général moins d'une semaine. On démarre dès qu'on a toutes les infos sur ton projet."],["Est-ce que je garde la main sur mon site après livraison ?","Oui. Ton site t'appartient à 100%. On peut aussi t'accompagner pour les mises à jour."]];
 $('#faqs').innerHTML=FAQ.map(function(f){return '<div class="fq"><button aria-expanded="false">'+f[0]+'</button><div>'+f[1]+'</div></div>'}).join('');
 document.querySelectorAll('.fq button').forEach(function(b){b.onclick=function(){var q=b.parentNode,o=q.classList.contains('o');document.querySelectorAll('.fq').forEach(function(x){x.classList.remove('o');x.firstChild.setAttribute('aria-expanded','false')});if(!o){q.classList.add('o');b.setAttribute('aria-expanded','true')}}});
 var s=document.createElement('script');s.type='application/ld+json';
 s.text=JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:FAQ.map(function(f){return{"@type":"Question",name:f[0],acceptedAnswer:{"@type":"Answer",text:f[1]}}})});document.head.appendChild(s);
 
-/* reveal + progress + stat counter */
 var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}})},{threshold:.1});
 setTimeout(function(){document.querySelectorAll('.rv').forEach(function(e){io.observe(e)})},0);
 addEventListener('scroll',function(){var h=document.documentElement;$('#bar').style.width=(scrollY/(h.scrollHeight-innerHeight)*100)+'%'},{passive:true});
 
 var fine=matchMedia('(pointer:fine)').matches,calm=matchMedia('(prefers-reduced-motion:reduce)').matches;
-/* tilt 3D + reflet qui suit le curseur */
 if(fine&&!calm){
  document.addEventListener('mousemove',function(e){var c=$('#cur');c.style.transform='translate('+e.clientX+'px,'+e.clientY+'px)'},{passive:true});
  document.querySelectorAll('.t').forEach(function(el){
@@ -266,7 +328,7 @@ if(fine&&!calm){
   el.addEventListener('mouseleave',function(){el.style.transform=''})})
 }else $('#cur').style.display='none';
 
-/* scène Three.js : icosaèdre wireframe + noyau + particules, réagit souris & scroll */
+/* Three.js hero */
 (function(){
  if(typeof THREE==='undefined'||calm||innerWidth<700)return;
  var cv=$('#gl'),R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});R.setPixelRatio(Math.min(devicePixelRatio,2));
@@ -292,6 +354,419 @@ if(fine&&!calm){
   var s=Math.min(scrollY/innerHeight,1);G.position.y=s*1.2;G.scale.setScalar(1-s*.35);
   l1.position.x=4+tx*6;l1.position.y=3-ty*6;
   R.render(S,C)})(0);
+})();
+
+/* SMOKE + CODE RAIN BACKGROUND */
+(function(){
+  var smoke = document.getElementById('smoke-bg');
+  var rain = document.getElementById('code-rain');
+  if(!smoke || !rain) return;
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+
+  var sctx = smoke.getContext('2d');
+  var rctx = rain.getContext('2d');
+  var W, H, DPR = Math.min(devicePixelRatio||1, 1.5);
+
+  function resize(){
+    W = innerWidth; H = innerHeight;
+    smoke.width = W*DPR; smoke.height = H*DPR;
+    sctx.setTransform(DPR,0,0,DPR,0,0);
+    rain.width = W*DPR; rain.height = H*DPR;
+    rctx.setTransform(DPR,0,0,DPR,0,0);
+  }
+  resize();
+  addEventListener('resize', resize);
+
+  var blobs = [];
+  for(var i=0;i<10;i++){
+    blobs.push({x:Math.random()*W,y:Math.random()*H,r:150+Math.random()*250,vx:(Math.random()-.5)*0.4,vy:(Math.random()-.5)*0.4,hue:Math.random()*360,hueSpeed:12+Math.random()*18,sat:0.75,lit:0.55,phase:Math.random()*Math.PI*2});
+  }
+
+  function hsl(h, s, l){
+    h = ((h % 360) + 360) % 360 / 360;
+    function hue2rgb(p,q,t){if(t<0)t+=1;if(t>1)t-=1;if(t<1/6)return p+(q-p)*6*t;if(t<1/2)return q;if(t<2/3)return p+(q-p)*(2/3-t)*6;return p;}
+    var q = l<0.5 ? l*(1+s) : l+s-l*s;
+    var p = 2*l-q;
+    return Math.round(hue2rgb(p,q,h+1/3)*255)+','+Math.round(hue2rgb(p,q,h)*255)+','+Math.round(hue2rgb(p,q,h-1/3)*255);
+  }
+
+  var chars = "01{}[]<>/=;:()&|+-*ABCDEFabcdef#$_";
+  var colWidth = 16;
+  var drops = [];
+  function initRain(){
+    drops = [];
+    var cols = Math.floor(W / colWidth);
+    for(var i=0;i<cols;i++){
+      drops.push({y:Math.random()*H,speed:1+Math.random()*2.2,char:chars[Math.floor(Math.random()*chars.length)],change:Math.floor(Math.random()*8),color:Math.random()>0.7?'201,162,39':(Math.random()>0.5?'34,211,238':'124,92,255')});
+    }
+  }
+  initRain();
+  addEventListener('resize', initRain);
+
+  var start = performance.now();
+  var visible = !document.hidden;
+  document.addEventListener('visibilitychange', () => visible = !document.hidden);
+
+  function frame(now){
+    requestAnimationFrame(frame);
+    if(!visible) return;
+    var t = (now - start) * 0.001;
+
+    sctx.clearRect(0,0,W,H);
+    sctx.globalCompositeOperation = 'lighter';
+    for(var i=0;i<blobs.length;i++){
+      var b = blobs[i];
+      b.x += b.vx + Math.sin(t*0.5 + b.phase) * 0.25;
+      b.y += b.vy + Math.cos(t*0.4 + b.phase) * 0.2;
+      if(b.x < -b.r) b.x = W + b.r;
+      if(b.x > W + b.r) b.x = -b.r;
+      if(b.y < -b.r) b.y = H + b.r;
+      if(b.y > H + b.r) b.y = -b.r;
+      var hue = b.hue + t * b.hueSpeed;
+      var col = hsl(hue, b.sat, b.lit);
+      var grd = sctx.createRadialGradient(b.x, b.y, 0, b.x, b.y, b.r);
+      grd.addColorStop(0,'rgba('+col+',0.11)');
+      grd.addColorStop(0.45,'rgba('+col+',0.05)');
+      grd.addColorStop(1,'rgba('+col+',0)');
+      sctx.fillStyle = grd;
+      sctx.beginPath();
+      sctx.arc(b.x, b.y, b.r, 0, Math.PI*2);
+      sctx.fill();
+    }
+    sctx.globalCompositeOperation = 'source-over';
+
+    rctx.clearRect(0,0,W,H);
+    rctx.font = '13px "JetBrains Mono", monospace';
+    rctx.textAlign = 'center';
+    for(var j=0;j<drops.length;j++){
+      var d = drops[j];
+      var x = j*colWidth + colWidth/2;
+      d.y += d.speed;
+      d.change++;
+      if(d.change > 4){ d.char = chars[Math.floor(Math.random()*chars.length)]; d.change = 0; }
+      if(d.y > H + 20){ d.y = -20; d.speed = 1 + Math.random()*2.2; }
+      var fade = 1 - Math.abs((d.y / H) - 0.5) * 1.6;
+      var alpha = Math.max(0, Math.min(0.55, fade * 0.9));
+      if(alpha <= 0.02) continue;
+      rctx.fillStyle = 'rgba('+d.color+','+alpha+')';
+      rctx.fillText(d.char, x, d.y);
+    }
+  }
+  requestAnimationFrame(frame);
+})();
+
+/* TYPEWRITER CODE BLOCKS */
+(function(){
+  var SNIPPETS = [
+    'const site = new Statevo({\n  owner: "Karim",\n  plan: "premium",\n  stripe: true\n});',
+    'function book(client) {\n  return calendar.slot(client);\n}',
+    'app.post("/pay", async (req, res) => {\n  const { amount } = req.body;\n  return stripe.charge(amount);\n});',
+    '// 50+ entrepreneurs nous font confiance\nbuild.website({\n  fast: true,\n  custom: true\n});'
+  ];
+  var targets = document.querySelectorAll('[data-tw]');
+  if(!targets.length) return;
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches){
+    targets.forEach(function(el){ el.style.display = 'none'; });
+    return;
+  }
+  targets.forEach(function(el, idx){
+    var snippetIdx = idx % SNIPPETS.length;
+    var tokens = [], pos = 0, erasing = false, running = true;
+    function loadSnippet(){ var s = SNIPPETS[snippetIdx]; tokens = s.match(/\S+\s*/g) || [s]; pos = 0; erasing = false; }
+    function render(){ var text = tokens.slice(0, pos).join(''); el.textContent = ''; el.appendChild(document.createTextNode(text)); var cur = document.createElement('span'); cur.className = 'tw-cursor'; cur.textContent = '▊'; el.appendChild(cur); }
+    function tick(){
+      if(!running) return;
+      var rect = el.getBoundingClientRect();
+      if(rect.bottom < -100 || rect.top > innerHeight + 100){ setTimeout(tick, 800); return; }
+      if(!erasing){
+        if(pos < tokens.length){ pos++; render(); setTimeout(tick, 180 + Math.random()*140); }
+        else { setTimeout(function(){ erasing = true; tick(); }, 2600); }
+      } else {
+        if(pos > 0){ pos--; render(); setTimeout(tick, 90); }
+        else { snippetIdx = (snippetIdx + 1) % SNIPPETS.length; loadSnippet(); render(); setTimeout(tick, 700); }
+      }
+    }
+    loadSnippet(); render(); setTimeout(tick, 800 + idx * 500);
+  });
+})();
+</script>
+
+<script>
+/* ============================================================
+   STARFIELD — Champ d'étoiles interactif
+   ============================================================ */
+(function () {
+  'use strict';
+  const CONFIG = {
+    STAR_DENSITY: 0.06,
+    STAR_DENSITY_MOBILE: 0.24,
+    STAR_COLORS: ['#ffffff', '#e0e7ff', '#fff4d6'],
+    TWINKLE_SPEED: 1,
+    DRIFT_SPEED: 0.15,
+    CLICK_RADIUS: 40,
+    CLICK_RADIUS_MOBILE: 50,
+    FLY_AWAY_DURATION: 600,
+    RESPAWN_DELAY: 3000,
+    SPECIAL_STAR_MAX: 4,
+    SPECIAL_STAR_CHANCE: 0.04,
+    IGNORE_INTERACTIVE: true,
+    INTERACTIVE_SELECTOR: 'a, button, input, textarea, select, label, [role="button"]',
+    FLASH_DURATION: 800,
+    PALETTE_TRANSITION_DURATION: 800,
+    PALETTES: {
+      aurore: { label: 'Aurore', vars: { '--ac': '#7C5CFF', '--cy': '#22D3EE', '--glow': 'rgba(124,92,255,.35)' } },
+      crepuscule: { label: 'Crépuscule', vars: { '--ac': '#C7335F', '--cy': '#FF7E9B', '--glow': 'rgba(199,51,95,.35)' } },
+      ocean: { label: 'Océan', vars: { '--ac': '#0D7BA8', '--cy': '#5EEAD4', '--glow': 'rgba(13,123,168,.35)' } },
+      or: { label: 'Or', vars: { '--ac': '#A8750F', '--cy': '#FFD97D', '--glow': 'rgba(168,117,15,.35)' } }
+    }
+  };
+
+  const canvas = document.getElementById('starfield');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  let W = 0, H = 0, DPR = 1;
+  let stars = [];
+  let starColors = [];
+  let isActive = !document.hidden;
+  let isVisible = true;
+  let lastTime = performance.now();
+  let resizeTimer = 0;
+
+  const paletteNames = Object.keys(CONFIG.PALETTES);
+  let currentPaletteName = 'aurore';
+  let paletteValues = {};
+
+  function parseColor(str) {
+    str = (str || '').trim();
+    if (str.startsWith('#')) {
+      let hex = str.slice(1);
+      if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+      if (hex.length === 6) return { r: parseInt(hex.slice(0,2),16), g: parseInt(hex.slice(2,4),16), b: parseInt(hex.slice(4,6),16), a: 1 };
+    }
+    const m = str.match(/rgba?\(\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)(?:\s*,\s*([\d.]+))?\s*\)/);
+    if (m) return { r: +m[1], g: +m[2], b: +m[3], a: m[4] != null ? +m[4] : 1 };
+    return { r: 255, g: 255, b: 255, a: 1 };
+  }
+  function colorToCss(c) {
+    const r = Math.round(c.r), g = Math.round(c.g), b = Math.round(c.b);
+    if (c.a >= 0.999) return '#' + [r,g,b].map(x => x.toString(16).padStart(2,'0')).join('');
+    return 'rgba(' + r + ',' + g + ',' + b + ',' + c.a.toFixed(3) + ')';
+  }
+  function lerpColor(a, b, t) {
+    return { r: a.r+(b.r-a.r)*t, g: a.g+(b.g-a.g)*t, b: a.b+(b.b-a.b)*t, a: a.a+(b.a-a.a)*t };
+  }
+  function readPaletteFromDOM() {
+    const style = getComputedStyle(document.documentElement);
+    paletteValues = {};
+    Object.keys(CONFIG.PALETTES.aurore.vars).forEach(k => {
+      paletteValues[k] = style.getPropertyValue(k).trim() || CONFIG.PALETTES.aurore.vars[k];
+    });
+  }
+  function applyPalette(name) {
+    const target = CONFIG.PALETTES[name];
+    if (!target || name === currentPaletteName) return;
+    currentPaletteName = name;
+    const root = document.documentElement;
+    const startValues = {}, endValues = {};
+    Object.keys(target.vars).forEach(k => {
+      startValues[k] = parseColor(paletteValues[k] || target.vars[k]);
+      endValues[k] = parseColor(target.vars[k]);
+    });
+    if (prefersReduced) {
+      Object.keys(target.vars).forEach(k => { root.style.setProperty(k, target.vars[k]); paletteValues[k] = target.vars[k]; });
+      return;
+    }
+    const startTime = performance.now();
+    const dur = CONFIG.PALETTE_TRANSITION_DURATION;
+    function tick(now) {
+      const t = Math.min(1, (now - startTime) / dur);
+      const eased = t < 0.5 ? 2*t*t : 1 - Math.pow(-2*t+2, 2)/2;
+      Object.keys(target.vars).forEach(k => {
+        const css = colorToCss(lerpColor(startValues[k], endValues[k], eased));
+        root.style.setProperty(k, css);
+        paletteValues[k] = css;
+      });
+      if (t < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  function triggerFlash(x, y) {
+    const size = 320;
+    const flash = document.createElement('div');
+    flash.setAttribute('aria-hidden', 'true');
+    flash.style.cssText = [
+      'position:fixed', 'left:'+(x-size/2)+'px', 'top:'+(y-size/2)+'px',
+      'width:'+size+'px', 'height:'+size+'px', 'border-radius:50%',
+      'pointer-events:none', 'z-index:9999',
+      'background:radial-gradient(circle,rgba(255,255,255,0.55) 0%,rgba(255,255,255,0) 65%)',
+      'opacity:0.9', 'transform:scale(0.4)',
+      'transition:opacity '+CONFIG.FLASH_DURATION+'ms ease-out,transform '+CONFIG.FLASH_DURATION+'ms ease-out'
+    ].join(';');
+    document.body.appendChild(flash);
+    requestAnimationFrame(() => { flash.style.opacity = '0'; flash.style.transform = 'scale(1.6)'; });
+    setTimeout(() => flash.remove(), CONFIG.FLASH_DURATION + 80);
+  }
+  function readStarColors() {
+    const style = getComputedStyle(document.documentElement);
+    const css = [];
+    ['--tx','--ac','--cy'].forEach(v => {
+      const val = style.getPropertyValue(v).trim();
+      if (val) css.push(val);
+    });
+    starColors = css.length ? css : CONFIG.STAR_COLORS.slice();
+  }
+  function computeStarCount() {
+    const density = isMobile ? CONFIG.STAR_DENSITY_MOBILE : CONFIG.STAR_DENSITY;
+    const count = Math.floor((W * H / 1000) * density);
+    return Math.max(30, Math.min(isMobile ? 100 : 220, count));
+  }
+  function makeStar() {
+    const special = Math.random() < CONFIG.SPECIAL_STAR_CHANCE;
+    return {
+      x: Math.random()*W, y: Math.random()*H,
+      radius: special ? 2 + Math.random()*0.8 : 0.5 + Math.random()*1.4,
+      opacityBase: 0.2 + Math.random()*0.5,
+      twinklePhase: Math.random()*Math.PI*2,
+      twinklePeriod: 2 + Math.random()*4,
+      layer: Math.random() < 0.5 ? 0 : 1,
+      color: starColors[Math.floor(Math.random()*starColors.length)],
+      special: special, flying: false, flyVx: 0, flyVy: 0, flyStart: 0, fadeOpacity: 1,
+      respawnAt: 0, respawnDelay: CONFIG.RESPAWN_DELAY + Math.random()*1500
+    };
+  }
+  function spawnAllStars() {
+    const count = computeStarCount();
+    stars = [];
+    for (let i = 0; i < count; i++) stars.push(makeStar());
+    let specials = stars.filter(s => s.special).length;
+    for (let i = 0; i < stars.length && specials > CONFIG.SPECIAL_STAR_MAX; i++) {
+      if (stars[i].special) { stars[i].special = false; stars[i].radius = 0.5 + Math.random()*1.4; specials--; }
+    }
+  }
+  function respawn(star) {
+    star.x = Math.random()*W; star.y = Math.random()*H;
+    star.flying = false; star.fadeOpacity = 1; star.flyVx = star.flyVy = 0; star.respawnAt = 0;
+    star.twinklePhase = Math.random()*Math.PI*2;
+    star.color = starColors[Math.floor(Math.random()*starColors.length)];
+    if (star.special) {
+      if (stars.filter(s => s !== star && s.special).length >= CONFIG.SPECIAL_STAR_MAX) {
+        star.special = false; star.radius = 0.5 + Math.random()*1.4;
+      }
+    } else if (Math.random() < 0.05) {
+      if (stars.filter(s => s !== star && s.special).length < CONFIG.SPECIAL_STAR_MAX) {
+        star.special = true; star.radius = 2 + Math.random()*0.8;
+      }
+    }
+  }
+  function flyAway(star, fromX, fromY) {
+    if (prefersReduced) return;
+    star.flying = true;
+    star.flyStart = performance.now();
+    const dx = star.x - fromX, dy = star.y - fromY;
+    const d = Math.sqrt(dx*dx + dy*dy) || 1;
+    star.flyVx = (dx/d)*3;
+    star.flyVy = (dy/d)*3;
+  }
+  function handlePointer(x, y) {
+    const radius = isMobile ? CONFIG.CLICK_RADIUS_MOBILE : CONFIG.CLICK_RADIUS;
+    let best = null, bestDist = Infinity;
+    for (const s of stars) {
+      if (s.flying) continue;
+      const dx = s.x - x, dy = s.y - y;
+      const d2 = dx*dx + dy*dy;
+      if (d2 <= radius*radius && d2 < bestDist) { bestDist = d2; best = s; }
+    }
+    if (!best) return;
+    if (best.special) {
+      const others = paletteNames.filter(n => n !== currentPaletteName);
+      const next = others[Math.floor(Math.random()*others.length)];
+      applyPalette(next);
+      triggerFlash(x, y);
+    }
+    flyAway(best, x, y);
+  }
+  document.addEventListener('pointerdown', (e) => {
+    if (CONFIG.IGNORE_INTERACTIVE && e.target.closest(CONFIG.INTERACTIVE_SELECTOR)) return;
+    handlePointer(e.clientX, e.clientY);
+  }, { passive: true });
+
+  function render(now) {
+    requestAnimationFrame(render);
+    if (!isActive || !isVisible) return;
+    const dt = Math.min(50, now - lastTime) / 16.667;
+    lastTime = now;
+    ctx.clearRect(0, 0, W, H);
+    const t = now / 1000;
+    for (const s of stars) {
+      if (s.respawnAt) {
+        if (now >= s.respawnAt) respawn(s);
+        else continue;
+      }
+      if (s.flying) {
+        const elapsed = now - s.flyStart;
+        const p = Math.min(1, elapsed / CONFIG.FLY_AWAY_DURATION);
+        s.x += s.flyVx * dt * (1 + p*2);
+        s.y += s.flyVy * dt * (1 + p*2);
+        s.fadeOpacity = 1 - p;
+        if (p >= 1) { s.respawnAt = now + s.respawnDelay; continue; }
+      } else if (!prefersReduced) {
+        const speed = CONFIG.DRIFT_SPEED * (s.layer === 0 ? 0.6 : 1);
+        s.x += speed * dt; s.y += speed * 0.4 * dt;
+        if (s.x > W + 6) s.x = -6;
+        if (s.y > H + 6) s.y = -6;
+      }
+      let opacity;
+      if (prefersReduced) { opacity = s.opacityBase + 0.15; }
+      else {
+        const tw = Math.sin((t / s.twinklePeriod) * Math.PI * 2 * CONFIG.TWINKLE_SPEED + s.twinklePhase);
+        const twNorm = tw * 0.5 + 0.5;
+        const boost = s.special ? 0.9 : 0.8;
+        opacity = s.opacityBase + twNorm * (1 - s.opacityBase) * boost;
+      }
+      opacity *= s.fadeOpacity;
+      if (opacity <= 0.02) continue;
+      if (s.special) {
+        const haloR = s.radius * 6;
+        const c = parseColor(s.color);
+        const grad = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, haloR);
+        grad.addColorStop(0, 'rgba('+c.r+','+c.g+','+c.b+','+(opacity*0.4)+')');
+        grad.addColorStop(1, 'rgba('+c.r+','+c.g+','+c.b+',0)');
+        ctx.fillStyle = grad;
+        ctx.beginPath(); ctx.arc(s.x, s.y, haloR, 0, Math.PI*2); ctx.fill();
+      }
+      ctx.globalAlpha = opacity;
+      ctx.fillStyle = s.color;
+      ctx.beginPath(); ctx.arc(s.x, s.y, s.radius, 0, Math.PI*2); ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    isActive = !document.hidden;
+    if (isActive) lastTime = performance.now();
+  });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => { isVisible = entries[0].isIntersecting; }, { threshold: 0 }).observe(canvas);
+  }
+  function resize() {
+    DPR = Math.min(window.devicePixelRatio || 1, 2);
+    W = window.innerWidth; H = window.innerHeight;
+    canvas.width = Math.floor(W * DPR); canvas.height = Math.floor(H * DPR);
+    canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    spawnAllStars();
+  }
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(resize, 150);
+  });
+  readPaletteFromDOM();
+  readStarColors();
+  resize();
+  requestAnimationFrame(render);
 })();
 </script>
 </body>
