@@ -62,13 +62,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:64px;display:flex;ali
 .st{font-size:clamp(30px,4.4vw,48px);letter-spacing:-1.5px;line-height:1.08}
 .sd{color:var(--mu);margin-top:14px;max-width:480px}
 .t{position:relative;background:linear-gradient(160deg,var(--s2),var(--s1));border:1px solid var(--line);border-radius:20px;transition:transform .15s ease-out,border-color .3s;transform-style:preserve-3d;will-change:transform;overflow:hidden}
-.t:before{content:"";position:absolute;inset:0;background:radial-gradient(380px circle at var(--mx,50%) var(--my,0%),rgba(124,92,255,.16),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.t:before{content:"";position:absolute;inset:0;background:radial-gradient(380px circle at var(--mx,50%) var(--my,0%),rgba(124,92,255,.16),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none;z-index:2}
 .t:hover{border-color:rgba(124,92,255,.4)}
 .t:hover:before{opacity:1}
 .plans{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
-.plan{padding:34px}
-.plan.pro{border-color:rgba(124,92,255,.5);box-shadow:0 30px 80px -40px var(--glow)}
-.badge{position:absolute;top:18px;right:18px;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;font-weight:700;background:linear-gradient(120deg,var(--ac),var(--cy));color:#06070B;padding:4px 12px;border-radius:100px}
+.plan{padding:34px;position:relative}
+
+/* ===== PACKS : IMAGES DE FOND ===== */
+.plan.essentielle{background:linear-gradient(160deg,rgba(13,16,23,.9),rgba(20,25,37,.94)),url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=900&q=80') center/cover no-repeat}
+.plan.pro{background:linear-gradient(160deg,rgba(13,16,23,.86),rgba(20,25,37,.92)),url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80') center/cover no-repeat;border-color:rgba(124,92,255,.5);box-shadow:0 30px 80px -40px var(--glow)}
+.plan>*{position:relative;z-index:1}
+.badge{position:absolute;top:18px;right:18px;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;font-weight:700;background:linear-gradient(120deg,var(--ac),var(--cy));color:#06070B;padding:4px 12px;border-radius:100px;z-index:3}
 .pk{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--mu);font-weight:600}
 .price{font-family:'Space Grotesk';font-size:58px;font-weight:700;letter-spacing:-2px;line-height:1.1;margin:6px 0 2px}
 .psub{color:var(--mu);font-size:13.5px;margin-bottom:22px}
@@ -150,7 +154,90 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:64px;display:flex;ali
 @keyframes tw-blink{50%{opacity:0}}
 .tw-float{position:absolute;z-index:0;opacity:.55;pointer-events:none}
 
-@media(max-width:860px){.plans,.calc,.man{grid-template-columns:1fr}.links{display:none}nav{padding:0 18px}.hero,.sec,.fcta{padding-left:20px;padding-right:20px}.stats{flex-direction:column}.stats div{border-right:0;border-bottom:1px solid var(--line);padding:24px 20px}.kp{grid-template-columns:1fr}.fb{padding:16px 20px}.fcta{padding:60px 24px;text-align:center}.tw-float{display:none}}
+/* ===== PORTFOLIO HOVER ===== */
+.card.has-img{cursor:pointer}
+.card.has-img .card-img{position:relative;overflow:hidden;transition:transform .5s ease}
+.card.has-img:hover .card-img{transform:scale(1.06)}
+.card-hover-cta{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(6,7,11,.55);color:#fff;font:600 13px Inter;letter-spacing:.5px;opacity:0;transition:opacity .3s;z-index:2}
+.card.has-img:hover .card-hover-cta{opacity:1}
+
+/* ===== MODAL PROJET ===== */
+.pm-backdrop{position:fixed;inset:0;background:rgba(6,7,11,.85);backdrop-filter:blur(14px);z-index:1500;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s}
+.pm-backdrop.open{opacity:1;pointer-events:auto}
+.pm-modal{max-width:680px;width:100%;max-height:90vh;overflow-y:auto;background:linear-gradient(160deg,var(--s2),var(--s1));border:1px solid var(--line);border-radius:22px;position:relative;transform:translateY(24px) scale(.98);transition:transform .35s cubic-bezier(.2,.8,.2,1);box-shadow:0 40px 120px -40px rgba(0,0,0,.9)}
+.pm-backdrop.open .pm-modal{transform:none}
+.pm-close{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:rgba(6,7,11,.85);color:var(--tx);font-size:22px;line-height:1;cursor:pointer;z-index:3;display:flex;align-items:center;justify-content:center;transition:.2s}
+.pm-close:hover{border-color:var(--ac);background:rgba(124,92,255,.2);transform:rotate(90deg)}
+.pm-img{height:230px;background-size:cover;background-position:center;border-radius:22px 22px 0 0;position:relative}
+.pm-img:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(13,16,23,.85));border-radius:inherit}
+.pm-body{padding:26px 32px 32px}
+.pm-cat{font-size:11.5px;letter-spacing:2px;text-transform:uppercase;color:var(--cy);font-weight:700;margin-bottom:8px}
+.pm-title{font-size:clamp(24px,3.5vw,34px);letter-spacing:-.8px;margin-bottom:12px;line-height:1.15}
+.pm-desc{color:var(--mu);font-size:14.5px;line-height:1.65;margin-bottom:24px}
+.pm-features h4{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx);margin-bottom:12px;font-weight:600}
+.pm-list{grid-template-columns:1fr 1fr;gap:8px 18px;margin-bottom:0}
+.pm-list li{font-size:13px}
+.pm-pack{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 22px;border:1px solid rgba(124,92,255,.45);background:linear-gradient(120deg,rgba(124,92,255,.1),rgba(34,211,238,.06));border-radius:16px;margin:24px 0 18px}
+.pm-pack-info .pk{font-size:10.5px}
+.pm-pack-name{font-family:'Space Grotesk';font-size:19px;font-weight:700;margin-top:3px}
+.pm-price{font-family:'Space Grotesk';font-size:36px;font-weight:700;letter-spacing:-1.5px;margin:0;line-height:1}
+.pm-actions{display:flex;gap:10px;flex-wrap:wrap}
+.pm-actions .btn{flex:1;text-align:center;min-width:150px;padding:13px 18px;font-size:13px}
+.pm-note{font-size:11.5px;color:var(--mu);text-align:center;margin-top:16px}
+
+/* ===== THEME STARS (3 étoiles de thème) ===== */
+#theme-stars{
+  position:fixed;
+  top:80px;
+  right:20px;
+  z-index:600;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  padding:14px 10px;
+  background:rgba(6,7,11,.6);
+  backdrop-filter:blur(14px);
+  border:1px solid var(--line);
+  border-radius:24px;
+  box-shadow:0 10px 40px -20px rgba(0,0,0,.8);
+  transition:border-color .3s,box-shadow .3s;
+}
+#theme-stars:hover{border-color:rgba(124,92,255,.35);box-shadow:0 10px 40px -18px var(--glow)}
+.theme-star{
+  width:44px;height:44px;
+  padding:0;border:0;background:transparent;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),filter .35s;
+  filter:drop-shadow(0 0 6px currentColor);
+  position:relative;
+}
+.theme-star svg{width:100%;height:100%;display:block}
+.theme-star svg path{fill:currentColor;transition:fill .35s}
+.theme-star[data-palette="aurore"]{color:#7C5CFF}
+.theme-star[data-palette="ocean"]{color:#5EEAD4}
+.theme-star[data-palette="or"]{color:#FFD97D}
+.theme-star:hover{transform:scale(1.22) rotate(-12deg);filter:drop-shadow(0 0 14px currentColor) drop-shadow(0 0 28px currentColor)}
+.theme-star:active{transform:scale(.92)}
+.theme-star.active{filter:drop-shadow(0 0 10px currentColor) drop-shadow(0 0 22px currentColor)}
+.theme-star.active::after{
+  content:"";position:absolute;inset:-6px;
+  border-radius:50%;
+  border:1.5px solid currentColor;
+  opacity:.5;
+  animation:star-ring 2.4s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes star-ring{
+  0%,100%{transform:scale(1);opacity:.5}
+  50%{transform:scale(1.15);opacity:.15}
+}
+
+@media(max-width:860px){.plans,.calc,.man{grid-template-columns:1fr}.links{display:none}nav{padding:0 18px}.hero,.sec,.fcta{padding-left:20px;padding-right:20px}.stats{flex-direction:column}.stats div{border-right:0;border-bottom:1px solid var(--line);padding:24px 20px}.kp{grid-template-columns:1fr}.fb{padding:16px 20px}.fcta{padding:60px 24px;text-align:center}.tw-float{display:none}
+  #theme-stars{top:auto;bottom:16px;right:50%;transform:translateX(50%);flex-direction:row;padding:10px 12px;gap:8px}
+  .theme-star{width:38px;height:38px}
+}
+@media(max-width:600px){.pm-list{grid-template-columns:1fr}.pm-body{padding:24px 22px 28px}.pm-img{height:170px}.pm-pack{flex-direction:column;align-items:flex-start}.pm-price{font-size:30px}.pm-actions .btn{min-width:100%}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.rv{opacity:1;transform:none}.tw-float{display:none}}
 </style>
 </head>
@@ -166,6 +253,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:64px;display:flex;ali
   <div class="links"><a href="#offres">Offres</a><a href="#calculatrice">Calculatrice</a><a href="#avis">Avis</a><a href="#faq">FAQ</a></div>
   <a class="btn" href="#offres">Commencer</a>
 </nav>
+
+<div id="theme-stars" role="group" aria-label="Changer le thème de couleurs">
+  <button class="theme-star active" data-palette="aurore" aria-label="Thème Aurore" title="Thème Aurore">
+    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+  </button>
+  <button class="theme-star" data-palette="ocean" aria-label="Thème Océan" title="Thème Océan">
+    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+  </button>
+  <button class="theme-star" data-palette="or" aria-label="Thème Or" title="Thème Or">
+    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+  </button>
+</div>
 
 <header class="hero">
   <canvas id="gl"></canvas>
@@ -225,24 +324,30 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:64px;display:flex;ali
 <section class="sec">
   <div class="rv"><span class="eb">Portfolio</span><h2 class="st">Nos <span class="grad">réalisations</span></h2><p class="sd">Des exemples de sites modernes, professionnels et sur-mesure que nous avons conçus.</p></div>
   <div class="grid3">
-    <div class="t card has-img rv">
-      <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80')"></div>
+    <div class="t card has-img rv" data-project="studio">
+      <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80')">
+        <span class="card-hover-cta">Voir le projet →</span>
+      </div>
       <div class="card-body">
         <div class="pk">Vitrine · Design</div>
         <h3 style="margin-top:8px">Studio Créatif</h3>
         <p>Site vitrine pour une agence de communication avec portfolio interactif.</p>
       </div>
     </div>
-    <div class="t card has-img rv">
-      <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80')"></div>
+    <div class="t card has-img rv" data-project="boutique">
+      <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80')">
+        <span class="card-hover-cta">Voir le projet →</span>
+      </div>
       <div class="card-body">
         <div class="pk">E-commerce · Paiement</div>
         <h3 style="margin-top:8px">Boutique en ligne</h3>
         <p>E-commerce complet avec catalogue, panier et paiement sécurisé.</p>
       </div>
     </div>
-    <div class="t card has-img rv">
-      <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80')"></div>
+    <div class="t card has-img rv" data-project="resto">
+      <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80')">
+        <span class="card-hover-cta">Voir le projet →</span>
+      </div>
       <div class="card-body">
         <div class="pk">Restauration · Réservation</div>
         <h3 style="margin-top:8px">Restaurant Gastronomique</h3>
@@ -280,6 +385,34 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:64px;display:flex;ali
 <div class="fb"><span>© Statevo 2026 — Agence reconnue et approuvée, plus de 50 entrepreneurs accompagnés.</span><span>Tous droits réservés</span></div>
 <div id="cur"></div>
 
+<div id="pm" class="pm-backdrop" role="dialog" aria-modal="true" aria-labelledby="pm-title">
+  <div class="pm-modal">
+    <button class="pm-close" aria-label="Fermer">×</button>
+    <div class="pm-img"></div>
+    <div class="pm-body">
+      <div class="pm-cat"></div>
+      <h2 class="pm-title" id="pm-title"></h2>
+      <p class="pm-desc"></p>
+      <div class="pm-features">
+        <h4>Ce qui est inclus</h4>
+        <ul class="fl pm-list"></ul>
+      </div>
+      <div class="pm-pack">
+        <div class="pm-pack-info">
+          <span class="pk">Pack recommandé pour ce projet</span>
+          <div class="pm-pack-name"></div>
+        </div>
+        <div class="price grad pm-price"></div>
+      </div>
+      <div class="pm-actions">
+        <button class="btn pm-order">Commander ce pack →</button>
+        <button class="btn ghost pm-back">← Retour</button>
+      </div>
+      <p class="pm-note">🔒 Prix fixe · Livraison rapide · Tu restes propriétaire à 100%</p>
+    </div>
+  </div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 var MAIL="statevocontact@gmail.com",$=function(s){return document.querySelector(s)};
@@ -291,7 +424,7 @@ var PRO=[["Paiement en ligne sécurisé","Tes clients paient par carte"],["Rése
 var li=function(a,c){return a.map(function(f){return '<li'+(c?' class="'+c+'"':'')+'>'+'<span>'+f[0]+(f[1]?'<small>'+f[1]+'</small>':'')+'</span></li>'}).join('')};
 
 $('#plans').innerHTML=
- '<div class="t plan rv"><div class="pk">Essentielle</div><div class="price">80€</div><div class="psub">Site vitrine pro · support 1 jour</div><ul class="fl">'+li(BASE)+li(PRO,'no')+'</ul><div class="plan-btns"><button class="btn ghost" onclick="openF(\'Essentielle\',80)">Commander</button><a href="'+STRIPE_ESSENTIELLE+'" target="_blank" rel="noopener" class="btn">Acheter</a></div><p class="note">🔒 Paiement sécurisé Stripe · ou Commander pour être conseillé</p></div>'+
+ '<div class="t plan essentielle rv"><div class="pk">Essentielle</div><div class="price">80€</div><div class="psub">Site vitrine pro · support 1 jour</div><ul class="fl">'+li(BASE)+li(PRO,'no')+'</ul><div class="plan-btns"><button class="btn ghost" onclick="openF(\'Essentielle\',80)">Commander</button><a href="'+STRIPE_ESSENTIELLE+'" target="_blank" rel="noopener" class="btn">Acheter</a></div><p class="note">🔒 Paiement sécurisé Stripe · ou Commander pour être conseillé</p></div>'+
  '<div class="t plan pro rv"><span class="badge">Recommandé</span><div class="pk">Premium</div><div class="price grad">190€</div><div class="psub">Le site complet · support 1 mois</div><ul class="fl">'+li(BASE)+li(PRO)+'</ul><div class="plan-btns"><button class="btn" onclick="openF(\'Premium\',190)">Commander</button><a href="'+STRIPE_PREMIUM+'" target="_blank" rel="noopener" class="btn">Acheter</a></div><p class="note">🔒 Paiement sécurisé Stripe · ou Commander pour être conseillé</p></div>';
 
 var plan="";
@@ -489,6 +622,91 @@ if(fine&&!calm){
     loadSnippet(); render(); setTimeout(tick, 800 + idx * 500);
   });
 })();
+
+/* ============================================================
+   MODAL PROJET — Vente des packs via le portfolio
+   ============================================================ */
+(function(){
+  var PROJECTS = {
+    studio: {
+      cat:'Vitrine · Design',
+      title:'Studio Créatif',
+      img:'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1200&q=80',
+      desc:"Site vitrine élégant pour une agence de communication. Portfolio interactif, présentation des services, mise en avant des réalisations et formulaire de contact optimisé. Un site qui inspire confiance dès la première seconde.",
+      features:[
+        ['Design sur-mesure'],['Portfolio interactif'],['Responsive tous écrans'],
+        ['Visible sur Google'],['Formulaire de contact'],['Galerie photos']
+      ],
+      pack:'Essentielle', price:80
+    },
+    boutique: {
+      cat:'E-commerce · Paiement',
+      title:'Boutique en ligne',
+      img:'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80',
+      desc:"E-commerce complet avec catalogue produits, panier intelligent et paiement sécurisé par carte bancaire. Gestion des commandes simplifiée et expérience d'achat fluide sur mobile. Tes clients achètent en 2 clics.",
+      features:[
+        ['Catalogue produits'],['Panier & commandes'],['Paiement sécurisé Stripe'],
+        ['Fiches produits optimisées'],['Responsive & rapide'],['Design professionnel']
+      ],
+      pack:'Premium', price:190
+    },
+    resto: {
+      cat:'Restauration · Réservation',
+      title:'Restaurant Gastronomique',
+      img:'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80',
+      desc:"Site immersif pour un restaurant gastronomique. Réservation en ligne 24h/24, menus toujours à jour, galerie photos soignée et avis clients pour donner envie avant même la première visite. Le site qui remplit la salle.",
+      features:[
+        ['Réservation 24h/24'],['Menus & carte à jour'],['Galerie photos HD'],
+        ['Avis clients'],['Formulaire de contact'],['Design premium']
+      ],
+      pack:'Premium', price:190
+    }
+  };
+
+  var modal = document.getElementById('pm');
+  if(!modal) return;
+  var $m = function(sel){ return modal.querySelector(sel); };
+
+  function openProject(id){
+    var p = PROJECTS[id];
+    if(!p) return;
+    $m('.pm-img').style.backgroundImage = "url('" + p.img + "')";
+    $m('.pm-cat').textContent = p.cat;
+    $m('.pm-title').textContent = p.title;
+    $m('.pm-desc').textContent = p.desc;
+    $m('.pm-list').innerHTML = p.features.map(function(f){
+      return '<li><span>' + f[0] + '</span></li>';
+    }).join('');
+    $m('.pm-pack-name').textContent = 'Pack ' + p.pack;
+    $m('.pm-price').textContent = p.price + '€';
+    $m('.pm-order').onclick = function(){
+      closeProject();
+      setTimeout(function(){
+        if(typeof openF === 'function') openF(p.pack, p.price);
+      }, 200);
+    };
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeProject(){
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.card.has-img[data-project]').forEach(function(card){
+    card.addEventListener('click', function(){
+      openProject(card.getAttribute('data-project'));
+    });
+  });
+
+  $m('.pm-close').addEventListener('click', closeProject);
+  $m('.pm-back').addEventListener('click', closeProject);
+  modal.addEventListener('click', function(e){ if(e.target === modal) closeProject(); });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && modal.classList.contains('open')) closeProject();
+  });
+})();
 </script>
 
 <script>
@@ -670,6 +888,17 @@ if(fine&&!calm){
     star.flyVx = (dx/d)*3;
     star.flyVy = (dy/d)*3;
   }
+
+  /* === THEME CHANGE === */
+  function setPalette(name, x, y){
+    applyPalette(name);
+    document.querySelectorAll('.theme-star').forEach(s => {
+      s.classList.toggle('active', s.dataset.palette === name);
+    });
+    if(x !== undefined && y !== undefined) triggerFlash(x, y);
+  }
+  window.statevoSetPalette = setPalette;
+
   function handlePointer(x, y) {
     const radius = isMobile ? CONFIG.CLICK_RADIUS_MOBILE : CONFIG.CLICK_RADIUS;
     let best = null, bestDist = Infinity;
@@ -681,10 +910,10 @@ if(fine&&!calm){
     }
     if (!best) return;
     if (best.special) {
-      const others = paletteNames.filter(n => n !== currentPaletteName);
+      const mainPalettes = ['aurore', 'ocean', 'or'];
+      const others = mainPalettes.filter(n => n !== currentPaletteName);
       const next = others[Math.floor(Math.random()*others.length)];
-      applyPalette(next);
-      triggerFlash(x, y);
+      setPalette(next, x, y);
     }
     flyAway(best, x, y);
   }
@@ -767,6 +996,16 @@ if(fine&&!calm){
   readStarColors();
   resize();
   requestAnimationFrame(render);
+
+  /* === THEME STAR BUTTONS === */
+  document.querySelectorAll('.theme-star').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const rect = btn.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      setPalette(btn.dataset.palette, cx, cy);
+    });
+  });
 })();
 </script>
 </body>
